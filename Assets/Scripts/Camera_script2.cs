@@ -10,7 +10,7 @@ public class Camera_script2 : MonoBehaviour
     public Transform lookAt;
     public Transform camTransform;
     private Camera cam;
-    private float distance = 10.0f;
+    private float distance = 100.0f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
     private float sensivityX = 4.0f;
@@ -22,7 +22,7 @@ public class Camera_script2 : MonoBehaviour
     {
         camTransform = transform;
         cam = Camera.main;
-        //offset = transform.position - Player.transform.position;      
+        //offset = transform.position - Player.transform.position;
     }
     private void Update()
     {
