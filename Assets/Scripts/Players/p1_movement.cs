@@ -2,23 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class p1_movement : MonoBehaviour {
+public class p1_movement : MonoBehaviour
+{
 
     public float speed;
 
+    public Vector3 motionVector;
     private Rigidbody rb;
+    private Transform camTransform;
 
-    void Start () {
+    void Start ()
+    {
         rb = GetComponent<Rigidbody>();
     }
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate ()
+    {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        Vector3 movement = Vector3.zero;
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        movement.x = moveHorizontal;
+        movement.z = moveVertical;
 
-        rb.AddForce(movement * speed);
+        if (movement.magnitude > 1) movement.Normalize();
+
+        motionVector = movement;
+
+        if (camTransform != null)
+        {
+            motionVector = camTransform.TransformDirection(motionVector);
+            motionVector.Set(motionVector.x, 0, motionVector.z);
+        }
+        else
+        {
+            camTransform = Camera.main.transform;
+        }
+
+        //rb.AddForce(motionVector * speed);
+        rb.transform.Translate(speed * motionVector.x * Time.deltaTime, 0f, speed * motionVector.z * Time.deltaTime);
 	}
 }

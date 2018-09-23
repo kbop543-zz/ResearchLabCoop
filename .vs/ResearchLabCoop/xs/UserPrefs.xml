@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/gameConstants.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="39" Column="4" />
+      <File FileName="Assets/shoot.cs" Line="3" Column="19" />
+      <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="40" Column="9" />
+      <File FileName="Assets/gameConstants.cs" Line="7" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

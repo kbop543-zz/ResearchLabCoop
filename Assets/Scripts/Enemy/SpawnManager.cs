@@ -7,7 +7,8 @@ public class SpawnManager : MonoBehaviour
     // public PlayerHealth playerHealth;       // Reference to the player's heatlh.
     public GameObject[] enemies;
     public Vector3 spawnValues;
-    public float spawnWait;
+    public float spawnWait = 3f;
+    public float initHeight = 4f;
 		public float spawnMostWait;
 		public float spawnLeastWait;
 		public int startWait;
@@ -21,23 +22,17 @@ public class SpawnManager : MonoBehaviour
 
 		}
 
-		void Update(){
-
-			spawnWait = Random.Range(spawnLeastWait,spawnMostWait);
-
-		}
-
-		IEnumerator waitSpawner(){
-
+		IEnumerator waitSpawner()
+        {
 			yield return new WaitForSeconds (startWait);
 
 			while (!stop){
 				randEnemy = Random.Range(0,2);
 
 				Vector3 spawnPosition = new Vector3 (Random.Range(-spawnValues.x,spawnValues.x), 0, Random.Range(-spawnValues.z,spawnValues.z)) + transform.TransformPoint(0,0,0);
-				spawnPosition.y = 0;
+				spawnPosition.y = initHeight;
 				Instantiate (enemies[randEnemy], spawnPosition,
-				gameObject.transform.rotation);
+                             Quaternion.Euler(new Vector3(0, 0, 90)));
 
 				yield return new WaitForSeconds (spawnWait);
 			}
