@@ -2,36 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera_script : MonoBehaviour {
+public class Camera_script : MonoBehaviour
+{
     private const float y_angle_min = 0.0f;
     private const float y_angle_max = 50.0f;
     public GameObject Player;
     public Transform lookAt;
     public Transform camTransform;
     private Camera cam;
-    private float distance=100.0f;
-    private float currentX=0.0f;
-    private float currentY=0.0f;
-    private float sensivityX=4.0f;
-    private float sensivityY=1.0f;
-    private Vector3 offset;
+    private float distance = 100.0f;
+    private float currentX = 0.0f;
+    private float currentY = 0.0f;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         camTransform = transform;
         cam = Camera.main;
         //offset = transform.position - Player.transform.position;
 	}
     private void Update()
     {
-        currentX += Input.GetAxis("Mouse X");
-        currentY += Input.GetAxis("Mouse Y");
+        currentX += Input.GetAxis("p1_horizontal_camera");
+        currentY += Input.GetAxis("p1_vertical_camera");
         currentY = Mathf.Clamp(currentY, y_angle_min, y_angle_max);
 
     }
 
     // Update is called once per frame
-    void LateUpdate () {
+    void LateUpdate ()
+    {
         Vector3 direction = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         camTransform.position = lookAt.position + rotation * direction;

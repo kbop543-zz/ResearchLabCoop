@@ -13,12 +13,9 @@ public class Camera_script2 : MonoBehaviour
     private float distance = 100.0f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
-    private float sensivityX = 4.0f;
-    private float sensivityY = 1.0f;
-    private Vector3 offset;
 
     // Use this for initialization
-    void Start()
+    void Start ()
     {
         camTransform = transform;
         cam = Camera.main;
@@ -26,14 +23,14 @@ public class Camera_script2 : MonoBehaviour
     }
     private void Update()
     {
-        currentX += Input.GetAxis("P2 Horizontall camera");
+        currentX += Input.GetAxis("P2 Horizontal camera");
         currentY += Input.GetAxis("P2 Vertical camera");
         currentY = Mathf.Clamp(currentY, y_angle_min, y_angle_max);
 
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void LateUpdate ()
     {
         Vector3 direction = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
