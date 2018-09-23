@@ -9,6 +9,8 @@ TagManager:
   - GameManager
   - p2_cam
   - monster
+  - Bullet
+  - HealthBar
   layers:
   - Default
   - TransparentFX
