@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  motionVector: {x: 0, y: 0, z: 0}
 --- !u!135 &49036758
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -358,7 +359,7 @@ GameObject:
   - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Camera1
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +536,7 @@ GameObject:
   - component: {fileID: 1510411880}
   m_Layer: 0
   m_Name: Camera2
-  m_TagString: Untagged
+  m_TagString: p2_cam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1030,6 +1031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  motionVector: {x: 0, y: 0, z: 0}
 --- !u!54 &1908956100
 Rigidbody:
   m_ObjectHideFlags: 0

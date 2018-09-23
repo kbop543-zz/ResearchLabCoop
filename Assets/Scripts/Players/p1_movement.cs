@@ -37,7 +37,8 @@ public class p1_movement : MonoBehaviour
         }
         else
         {
-            camTransform = Camera.main.transform;
+            //camTransform = Camera.main.transform;
+            camTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
         }
 
         //rb.AddForce(motionVector * speed);
