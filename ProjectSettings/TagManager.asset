@@ -8,6 +8,7 @@ TagManager:
   - Lab
   - GameManager
   - p2_cam
+  - monster
   layers:
   - Default
   - TransparentFX

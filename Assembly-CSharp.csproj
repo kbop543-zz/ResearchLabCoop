@@ -61,7 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\bulletHit.cs" />
     <Compile Include="Assets\gameConstants.cs" />
+    <Compile Include="Assets\onTouchEffect.cs" />
     <Compile Include="Assets\Scripts\Camera_script.cs" />
     <Compile Include="Assets\Scripts\Camera_script2.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />

@@ -762,6 +762,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1678035155
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4391942425623334, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -9761.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391942425623334, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -141.80003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391942425623334, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11854.199
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391942425623334, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391942425623334, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391942425623334, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391942425623334, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391942425623334, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1822987025
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,8 +1027,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLabHealth: 100
+  maxOrbs: 5
   curLabHealth: 0
+  curOrbs: 0
   gameOver: 0
+  completeLvl: 0
 --- !u!4 &1881359497
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,7 +1059,7 @@ GameObject:
   - component: {fileID: 1908956105}
   m_Layer: 0
   m_Name: P1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1045,7 +1090,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!23 &1908956102
 MeshRenderer:
@@ -1108,9 +1153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd70ae7e4e1c40e79d02421b1a6b2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camTrans: {fileID: 534669905}
   bullet: {fileID: 1763757082567436, guid: 1978d3c8890034afd98c0bf3b1df3ede, type: 2}
-  range: 100
-  startDistance: 15
+  range: 1000
+  startDistance: 25
   duration: 1.5
-  shootRate: 5
-  curCooldown: 0
+  shootRate: 100

@@ -3,14 +3,18 @@
 public class gameConstants : MonoBehaviour {
 
     public int maxLabHealth = 100;
+    public int maxOrbs = 5;
     public int curLabHealth;
+    public int curOrbs;
     public bool gameOver;
+    public bool completeLvl;
 
 	// Use this for initialization
 	void Start () {
         curLabHealth = maxLabHealth;
         gameOver = false;
-
+        curOrbs = 0;
+        completeLvl = false;
     }
 	
 	// Update is called once per frame
@@ -21,5 +25,13 @@ public class gameConstants : MonoBehaviour {
             Debug.Log("GAME OVER");
             gameOver = true;
         }
-	}
+
+        // Win Condition 1): collect enough orbs and press button
+        if (!completeLvl && !gameOver && curOrbs == maxOrbs)
+        {
+            // Enter WIN scene
+            Debug.Log("YOU WIN");
+            completeLvl = true;
+        }
+    }
 }
