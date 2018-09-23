@@ -37,11 +37,11 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)     {         if (collision.gameObject.tag == "Lab") {             GameObject spawner = GameObject.FindWithTag("GameManager");
+    private void OnCollisionEnter(Collision collision)     {         if (collision.gameObject.tag == "Lab") {             GameObject gm = GameObject.FindWithTag("GameManager");
 
-            if (!spawner.GetComponent<gameConstants>().gameOver) {
-                spawner.GetComponent<gameConstants>().curLabHealth -= damage;
-                Debug.Log("curLabHealth: " + spawner.GetComponent<gameConstants>().curLabHealth.ToString());
+            if (!gm.GetComponent<gameConstants>().gameOver) {
+                gm.GetComponent<gameConstants>().curLabHealth -= damage;
+                Debug.Log("curLabHealth: " + gm.GetComponent<gameConstants>().curLabHealth.ToString());
             } 
             Destroy(this.gameObject);         }     }
 
