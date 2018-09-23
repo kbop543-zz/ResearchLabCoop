@@ -11,6 +11,8 @@ TagManager:
   - monster
   - Bullet
   - HealthBar
+  - HealthBarImage
+  - LabRatio
   layers:
   - Default
   - TransparentFX
