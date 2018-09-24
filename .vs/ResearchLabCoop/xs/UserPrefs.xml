@@ -1,15 +1,14 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/gameConstants.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/transTerrainLab.cs">
     <Files>
       <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="33" Column="5" />
-      <File FileName="Assets/shoot.cs" Line="10" Column="33" />
       <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="50" Column="38" />
-      <File FileName="Assets/gameConstants.cs" Line="34" Column="32" />
       <File FileName="Assets/Scripts/Players/p2_movement.cs" Line="40" Column="81" />
-      <File FileName="Assets/Scripts/Players/p1_movement.cs" Line="7" Column="5" />
-      <File FileName="Assets/bulletHit.cs" Line="22" Column="6" />
-      <File FileName="Assets/onTouchEffect.cs" Line="15" Column="38" />
+      <File FileName="Assets/Scripts/Players/p1_movement.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/shoot.cs" Line="24" Column="6" />
+      <File FileName="Assets/Scripts/bulletHit.cs" Line="20" Column="9" />
+      <File FileName="Assets/Scripts/transTerrainLab.cs" Line="11" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

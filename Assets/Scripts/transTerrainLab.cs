@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class transTerrainLab : MonoBehaviour {
 
@@ -14,6 +12,9 @@ public class transTerrainLab : MonoBehaviour {
 
     public void translocate(GameObject col)
     {
-        col.transform.position += translocation;
+        if (col.tag == "Player")
+        {
+            col.transform.position += translocation;
+        }
     }
 }
