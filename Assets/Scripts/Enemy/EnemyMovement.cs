@@ -48,8 +48,8 @@ public class EnemyMovement : MonoBehaviour
 
     void UpdateHealthBar(){
       GameObject gm = GameObject.FindWithTag("GameManager");
-  		var currLabHealth = gm.GetComponent<gameConstants>().curLabHealth;
-  		var maxLabHealth = gm.GetComponent<gameConstants>().maxLabHealth;
+  		var currLabHealth = gm.GetComponent<GameConstants>().curLabHealth;
+  		var maxLabHealth = gm.GetComponent<GameConstants>().maxLabHealth;
 
   		float ratio = (float) currLabHealth / 100;
       print("ratio" + ratio);
@@ -69,14 +69,14 @@ public class EnemyMovement : MonoBehaviour
       if (collision.gameObject.tag == "Lab") { 
         GameObject gm = GameObject.FindWithTag("GameManager");
 
-            if (!gm.GetComponent<gameConstants>().gameOver && !gm.GetComponent<gameConstants>().completeLvl) {
-                gm.GetComponent<gameConstants>().curLabHealth -= damage;
+            if (!gm.GetComponent<GameConstants>().gameOver && !gm.GetComponent<GameConstants>().completeLvl) {
+                gm.GetComponent<GameConstants>().curLabHealth -= damage;
 
 
-                Debug.Log("curLabHealth: " + gm.GetComponent<gameConstants>().curLabHealth.ToString());
+                Debug.Log("curLabHealth: " + gm.GetComponent<GameConstants>().curLabHealth.ToString());
                 UpdateHealthBar();
             } 
-            if(gm.GetComponent<gameConstants>().completeLvl){
+            if(gm.GetComponent<GameConstants>().completeLvl){
               if(labRatioText){
                 ratioText = labRatioText.GetComponent<Text>();
           		  ratioText.text = "Orbs collected.You win!";
@@ -88,7 +88,7 @@ public class EnemyMovement : MonoBehaviour
                         player.SetActive (false);
                 }
             }
-            if (gm.GetComponent<gameConstants>().gameOver) {
+            if (gm.GetComponent<GameConstants>().gameOver) {
               if(labRatioText){
                 ratioText = labRatioText.GetComponent<Text>();
           		  ratioText.text = "Game Over";

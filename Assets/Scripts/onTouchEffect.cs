@@ -8,8 +8,8 @@ public class onTouchEffect : MonoBehaviour {
         {
             GameObject gm = GameObject.FindWithTag("GameManager");
 
-            gm.GetComponent<gameConstants>().curOrbs += 1;
-            Debug.Log("curOrbs: " + gm.GetComponent<gameConstants>().curOrbs.ToString());
+            gm.GetComponent<GameConstants>().curOrbs += 1;
+            Debug.Log("curOrbs: " + gm.GetComponent<GameConstants>().curOrbs.ToString());
 
 
             Destroy(this.gameObject);

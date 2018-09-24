@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1111072720783528}
+  m_IsPrefabAsset: 1
+--- !u!1 &1111072720783528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4530309265842806}
+  - component: {fileID: 114940834490679864}
+  - component: {fileID: 114590286036137762}
+  - component: {fileID: 114116682196046872}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4530309265842806
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111072720783528}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 144.4, y: 11.200001, z: 330.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114116682196046872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111072720783528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b64c75e06ef74636b9c30af0a4da979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLabHealth: 100
+  maxOrbs: 5
+  curLabHealth: 0
+  curOrbs: 0
+  gameOver: 0
+  completeLvl: 0
+--- !u!114 &114590286036137762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111072720783528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ef5c2e23af841d48055a3788176322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainTiles: {fileID: 1925211314750498, guid: eadc6f40ce71847208cf8beeb14d3563,
+    type: 2}
+  player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
+  player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
+  researchLab: {fileID: 1250226237364828, guid: 6dbe312d78c2d476a8f0a99e6c4d9618,
+    type: 2}
+  enemySpawner: {fileID: 1911282503729640, guid: 7398c9e685088486c99bc3097dcf6087,
+    type: 2}
+  orb: {fileID: 1068102295257792, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
+  eventSystem: {fileID: 1087734908863884, guid: 18f754b90762d447ba8b0b0bfe9364aa,
+    type: 2}
+  labHealth: {fileID: 1428831692999612, guid: 54964fec3eb8e433387c3c71f924b8f5, type: 2}
+--- !u!114 &114940834490679864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111072720783528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2a4dfacc23d413b962589bc647afa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelScript: {fileID: 0}

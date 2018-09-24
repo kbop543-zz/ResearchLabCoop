@@ -126,3 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardSpeed: 20
   damage: 10
+  currentHealthbar: {fileID: 0}
+  ratioText: {fileID: 0}

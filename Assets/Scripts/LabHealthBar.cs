@@ -18,8 +18,8 @@ public class LabHealthBar : MonoBehaviour {
 	// Update is called once per frame
 	public void UpdateHealthBar () {
 		GameObject gm = GameObject.FindWithTag("GameManager");
-		var currLabHealth = gm.GetComponent<gameConstants>().curLabHealth;
-		var maxLabHealth = gm.GetComponent<gameConstants>().maxLabHealth;
+		var currLabHealth = gm.GetComponent<GameConstants>().curLabHealth;
+		var maxLabHealth = gm.GetComponent<GameConstants>().maxLabHealth;
 
 		float ratio = currLabHealth / maxLabHealth;
 		currentHealthbar.rectTransform.localScale = new Vector3(ratio,1,1);

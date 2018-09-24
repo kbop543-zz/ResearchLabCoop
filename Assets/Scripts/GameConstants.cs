@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class gameConstants : MonoBehaviour {
+public class GameConstants : MonoBehaviour {
 
     public int maxLabHealth = 100;
     public int maxOrbs = 5;
