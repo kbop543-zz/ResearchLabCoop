@@ -1,1 +1,1 @@
-Only commit Assets, ProjectSettings and folders! 
+Only commit Assets, ProjectSettings and Packages folders! 
