@@ -9,12 +9,13 @@ public class GameConstants : MonoBehaviour {
     public bool gameOver;
     public bool completeLvl;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         curLabHealth = maxLabHealth;
         gameOver = false;
         curOrbs = 0;
         completeLvl = false;
+
     }
 	
 	// Update is called once per frame
@@ -27,11 +28,20 @@ public class GameConstants : MonoBehaviour {
         }
 
         // Win Condition 1): collect enough orbs and press button
-        if (!completeLvl && !gameOver && curOrbs == maxOrbs)
+        if (!completeLvl && !gameOver && curOrbs >= maxOrbs &&
+            ((GameObject.Find("P2(Clone)").transform.position.y > 700 && GameObject.Find("P2(Clone)").transform.position.z < -40 &&
+              GameObject.Find("P2(Clone)").GetComponent<PickOrDrop>().hasCollector) ||
+             (GameObject.Find("P2").transform.position.y > 700 && GameObject.Find("P2").transform.position.z < -40 &&
+              GameObject.Find("P2").GetComponent<PickOrDrop>().hasCollector) ||
+             (GameObject.Find("P1(Clone)").transform.position.y > 700 && GameObject.Find("P1(Clone)").transform.position.z < -40 &&
+              GameObject.Find("P1(Clone)").GetComponent<PickOrDrop>().hasCollector) ||
+             (GameObject.Find("P1").transform.position.y > 700 && GameObject.Find("P1").transform.position.z < -40 &&
+              GameObject.Find("P1").GetComponent<PickOrDrop>().hasCollector)))
         {
             // Enter WIN scene
             Debug.Log("YOU WIN");
             completeLvl = true;
         }
+
     }
 }

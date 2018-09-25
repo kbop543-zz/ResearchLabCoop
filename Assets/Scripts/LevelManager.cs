@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour {
     public GameObject orb;
     public GameObject eventSystem;
     public GameObject labHealth;
+    public GameObject crossBow;
+    public GameObject collector;
     //public GameObject lighting;
 
     public void SetupScene() {
@@ -32,6 +34,8 @@ public class LevelManager : MonoBehaviour {
         Instantiate(orb);
         Instantiate(eventSystem);
         Instantiate(labHealth);
+        Instantiate(crossBow);
+        Instantiate(collector);
         //Instantiate(lighting);
     }
 }

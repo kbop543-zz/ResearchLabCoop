@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
@@ -12,6 +10,8 @@ public class EnemyMovement : MonoBehaviour
   	public Text ratioText;
     GameObject healthBarImage;
     GameObject labRatioText;
+    GameObject gm;
+    private Vector3 DestinationPos;
     //Transform _playerTransform;
     //NavMeshAgent _meshAgent;
 
@@ -21,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
         LabTransform = GameObject.FindGameObjectWithTag("Lab").transform;
         healthBarImage = GameObject.FindWithTag("HealthBarImage");
         labRatioText = GameObject.FindWithTag("LabRatio");
+        gm = GameObject.FindWithTag("GameManager");
         //try
         //{
         //    _meshAgent = GetComponent<NavMeshAgent>();
@@ -30,15 +31,18 @@ public class EnemyMovement : MonoBehaviour
         //{
         // TOOD: throw custom error
         //}
+
+        //Fixing scorpman floating problem
+        DestinationPos = new Vector3(LabTransform.position.x, transform.position.y, LabTransform.position.z);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         if (LabTransform)
-        {
+        {   
             Vector3 direction = Vector3.MoveTowards(transform.position,
-                                                    LabTransform.position,
+                                                    DestinationPos,
                                                     Time.deltaTime * forwardSpeed);
 
             transform.position = direction;
@@ -46,8 +50,38 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    private void LateUpdate()
+    {
+        if(gm.GetComponent<GameConstants>().completeLvl) 
+        {
+          if(labRatioText){
+            ratioText = labRatioText.GetComponent<Text>();
+            ratioText.text = "Orbs collected.You win!";
+            ratioText.color = Color.blue;
+            }
+            GameObject[] playerObjectArray = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in playerObjectArray) {
+                    player.SetActive (false);
+            }
+        }
+        if (gm.GetComponent<GameConstants>().gameOver)
+        {
+            if (labRatioText)
+            {
+                ratioText = labRatioText.GetComponent<Text>();
+                ratioText.text = "Game Over";
+                ratioText.color = Color.red;
+            }
+            GameObject[] playerObjectArray = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in playerObjectArray)
+            {
+                player.SetActive(false);
+            }
+        }
+    }
+
     void UpdateHealthBar(){
-      GameObject gm = GameObject.FindWithTag("GameManager");
+      //GameObject gm = GameObject.FindWithTag("GameManager");
   		var currLabHealth = gm.GetComponent<GameConstants>().curLabHealth;
   		var maxLabHealth = gm.GetComponent<GameConstants>().maxLabHealth;
 
@@ -65,47 +99,52 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)     { 
-      if (collision.gameObject.tag == "Lab") { 
-        GameObject gm = GameObject.FindWithTag("GameManager");
+    private void OnCollisionEnter(Collision collision)
+        {
 
-            if (!gm.GetComponent<GameConstants>().gameOver && !gm.GetComponent<GameConstants>().completeLvl) {
-                gm.GetComponent<GameConstants>().curLabHealth -= damage;
+            if (collision.gameObject.tag == "Lab")
+            {
+
+                //GameObject gm = GameObject.FindWithTag("GameManager");
+
+                if (!gm.GetComponent<GameConstants>().gameOver && !gm.GetComponent<GameConstants>().completeLvl)
+                {
+                    gm.GetComponent<GameConstants>().curLabHealth -= damage;
 
 
-                Debug.Log("curLabHealth: " + gm.GetComponent<GameConstants>().curLabHealth.ToString());
-                UpdateHealthBar();
-            } 
-            if(gm.GetComponent<GameConstants>().completeLvl){
-              if(labRatioText){
-                ratioText = labRatioText.GetComponent<Text>();
-          		  ratioText.text = "Orbs collected.You win!";
-                ratioText.color = Color.blue;
+                    Debug.Log("curLabHealth: " + gm.GetComponent<GameConstants>().curLabHealth.ToString());
+                    UpdateHealthBar();
                 }
-                GameObject[] playerObjectArray = GameObject.FindGameObjectsWithTag("Player");
-                foreach (GameObject player in playerObjectArray) {
 
-                        player.SetActive (false);
-                }
+                // Moving the following code to LateUpdate; currently it's
+                // triggered by OnCollisionEnter builtin function which causes the delay
+
+                //if(gm.GetComponent<GameConstants>().completeLvl){
+                //  if(labRatioText){
+                //    ratioText = labRatioText.GetComponent<Text>();
+                //	  ratioText.text = "Orbs collected.You win!";
+                //    ratioText.color = Color.blue;
+                //    }
+                //    GameObject[] playerObjectArray = GameObject.FindGameObjectsWithTag("Player");
+                //    foreach (GameObject player in playerObjectArray) {
+                //            player.SetActive (false);
+                //    }
+                //}
+                //if (gm.GetComponent<GameConstants>().gameOver) {
+                //  if(labRatioText){
+                //    ratioText = labRatioText.GetComponent<Text>();
+                //	  ratioText.text = "Game Over";
+                //    ratioText.color = Color.red;
+                //    }
+                //    GameObject[] playerObjectArray = GameObject.FindGameObjectsWithTag("Player");
+                //    foreach (GameObject player in playerObjectArray) {
+                //            player.SetActive (false);
+                //    }
+                //}
+
+
+                Destroy(this.gameObject);
+
             }
-            if (gm.GetComponent<GameConstants>().gameOver) {
-              if(labRatioText){
-                ratioText = labRatioText.GetComponent<Text>();
-          		  ratioText.text = "Game Over";
-                ratioText.color = Color.red;
-                }
-                GameObject[] playerObjectArray = GameObject.FindGameObjectsWithTag("Player");
-                foreach (GameObject player in playerObjectArray) {
-
-                        player.SetActive (false);
-
-
-                }
-
-            }
-            Destroy(this.gameObject); 
-          }
         }
-
-
 }

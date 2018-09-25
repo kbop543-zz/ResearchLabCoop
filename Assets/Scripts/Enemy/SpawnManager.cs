@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemies;
     public Vector3 spawnValues;
     public float spawnWait = 3f;
-    public float initHeight = 4f;
+    public float initHeight = 0.7f;
 		public float spawnMostWait;
 		public float spawnLeastWait;
 		public int startWait;
