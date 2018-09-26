@@ -11,7 +11,7 @@ public class PickOrDrop : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (((Input.GetKey("v") || Input.GetKey(KeyCode.JoystickButton1)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)")) ||
+        if (((Input.GetKey("v") || Input.GetKey(KeyCode.JoystickButton17)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)")) ||
             (Input.GetKey("n") && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))) 
         {
             if (emptyHand)
