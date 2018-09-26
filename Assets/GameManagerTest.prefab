@@ -82,6 +82,8 @@ MonoBehaviour:
   eventSystem: {fileID: 1087734908863884, guid: 18f754b90762d447ba8b0b0bfe9364aa,
     type: 2}
   labHealth: {fileID: 1428831692999612, guid: 54964fec3eb8e433387c3c71f924b8f5, type: 2}
+  crossBow: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
+  collector: {fileID: 1459768763861408, guid: caab23fb7dbf04e00969721237f7307b, type: 2}
 --- !u!114 &114940834490679864
 MonoBehaviour:
   m_ObjectHideFlags: 1
