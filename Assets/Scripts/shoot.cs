@@ -7,7 +7,7 @@ public class shoot : MonoBehaviour {
 
     void FixedUpdate()     {
         if (gameObject.GetComponent<PickOrDrop>().hasGun == true) {
-            if ((Input.GetKey("b") || Input.GetKey(KeyCode.JoystickButton7)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
+            if ((Input.GetKey("b") || Input.GetKey(KeyCode.JoystickButton18)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
             {
                 Shoot();
             }
