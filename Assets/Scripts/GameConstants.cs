@@ -31,12 +31,8 @@ public class GameConstants : MonoBehaviour {
         if (!completeLvl && !gameOver && curOrbs >= maxOrbs &&
             ((GameObject.Find("P2(Clone)").transform.position.y > 700 && GameObject.Find("P2(Clone)").transform.position.z < -40 &&
               GameObject.Find("P2(Clone)").GetComponent<PickOrDrop>().hasCollector) ||
-             (GameObject.Find("P2").transform.position.y > 700 && GameObject.Find("P2").transform.position.z < -40 &&
-              GameObject.Find("P2").GetComponent<PickOrDrop>().hasCollector) ||
              (GameObject.Find("P1(Clone)").transform.position.y > 700 && GameObject.Find("P1(Clone)").transform.position.z < -40 &&
-              GameObject.Find("P1(Clone)").GetComponent<PickOrDrop>().hasCollector) ||
-             (GameObject.Find("P1").transform.position.y > 700 && GameObject.Find("P1").transform.position.z < -40 &&
-              GameObject.Find("P1").GetComponent<PickOrDrop>().hasCollector)))
+              GameObject.Find("P1(Clone)").GetComponent<PickOrDrop>().hasCollector)))
         {
             // Enter WIN scene
             Debug.Log("YOU WIN");
