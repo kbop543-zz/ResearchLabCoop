@@ -1,15 +1,21 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/EnemyMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Camera_script2.cs">
     <Files>
-      <File FileName="Assets/Scripts/shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/PickOrDrop.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Camera_script.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Camera_script2.cs" Line="19" Column="4" />
-      <File FileName="Assets/Scripts/transTerrainLab.cs" Line="5" Column="31" />
-      <File FileName="Assets/Scripts/GameConstants.cs" Line="8" Column="23" />
+      <File FileName="Assets/Scripts/Loader.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameConstants.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LabHealthBar.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/onTouchEffect.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/shoot.cs" Line="12" Column="34" />
+      <File FileName="Assets/Scripts/Players/p1_movement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Players/p2_movement.cs" Line="1" Column="1" />
+      <File FileName="Assets/PickOrDrop.cs" Line="14" Column="12" />
+      <File FileName="Assets/Scripts/Camera_script.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Camera_script2.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
