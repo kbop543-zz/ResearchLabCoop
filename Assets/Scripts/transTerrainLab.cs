@@ -2,12 +2,37 @@
 
 public class transTerrainLab : MonoBehaviour {
 
-    //public GameObject player;
+    //public GameObject player
     public Vector3 translocation;
-	
-	void OnCollisionEnter(Collision col) 
+    public bool doorOpen;
+    GameObject gm;
+
+    private void Start()
     {
-        translocate(col.gameObject);
+        gameObject.GetComponent<Renderer>().enabled = false;
+        doorOpen = false;
+        gm = GameObject.FindWithTag("GameManager");
+    }
+
+    private void LateUpdate()
+    {
+        if (!doorOpen)
+        {
+            if (gm.GetComponent<GameConstants>().curOrbs >= gm.GetComponent<GameConstants>().maxOrbs)
+            {
+                doorOpen = true;
+                gameObject.GetComponent<Renderer>().enabled = true;
+            }
+        }
+
+    }
+
+    void OnCollisionEnter(Collision col) 
+    {
+        if (doorOpen) {
+            translocate(col.gameObject);
+        }
+
     }
 
     public void translocate(GameObject col)
@@ -17,4 +42,6 @@ public class transTerrainLab : MonoBehaviour {
             col.transform.position += translocation;
         }
     }
+
+
 }
