@@ -11,8 +11,8 @@ public class Camera_script : MonoBehaviour
     public Transform camTransform;
     private Camera cam;
     private float distance = 100.0f;
-    private float currentX = 0.0f;
-    private float currentY = 0.0f;
+    private float currentX = 180.0f;
+    private float currentY = 30.0f;
 
 	// Use this for initialization
 	void Start ()
