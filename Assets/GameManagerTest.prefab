@@ -55,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLabHealth: 100
   maxOrbs: 5
-  curLabHealth: 0
+  curLabHealth: 90
   curOrbs: 0
   gameOver: 0
   completeLvl: 0
@@ -70,11 +70,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ef5c2e23af841d48055a3788176322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainTiles: {fileID: 1925211314750498, guid: eadc6f40ce71847208cf8beeb14d3563,
+  terrainTiles: {fileID: 1602331644201290, guid: d0ad42cf466d34111a3bcb90006b754b,
     type: 2}
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
-  researchLab: {fileID: 1250226237364828, guid: 6dbe312d78c2d476a8f0a99e6c4d9618,
+  researchLab: {fileID: 1674157489231016, guid: 6568ce3116a164be19862d064c57f033,
     type: 2}
   enemySpawner: {fileID: 1911282503729640, guid: 7398c9e685088486c99bc3097dcf6087,
     type: 2}
@@ -95,4 +95,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2a4dfacc23d413b962589bc647afa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelScript: {fileID: 0}
+  levelScript: {fileID: 114590286036137762}
