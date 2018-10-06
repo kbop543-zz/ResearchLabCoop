@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28207c8fd9324f7ba0ba50b042a7beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  item: {fileID: 0}
+  gun: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
+  collector: {fileID: 1459768763861408, guid: caab23fb7dbf04e00969721237f7307b, type: 2}
   emptyHand: 1
   pickUpRadius: 13
   hasGun: 0

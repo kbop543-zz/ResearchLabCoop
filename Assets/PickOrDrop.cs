@@ -2,17 +2,18 @@
 
 public class PickOrDrop : MonoBehaviour {
 
-    public GameObject cam;
-    public GameObject item;
+    public GameObject gun;
+    public GameObject collector;
     public bool emptyHand = true;
     public float pickUpRadius = 13f;
     public bool hasGun = false;
     public bool hasCollector = false;
+    //private string curItem = "";
 
     void FixedUpdate()
     {
-        if (((Input.GetKey("v") || Input.GetKey(KeyCode.Joystick1Button1)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)")) ||
-            ((Input.GetKey("n") || Input.GetKey(KeyCode.Joystick2Button1)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)"))))
+        if (((Input.GetKeyUp("v") || Input.GetKeyUp(KeyCode.Joystick1Button1)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)")) ||
+            ((Input.GetKeyUp("n") || Input.GetKeyUp(KeyCode.Joystick2Button1)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)"))))
         {
             if (emptyHand)
             {
@@ -31,7 +32,7 @@ public class PickOrDrop : MonoBehaviour {
 
     }
 
-    public void Pickup()
+    private void Pickup()
     {
         Collider[] items = Physics.OverlapSphere(transform.position, pickUpRadius);
         bool found = false;
@@ -47,6 +48,8 @@ public class PickOrDrop : MonoBehaviour {
                 {
                     //Set parameters
                     hasGun = true;
+                    //item = items[i].gameObject;
+                    //curItem = items[i].gameObject.name;
                     Destroy(items[i].gameObject);
                     found = true;
                     emptyHand = false;
@@ -56,6 +59,8 @@ public class PickOrDrop : MonoBehaviour {
                 {
                     //Set parameters
                     hasCollector = true;
+                    //item = items[i].gameObject;
+                    //curItem = items[i].gameObject.name;
                     Destroy(items[i].gameObject);
                     found = true;
                     emptyHand = false;
@@ -70,8 +75,30 @@ public class PickOrDrop : MonoBehaviour {
         return;
     }
 
-    public void Dropdown()
+    private void Dropdown()
     {
-        return;
+        Vector3 pos = transform.position;
+        //GameObject item = Resources.Load(curItem) as GameObject;
+
+        if (hasGun)
+        {
+            pos.y = 0.5f;
+            hasGun = false;
+            emptyHand = true;
+
+            var b = (GameObject)Instantiate(gun,
+                                            pos,
+                                            Quaternion.identity);
+        }
+        else if(hasCollector)
+        {
+            pos.y = 2.6f;
+            hasCollector = false;
+            emptyHand = true;
+
+            var b = (GameObject)Instantiate(collector,
+                                            pos,
+                                            Quaternion.identity);
+        }
     }
 }
