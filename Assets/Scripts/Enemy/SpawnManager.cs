@@ -29,7 +29,8 @@ public class SpawnManager : MonoBehaviour
 			while (!stop){
 				randEnemy = Random.Range(0,2);
 
-				Vector3 spawnPosition = new Vector3 (Random.Range(-spawnValues.x,spawnValues.x), 0, Random.Range(-spawnValues.z,spawnValues.z)) + transform.TransformPoint(0,0,0);
+            Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 0, 500f);
+            //+ transform.TransformPoint(0,0,0);
 				spawnPosition.y = initHeight;
 				Instantiate (enemies[randEnemy], spawnPosition,
                              Quaternion.Euler(new Vector3(0, 0, 90)));

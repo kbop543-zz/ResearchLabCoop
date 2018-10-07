@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public Transform playerTransform;
+    public float minDistance = 5f;
     Transform LabTransform;
     public float forwardSpeed = 20f;
     public int damage = 10;
@@ -18,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         LabTransform = GameObject.FindGameObjectWithTag("Lab").transform;
         healthBarImage = GameObject.FindWithTag("HealthBarImage");
         labRatioText = GameObject.FindWithTag("LabRatio");
@@ -39,15 +42,23 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (LabTransform)
-        {   
-            Vector3 direction = Vector3.MoveTowards(transform.position,
-                                                    DestinationPos,
-                                                    Time.deltaTime * forwardSpeed);
+        //if (LabTransform)
+        //{
+        //    Vector3 direction = Vector3.MoveTowards(transform.position,
+        //                                            DestinationPos,
+        //                                            Time.deltaTime * forwardSpeed);
 
-            transform.position = direction;
+        //    transform.position = direction;
+        //}
+
+        transform.LookAt(playerTransform);
+
+        if (Vector3.Distance(transform.position, playerTransform.position) >= minDistance)
+        {
+
+            transform.position += transform.forward * forwardSpeed * Time.deltaTime;
+
         }
-
     }
 
     private void LateUpdate()

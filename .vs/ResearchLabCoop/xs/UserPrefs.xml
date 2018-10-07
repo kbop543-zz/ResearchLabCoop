@@ -1,6 +1,10 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManager.cs">
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/EnemyMovement.cs">
+>>>>>>> 87582df84f4176638e078253a7e53256636842b1
     <Files>
       <File FileName="Assets/Scripts/shoot.cs" Line="39" Column="70" />
       <File FileName="Assets/PickOrDrop.cs" Line="8" Column="5" />

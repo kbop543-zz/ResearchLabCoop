@@ -53,9 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemiesSpawned: 0
   enemies:
-  - {fileID: 1554634865206940, guid: b36d64a7377b34d838e05549cdff8562, type: 2}
-  - {fileID: 1554634865206940, guid: b36d64a7377b34d838e05549cdff8562, type: 2}
-  spawnValues: {x: 166, y: 0, z: 166}
+  - {fileID: 1025782577399982, guid: 83625b6b540ff481087d79df626f2ce2, type: 2}
+  - {fileID: 1025782577399982, guid: 83625b6b540ff481087d79df626f2ce2, type: 2}
+  spawnValues: {x: 450, y: 0, z: 166}
   spawnWait: 3
   initHeight: 0.7
   spawnMostWait: 2
