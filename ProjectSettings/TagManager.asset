@@ -15,6 +15,9 @@ TagManager:
   - LabRatio
   - Weapon
   - Tool
+  - Station
+  - Tile
+  - Ground
   layers:
   - Default
   - TransparentFX

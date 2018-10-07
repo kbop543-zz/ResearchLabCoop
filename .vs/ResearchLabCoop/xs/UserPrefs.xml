@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PickOrDrop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/PickOrDrop.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Camera_script.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Camera_script2.cs" Line="19" Column="4" />
-      <File FileName="Assets/Scripts/transTerrainLab.cs" Line="35" Column="1" />
-      <File FileName="Assets/Scripts/GameConstants.cs" Line="8" Column="23" />
+      <File FileName="Assets/Scripts/shoot.cs" Line="39" Column="70" />
+      <File FileName="Assets/PickOrDrop.cs" Line="8" Column="5" />
+      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="36" Column="13" />
       <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="55" Column="56" />
+      <File FileName="Assets/Interact.cs" Line="40" Column="27" />
+      <File FileName="Assets/StationStatus.cs" Line="19" Column="13" />
+      <File FileName="Assets/Thrink.cs" Line="23" Column="62" />
+      <File FileName="Assets/FallOff.cs" Line="44" Column="22" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="43" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

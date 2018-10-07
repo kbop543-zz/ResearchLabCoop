@@ -14,6 +14,10 @@ public class LevelManager : MonoBehaviour {
     public GameObject labHealth;
     public GameObject crossBow;
     public GameObject collector;
+    public GameObject thrinkStation;
+    public GameObject thrinkTile;
+    public GameObject holeStation;
+    public GameObject holeTile;
     //public GameObject lighting;
 
     public void SetupScene() {
@@ -36,6 +40,10 @@ public class LevelManager : MonoBehaviour {
         Instantiate(labHealth);
         Instantiate(crossBow);
         Instantiate(collector);
+        Instantiate(thrinkStation);
+        Instantiate(thrinkTile);
+        Instantiate(holeStation);
+        Instantiate(holeTile);
         //Instantiate(lighting);
     }
 }
