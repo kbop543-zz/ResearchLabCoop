@@ -218,6 +218,24 @@ Prefab:
       value: 
       objectReference: {fileID: 1283595887262320, guid: 520e342c859454126b533a82a3d4d447,
         type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: OutsideWallBig
+      value: 
+      objectReference: {fileID: 1343803336521500, guid: eeb05815f97df4869be0c5de760dcc47,
+        type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: OutsideWallSmall1
+      value: 
+      objectReference: {fileID: 1998838014641388, guid: 549ce075b7a514ab9be2bad100b39d39,
+        type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: OutsideWallSmall2
+      value: 
+      objectReference: {fileID: 1184066616126086, guid: ab7f2fbab83a449b39557a8c391f8855,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
   m_IsPrefabAsset: 0
