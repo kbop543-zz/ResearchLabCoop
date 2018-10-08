@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 114845997324247978}
   - component: {fileID: 114724861238038276}
   - component: {fileID: 114546798284552392}
+  - component: {fileID: 114236833593404930}
   m_Layer: 0
   m_Name: P2
   m_TagString: Player
@@ -450,6 +451,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 100%
+--- !u!114 &114236833593404930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397161449656490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd002b4db9ec44eb88d6a16bdf6ae46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 16
 --- !u!114 &114451218193530218
 MonoBehaviour:
   m_ObjectHideFlags: 1
