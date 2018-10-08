@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject OutsideWallBig;
     public GameObject OutsideWallSmall1;
     public GameObject OutsideWallSmall2;
+    public GameObject lightBulbs;
     //public GameObject lighting;
 
     public void SetupScene() {
@@ -51,6 +52,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(OutsideWallBig);
         Instantiate(OutsideWallSmall1);
         Instantiate(OutsideWallSmall2);
+        Instantiate(lightBulbs);
 
     }
 }
