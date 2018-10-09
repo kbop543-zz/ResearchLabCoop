@@ -7,12 +7,17 @@ public class Thrink : MonoBehaviour {
     public float thrinkRate = 3.0f;
     public int speedDecreaseRate = 5;
     public float thrinkMin = 5.0f;
-    GameObject station;
+    public float maxIntensity = 20f;
+    private GameObject station;
+    private Light myLight;
+    private bool flashing;
 
     private void Start()
     {
         station = GameObject.Find("ThrinkStation(Clone)");
-
+        myLight = GetComponentInChildren<Light>();
+        myLight.intensity = 0f;
+        flashing = false;
     }
 
     private void OnTriggerStay(Collider other)
@@ -50,4 +55,19 @@ public class Thrink : MonoBehaviour {
         }
 
     }
+
+    private void FixedUpdate()
+    {
+        if (station.GetComponent<StationStatus>().activated && !flashing) {
+            myLight.intensity = maxIntensity;
+            flashing = true;
+        }
+        else if (!station.GetComponent<StationStatus>().activated && flashing)
+        {
+            myLight.intensity = 0f;
+            flashing = false;
+        }
+
+    }
+
 }

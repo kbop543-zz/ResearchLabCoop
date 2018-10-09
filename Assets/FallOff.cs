@@ -7,12 +7,16 @@ public class FallOff : MonoBehaviour {
     public float fallSpeed = 10.0f;
     public float fallThreshold = 10.0f;
     public float destroyDelay = 5.0f;
-    GameObject station;
+    private GameObject station;
+    private Renderer myRend;
+    private bool opened;
 
     private void Start()
     {
         station = GameObject.Find("HoleStation(Clone)");
-
+        myRend = GetComponent<Renderer>();
+        myRend.enabled = false;
+        opened = false;
     }
 
     private void OnTriggerStay(Collider other)
@@ -57,5 +61,17 @@ public class FallOff : MonoBehaviour {
             }
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (station.GetComponent<StationStatus>().activated && !opened) {
+            myRend.enabled = true;
+            opened = true;
+        }
+        else if (!station.GetComponent<StationStatus>().activated && opened) {
+            myRend.enabled = false;
+            opened = false;
+        }
     }
 }

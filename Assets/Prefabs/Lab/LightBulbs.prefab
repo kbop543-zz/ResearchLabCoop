@@ -177,13 +177,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746849877949658}
-  m_LocalRotation: {x: 0.4934962, y: -0.2916005, z: -0.013103638, w: 0.819304}
-  m_LocalPosition: {x: 966.3, y: 3.5, z: -285.49997}
+  m_LocalRotation: {x: -0.53034705, y: 0.19121668, z: 0.10347204, w: -0.8194277}
+  m_LocalPosition: {x: 967.7, y: 0.3999939, z: -285.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4164593229789668}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 53.226, y: -55.06, z: -31.106}
+  m_LocalEulerAnglesHint: {x: 123.94299, y: -229.27, z: 138.169}
 --- !u!4 &4333448090915348
 Transform:
   m_ObjectHideFlags: 1
@@ -259,9 +259,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 400
-  m_SpotAngle: 100
+  m_Intensity: 6
+  m_Range: 300
+  m_SpotAngle: 110
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -278,7 +278,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -296,9 +296,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 400
-  m_SpotAngle: 100
+  m_Intensity: 6
+  m_Range: 300
+  m_SpotAngle: 110
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -315,7 +315,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -333,9 +333,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 400
-  m_SpotAngle: 100
+  m_Intensity: 6
+  m_Range: 300
+  m_SpotAngle: 110
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -352,7 +352,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -370,9 +370,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 400
-  m_SpotAngle: 100
+  m_Intensity: 6
+  m_Range: 300
+  m_SpotAngle: 110
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -389,7 +389,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -407,9 +407,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 400
-  m_SpotAngle: 100
+  m_Intensity: 6
+  m_Range: 300
+  m_SpotAngle: 110
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -426,7 +426,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -444,9 +444,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 400
-  m_SpotAngle: 100
+  m_Intensity: 6
+  m_Range: 300
+  m_SpotAngle: 110
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -463,7 +463,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -481,9 +481,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 400
-  m_SpotAngle: 100
+  m_Intensity: 6
+  m_Range: 300
+  m_SpotAngle: 110
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -500,7 +500,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
