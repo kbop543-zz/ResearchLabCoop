@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
   {
-	  if (collision.gameObject.tag == "monster")
+	  if (collision.gameObject.tag == "Monster")
 	  {
 			Debug.Log("collide with monster");
 			TakeDamage(10);

@@ -40,7 +40,7 @@ public class FallOff : MonoBehaviour {
 
                     // Drop item after short delay
                 }
-                else if (hitTarget.tag == "monster")
+                else if (hitTarget.tag == "Monster")
                 {
                     hitTarget.GetComponent<EnemyMovement>().forwardSpeed = 0;
 

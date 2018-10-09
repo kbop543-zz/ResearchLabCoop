@@ -84,6 +84,22 @@ MonoBehaviour:
   labHealth: {fileID: 1428831692999612, guid: 54964fec3eb8e433387c3c71f924b8f5, type: 2}
   crossBow: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
   collector: {fileID: 1459768763861408, guid: caab23fb7dbf04e00969721237f7307b, type: 2}
+  thrinkStation: {fileID: 1488631943349220, guid: d618651b637464720a90749f6612495d,
+    type: 2}
+  thrinkTile: {fileID: 1672104751296836, guid: cee798ca3ee4c43329ae3babc76d7ce0, type: 2}
+  holeStation: {fileID: 1596177855346838, guid: 8ad50e9e3ae794429a49b1c350ea2390,
+    type: 2}
+  holeTile: {fileID: 1283595887262320, guid: 520e342c859454126b533a82a3d4d447, type: 2}
+  OutsideWallBig: {fileID: 1343803336521500, guid: eeb05815f97df4869be0c5de760dcc47,
+    type: 2}
+  OutsideWallSmall1: {fileID: 1998838014641388, guid: 549ce075b7a514ab9be2bad100b39d39,
+    type: 2}
+  OutsideWallSmall2: {fileID: 1184066616126086, guid: ab7f2fbab83a449b39557a8c391f8855,
+    type: 2}
+  lightBulbs: {fileID: 1837157551751762, guid: 38eb8477d6bfd46b99b1af94dfe01c04, type: 2}
+  freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
+    type: 2}
+  freezeTile: {fileID: 1720781894172248, guid: e24d1f61251644c9f97363a385aa9b78, type: 2}
 --- !u!114 &114940834490679864
 MonoBehaviour:
   m_ObjectHideFlags: 1

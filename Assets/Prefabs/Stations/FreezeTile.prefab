@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1283595887262320}
+  m_RootGameObject: {fileID: 1720781894172248}
   m_IsPrefabAsset: 1
---- !u!1 &1283595887262320
+--- !u!1 &1720781894172248
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4098496253341802}
-  - component: {fileID: 33611121428404022}
-  - component: {fileID: 23645774323633528}
-  - component: {fileID: 135926885877234416}
-  - component: {fileID: 114490414008110568}
+  - component: {fileID: 4726773001296792}
+  - component: {fileID: 33011448582552866}
+  - component: {fileID: 23597843294182674}
+  - component: {fileID: 65035370776298268}
+  - component: {fileID: 114632263969194394}
   m_Layer: 0
-  m_Name: HoleTile
+  m_Name: FreezeTile
   m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4098496253341802
+--- !u!4 &4726773001296792
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1283595887262320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 379, y: 1, z: 395.5}
-  m_LocalScale: {x: 15, y: 1, z: 15}
+  m_GameObject: {fileID: 1720781894172248}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 270.13083, y: 0.1, z: 399.0534}
+  m_LocalScale: {x: 6.735722, y: 10, z: 6.735722}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23645774323633528
+--- !u!23 &23597843294182674
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1283595887262320}
+  m_GameObject: {fileID: 1720781894172248}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3cd968a2cae31464aba447ff5062738c, type: 2}
+  - {fileID: 2100000, guid: a72820c46526749d08199587e802d319, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,36 +78,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33611121428404022
+--- !u!33 &33011448582552866
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1283595887262320}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114490414008110568
-MonoBehaviour:
+  m_GameObject: {fileID: 1720781894172248}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65035370776298268
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1283595887262320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da894b749a02c4ac6bcc4d906f2af6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallSpeed: 10
-  fallThreshold: 10
-  destroyDelay: 5
---- !u!135 &135926885877234416
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1283595887262320}
+  m_GameObject: {fileID: 1720781894172248}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 9.999999, y: 10, z: 9.999999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114632263969194394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720781894172248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d10c019c7e4641bb86567d3a29f8876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

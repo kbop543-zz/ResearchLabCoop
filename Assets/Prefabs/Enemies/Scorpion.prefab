@@ -19,11 +19,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4133069940221976}
-  - component: {fileID: 114299339019399334}
   - component: {fileID: 54550407596532156}
+  - component: {fileID: 114299339019399334}
+  - component: {fileID: 114691987951178912}
+  - component: {fileID: 65569548361975510}
   m_Layer: 0
   m_Name: Scorpion
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +42,7 @@ GameObject:
   - component: {fileID: 23535243671902254}
   m_Layer: 0
   m_Name: scorpman-1
-  m_TagString: monster
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025782577399982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -99.98126, y: 8.629042, z: 340.56998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -99.98126, y: 0, z: 340.56998}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 4818402596374278}
   m_Father: {fileID: 0}
@@ -66,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252268329820588}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: -0.11873627, y: -7.8290415, z: -0.3699646}
-  m_LocalScale: {x: 15.667831, y: 18.347275, z: 7.3541307}
+  m_LocalPosition: {x: -0.11873627, y: -0.5, z: -0.3699646}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4133069940221976}
   m_RootOrder: 0
@@ -129,6 +131,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &65569548361975510
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025782577399982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114299339019399334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,6 +157,16 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   minDistance: 5
   forwardSpeed: 20
-  damage: 10
-  currentHealthbar: {fileID: 0}
-  ratioText: {fileID: 0}
+--- !u!114 &114691987951178912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025782577399982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09db2320211cc478d94de697056a09cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frozen: 0
+  duraiton: 5

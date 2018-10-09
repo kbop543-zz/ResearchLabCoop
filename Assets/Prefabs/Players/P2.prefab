@@ -113,6 +113,8 @@ GameObject:
   - component: {fileID: 114724861238038276}
   - component: {fileID: 114546798284552392}
   - component: {fileID: 114236833593404930}
+  - component: {fileID: 114699826494083010}
+  - component: {fileID: 65842067100902542}
   m_Layer: 0
   m_Name: P2
   m_TagString: Player
@@ -236,7 +238,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -385,6 +387,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &65842067100902542
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397161449656490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65934408515846018
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -511,6 +525,19 @@ MonoBehaviour:
   startHealth: 100
   deathEffect: {fileID: 0}
   healthBar: {fileID: 114927360836778134}
+--- !u!114 &114699826494083010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397161449656490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17103c06645c54be48b497cafa283c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frozen: 0
+  duraiton: 5
 --- !u!114 &114724861238038276
 MonoBehaviour:
   m_ObjectHideFlags: 1

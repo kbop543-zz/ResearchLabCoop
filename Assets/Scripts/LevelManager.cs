@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour {
     public GameObject OutsideWallSmall2;
     public GameObject lightBulbs;
     //public GameObject lighting;
+    public GameObject freezeStation;
+    public GameObject freezeTile;
 
     public void SetupScene() {
         //Instantiate(terrainTiles, new Vector3(-514f, 0, -472f), Quaternion.identity);
@@ -53,6 +55,8 @@ public class LevelManager : MonoBehaviour {
         Instantiate(OutsideWallSmall1);
         Instantiate(OutsideWallSmall2);
         Instantiate(lightBulbs);
+        Instantiate(freezeStation);
+        Instantiate(freezeTile);
 
     }
 }

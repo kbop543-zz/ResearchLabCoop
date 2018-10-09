@@ -46,7 +46,7 @@ public class Thrink : MonoBehaviour {
                 {
                     hitTarget.GetComponent<p2_movement>().speed = hitTarget.GetComponent<p2_movement>().speed * ratio;
                 }
-                else if (hitTarget.tag == "monster")
+                else if (hitTarget.tag == "Monster")
                 {
                     hitTarget.GetComponent<EnemyMovement>().forwardSpeed = hitTarget.GetComponent<EnemyMovement>().forwardSpeed * ratio;
 

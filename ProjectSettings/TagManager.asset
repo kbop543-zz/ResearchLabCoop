@@ -8,7 +8,6 @@ TagManager:
   - Lab
   - GameManager
   - p2_cam
-  - monster
   - Bullet
   - HealthBar
   - HealthBarImage
@@ -18,6 +17,8 @@ TagManager:
   - Station
   - Tile
   - Ground
+  - Monster
+  - monster
   layers:
   - Default
   - TransparentFX

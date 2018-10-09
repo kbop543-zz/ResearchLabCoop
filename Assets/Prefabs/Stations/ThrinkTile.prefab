@@ -172,9 +172,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1672104751296836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f407b02864a4e466f94ec66bcbc5f911, type: 3}
+  m_Script: {fileID: 11500000, guid: 993d949d1ab6645e3b24e521aecd318d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thrinkRate: 3
   speedDecreaseRate: 5
   thrinkMin: 5
+  maxIntensity: 20
