@@ -28,24 +28,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1217808609142598
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4037471299036932}
-  - component: {fileID: 20844130385283562}
-  - component: {fileID: 81244171655701038}
-  - component: {fileID: 114010584497475566}
-  m_Layer: 0
-  m_Name: Camera2
-  m_TagString: p2_cam
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1304788162371648
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,19 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4037471299036932
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217808609142598}
-  m_LocalRotation: {x: -0, y: 0.9659258, z: -0.25881907, w: 0}
-  m_LocalPosition: {x: 0, y: 3.3333335, z: 5.773503}
-  m_LocalScale: {x: 0.8128436, y: 1.058146, z: 15.224037}
-  m_Children: []
-  m_Father: {fileID: 4590035509579788}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 18.739, y: 248.633, z: -0.067}
 --- !u!4 &4590035509579788
 Transform:
   m_ObjectHideFlags: 1
@@ -180,7 +149,6 @@ Transform:
   m_LocalPosition: {x: 167.68, y: 9.5, z: 330.3}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
-  - {fileID: 4037471299036932}
   - {fileID: 4709638000055978}
   - {fileID: 4678135607736728}
   - {fileID: 224258666469734770}
@@ -198,7 +166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4590035509579788}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4709638000055978
 Transform:
@@ -211,48 +179,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4590035509579788}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &20844130385283562
-Camera:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217808609142598}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!23 &23170952080827922
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -411,27 +339,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!81 &81244171655701038
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217808609142598}
-  m_Enabled: 1
---- !u!114 &114010584497475566
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217808609142598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0da7aa98262141d2b01a73308247cf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1397161449656490}
-  lookAt: {fileID: 4590035509579788}
-  camTransform: {fileID: 4037471299036932}
 --- !u!114 &114014891423081972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -566,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd70ae7e4e1c40e79d02421b1a6b2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTrans: {fileID: 4037471299036932}
+  camTrans: {fileID: 0}
   bullet: {fileID: 1763757082567436, guid: 1978d3c8890034afd98c0bf3b1df3ede, type: 2}
   range: 1000
   startDistance: 25
@@ -695,7 +602,7 @@ RectTransform:
   m_Children:
   - {fileID: 224990297949715170}
   m_Father: {fileID: 4590035509579788}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 6.2960005, y: 2.2610002, z: -7.8970003}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
