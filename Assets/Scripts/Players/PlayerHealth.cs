@@ -33,6 +33,15 @@ public class PlayerHealth : MonoBehaviour {
 		healthBar.fillAmount = health/startHealth;
 		Debug.Log("fill amount" + healthBar.fillAmount );
 
+
+		if(healthBar.fillAmount <= .50 && healthBar.fillAmount > 25){
+			healthBar.color = Color.yellow;
+		}
+
+		if(healthBar.fillAmount <= .25 ){
+			healthBar.color = Color.red;
+		}
+
 		if(health <= 0){
 			Die();
 		}
