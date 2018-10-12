@@ -44,14 +44,8 @@ public class LevelManager : MonoBehaviour {
         Instantiate(enemySpawner);
         Instantiate(orb);
         Instantiate(eventSystem);
-<<<<<<< HEAD
-        Instantiate(labHealth);
-        //Instantiate(crossBow);
-        //Instantiate(collector);
-=======
         Instantiate(crossBow);
         Instantiate(collector);
->>>>>>> 5233dc78e91bcbee328cb5b8288ebb90f813f72d
         Instantiate(thrinkStation);
         Instantiate(thrinkTile);
         Instantiate(holeStation);

@@ -1,162 +1,44 @@
-using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public Transform playerTransform;
     public float minDistance = 5f;
-    public float forwardSpeed = 45f;
-    public float sightRange = 115f;
-    public float idleDuration = 5.0f;
-    private GameObject[] players;
-    //private Transform LabTransform;
-    private GameObject gm;
+    Transform LabTransform;
+    public float forwardSpeed = 20f;
+    GameObject gm;
     private Vector3 DestinationPos;
-    private Vector3 curVelocity;
-    private GameObject curTargetPlayer;
-    public bool chasing;
-    public bool idling;
-    public bool activated;
 
     // Use this for initialization
-    private void Start()
+    void Start()
     {
-        //LabTransform = GameObject.FindGameObjectWithTag("Lab").transform;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        LabTransform = GameObject.FindGameObjectWithTag("Lab").transform;
         gm = GameObject.FindWithTag("GameManager");
-        players = gm.GetComponent<GameConstants>().players;
-        chasing = false;
-        idling = false;
-        activated = false;
 
+
+        //Fixing scorpman floating problem
+        DestinationPos = new Vector3(LabTransform.position.x, transform.position.y, LabTransform.position.z);
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        SearchForTarget();
+        //}
 
-        if (activated) {
-            if (chasing) {
-                Chase();
-            }
-            // Not chasing && not idling => start idling
-            else {
-                if (!idling) {
-                    idling = true;
-                    StartCoroutine(Idle());
-                }
-            }
-        }
-    }
+        transform.LookAt(playerTransform);
 
-    private void SearchForTarget () {
-        if (!chasing) {
-            if (players[0] == null && players[1] == null)
-            {
-                return;
-            }
-
-            if (players[0] != null) {
-                //targetPos = players[0].transform.position;
-                curTargetPlayer = players[0];
-            }
-
-            if (players[1] != null) {
-                if (players[0] != null) {
-                    float p1Dis = Vector3.Distance(players[0].transform.position, transform.position);
-                    float p2Dis = Vector3.Distance(players[1].transform.position, transform.position);
-                    if (p2Dis < p1Dis) {
-                        //targetPos = players[1].transform.position;
-                        curTargetPlayer = players[1];
-                    }
-                }
-                else {
-                    //targetPos = players[1].transform.position;
-                    curTargetPlayer = players[1];
-                }
-
-            }
-
-            // Verify range
-            if (Vector3.Distance(curTargetPlayer.transform.position, transform.position) < sightRange) {
-                chasing = true;
-                idling = false;
-
-                //if (!activated) {
-                //    activated = true;
-                //}
-            }
-        }
-    }
-
-    private void Chase() {
-        //DestinationPos = new Vector3(targetPos.x, transform.position.y, targetPos.z);
-        if(curTargetPlayer == null) {
-            chasing = false;
-            return;
-        }
-
-        DestinationPos = new Vector3(curTargetPlayer.transform.position.x,
-                                     transform.position.y,
-                                     curTargetPlayer.transform.position.z);
-
-        transform.LookAt(DestinationPos);
-
-        if (Vector3.Distance(transform.position, DestinationPos) > 2 * sightRange) {
-            chasing = false;
-            return;
-        }
-        else if (Vector3.Distance(transform.position, DestinationPos) >= minDistance)
+        if (Vector3.Distance(transform.position, playerTransform.position) >= minDistance)
         {
-            curVelocity = DestinationPos - transform.position;
-            curVelocity.Normalize();
-            curVelocity *= forwardSpeed;
-            GetComponent<Rigidbody>().velocity = curVelocity;
 
-        }
-        else {
-            GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+            transform.position += transform.forward * forwardSpeed * Time.deltaTime;
 
         }
     }
 
-    private IEnumerator Idle() {
-        // Pick random direction
-        Vector3 idleDir = new Vector3(Random.Range(-3, 6), 0, Random.Range(-10, 4));
-        idleDir.Normalize();
-        float stopDuration = Random.Range(1, 3) * idleDuration / 10;
-        float walkSpeed = 3 * forwardSpeed / 5;
-        Vector3 lookTo;
 
-        // Idle
-        float curTime = 0.0f;
-        while (idling && (curTime < stopDuration)) {
-            curTime += Time.deltaTime;
-            yield return null;
-        }
 
-        if (!idling)
-        {
-            yield break;
-        }
 
-        // Walk
-        while (idling && (curTime < idleDuration)) {
-            lookTo = transform.position + idleDir;
-            transform.LookAt(lookTo);
-            GetComponent<Rigidbody>().velocity = idleDir * walkSpeed;
-            curTime += Time.deltaTime;
-            yield return null;
-        }
-
-        if (!idling)
-        {
-            yield break;
-        }
-
-        // End
-        GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f); 
-        idling = false;
-        yield return null;
-    }
 
 }

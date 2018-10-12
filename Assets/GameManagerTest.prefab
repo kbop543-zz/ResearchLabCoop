@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ef5c2e23af841d48055a3788176322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainTiles: {fileID: 1109714209052696, guid: 441bd60615ae744c69345613b89d59e7,
+  terrainTiles: {fileID: 1602331644201290, guid: d0ad42cf466d34111a3bcb90006b754b,
     type: 2}
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
@@ -81,6 +81,7 @@ MonoBehaviour:
   orb: {fileID: 1068102295257792, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
   eventSystem: {fileID: 1087734908863884, guid: 18f754b90762d447ba8b0b0bfe9364aa,
     type: 2}
+  labHealth: {fileID: 1428831692999612, guid: 54964fec3eb8e433387c3c71f924b8f5, type: 2}
   crossBow: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
   collector: {fileID: 1459768763861408, guid: caab23fb7dbf04e00969721237f7307b, type: 2}
   thrinkStation: {fileID: 1488631943349220, guid: d618651b637464720a90749f6612495d,
@@ -88,9 +89,7 @@ MonoBehaviour:
   thrinkTile: {fileID: 1672104751296836, guid: cee798ca3ee4c43329ae3babc76d7ce0, type: 2}
   holeStation: {fileID: 1596177855346838, guid: 8ad50e9e3ae794429a49b1c350ea2390,
     type: 2}
-  holeTile0: {fileID: 1283595887262320, guid: 520e342c859454126b533a82a3d4d447, type: 2}
-  holeTile1: {fileID: 1593000909422462, guid: 989d9ff28137a4e6b9744f787145361c, type: 2}
-  holeTile2: {fileID: 1207480537272990, guid: c0417e1dbf4244dad8002fdfd7ac4d6a, type: 2}
+  holeTile: {fileID: 1283595887262320, guid: 520e342c859454126b533a82a3d4d447, type: 2}
   OutsideWallBig: {fileID: 1343803336521500, guid: eeb05815f97df4869be0c5de760dcc47,
     type: 2}
   OutsideWallSmall1: {fileID: 1998838014641388, guid: 549ce075b7a514ab9be2bad100b39d39,

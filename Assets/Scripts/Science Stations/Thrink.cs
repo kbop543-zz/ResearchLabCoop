@@ -38,18 +38,17 @@ public class Thrink : MonoBehaviour {
 
                 // Change speed
                 float ratio = Mathf.Pow((1.0f - speedDecreaseRate * thrinkRate * Time.deltaTime / hitTarget.transform.position.x), speedDecreaseRate);
-
                 if (hitTarget.name == "P1(Clone)")
                 {
-                    hitTarget.GetComponent<P1Status>().Shrink(ratio);
+                    hitTarget.GetComponent<p1_movement>().speed = hitTarget.GetComponent<p1_movement>().speed * ratio;
                 }
                 else if (hitTarget.name == "P2(Clone)")
                 {
-                    hitTarget.GetComponent<P2Status>().Shrink(ratio);
+                    hitTarget.GetComponent<p2_movement>().speed = hitTarget.GetComponent<p2_movement>().speed * ratio;
                 }
                 else if (hitTarget.tag == "Monster")
                 {
-                    hitTarget.GetComponent<EnemyStatus>().Shrink(ratio);
+                    hitTarget.GetComponent<EnemyMovement>().forwardSpeed = hitTarget.GetComponent<EnemyMovement>().forwardSpeed * ratio;
 
                 }
             }
