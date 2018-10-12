@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114683952990592336}
   - component: {fileID: 114342909005918420}
   - component: {fileID: 65736034056075486}
+  - component: {fileID: 114669595518801762}
   m_Layer: 0
   m_Name: P1
   m_TagString: Player
@@ -351,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
-  collector: {fileID: 1459768763861408, guid: caab23fb7dbf04e00969721237f7307b, type: 2}
+  collector: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d, type: 2}
   emptyHand: 1
   pickUpRadius: 13
   hasGun: 0
@@ -455,6 +456,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   motionVector: {x: 0, y: 0, z: 0}
+--- !u!114 &114669595518801762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021489951523888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218004f5fbc494b8fb11cc160a7c98a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTrans: {fileID: 0}
+  bullet: {fileID: 1140697868829180, guid: 4a8c00681baba4876b10bad10fe867d4, type: 2}
+  range: 1000
+  startDistance: 25
+  duration: 1.5
+  shootRate: 100
 --- !u!114 &114683952990592336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,7 +529,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021489951523888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efd70ae7e4e1c40e79d02421b1a6b2be, type: 3}
   m_Name: 

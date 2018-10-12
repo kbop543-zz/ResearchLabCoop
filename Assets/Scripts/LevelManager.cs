@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject eventSystem;
     public GameObject labHealth;
     public GameObject crossBow;
-    public GameObject collector;
+    //public GameObject collector;
     public GameObject thrinkStation;
     public GameObject thrinkTile;
     public GameObject holeStation;
@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour {
     //public GameObject lighting;
     public GameObject freezeStation;
     public GameObject freezeTile;
+    public GameObject ShockWaveGun;
 
     public void SetupScene() {
         //Instantiate(terrainTiles, new Vector3(-514f, 0, -472f), Quaternion.identity);
@@ -47,7 +48,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(eventSystem);
         Instantiate(labHealth);
         Instantiate(crossBow);
-        Instantiate(collector);
+        //Instantiate(collector);
         Instantiate(thrinkStation);
         Instantiate(thrinkTile);
         Instantiate(holeStation);
@@ -61,6 +62,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(lightBulbs);
         Instantiate(freezeStation);
         Instantiate(freezeTile);
+        Instantiate(ShockWaveGun);
 
     }
 }
