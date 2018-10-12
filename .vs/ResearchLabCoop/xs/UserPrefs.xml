@@ -1,19 +1,18 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/EnemyStatus.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Players/P1Status.cs">
     <Files>
-      <File FileName="Assets/Scripts/Science Stations/Freeze.cs" Line="32" Column="64" />
-      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="37" Column="1" />
-      <File FileName="Assets/Scripts/Players/P2Status.cs" Line="16" Column="48" />
-      <File FileName="Assets/Scripts/Science Stations/FallOff.cs" Line="43" Column="46" />
-      <File FileName="Assets/Scripts/Science Stations/Thrink.cs" Line="20" Column="26" />
-      <File FileName="Assets/Scripts/Science Stations/StationStatus.cs" Line="49" Column="1" />
-      <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Players/PlayerHealth.cs" Line="43" Column="38" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="5" Column="31" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="59" Column="33" />
-      <File FileName="Assets/Scripts/Players/Player Movement/p1_movement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy/EnemyStatus.cs" Line="37" Column="1" />
+      <File FileName="Assets/Scripts/shoot.cs" Line="1" Column="1" />
+      <File FileName="Assets/PickOrDrop.cs" Line="8" Column="5" />
+      <File FileName="Assets/Interact.cs" Line="40" Column="27" />
+      <File FileName="Assets/StationStatus.cs" Line="14" Column="31" />
+      <File FileName="Assets/FallOff.cs" Line="65" Column="5" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="40" Column="30" />
+      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="19" Column="16" />
+      <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="19" Column="28" />
+      <File FileName="Assets/Scripts/Enemy/EnemyStatus.cs" Line="29" Column="11" />
+      <File FileName="Assets/Scripts/GameConstants.cs" Line="19" Column="9" />
+      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
