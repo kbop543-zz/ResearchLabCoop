@@ -16,7 +16,7 @@ public class EnemyStatus : MonoBehaviour
         {
             StartCoroutine(waitForStatusEnd());
 
-            Debug.Log("Waiting for unfreeze!");
+            //Debug.Log("Waiting for unfreeze!");
         }
 
     }
@@ -26,7 +26,7 @@ public class EnemyStatus : MonoBehaviour
         yield return new WaitForSeconds(duraiton);
         frozen = false;
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
-        Debug.Log("Unfrozen!!!");
+        //Debug.Log("Unfrozen!!!");
     }
 
     public void Freeze()

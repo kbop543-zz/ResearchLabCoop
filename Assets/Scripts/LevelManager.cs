@@ -44,8 +44,8 @@ public class LevelManager : MonoBehaviour {
         Instantiate(orb);
         Instantiate(eventSystem);
         Instantiate(labHealth);
-        Instantiate(crossBow);
-        Instantiate(collector);
+        //Instantiate(crossBow);
+        //Instantiate(collector);
         Instantiate(thrinkStation);
         Instantiate(thrinkTile);
         Instantiate(holeStation);
