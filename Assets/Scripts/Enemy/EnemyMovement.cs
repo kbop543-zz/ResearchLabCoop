@@ -3,16 +3,19 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float minDistance = 5f;
+    public float minDistance = 20f;
     public float forwardSpeed = 45f;
     public float sightRange = 115f;
     public float idleDuration = 5.0f;
+    public int damage = 10;
+    public float attackCD = 1.5f;
     private GameObject[] players;
     //private Transform LabTransform;
     private GameObject gm;
     private Vector3 DestinationPos;
     private Vector3 curVelocity;
     private GameObject curTargetPlayer;
+    private float curCD;
     public bool chasing;
     public bool idling;
     public bool activated;
@@ -26,6 +29,7 @@ public class EnemyMovement : MonoBehaviour
         chasing = false;
         idling = false;
         activated = false;
+        curCD = attackCD;
 
     }
 
@@ -35,6 +39,10 @@ public class EnemyMovement : MonoBehaviour
         SearchForTarget();
 
         if (activated) {
+            if (GetComponent<EnemyStatus>().frozen) {
+                return;
+            }
+
             if (chasing) {
                 Chase();
             }
@@ -44,6 +52,11 @@ public class EnemyMovement : MonoBehaviour
                     idling = true;
                     StartCoroutine(Idle());
                 }
+            }
+
+            // Recharge attack
+            if (curCD < attackCD) {
+                curCD += Time.deltaTime;
             }
         }
     }
@@ -114,6 +127,13 @@ public class EnemyMovement : MonoBehaviour
 
         }
         else {
+            // Attack target when in attack range
+            if (curCD >= attackCD) {
+                Debug.Log("Attack!");
+                curTargetPlayer.GetComponent<PlayerHealth>().TakeDamage(damage);
+                curCD = 0f;
+            }
+
             GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
 
         }

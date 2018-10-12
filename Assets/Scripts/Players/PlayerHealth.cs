@@ -17,7 +17,10 @@ public class PlayerHealth : MonoBehaviour {
 		health = startHealth;
 		healthBar.color = Color.green;
 
-	}
+        // Respawn position is subject to change in future
+        respawnTransform = transform;
+
+    }
 
 	public void Die () {
 
@@ -69,15 +72,12 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	private void OnCollisionEnter(Collision collision)
-  {
-	  if (collision.gameObject.tag == "Monster")
-	  {
-			Debug.Log("collide with monster");
-			TakeDamage(10);
-		}
-	}
-
-
-
+	//private void OnCollisionEnter(Collision collision)
+    //{
+	//  if (collision.gameObject.tag == "Monster")
+	//  {
+	//		Debug.Log("collide with monster");
+	//		TakeDamage(10);
+	//	}
+	//}
 }

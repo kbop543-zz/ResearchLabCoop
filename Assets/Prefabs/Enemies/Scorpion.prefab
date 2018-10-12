@@ -154,10 +154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0470fc8544546268a0a03b464b07f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 5
+  minDistance: 20
   forwardSpeed: 45
   sightRange: 115
   idleDuration: 5
+  damage: 10
+  attackCD: 1.5
   chasing: 0
   idling: 0
   activated: 0
@@ -173,4 +175,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frozen: 0
+  shrank: 0
   duraiton: 5
