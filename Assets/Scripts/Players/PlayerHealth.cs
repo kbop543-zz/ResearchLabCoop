@@ -8,38 +8,23 @@ public class PlayerHealth : MonoBehaviour {
 	public float startHealth = 100;
 	public GameObject deathEffect;
 	float health;
-	static bool playerIsDead = false;
+
 	public Image healthBar;
-	public Transform respawnTransform;
 
 	// Use this for initialization
 	void Start () {
 		health = startHealth;
-		healthBar.color = Color.green;
 
 	}
 
+	// Update is called once per frame
 	public void Die () {
 
 		if(gameObject){
-			gameObject.SetActive(false);
-			playerIsDead = true;
-			Respawn();
-		}
-	}
-
-	public void Respawn () {
-		transform.position = respawnTransform.position;
-		transform.rotation = respawnTransform.rotation;
-
-		health = startHealth;
-
-		if(gameObject){
-			gameObject.SetActive(true);
-			playerIsDead = false;
+			Destroy(gameObject);
 		}
 
-		Debug.Log("Player has respawned");
+
 	}
 
 	public void TakeDamage(float amount){
@@ -49,19 +34,12 @@ public class PlayerHealth : MonoBehaviour {
 		Debug.Log("fill amount" + healthBar.fillAmount );
 
 
-		if(healthBar.fillAmount <= .80 & healthBar.fillAmount > .30){
+		if(healthBar.fillAmount <= .50 && healthBar.fillAmount > 25){
 			healthBar.color = Color.yellow;
-			Debug.Log("fill should be yellow" );
 		}
 
-		else if(healthBar.fillAmount <= .30 ){
+		if(healthBar.fillAmount <= .25 ){
 			healthBar.color = Color.red;
-			Debug.Log("fill should be red" );
-		}
-		else{
-			healthBar.color = Color.green;
-			Debug.Log("fill should be red" );
-
 		}
 
 		if(health <= 0){
