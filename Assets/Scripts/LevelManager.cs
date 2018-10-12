@@ -11,13 +11,14 @@ public class LevelManager : MonoBehaviour {
     public GameObject enemySpawner;
     public GameObject orb;
     public GameObject eventSystem;
-    public GameObject labHealth;
     public GameObject crossBow;
     public GameObject collector;
     public GameObject thrinkStation;
     public GameObject thrinkTile;
     public GameObject holeStation;
-    public GameObject holeTile;
+    public GameObject holeTile0;
+    public GameObject holeTile1;
+    public GameObject holeTile2;
     public GameObject OutsideWallBig;
     public GameObject OutsideWallSmall1;
     public GameObject OutsideWallSmall2;
@@ -43,13 +44,20 @@ public class LevelManager : MonoBehaviour {
         Instantiate(enemySpawner);
         Instantiate(orb);
         Instantiate(eventSystem);
+<<<<<<< HEAD
         Instantiate(labHealth);
         //Instantiate(crossBow);
         //Instantiate(collector);
+=======
+        Instantiate(crossBow);
+        Instantiate(collector);
+>>>>>>> 5233dc78e91bcbee328cb5b8288ebb90f813f72d
         Instantiate(thrinkStation);
         Instantiate(thrinkTile);
         Instantiate(holeStation);
-        Instantiate(holeTile);
+        Instantiate(holeTile0);
+        Instantiate(holeTile1);
+        Instantiate(holeTile2);
         //Instantiate(lighting);
         Instantiate(OutsideWallBig);
         Instantiate(OutsideWallSmall1);
