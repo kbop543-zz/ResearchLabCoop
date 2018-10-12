@@ -8,7 +8,12 @@ public class P1Status : MonoBehaviour {
     public bool shrank = false;
     public float duraiton = 5f;
 
-    float originalSpeed = 100f;
+    private float originalSpeed;
+
+    private void Start()
+    {
+        originalSpeed = gameObject.GetComponent<p1_movement>().speed;
+    }
 
     void FixedUpdate()
     {

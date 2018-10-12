@@ -9,7 +9,12 @@ public class EnemyStatus : MonoBehaviour
     public bool shrank = false;
     public float duraiton = 5f;
 
-    float originalSpeed = 20f;
+    private float originalSpeed;
+
+    private void Start()
+    {
+        originalSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed;
+    }
 
     void FixedUpdate()
     {
@@ -23,7 +28,7 @@ public class EnemyStatus : MonoBehaviour
         {
             StartCoroutine(Unfreeze());
 
-            //Debug.Log("Waiting for unfreeze!");
+            Debug.Log("Waiting for unfreeze!");
         }
 
     }
@@ -49,9 +54,6 @@ public class EnemyStatus : MonoBehaviour
 
         // restore original speed after being unshrink
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
-<<<<<<< HEAD
-        //Debug.Log("Unfrozen!!!");
-=======
 
         // restore original size after being unshrink
         if (transform.localScale.x < 15)
@@ -63,7 +65,6 @@ public class EnemyStatus : MonoBehaviour
         }
 
         Debug.Log("Unshrank!!");
->>>>>>> 5233dc78e91bcbee328cb5b8288ebb90f813f72d
     }
 
     public void Freeze()

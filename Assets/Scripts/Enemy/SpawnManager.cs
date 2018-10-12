@@ -8,7 +8,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemies;
     public Vector3 spawnDeviation = new Vector3 (100f, 0f, 0f);
     public Vector3 spawnPoint = new Vector3 (170f, 0f, 560f);
-    public float spawnWait = 3f;
+    public int spawnLimit = 13;
+    public float spawnWait = 4f;
 	public float startWait = 5f;
 	public bool stop = false;
     public float zBoundary = 505f;
@@ -25,7 +26,7 @@ public class SpawnManager : MonoBehaviour
     {
 	    yield return new WaitForSeconds (startWait);
 
-		while(!stop) {
+		while(!stop && (EnemiesSpawned < spawnLimit)) {
 		    randEnemy = Random.Range(0, enemies.Length);
             spawnPosition = new Vector3 (spawnPoint.x + Random.Range(-spawnDeviation.x, spawnDeviation.x),
                                          enemies[randEnemy].transform.localScale.y / 2,
@@ -37,6 +38,7 @@ public class SpawnManager : MonoBehaviour
             StartCoroutine(sendMinion(monster));
             EnemiesSpawned += 1;
 
+            Debug.Log("spawned: " + EnemiesSpawned.ToString());
             yield return new WaitForSeconds (spawnWait);
 		}
 	}

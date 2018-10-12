@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3cd968a2cae31464aba447ff5062738c, type: 2}
+  - {fileID: 2100000, guid: 48695148dda3142cdba282a016f60882, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   fallSpeed: 10
   fallThreshold: 10
   destroyDelay: 5
+  rotateRate: 270
+  expandDuration: 0.75
 --- !u!135 &135766801444167278
 SphereCollider:
   m_ObjectHideFlags: 1
