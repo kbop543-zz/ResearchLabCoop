@@ -21,13 +21,13 @@ public class P1Status : MonoBehaviour {
         {
             StartCoroutine(Unshrink());
 
-            Debug.Log("Waiting for unshrink!");
+            // Debug.Log("Waiting for unshrink!");
         }
         else if (frozen)
         {
             StartCoroutine(Unfreeze());
 
-            Debug.Log("Waiting for unfreeze!");
+            // Debug.Log("Waiting for unfreeze!");
         }
 
     }
@@ -64,7 +64,7 @@ public class P1Status : MonoBehaviour {
                                              transform.position.z);
         }
 
-        Debug.Log("Unshrank!!");
+        // Debug.Log("Unshrank!!");
     }
 
     public void Freeze()

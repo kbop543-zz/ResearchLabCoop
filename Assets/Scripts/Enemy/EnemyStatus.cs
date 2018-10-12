@@ -22,7 +22,7 @@ public class EnemyStatus : MonoBehaviour
         {
             StartCoroutine(Unshrink());
 
-            Debug.Log("Waiting for unshrink!");
+            // Debug.Log("Waiting for unshrink!");
         }
         else if (frozen)
         {
@@ -64,7 +64,7 @@ public class EnemyStatus : MonoBehaviour
                                              transform.position.z);
         }
 
-        Debug.Log("Unshrank!!");
+        // Debug.Log("Unshrank!!");
     }
 
     public void Freeze()

@@ -63,7 +63,7 @@ public class P2Status : MonoBehaviour {
                                              transform.position.z);
         }
 
-        Debug.Log("Unshrank!!");
+        // Debug.Log("Unshrank!!");
     }
 
     public void Freeze()

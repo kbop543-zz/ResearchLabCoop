@@ -37,6 +37,8 @@ public class PlayerHealth : MonoBehaviour {
 		if(gameObject){
 			gameObject.SetActive(true);
 			playerIsDead = false;
+			healthBar.fillAmount = health;
+			healthBar.color = Color.green;
 		}
 
 		Debug.Log("Player has respawned");
@@ -46,21 +48,21 @@ public class PlayerHealth : MonoBehaviour {
 		health-=amount;
 
 		healthBar.fillAmount = health/startHealth;
-		Debug.Log("fill amount" + healthBar.fillAmount );
+		// Debug.Log("fill amount" + healthBar.fillAmount );
 
 
 		if(healthBar.fillAmount <= .80 & healthBar.fillAmount > .30){
 			healthBar.color = Color.yellow;
-			Debug.Log("fill should be yellow" );
+			// Debug.Log("fill should be yellow" );
 		}
 
 		else if(healthBar.fillAmount <= .30 ){
 			healthBar.color = Color.red;
-			Debug.Log("fill should be red" );
+			// Debug.Log("fill should be red" );
 		}
 		else{
 			healthBar.color = Color.green;
-			Debug.Log("fill should be red" );
+			// Debug.Log("fill should be red" );
 
 		}
 
