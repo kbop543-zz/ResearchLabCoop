@@ -9,6 +9,8 @@ public class GameConstants : MonoBehaviour {
     public bool gameOver;
     public bool completeLvl;
     public GameObject[] players;
+    GameObject p1;
+    GameObject p2;
     
     // For win condition, grab enemy death count and enemy spawn limit
     public int enemyKillCount = 0;
@@ -22,6 +24,9 @@ public class GameConstants : MonoBehaviour {
         completeLvl = false;
         // Grab each gameobject for win condition
         players = GameObject.FindGameObjectsWithTag("Player");
+        p1 = GameObject.Find("P1(Clone)");
+        p2 = GameObject.Find("P2(Clone)");
+
         spawner = GameObject.Find("Spawner(Clone)");
 
     }
@@ -29,7 +34,7 @@ public class GameConstants : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // Lose Condition 1): lab health drops to 0
-        if (!gameOver && curLabHealth <= 0) {
+        if (!gameOver && p1.GetComponent<PlayerHealth>().playerIsDead && p2.GetComponent<PlayerHealth>().playerIsDead) {
             // Enter GAMEOVER scene
             Debug.Log("GAME OVER");
             gameOver = true;

@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float startHealth = 100;
 	public GameObject deathEffect;
 	float health;
-	static bool playerIsDead = false;
+	public bool playerIsDead = false;
 	public Image healthBar;
 	public Transform respawnTransform;
 
