@@ -9,6 +9,10 @@ public class GameConstants : MonoBehaviour {
     public bool gameOver;
     public bool completeLvl;
     public GameObject[] players;
+    
+    // For win condition, grab enemy death count and enemy spawn limit
+    public int enemyKillCount = 0;
+    public GameObject spawner;
 
     // Use this for initialization
     void Start () {
@@ -16,7 +20,9 @@ public class GameConstants : MonoBehaviour {
         gameOver = false;
         curOrbs = 0;
         completeLvl = false;
+        // Grab each gameobject for win condition
         players = GameObject.FindGameObjectsWithTag("Player");
+        spawner = GameObject.Find("Spawner(Clone)");
 
     }
 	
@@ -29,6 +35,13 @@ public class GameConstants : MonoBehaviour {
             gameOver = true;
         }
 
+        // Win Condition 1): Kill same amount of enemy with enemy spawn limit
+        if (enemyKillCount >= spawner.GetComponent<SpawnManager>().spawnLimit)
+        {
+            Debug.Log("YOU WIN");
+            completeLvl = true;
+            enemyKillCount = 0;
+        }
         // Win Condition 1): collect enough orbs and press button
         //if (!completeLvl && !gameOver && curOrbs >= maxOrbs &&
         //    ((GameObject.Find("P2(Clone)").transform.position.y > 700 && GameObject.Find("P2(Clone)").transform.position.z < -40 &&

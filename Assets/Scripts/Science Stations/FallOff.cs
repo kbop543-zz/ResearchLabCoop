@@ -15,6 +15,8 @@ public class FallOff : MonoBehaviour {
     private float scaleX;
     private float scaleY;
     private float scaleZ;
+    // For win condition update
+    public GameObject gc;
 
     private void Start()
     {
@@ -22,6 +24,9 @@ public class FallOff : MonoBehaviour {
         myRend = GetComponent<Renderer>();
         myRend.enabled = false;
         opened = false;
+        
+        // Not Working! grab gameMangerTest to update the enemy death count
+        gc = GameObject.Find("gameManagerTest");
 
         scaleX = transform.localScale.x;
         scaleY = transform.localScale.y;
@@ -68,6 +73,8 @@ public class FallOff : MonoBehaviour {
 
                 // Destroy
                 Destroy(hitTarget, destroyDelay);
+                // update the enemy death count
+                gc.GetComponent<GameConstants>().enemyKillCount += 1;
 
             }
         }
