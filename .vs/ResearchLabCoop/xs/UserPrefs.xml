@@ -1,22 +1,16 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Players/PlayerHealth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/EnemyMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/PickOrDrop.cs" Line="8" Column="5" />
-      <File FileName="Assets/Interact.cs" Line="40" Column="27" />
-      <File FileName="Assets/StationStatus.cs" Line="52" Column="17" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="19" Column="32" />
-      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="36" Column="86" />
-      <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="18" Column="26" />
-      <File FileName="Assets/Scripts/GameConstants.cs" Line="27" Column="36" />
-      <File FileName="Assets/Scripts/Science Stations/FallOff.cs" Line="91" Column="5" />
-      <File FileName="Assets/Scripts/Players/Player Movement/p1_movement.cs" Line="20" Column="21" />
-      <File FileName="Assets/Scripts/Enemy/EnemyStatus.cs" Line="67" Column="33" />
-      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="48" Column="6" />
-      <File FileName="Assets/Scripts/Players/P2Status.cs" Line="14" Column="6" />
-      <File FileName="Assets/Scripts/Science Stations/Thrink.cs" Line="51" Column="18" />
-      <File FileName="Assets/Scripts/Players/PlayerHealth.cs" Line="32" Column="40" />
+      <File FileName="Assets/Scripts/Players/Player Actions/PickOrDrop.cs" Line="55" Column="34" />
+      <File FileName="Assets/Scripts/Players/Player Actions/shoot.cs" Line="63" Column="39" />
+      <File FileName="Assets/Scripts/Science Stations/Thrink.cs" Line="44" Column="21" />
+      <File FileName="Assets/Scripts/Players/Player Actions/BigShotHit.cs" Line="31" Column="17" />
+      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="15" Column="35" />
+      <File FileName="Assets/Scripts/Enemy/EnemyStatus.cs" Line="11" Column="5" />
+      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="15" Column="25" />
+      <File FileName="Assets/Scripts/Players/P2Status.cs" Line="10" Column="5" />
+      <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="43" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

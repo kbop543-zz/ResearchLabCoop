@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 
 public class shoot : MonoBehaviour {
-    public Transform camTrans;     public GameObject bullet;     public float range = 1000f;     public float startDistance = 25f;     public float duration = 1.5f;     public float shootRate = 100f;
-    private float curCooldown = 0f;
+    public GameObject shockwave;
+
+    // Following projectile properties will be updated according to weapon     private GameObject projectile;     private float range = 1000f;     private float startDistance = 25f;     private float duration = 1.5f;
     private float cooldown = 10f;
+
+    // Current gun cooldown
+    private float curCooldown;
 
     void FixedUpdate()     {
         if (gameObject.GetComponent<PickOrDrop>().hasGun == true) {
@@ -15,23 +19,60 @@ public class shoot : MonoBehaviour {
             {
                 Shoot();
             }
-        }      }      public void Shoot() {
-        if (curCooldown < 0) {
+
+            if (curCooldown < cooldown) {
+                curCooldown += Time.deltaTime;
+            }
+        }     }      public void Shoot() {
+        if (gameObject.name == "P1(Clone)" && (GetComponent<P1Status>().frozen || GetComponent<P1Status>().blown)) {
+            return;
+        }
+        else if (gameObject.name == "P2(Clone)" && (GetComponent<P2Status>().frozen || GetComponent<P2Status>().blown)) {
+            return;
+        }
+
+        if (curCooldown >= cooldown)
+        {
             Vector3 pos = transform.position;
-            Vector3 direction = (pos - camTrans.position);
+            Vector3 direction = transform.forward;
             direction.y = 0f;
             direction.Normalize();
 
-            var b = (GameObject)Instantiate(bullet,
+            //Debug.Log("Preparing Bullet");
+
+            var b = (GameObject)Instantiate(projectile,
                                             pos + direction * startDistance,
-                                            Quaternion.identity);
+                                            transform.rotation);
+
             b.GetComponent<Rigidbody>().velocity = direction * range;
+            b.GetComponent<BigShotHit>().updateHolder(gameObject);
 
             Destroy(b, duration);
 
-            curCooldown = cooldown;
+            curCooldown = 0f;
         }
-        else {
-            curCooldown -= shootRate * Time.deltaTime;
+     }
+
+    public void GunStatsUpdate(string gunName) {
+        switch (gunName)
+        {
+            case "ShockwaveGun(Clone)":
+                projectile = shockwave;
+                range = 350f;
+                startDistance = 30f;
+                duration = 0.45f;
+                //cooldown = 0.5f;
+                cooldown = 2.0f;
+                curCooldown = cooldown;
+                break;
+            default:
+                Debug.Log("Unregistered weapon");
+                projectile = shockwave;
+                range = 1000f;
+                startDistance = 25f;
+                duration = 1.5f;
+                cooldown = 10f;
+                curCooldown = cooldown;
+                break;
         }
-     }  }
+    }  }

@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 54493797777349128}
   m_Layer: 0
   m_Name: Elephant
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,6 +226,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0470fc8544546268a0a03b464b07f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   minDistance: 5
   forwardSpeed: 35
+  sightRange: 115
+  idleDuration: 5
+  damage: 10
+  attackCD: 1.5
+  chasing: 0
+  idling: 0
+  activated: 0

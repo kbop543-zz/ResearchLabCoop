@@ -7,9 +7,10 @@ public class EnemyStatus : MonoBehaviour
 
     public bool frozen = false;
     public bool shrank = false;
+    public bool blown = false;
     public float duraiton = 5f;
 
-    private float originalSpeed;
+    public float originalSpeed;
 
     private void Start()
     {
@@ -82,5 +83,34 @@ public class EnemyStatus : MonoBehaviour
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
 
         Debug.Log("Unfrozen!!");
+    }
+
+    public void BlowAway(float seconds)
+    {
+        blown = true;
+        float curSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed;
+        gameObject.GetComponent<EnemyMovement>().forwardSpeed = 0;
+
+        StartCoroutine(UnBlown(seconds, curSpeed));
+    }
+
+    IEnumerator UnBlown(float seconds, float curSpeed)
+    {
+        yield return new WaitForSeconds(seconds);
+        blown = false;
+
+        // restore original speed after being unfrozen
+        if (frozen)
+        {
+        }
+        else if (shrank)
+        {
+            gameObject.GetComponent<EnemyMovement>().forwardSpeed = curSpeed;
+        }
+        else
+        {
+            gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
+        }
+
     }
 }

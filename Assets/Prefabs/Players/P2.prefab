@@ -79,7 +79,6 @@ GameObject:
   - component: {fileID: 114546798284552392}
   - component: {fileID: 114236833593404930}
   - component: {fileID: 114699826494083010}
-  - component: {fileID: 114527185579213010}
   - component: {fileID: 65842067100902542}
   m_Layer: 0
   m_Name: P2
@@ -369,23 +368,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   motionVector: {x: 0, y: 0, z: 0}
---- !u!114 &114527185579213010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1397161449656490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218004f5fbc494b8fb11cc160a7c98a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camTrans: {fileID: 0}
-  bullet: {fileID: 1140697868829180, guid: 4a8c00681baba4876b10bad10fe867d4, type: 2}
-  range: 1000
-  startDistance: 25
-  duration: 1.5
-  shootRate: 100
 --- !u!114 &114546798284552392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,6 +382,7 @@ MonoBehaviour:
   startHealth: 100
   deathEffect: {fileID: 0}
   healthBar: {fileID: 114927360836778134}
+  respawnTransform: {fileID: 0}
 --- !u!114 &114699826494083010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,7 +409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
-  collector: {fileID: 1459768763861408, guid: caab23fb7dbf04e00969721237f7307b, type: 2}
+  shockWave: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d, type: 2}
+  collector: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d, type: 2}
   emptyHand: 1
   pickUpRadius: 13
   hasGun: 0
@@ -437,17 +421,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1397161449656490}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efd70ae7e4e1c40e79d02421b1a6b2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTrans: {fileID: 0}
-  bullet: {fileID: 1763757082567436, guid: 1978d3c8890034afd98c0bf3b1df3ede, type: 2}
-  range: 1000
-  startDistance: 25
-  duration: 1.5
-  shootRate: 100
+  shockwave: {fileID: 1140697868829180, guid: 4a8c00681baba4876b10bad10fe867d4, type: 2}
 --- !u!114 &114914046198443422
 MonoBehaviour:
   m_ObjectHideFlags: 1

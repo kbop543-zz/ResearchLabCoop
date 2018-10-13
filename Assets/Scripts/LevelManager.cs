@@ -47,8 +47,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(orb);
         Instantiate(eventSystem);
 
-       
-        Instantiate(crossBow);
+        //Instantiate(crossBow);
         //Instantiate(collector);
 
         Instantiate(thrinkStation);

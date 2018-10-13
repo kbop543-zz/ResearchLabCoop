@@ -39,7 +39,7 @@ public class EnemyMovement : MonoBehaviour
         SearchForTarget();
 
         if (activated) {
-            if (GetComponent<EnemyStatus>().frozen) {
+            if (GetComponent<EnemyStatus>().frozen || GetComponent<EnemyStatus>().blown) {
                 return;
             }
 
@@ -61,7 +61,11 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void SearchForTarget () {
+    public void changeCurTarget (GameObject target) {
+        curTargetPlayer = target;
+    }
+
+    public void SearchForTarget () {
         if (!chasing) {
             if (players[0] == null && players[1] == null)
             {
