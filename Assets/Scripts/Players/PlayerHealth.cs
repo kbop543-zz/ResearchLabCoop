@@ -12,22 +12,25 @@ public class PlayerHealth : MonoBehaviour {
 	public Image healthBar;
 	public Transform respawnTransform;
 
+
 	// Use this for initialization
 	void Start () {
 		health = startHealth;
 		healthBar.color = Color.green;
 
         // Respawn position is subject to change in future
-        respawnTransform = transform;
+        //respawnTransform = transform;
 
     }
+
 
 	public void Die () {
 
 		if(gameObject){
 			gameObject.SetActive(false);
 			playerIsDead = true;
-			Respawn();
+
+			Invoke("Respawn",3);
 		}
 	}
 
