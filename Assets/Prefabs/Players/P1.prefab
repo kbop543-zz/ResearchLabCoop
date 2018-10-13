@@ -393,7 +393,6 @@ MonoBehaviour:
   startHealth: 100
   deathEffect: {fileID: 0}
   healthBar: {fileID: 114840860456598936}
-  respawnTransform: {fileID: 0}
   respawnTransform: {fileID: 4073913689763814, guid: 9b723c5addd034aa1ad212dc321568e8,
     type: 2}
 --- !u!114 &114626043079589770
