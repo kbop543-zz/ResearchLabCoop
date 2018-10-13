@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject orb;
     public GameObject eventSystem;
     public GameObject crossBow;
+
     //public GameObject collector;
     public GameObject thrinkStation;
     public GameObject thrinkTile;
@@ -46,7 +47,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(orb);
         Instantiate(eventSystem);
 
-        Instantiate(labHealth);
+       
         Instantiate(crossBow);
         //Instantiate(collector);
 
