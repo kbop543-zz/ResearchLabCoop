@@ -36,20 +36,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283595887262320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 379, y: 1, z: 395.5}
+  m_LocalRotation: {x: -0, y: -0.13005055, z: -0, w: 0.99150735}
+  m_LocalPosition: {x: 352.13, y: 1, z: 395.5}
   m_LocalScale: {x: 15, y: 1, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -14.945001, z: 0}
 --- !u!23 &23645774323633528
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283595887262320}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3cd968a2cae31464aba447ff5062738c, type: 2}
+  - {fileID: 2100000, guid: 48695148dda3142cdba282a016f60882, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   fallSpeed: 10
   fallThreshold: 10
   destroyDelay: 5
+  rotateRate: 270
+  expandDuration: 0.75
 --- !u!135 &135926885877234416
 SphereCollider:
   m_ObjectHideFlags: 1
