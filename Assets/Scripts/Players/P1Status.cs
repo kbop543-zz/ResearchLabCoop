@@ -7,7 +7,7 @@ public class P1Status : MonoBehaviour {
     public bool frozen = false;
     public bool shrank = false;
     public bool blown = false;
-    public float duraiton = 5f;
+    public float duration = 5f;
 
     public float originalSpeed;
 
@@ -24,7 +24,8 @@ public class P1Status : MonoBehaviour {
 
             // Debug.Log("Waiting for unshrink!");
         }
-        else if (frozen)
+
+        if (frozen)
         {
             StartCoroutine(Unfreeze());
 
@@ -50,11 +51,14 @@ public class P1Status : MonoBehaviour {
 
     IEnumerator Unshrink()
     {
-        yield return new WaitForSeconds(duraiton);
+        yield return new WaitForSeconds(duration);
         shrank = false;
 
         // restore original speed after being unshrink
-        gameObject.GetComponent<p1_movement>().speed = originalSpeed;
+        if (!frozen)
+        {
+            gameObject.GetComponent<p1_movement>().speed = originalSpeed;
+        }
 
         // restore original size after being unshrink
         if (transform.localScale.x < 15)
@@ -78,7 +82,7 @@ public class P1Status : MonoBehaviour {
 
     IEnumerator Unfreeze()
     {
-        yield return new WaitForSeconds(duraiton);
+        yield return new WaitForSeconds(duration);
         frozen = false;
 
         // restore original speed after being unfrozen
@@ -115,4 +119,18 @@ public class P1Status : MonoBehaviour {
         }
 
     }
+
+    public void Fall()
+    {
+        if (shrank)
+        {
+            StopCoroutine(Unshrink());
+            shrank = false;
+        }
+
+        gameObject.GetComponent<p1_movement>().speed = 0;
+        gameObject.GetComponent<PlayerHealth>().Die();
+        gameObject.GetComponent<p1_movement>().speed = originalSpeed;
+    }
+
 }

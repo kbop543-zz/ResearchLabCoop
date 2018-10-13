@@ -26,11 +26,12 @@ public class EnemyStatus : MonoBehaviour
 
             // Debug.Log("Waiting for unshrink!");
         }
-        else if (frozen)
+
+        if (frozen)
         {
             StartCoroutine(Unfreeze());
 
-            Debug.Log("Waiting for unfreeze!");
+            //Debug.Log("Waiting for unfreeze!");
         }
 
     }
@@ -55,7 +56,10 @@ public class EnemyStatus : MonoBehaviour
         shrank = false;
 
         // restore original speed after being unshrink
-        gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
+        if (!frozen)
+        {
+            gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
+        }
 
         // restore original size after being unshrink
         if (transform.localScale.x < 15)

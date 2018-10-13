@@ -22,13 +22,14 @@ public class P2Status : MonoBehaviour {
         {
             StartCoroutine(Unshrink());
 
-            Debug.Log("Waiting for unshrink!");
+            //Debug.Log("Waiting for unshrink!");
         }
-        else if (frozen)
+
+        if (frozen)
         {
             StartCoroutine(Unfreeze());
 
-            Debug.Log("Waiting for unfreeze!");
+            //Debug.Log("Waiting for unfreeze!");
         }
 
     }
@@ -53,7 +54,10 @@ public class P2Status : MonoBehaviour {
         shrank = false;
 
         // restore original speed after being unshrink
-        gameObject.GetComponent<p2_movement>().speed = originalSpeed;
+        if (!frozen)
+        {
+            gameObject.GetComponent<p2_movement>().speed = originalSpeed;
+        }
 
         // restore original size after being unshrink
         if (transform.localScale.x < 15)
@@ -112,4 +116,18 @@ public class P2Status : MonoBehaviour {
         }
 
     }
+
+    public void Fall()
+    {
+        if (shrank)
+        {
+            StopCoroutine(Unshrink());
+            shrank = false;
+        }
+
+        gameObject.GetComponent<p2_movement>().speed = 0;
+        gameObject.GetComponent<PlayerHealth>().Die();
+        gameObject.GetComponent<p2_movement>().speed = originalSpeed;
+    }
+
 }

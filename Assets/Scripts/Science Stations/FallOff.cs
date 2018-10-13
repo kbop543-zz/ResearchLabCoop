@@ -40,13 +40,13 @@ public class FallOff : MonoBehaviour {
                 // Freeze movement by setting parameters
                 if (hitTarget.name == "P1(Clone)")
                 {
-                    hitTarget.GetComponent<p1_movement>().speed = 0;
+                    hitTarget.GetComponent<P1Status>().Fall();
 
                     // Drop item after short delay
                 }
                 else if (hitTarget.name == "P2(Clone)")
                 {
-                    hitTarget.GetComponent<p2_movement>().speed = 0;
+                    hitTarget.GetComponent<P2Status>().Fall();
 
                     // Drop item after short delay
                 }
@@ -66,7 +66,7 @@ public class FallOff : MonoBehaviour {
                 }
 
                 // Fall
-                Vector3 tarDest = transform.position + new Vector3(0f, -60f, 0f);
+                Vector3 tarDest = transform.position + new Vector3(0f, -100f, 0f);
                 Vector3 direction = tarDest - hitTarget.transform.position;
                 direction.Normalize();
                 hitTarget.transform.Translate(direction * fallSpeed * Time.deltaTime);

@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour {
 	public void Respawn () {
 		transform.position = respawnTransform.position;
 		transform.rotation = respawnTransform.rotation;
+        transform.localScale = respawnTransform.localScale;
 
 		health = startHealth;
 

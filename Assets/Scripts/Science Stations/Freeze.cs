@@ -23,11 +23,11 @@ public class Freeze : MonoBehaviour {
             {
                 hitTarget.GetComponent<P1Status>().Freeze();
             }
-            else if (hitTarget.name == "P2(Clone)")
+            if (hitTarget.name == "P2(Clone)")
             {
                 hitTarget.GetComponent<P2Status>().Freeze();
             }
-            else if (hitTarget.tag == "Monster")
+            if (hitTarget.tag == "Monster")
             {
                 hitTarget.GetComponent<EnemyStatus>().Freeze();
             }
