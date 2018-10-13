@@ -42,7 +42,7 @@ public class PlayerHealth : MonoBehaviour {
 
 		if(gameObject){
 			gameObject.SetActive(true);
-			playerIsDead = false;
+            playerIsDead = false;
 			healthBar.fillAmount = health;
 			healthBar.color = Color.green;
 		}

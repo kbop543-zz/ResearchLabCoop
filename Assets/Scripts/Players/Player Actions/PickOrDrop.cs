@@ -42,9 +42,17 @@ public class PickOrDrop : MonoBehaviour {
         if (size != 0) {
             int i = 0;
 
+            //Debug code
+            //if (GameObject.Find("ShockwaveGun(Clone)")) {
+            //    float shockDist = Vector3.Distance(GameObject.Find("ShockwaveGun(Clone)").transform.position,
+            //                                       transform.position);
+            //    Debug.Log("Distance with ShockwaveGun(Clone): " + shockDist);
+            //} else {
+            //    Debug.Log("ShockwaveGun(Clone) not present: ERROR");
+            //}
+
             while ((i < size) && !found)
             {
-                Debug.Log(items[i].gameObject.tag + " " + items[i].gameObject.name);
                 //If we have weapon
                 if (items[i].gameObject.tag == "Weapon")
                 {
