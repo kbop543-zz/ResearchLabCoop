@@ -73,7 +73,13 @@ public class PlayerHealth : MonoBehaviour {
 		}
 
 		if(health <= 0){
-			Die();
+            // Drop items before Die
+            if (!GetComponent<PickOrDrop>().emptyHand)
+            {
+                GetComponent<PickOrDrop>().Dropdown();
+            }
+
+            Die();
 		}
 	}
 

@@ -38,7 +38,7 @@ public class SpawnManager : MonoBehaviour
             StartCoroutine(sendMinion(monster));
             EnemiesSpawned += 1;
 
-            Debug.Log("spawned: " + EnemiesSpawned.ToString());
+            //Debug.Log("spawned: " + EnemiesSpawned.ToString());
             yield return new WaitForSeconds (spawnWait);
 		}
 	}

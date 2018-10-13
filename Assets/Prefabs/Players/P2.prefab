@@ -381,6 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   deathEffect: {fileID: 0}
+  playerIsDead: 0
   healthBar: {fileID: 114927360836778134}
   respawnTransform: {fileID: 4073913689763814, guid: 9b723c5addd034aa1ad212dc321568e8,
     type: 2}
@@ -397,7 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frozen: 0
   shrank: 0
+  blown: 0
   duraiton: 5
+  originalSpeed: 0
 --- !u!114 &114724861238038276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,7 +416,7 @@ MonoBehaviour:
   shockWave: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d, type: 2}
   collector: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d, type: 2}
   emptyHand: 1
-  pickUpRadius: 13
+  pickUpRadius: 20
   hasGun: 0
   hasCollector: 0
 --- !u!114 &114845997324247978

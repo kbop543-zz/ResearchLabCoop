@@ -6,7 +6,7 @@ public class PickOrDrop : MonoBehaviour {
     public GameObject shockWave;
     public GameObject collector;
     public bool emptyHand = true;
-    public float pickUpRadius = 13f;
+    public float pickUpRadius = 20f;
     public bool hasGun = false;
     public bool hasCollector = false;
     private string curItem;
@@ -44,6 +44,7 @@ public class PickOrDrop : MonoBehaviour {
 
             while ((i < size) && !found)
             {
+                Debug.Log(items[i].gameObject.tag + " " + items[i].gameObject.name);
                 //If we have weapon
                 if (items[i].gameObject.tag == "Weapon")
                 {
@@ -80,7 +81,7 @@ public class PickOrDrop : MonoBehaviour {
         return;
     }
 
-    private void Dropdown()
+    public void Dropdown()
     {
         Vector3 pos = transform.position;
         GameObject item;
@@ -106,9 +107,9 @@ public class PickOrDrop : MonoBehaviour {
                     break;
             }
 
-            var b = (GameObject)Instantiate(item,
-                                            pos,
-                                            Quaternion.identity);
+            GameObject b = Instantiate(item);
+            b.transform.position = pos;
+            Debug.Log("Dropped " + b.name + " at: " + b.transform.position);
         }
         else if(hasCollector)
         {
