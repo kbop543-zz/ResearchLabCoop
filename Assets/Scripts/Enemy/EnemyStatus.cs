@@ -8,6 +8,7 @@ public class EnemyStatus : MonoBehaviour
     public bool frozen = false;
     public bool shrank = false;
     public bool blown = false;
+    public bool willDie = false;
     public float duraiton = 5f;
 
     public float originalSpeed;

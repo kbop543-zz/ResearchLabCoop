@@ -394,6 +394,8 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   healthBar: {fileID: 114840860456598936}
   respawnTransform: {fileID: 0}
+  respawnTransform: {fileID: 4073913689763814, guid: 9b723c5addd034aa1ad212dc321568e8,
+    type: 2}
 --- !u!114 &114626043079589770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -482,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.30891773, g: 0.735849, b: 0.43148923, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

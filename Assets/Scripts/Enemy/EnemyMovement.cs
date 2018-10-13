@@ -67,18 +67,19 @@ public class EnemyMovement : MonoBehaviour
 
     public void SearchForTarget () {
         if (!chasing) {
-            if (players[0] == null && players[1] == null)
+            if (players[0].GetComponent<PlayerHealth>().playerIsDead &&
+                players[1].GetComponent<PlayerHealth>().playerIsDead)
             {
                 return;
             }
 
-            if (players[0] != null) {
+            if (!players[0].GetComponent<PlayerHealth>().playerIsDead) {
                 //targetPos = players[0].transform.position;
                 curTargetPlayer = players[0];
             }
 
-            if (players[1] != null) {
-                if (players[0] != null) {
+            if (!players[1].GetComponent<PlayerHealth>().playerIsDead) {
+                if (!players[0].GetComponent<PlayerHealth>().playerIsDead) {
                     float p1Dis = Vector3.Distance(players[0].transform.position, transform.position);
                     float p2Dis = Vector3.Distance(players[1].transform.position, transform.position);
                     if (p2Dis < p1Dis) {
@@ -107,7 +108,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Chase() {
         //DestinationPos = new Vector3(targetPos.x, transform.position.y, targetPos.z);
-        if(curTargetPlayer == null) {
+        if(curTargetPlayer.GetComponent<PlayerHealth>().playerIsDead) {
             chasing = false;
             return;
         }

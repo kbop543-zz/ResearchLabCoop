@@ -16,6 +16,7 @@ public class FallOff : MonoBehaviour {
     private float scaleY;
     private float scaleZ;
 
+
     private void Start()
     {
         station = GameObject.Find("HoleStation(Clone)");
@@ -49,12 +50,16 @@ public class FallOff : MonoBehaviour {
 
                     // Drop item after short delay
                 }
-                else if (hitTarget.tag == "Monster")
+                else if (hitTarget.tag == "Monster" && hitTarget.GetComponent<EnemyStatus>().willDie == false)
                 {
                     hitTarget.GetComponent<EnemyMovement>().chasing = false;
                     hitTarget.GetComponent<EnemyMovement>().activated = false;
                     hitTarget.GetComponent<EnemyMovement>().forwardSpeed = 0;
-                    
+                    // Destroying the enemy with updating the win condition
+                    hitTarget.GetComponent<EnemyStatus>().willDie = true;
+                    Destroy(hitTarget, destroyDelay);
+                    GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
+
                 }
                 else{
                     return;
@@ -67,7 +72,9 @@ public class FallOff : MonoBehaviour {
                 hitTarget.transform.Translate(direction * fallSpeed * Time.deltaTime);
 
                 // Destroy
-                Destroy(hitTarget, destroyDelay);
+                //Destroy(hitTarget, destroyDelay);
+                // update the enemy death count
+                //GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
 
             }
         }

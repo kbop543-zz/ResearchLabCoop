@@ -8,9 +8,10 @@ public class PlayerHealth : MonoBehaviour {
 	public float startHealth = 100;
 	public GameObject deathEffect;
 	float health;
-	static bool playerIsDead = false;
+	public bool playerIsDead = false;
 	public Image healthBar;
 	public Transform respawnTransform;
+
 
 	// Use this for initialization
 	void Start () {
@@ -18,16 +19,18 @@ public class PlayerHealth : MonoBehaviour {
 		healthBar.color = Color.green;
 
         // Respawn position is subject to change in future
-        respawnTransform = transform;
+        //respawnTransform = transform;
 
     }
+
 
 	public void Die () {
 
 		if(gameObject){
 			gameObject.SetActive(false);
 			playerIsDead = true;
-			Respawn();
+
+			Invoke("Respawn",3);
 		}
 	}
 
