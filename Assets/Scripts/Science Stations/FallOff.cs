@@ -15,7 +15,7 @@ public class FallOff : MonoBehaviour {
     private float scaleX;
     private float scaleY;
     private float scaleZ;
-
+    public AudioSource dropsound;
 
     private void Start()
     {
@@ -66,6 +66,7 @@ public class FallOff : MonoBehaviour {
                 }
 
                 // Fall
+                dropsound.Play();
                 Vector3 tarDest = transform.position + new Vector3(0f, -100f, 0f);
                 Vector3 direction = tarDest - hitTarget.transform.position;
                 direction.Normalize();
