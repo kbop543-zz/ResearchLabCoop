@@ -2,7 +2,7 @@
 
 public class shoot : MonoBehaviour {
     public GameObject shockwave;
-
+    public AudioSource LaserSound;
     // Following projectile properties will be updated according to weapon     private GameObject projectile;     private float range = 1000f;     private float startDistance = 25f;     private float duration = 1.5f;
     private float cooldown = 10f;
 
@@ -43,7 +43,7 @@ public class shoot : MonoBehaviour {
             var b = (GameObject)Instantiate(projectile,
                                             pos + direction * startDistance,
                                             transform.rotation);
-
+            LaserSound.Play();
             b.GetComponent<Rigidbody>().velocity = direction * range;
             b.GetComponent<BigShotHit>().updateHolder(gameObject);
 
