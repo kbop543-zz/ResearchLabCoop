@@ -1,18 +1,22 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameConstants.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Players/Player Actions/Interact.cs">
     <Files>
-      <File FileName="Assets/Scripts/Players/Player Actions/PickOrDrop.cs" Line="55" Column="34" />
-      <File FileName="Assets/Scripts/Players/Player Actions/shoot.cs" Line="58" Column="13" />
-      <File FileName="Assets/Scripts/Science Stations/Thrink.cs" Line="51" Column="18" />
-      <File FileName="Assets/Scripts/Players/Player Actions/BigShotHit.cs" Line="60" Column="22" />
-      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="15" Column="35" />
-      <File FileName="Assets/Scripts/Enemy/EnemyStatus.cs" Line="10" Column="31" />
-      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="19" Column="23" />
-      <File FileName="Assets/Scripts/Players/P2Status.cs" Line="109" Column="13" />
-      <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="106" Column="10" />
-      <File FileName="Assets/Scripts/Players/PlayerHealth.cs" Line="20" Column="9" />
-      <File FileName="Assets/Scripts/GameConstants.cs" Line="32" Column="1" />
+      <File FileName="Assets/Scripts/Science Stations/Freeze.cs" Line="30" Column="13" />
+      <File FileName="Assets/Scripts/Science Stations/Thrink.cs" Line="38" Column="17" />
+      <File FileName="Assets/Scripts/Science Stations/FallOff.cs" Line="49" Column="52" />
+      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="86" Column="24" />
+      <File FileName="Assets/Scripts/Players/P2Status.cs" Line="131" Column="6" />
+      <File FileName="Assets/Scripts/Enemy/EnemyStatus.cs" Line="34" Column="50" />
+      <File FileName="Assets/Scripts/Science Stations/StationStatus.cs" Line="49" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/EnemyMovement.cs" Line="47" Column="22" />
+      <File FileName="Assets/Scripts/Players/Player Actions/Interact.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Players/PlayerHealth.cs" Line="40" Column="60" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="5" Column="31" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="48" Column="48" />
+      <File FileName="Assets/Scripts/Players/Player Actions/shoot.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Players/PlayerUI.cs" Line="66" Column="43" />
+      <File FileName="Assets/Scripts/Players/Player Actions/PickOrDrop.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject terrainTiles;
     public GameObject player1;
     public GameObject player2;
+    public GameObject HUDCanvas;
     public GameObject researchLab;
     public GameObject enemySpawner;
     public GameObject orb;
@@ -30,6 +31,9 @@ public class LevelManager : MonoBehaviour {
     public GameObject ShockWaveGun;
     public GameObject BackgroundSound;
 
+    public GameObject p1;
+    public GameObject p2;
+
     public void SetupScene() {
         //Instantiate(terrainTiles, new Vector3(-514f, 0, -472f), Quaternion.identity);
         //Instantiate(player1, new Vector3(144.4f, 8.1f, 330.3f), Quaternion.identity);
@@ -41,8 +45,9 @@ public class LevelManager : MonoBehaviour {
         //Instantiate(labHealth, new Vector3(333f, 196.5f, 0f), Quaternion.identity);
 
         Instantiate(terrainTiles);
-        Instantiate(player1);
-        Instantiate(player2);
+        p1 = Instantiate(player1) as GameObject;
+        p2 = Instantiate(player2) as GameObject;
+        Instantiate(HUDCanvas);
         Instantiate(researchLab);
         Instantiate(enemySpawner);
         Instantiate(orb);

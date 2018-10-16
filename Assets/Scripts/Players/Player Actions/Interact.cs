@@ -9,8 +9,8 @@ public class Interact : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ((Input.GetKey("x") && (gameObject.name == "P1" || gameObject.name == "P1(Clone)")) ||
-            (Input.GetKey("o") && (gameObject.name == "P2" || gameObject.name == "P2(Clone)")))
+        if (((Input.GetKey("x") || Input.GetKeyUp(KeyCode.Joystick1Button1)) && (gameObject.name == "P1" || gameObject.name == "P1(Clone)")) ||
+            ((Input.GetKey("o") || Input.GetKeyUp(KeyCode.Joystick1Button1)) && (gameObject.name == "P2" || gameObject.name == "P2(Clone)")))
         {
             Activate();
 

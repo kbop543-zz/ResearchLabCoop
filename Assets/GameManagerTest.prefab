@@ -59,6 +59,9 @@ MonoBehaviour:
   curOrbs: 0
   gameOver: 0
   completeLvl: 0
+  players: []
+  enemyKillCount: 0
+  spawner: {fileID: 0}
 --- !u!114 &114590286036137762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,6 +77,7 @@ MonoBehaviour:
     type: 2}
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
+  HUDCanvas: {fileID: 1475400907237462, guid: fe37bb0a439214dad944150abe29feec, type: 2}
   researchLab: {fileID: 1674157489231016, guid: 6568ce3116a164be19862d064c57f033,
     type: 2}
   enemySpawner: {fileID: 1911282503729640, guid: 7398c9e685088486c99bc3097dcf6087,
@@ -82,7 +86,6 @@ MonoBehaviour:
   eventSystem: {fileID: 1087734908863884, guid: 18f754b90762d447ba8b0b0bfe9364aa,
     type: 2}
   crossBow: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
-  collector: {fileID: 1459768763861408, guid: caab23fb7dbf04e00969721237f7307b, type: 2}
   thrinkStation: {fileID: 1488631943349220, guid: d618651b637464720a90749f6612495d,
     type: 2}
   thrinkTile: {fileID: 1672104751296836, guid: cee798ca3ee4c43329ae3babc76d7ce0, type: 2}
@@ -101,6 +104,12 @@ MonoBehaviour:
   freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
     type: 2}
   freezeTile: {fileID: 1720781894172248, guid: e24d1f61251644c9f97363a385aa9b78, type: 2}
+  ShockWaveGun: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d,
+    type: 2}
+  BackgroundSound: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
+    type: 2}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
 --- !u!114 &114940834490679864
 MonoBehaviour:
   m_ObjectHideFlags: 1
