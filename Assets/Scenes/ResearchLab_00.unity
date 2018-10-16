@@ -176,6 +176,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d,
         type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: BackgroundSound
+      value: 
+      objectReference: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
   m_IsPrefabAsset: 0

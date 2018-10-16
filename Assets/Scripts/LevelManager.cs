@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject freezeStation;
     public GameObject freezeTile;
     public GameObject ShockWaveGun;
+    public GameObject BackgroundSound;
 
     public void SetupScene() {
         //Instantiate(terrainTiles, new Vector3(-514f, 0, -472f), Quaternion.identity);
@@ -64,6 +65,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(freezeStation);
         Instantiate(freezeTile);
         Instantiate(ShockWaveGun);
+        Instantiate(BackgroundSound);
 
     }
 }
