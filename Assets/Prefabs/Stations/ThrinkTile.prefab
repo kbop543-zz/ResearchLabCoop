@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993d949d1ab6645e3b24e521aecd318d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrinkRate: 3
+  thrinkRate: 10
   speedDecreaseRate: 5
   thrinkMin: 5
   maxIntensity: 100
