@@ -52,6 +52,7 @@ public class BigShotHit : MonoBehaviour {
                     // If Frozen
                     if (hitTarget.GetComponent<EnemyStatus>().frozen) {
                         Destroy(hitTarget);
+                        GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
                     }
                     // If normal state
                     else {

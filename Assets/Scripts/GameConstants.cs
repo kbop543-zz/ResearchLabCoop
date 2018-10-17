@@ -43,6 +43,7 @@ public class GameConstants : MonoBehaviour {
             Debug.Log("GAME OVER");
             gameUI.GetComponent<PlayerUI>().gameState.text = "GAME OVER";
             gameOver = true;
+            Time.timeScale = 0;
         }
         //if (gameOver) {
         //    Scene scene = SceneManager.GetActiveScene();
@@ -56,6 +57,7 @@ public class GameConstants : MonoBehaviour {
             gameUI.GetComponent<PlayerUI>().gameState.text = "YOU WIN!";
             completeLvl = true;
             enemyKillCount = 0;
+            Time.timeScale = 0;
         }
         // Win Condition 1): collect enough orbs and press button
         //if (!completeLvl && !gameOver && curOrbs >= maxOrbs &&
