@@ -28,7 +28,8 @@ public class LevelManager : MonoBehaviour {
     //public GameObject lighting;
     public GameObject freezeStation;
     public GameObject freezeTile;
-    public GameObject ShockWaveGun;
+    public GameObject ShockWaveGun1;
+    public GameObject ShockWaveGun2;
     public GameObject BackgroundSound;
 
     public GameObject p1;
@@ -69,7 +70,8 @@ public class LevelManager : MonoBehaviour {
         Instantiate(lightBulbs);
         Instantiate(freezeStation);
         Instantiate(freezeTile);
-        Instantiate(ShockWaveGun);
+        Instantiate(ShockWaveGun1);
+        Instantiate(ShockWaveGun2, new Vector3(135f, 2.62f, 400f), Quaternion.identity);
         Instantiate(BackgroundSound);
 
     }

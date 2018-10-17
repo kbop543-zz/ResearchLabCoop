@@ -104,7 +104,9 @@ MonoBehaviour:
   freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
     type: 2}
   freezeTile: {fileID: 1720781894172248, guid: e24d1f61251644c9f97363a385aa9b78, type: 2}
-  ShockWaveGun: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d,
+  ShockWaveGun1: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d,
+    type: 2}
+  ShockWaveGun2: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d,
     type: 2}
   BackgroundSound: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
     type: 2}
