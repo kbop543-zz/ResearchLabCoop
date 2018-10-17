@@ -25,8 +25,13 @@ public class PlayerHealth : MonoBehaviour {
 
 
 	public void Die () {
+        // Drop items before Die
+        if (!GetComponent<PickOrDrop>().emptyHand)
+        {
+            GetComponent<PickOrDrop>().Dropdown();
+        }
 
-		if(gameObject){
+        if (gameObject){
 			gameObject.SetActive(false);
 			playerIsDead = true;
 
@@ -75,10 +80,10 @@ public class PlayerHealth : MonoBehaviour {
 
 		if(health <= 0){
             // Drop items before Die
-            if (!GetComponent<PickOrDrop>().emptyHand)
-            {
-                GetComponent<PickOrDrop>().Dropdown();
-            }
+            //if (!GetComponent<PickOrDrop>().emptyHand)
+            //{
+            //    GetComponent<PickOrDrop>().Dropdown();
+            //}
 
             Die();
 		}

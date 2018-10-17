@@ -52,25 +52,24 @@ public class FallOff : MonoBehaviour {
                 }
                 else if (hitTarget.tag == "Monster" && hitTarget.GetComponent<EnemyStatus>().willDie == false)
                 {
-                    hitTarget.GetComponent<EnemyMovement>().chasing = false;
-                    hitTarget.GetComponent<EnemyMovement>().activated = false;
-                    hitTarget.GetComponent<EnemyMovement>().forwardSpeed = 0;
-                    // Destroying the enemy with updating the win condition
-                    hitTarget.GetComponent<EnemyStatus>().willDie = true;
+                    // Enemy Fall
+                    hitTarget.GetComponent<EnemyStatus>().Fall();
                     Destroy(hitTarget, destroyDelay);
                     GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
 
+                    // Start falling animation
+                    StartCoroutine(StartFalling(hitTarget));
                 }
                 else{
                     return;
                 }
 
                 // Fall
-                dropsound.Play();
-                Vector3 tarDest = transform.position + new Vector3(0f, -100f, 0f);
-                Vector3 direction = tarDest - hitTarget.transform.position;
-                direction.Normalize();
-                hitTarget.transform.Translate(direction * fallSpeed * Time.deltaTime);
+                //dropsound.Play();
+                //Vector3 tarDest = transform.position + new Vector3(0f, -100f, 0f);
+                //Vector3 direction = tarDest - hitTarget.transform.position;
+                //direction.Normalize();
+                //hitTarget.transform.Translate(direction * fallSpeed * Time.deltaTime);
 
                 // Destroy
                 //Destroy(hitTarget, destroyDelay);
@@ -80,6 +79,18 @@ public class FallOff : MonoBehaviour {
             }
         }
 
+    }
+
+    private IEnumerator StartFalling (GameObject target) {
+        //dropsound.Play();
+        Vector3 tarDest = transform.position + new Vector3(0f, -75f, 0f);
+        Vector3 direction = tarDest - target.transform.position;
+        direction.Normalize();
+
+        while (true) {
+            target.transform.Translate(direction * fallSpeed * Time.deltaTime);
+            yield return null;
+        }
     }
 
     private void FixedUpdate()

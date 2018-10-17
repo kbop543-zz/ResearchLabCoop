@@ -9,6 +9,7 @@ public class EnemyStatus : MonoBehaviour
     public bool shrank = false;
     public bool blown = false;
     public bool willDie = false;
+    public bool falling = false;
     public float duraiton = 5f;
 
     public float originalSpeed;
@@ -36,6 +37,15 @@ public class EnemyStatus : MonoBehaviour
 
     }
 
+    public void Fall() {
+        GetComponent<EnemyMovement>().chasing = false;
+        GetComponent<EnemyMovement>().idling = false;
+        GetComponent<EnemyMovement>().activated = false;
+        GetComponent<EnemyMovement>().forwardSpeed = 0;
+
+        falling = true;
+        willDie = true;
+    }
     //IEnumerator waitForStatusEnd(bool status)
     //{
     //    yield return new WaitForSeconds(duraiton);
@@ -54,6 +64,10 @@ public class EnemyStatus : MonoBehaviour
     {
         yield return new WaitForSeconds(duraiton);
         shrank = false;
+
+        if (falling) {
+            yield break;
+        }
 
         // restore original speed after being unshrink
         if (!frozen)
@@ -103,6 +117,10 @@ public class EnemyStatus : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         blown = false;
+
+        if (falling) {
+            yield break;
+        }
 
         // restore original speed after being unfrozen
         if (frozen)
