@@ -12,6 +12,7 @@ public class PlayerUI : MonoBehaviour
     public Text P1FrozenCoolDown;
     public Text P2ShrinkCoolDown;
     public Text P2FrozenCoolDown;
+    public Text gameState;
     private bool P1Shrank = false;
     private bool P1Frozen = false;
     private bool P2Shrank = false;
@@ -29,6 +30,8 @@ public class PlayerUI : MonoBehaviour
 
         P2ShrinkCoolDown.text = "";
         P2FrozenCoolDown.text = "";
+
+        gameState.text = "";
     }
 
     private void FixedUpdate()
