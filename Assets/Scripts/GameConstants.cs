@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameConstants : MonoBehaviour {
 
@@ -29,6 +31,15 @@ public class GameConstants : MonoBehaviour {
         spawner = GameObject.Find("Spawner(Clone)");
 
     }
+
+    private IEnumerator Pause(int p) {
+        Time.timeScale = 0.1f;
+        float pauseEndTime = Time.realtimeSinceStartup + 1;
+        while (Time.realtimeSinceStartup < pauseEndTime) {
+            yield return 0;
+        }
+        Time.timeScale = 1;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -38,7 +49,12 @@ public class GameConstants : MonoBehaviour {
             Debug.Log("GAME OVER");
             gameOver = true;
         }
-
+        if (gameOver) {
+            Pause(3);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+            gameOver = false;
+        }
         // Win Condition 1): Kill same amount of enemy with enemy spawn limit
         if (enemyKillCount >= spawner.GetComponent<SpawnManager>().spawnLimit)
         {
