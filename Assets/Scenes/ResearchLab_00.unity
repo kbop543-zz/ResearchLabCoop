@@ -182,6 +182,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
         type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: OutsideWallSmall3
+      value: 
+      objectReference: {fileID: 1356860944220398, guid: d6ba06c59b4d443429802d5847b0b43e,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
   m_IsPrefabAsset: 0
