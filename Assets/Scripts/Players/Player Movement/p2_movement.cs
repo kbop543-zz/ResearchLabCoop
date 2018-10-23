@@ -42,5 +42,11 @@ public class p2_movement : MonoBehaviour
 
         //rb.AddForce(motionVector * speed);
         rb.transform.Translate(speed * motionVector.x * Time.deltaTime, 0f, speed * motionVector.z * Time.deltaTime);
+
+        // Change rotation
+        if (movement.magnitude > 0)
+        {
+            transform.GetChild(1).LookAt(rb.transform.position - motionVector); // since model is reversed, we will reverse directions
+        }
     }
 }

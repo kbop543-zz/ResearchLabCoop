@@ -66,7 +66,7 @@ public class BigShotHit : MonoBehaviour {
                 //force *= 2f;
             }
 
-            hitTarget.GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);         }   
+            hitTarget.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity.normalized * force, ForceMode.Impulse);         }   
     }
 
     IEnumerator increaseXscale()
