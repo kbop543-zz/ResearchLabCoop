@@ -157,13 +157,17 @@ public class EnemyMovement : MonoBehaviour
 
     private IEnumerator Idle() {
         // Pick random direction
-        Vector3 idleDir = new Vector3(Random.Range(-3, 6), 0, Random.Range(-10, 4));
+
+        Vector3 idleDir = new Vector3(Random.Range(-75, 75), 0, Random.Range(-75, 75));
+        idleDir += curTargetPlayer.transform.position - transform.position;
+        idleDir.y = 0;
         idleDir.Normalize();
         float stopDuration = Random.Range(1, 3) * idleDuration / 10;
         float walkSpeed = 3 * forwardSpeed / 5;
-        Vector3 lookTo;
+        // Vector3 lookTo;
 
         // Idle
+        navAgent.speed = 0;
         float curTime = 0.0f;
         while (idling && (curTime < stopDuration)) {
             curTime += Time.deltaTime;
@@ -172,27 +176,26 @@ public class EnemyMovement : MonoBehaviour
 
         if (!idling)
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+            //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
             yield break;
         }
 
         // Walk
-        while (idling && (curTime < idleDuration)) {
-            lookTo = transform.position + idleDir;
-            transform.LookAt(lookTo);
-            GetComponent<Rigidbody>().velocity = idleDir * walkSpeed;
+        Vector3 dest = transform.position + idleDir * forwardSpeed;
+        navAgent.speed = walkSpeed;
+        navAgent.SetDestination(dest);
+        while (idling && curTime < idleDuration && Vector3.Distance(transform.position, dest) > 0) {
+            //lookTo = transform.position + idleDir;
+            //transform.LookAt(lookTo);
+            //GetComponent<Rigidbody>().velocity = idleDir * walkSpeed;
             curTime += Time.deltaTime;
             yield return null;
         }
 
-        if (!idling)
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
-            yield break;
-        }
-
         // End
-        GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+        navAgent.speed = 0;
+        navAgent.SetDestination(transform.position);
+        //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
         idling = false;
         yield return null;
     }
