@@ -10,29 +10,38 @@ public class P1Status : MonoBehaviour {
     public float duration = 5f;
 
     public float originalSpeed;
+    private IEnumerator curUnshrink;
+    private IEnumerator curUnfreeze;
 
     private void Start()
     {
         originalSpeed = gameObject.GetComponent<p1_movement>().speed;
     }
 
-    void FixedUpdate()
-    {
-        if (shrank)
-        {
-            StartCoroutine(Unshrink());
+    //void FixedUpdate()
+    //{
+    //    if (shrank)
+    //    {
+    //        if (curUnshrink != null) {
+    //            StopCoroutine(curUnshrink);
+    //        }
+    //        curUnshrink = Unshrink();
+    //        StartCoroutine(Unshrink());
+    //        // Debug.Log("Waiting for unshrink!");
+    //    }
 
-            // Debug.Log("Waiting for unshrink!");
-        }
-
-        if (frozen)
-        {
-            StartCoroutine(Unfreeze());
-
-            // Debug.Log("Waiting for unfreeze!");
-        }
-
-    }
+    //    if (frozen)
+    //    {
+    //        if (curUnfreeze != null)
+    //        {
+    //           StopCoroutine(curUnfreeze);
+    //        }
+    //        curUnfreeze = Unfreeze();
+    //        StartCoroutine(Unfreeze());
+    //        // Debug.Log("Waiting for unfreeze!");
+    //    }
+    //
+    //}
 
     //IEnumerator waitForStatusEnd()
     //{
@@ -47,12 +56,19 @@ public class P1Status : MonoBehaviour {
 
         // reduce speed after being shrunk
         gameObject.GetComponent<p1_movement>().speed = gameObject.GetComponent<p1_movement>().speed * ratio;
+
+        if (curUnshrink != null)
+        {
+            StopCoroutine(curUnshrink);
+        }
+        curUnshrink = Unshrink();
+        StartCoroutine(curUnshrink);
+        // Debug.Log("Waiting for unshrink!");
     }
 
     IEnumerator Unshrink()
     {
         yield return new WaitForSeconds(duration);
-        shrank = false;
 
         // restore original speed after being unshrink
         if (!frozen)
@@ -61,14 +77,16 @@ public class P1Status : MonoBehaviour {
         }
 
         // restore original size after being unshrink
-        if (transform.localScale.x < 15)
+        while (transform.localScale.x < 15)
         {
-            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * 3.0f * Time.deltaTime;
+            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * Time.deltaTime;
             transform.position = new Vector3(transform.position.x,
                                              transform.localScale.y / 2,
                                              transform.position.z);
+            yield return null;
         }
 
+        shrank = false;
         // Debug.Log("Unshrank!!");
     }
 
@@ -78,17 +96,25 @@ public class P1Status : MonoBehaviour {
 
         // make speed 0 after being frozen
         gameObject.GetComponent<p1_movement>().speed = 0;
+
+        if (curUnfreeze != null)
+        {
+            StopCoroutine(curUnfreeze);
+        }
+        curUnfreeze = Unfreeze();
+        StartCoroutine(curUnfreeze);
+        // Debug.Log("Waiting for unfreeze!");
     }
 
     IEnumerator Unfreeze()
     {
         yield return new WaitForSeconds(duration);
-        frozen = false;
 
         // restore original speed after being unfrozen
         gameObject.GetComponent<p1_movement>().speed = originalSpeed;
 
-        Debug.Log("Unfrozen!!");
+        frozen = false;
+        //Debug.Log("Unfrozen!!");
     }
 
     public void BlowAway(float seconds)

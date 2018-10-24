@@ -13,29 +13,31 @@ public class EnemyStatus : MonoBehaviour
     public float duraiton = 5f;
 
     public float originalSpeed;
+    private IEnumerator curUnshrink;
+    private IEnumerator curUnfreeze;
 
     private void Start()
     {
         originalSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed;
     }
 
-    void FixedUpdate()
-    {
-        if (shrank)
-        {
-            StartCoroutine(Unshrink());
+    //void FixedUpdate()
+    //{
+    //    if (shrank)
+    //    {
+    //        StartCoroutine(Unshrink());
 
-            // Debug.Log("Waiting for unshrink!");
-        }
+    //        // Debug.Log("Waiting for unshrink!");
+    //    }
 
-        if (frozen)
-        {
-            StartCoroutine(Unfreeze());
+    //    if (frozen)
+    //    {
+    //        StartCoroutine(Unfreeze());
 
-            //Debug.Log("Waiting for unfreeze!");
-        }
+    //        //Debug.Log("Waiting for unfreeze!");
+    //    }
 
-    }
+    //}
 
     public void Fall() {
         GetComponent<EnemyMovement>().chasing = false;
@@ -58,12 +60,19 @@ public class EnemyStatus : MonoBehaviour
     {
         shrank = true;
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * ratio;
+
+        if (curUnshrink != null)
+        {
+            StopCoroutine(curUnshrink);
+        }
+        curUnshrink = Unshrink();
+        StartCoroutine(curUnshrink);
+        // Debug.Log("Waiting for unshrink!");
     }
 
     IEnumerator Unshrink()
     {
         yield return new WaitForSeconds(duraiton);
-        shrank = false;
 
         if (falling) {
             yield break;
@@ -76,14 +85,16 @@ public class EnemyStatus : MonoBehaviour
         }
 
         // restore original size after being unshrink
-        if (transform.localScale.x < 15)
+        while (transform.localScale.x < 15)
         {
-            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * 3.0f * Time.deltaTime;
+            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * Time.deltaTime;
             transform.position = new Vector3(transform.position.x,
                                              transform.localScale.y / 2,
                                              transform.position.z);
+            yield return null;
         }
 
+        shrank = false;
         // Debug.Log("Unshrank!!");
     }
 
@@ -91,17 +102,25 @@ public class EnemyStatus : MonoBehaviour
     {
         frozen = true;
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = 0;
+
+        if (curUnfreeze != null)
+        {
+            StopCoroutine(curUnfreeze);
+        }
+        curUnfreeze = Unfreeze();
+        StartCoroutine(curUnfreeze);
+        // Debug.Log("Waiting for unfreeze!");
     }
 
     IEnumerator Unfreeze()
     {
         yield return new WaitForSeconds(duraiton);
-        frozen = false;
 
         // restore original speed after being unfrozen
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
 
-        Debug.Log("Unfrozen!!");
+        frozen = false;
+        //Debug.Log("Unfrozen!!");
     }
 
     public void BlowAway(float seconds)
