@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835393105787874}
   - component: {fileID: 108343329412519758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StationLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 23509518062313724}
   - component: {fileID: 136979283598056986}
   - component: {fileID: 114182456583484812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FreezeStation
   m_TagString: Station
   m_Icon: {fileID: 0}

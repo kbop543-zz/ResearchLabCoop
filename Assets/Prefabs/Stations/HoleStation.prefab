@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23681894090985040}
   - component: {fileID: 136961075658528444}
   - component: {fileID: 114529332929494366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HoleStation
   m_TagString: Station
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4720882776754582}
   - component: {fileID: 108473833742462036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StationLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4090045611724730}
   - component: {fileID: 108783642669888844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StationLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 23861419947058592}
   - component: {fileID: 136716518836451548}
   - component: {fileID: 114523538858457700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThrinkStation
   m_TagString: Station
   m_Icon: {fileID: 0}

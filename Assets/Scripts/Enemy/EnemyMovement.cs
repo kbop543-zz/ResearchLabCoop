@@ -1,14 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
     public float minDistance = 20f;
-    public float forwardSpeed = 45f;
+    public float forwardSpeed = 75f;
+
     public float sightRange = 115f;
     public float idleDuration = 5.0f;
     public int damage = 10;
     public float attackCD = 1.5f;
+    public NavMeshAgent navAgent;
     private GameObject[] players;
     //private Transform LabTransform;
     private GameObject gm;
@@ -30,6 +33,7 @@ public class EnemyMovement : MonoBehaviour
         idling = false;
         activated = false;
         curCD = attackCD;
+        navAgent.speed = 0;
 
     }
 
@@ -110,6 +114,7 @@ public class EnemyMovement : MonoBehaviour
         //DestinationPos = new Vector3(targetPos.x, transform.position.y, targetPos.z);
         if(curTargetPlayer.GetComponent<PlayerHealth>().playerIsDead) {
             chasing = false;
+            navAgent.speed = 0;
             return;
         }
 
@@ -117,18 +122,21 @@ public class EnemyMovement : MonoBehaviour
                                      transform.position.y,
                                      curTargetPlayer.transform.position.z);
 
-        transform.LookAt(DestinationPos);
+        //transform.LookAt(DestinationPos);
 
         if (Vector3.Distance(transform.position, DestinationPos) > 2 * sightRange) {
             chasing = false;
+            navAgent.speed = 0;
             return;
         }
         else if (Vector3.Distance(transform.position, DestinationPos) >= minDistance)
         {
-            curVelocity = DestinationPos - transform.position;
-            curVelocity.Normalize();
-            curVelocity *= forwardSpeed;
-            GetComponent<Rigidbody>().velocity = curVelocity;
+            //curVelocity = DestinationPos - transform.position;
+            //curVelocity.Normalize();
+            //curVelocity *= forwardSpeed;
+            //GetComponent<Rigidbody>().velocity = curVelocity;
+            navAgent.speed = forwardSpeed;
+            navAgent.SetDestination(DestinationPos);
 
         }
         else {
@@ -139,7 +147,10 @@ public class EnemyMovement : MonoBehaviour
                 curCD = 0f;
             }
 
-            GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+            navAgent.speed = 0;
+            navAgent.SetDestination(transform.position);
+
+            //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
 
         }
     }
@@ -161,6 +172,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (!idling)
         {
+            GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
             yield break;
         }
 
@@ -175,11 +187,12 @@ public class EnemyMovement : MonoBehaviour
 
         if (!idling)
         {
+            GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
             yield break;
         }
 
         // End
-        GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f); 
+        GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
         idling = false;
         yield return null;
     }
