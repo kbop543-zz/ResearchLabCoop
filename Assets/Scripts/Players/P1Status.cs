@@ -70,20 +70,20 @@ public class P1Status : MonoBehaviour {
     {
         yield return new WaitForSeconds(duration);
 
-        // restore original speed after being unshrink
-        if (!frozen)
-        {
-            gameObject.GetComponent<p1_movement>().speed = originalSpeed;
-        }
-
         // restore original size after being unshrink
         while (transform.localScale.x < 15)
         {
-            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * Time.deltaTime;
+            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * 3f * Time.deltaTime;
             transform.position = new Vector3(transform.position.x,
                                              transform.localScale.y / 2,
                                              transform.position.z);
             yield return null;
+        }
+
+        // restore original speed after being unshrink
+        if (!frozen)
+        {
+            gameObject.GetComponent<p1_movement>().speed = originalSpeed;
         }
 
         shrank = false;

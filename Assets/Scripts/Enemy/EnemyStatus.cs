@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyStatus : MonoBehaviour
 {
@@ -78,20 +78,20 @@ public class EnemyStatus : MonoBehaviour
             yield break;
         }
 
-        // restore original speed after being unshrink
-        if (!frozen)
-        {
-            gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
-        }
-
         // restore original size after being unshrink
         while (transform.localScale.x < 15)
         {
-            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * Time.deltaTime;
+            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * 3f * Time.deltaTime;
             transform.position = new Vector3(transform.position.x,
                                              transform.localScale.y / 2,
                                              transform.position.z);
             yield return null;
+        }
+
+        // restore original speed after being unshrink
+        if (!frozen)
+        {
+            gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
         }
 
         shrank = false;
@@ -102,6 +102,10 @@ public class EnemyStatus : MonoBehaviour
     {
         frozen = true;
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = 0;
+        gameObject.GetComponent<NavMeshAgent>().speed = 0;
+        gameObject.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+        gameObject.GetComponent<EnemyMovement>().chasing = false;
+        gameObject.GetComponent<EnemyMovement>().idling = false;
 
         if (curUnfreeze != null)
         {
