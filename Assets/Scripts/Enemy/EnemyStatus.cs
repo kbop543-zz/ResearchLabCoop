@@ -8,6 +8,7 @@ public class EnemyStatus : MonoBehaviour
     public bool frozen = false;
     public bool shrank = false;
     public bool blown = false;
+    public bool oiled = false;
     public bool willDie = false;
     public bool falling = false;
     public float duraiton = 5f;
@@ -15,6 +16,7 @@ public class EnemyStatus : MonoBehaviour
     public float originalSpeed;
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
+    private IEnumerator curUnoiled;
 
     private void Start()
     {
@@ -158,5 +160,41 @@ public class EnemyStatus : MonoBehaviour
             gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
         }
 
+    }
+
+    public void Oiling()
+    {
+        oiled = true;
+
+        gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed / 2;
+
+        if (curUnoiled != null)
+        {
+            StopCoroutine(curUnoiled);
+        }
+        curUnoiled = Unoil();
+        StartCoroutine(curUnoiled);
+    }
+
+    IEnumerator Unoil()
+    {
+        yield return new WaitForSeconds(duraiton);
+
+        gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
+
+        oiled = false;
+    }
+
+    public void Shock()
+    {
+        if (gameObject.GetComponent<EnemyStatus>().oiled)
+        {
+            Destroy(gameObject);
+            GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
+        }
+        else
+        {
+            gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * 2
+        }
     }
 }
