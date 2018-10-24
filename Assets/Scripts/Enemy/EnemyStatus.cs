@@ -194,7 +194,7 @@ public class EnemyStatus : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * 2
+            gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * 2;
         }
     }
 }

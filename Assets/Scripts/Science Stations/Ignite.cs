@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ignite : MonoBehaviour {
+public class Ignite : MonoBehaviour
+{
 
     private GameObject station;
 
@@ -35,3 +36,4 @@ public class Ignite : MonoBehaviour {
 
         }
     }
+}
