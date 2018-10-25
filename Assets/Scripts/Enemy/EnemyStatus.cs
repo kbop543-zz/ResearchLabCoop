@@ -180,7 +180,10 @@ public class EnemyStatus : MonoBehaviour
     {
         yield return new WaitForSeconds(duraiton);
 
-        gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
+        if (!falling || !frozen)
+        {
+            gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
+        }
 
         oiled = false;
     }
