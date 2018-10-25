@@ -30,22 +30,22 @@ public class shoot : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ((Input.GetKey("v") || Input.GetKey(KeyCode.Joystick1Button7)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
+        if ((Input.GetKeyDown("v") || Input.GetKey(KeyCode.Joystick1Button7)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
         {
             //Debug.Log("switch bullet");
             Switch();
         }
-        if ((Input.GetKey("n") || Input.GetKey(KeyCode.Joystick2Button7)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
+        if ((Input.GetKeyDown("n") || Input.GetKey(KeyCode.Joystick2Button7)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
         {
             //Debug.Log("switch bullet2");
             Switch();
         }
 
-        if ((Input.GetKey("b") || Input.GetKey(KeyCode.Joystick1Button7)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
+        if ((Input.GetKeyDown("b") || Input.GetKey(KeyCode.Joystick1Button7)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
         {
             Shoot();
         }
-        if ((Input.GetKey("m") || Input.GetKey(KeyCode.Joystick2Button7)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
+        if ((Input.GetKeyDown("m") || Input.GetKey(KeyCode.Joystick2Button7)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
         {
             Shoot();
         }
@@ -122,16 +122,16 @@ public class shoot : MonoBehaviour
                 startDistance = 30f;
                 duration = 0.45f;
                 //cooldown = 0.5f;
-                cooldown = 2.0f;
-                curCooldown = cooldown;
+                //cooldown = 2.0f;
+                //curCooldown = cooldown;
                 break;
             case "oil":
                 projectile = oil;
                 range = 350f;
                 startDistance = 30f;
                 duration = 0.45f;
-                cooldown = 2.0f;
-                curCooldown = cooldown;
+                //cooldown = 2.0f;
+                //curCooldown = cooldown;
                 break;
             default:
                 Debug.Log("Unregistered weapon");
@@ -139,8 +139,8 @@ public class shoot : MonoBehaviour
                 range = 350f;
                 startDistance = 30f;
                 duration = 0.45f;
-                cooldown = 2.0f;
-                curCooldown = cooldown;
+                //cooldown = 2.0f;
+                //curCooldown = cooldown;
                 break;
         }
     }
