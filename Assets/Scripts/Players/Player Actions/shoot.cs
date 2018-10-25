@@ -34,7 +34,7 @@ public class shoot : MonoBehaviour {
         if (curCooldown >= cooldown)
         {
             Vector3 pos = transform.position;
-            Vector3 direction = transform.GetChild(1).forward;
+            Vector3 direction = -transform.GetChild(1).forward;
             direction.y = 0f;
             direction.Normalize();
 
