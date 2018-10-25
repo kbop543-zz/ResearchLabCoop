@@ -46,7 +46,7 @@ public class p1_movement : MonoBehaviour
 
         // Change rotation
         if (!GetComponent<P1Status>().frozen && movement.magnitude > 0) {
-            transform.GetChild(1).LookAt(rb.transform.position - motionVector); // since model is reversed, we will reverse directions
+            transform.GetChild(1).LookAt(rb.transform.position + motionVector); // since model is reversed, we will reverse directions
         }
     }
 }
