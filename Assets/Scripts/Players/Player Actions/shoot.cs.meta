@@ -3,7 +3,11 @@ guid: efd70ae7e4e1c40e79d02421b1a6b2be
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shockwave: {fileID: 1140697868829180, guid: 4a8c00681baba4876b10bad10fe867d4,
+      type: 2}
+  - oil: {fileID: 1323955046041982, guid: 0e5a54330010444668f74e1d6d62bec9, type: 2}
+  - LaserSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
