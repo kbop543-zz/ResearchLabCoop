@@ -194,6 +194,18 @@ Prefab:
       value: 
       objectReference: {fileID: 1556159252549452, guid: d157c3920c88b4812804bc5750761c62,
         type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1,
+        type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
   m_IsPrefabAsset: 0
