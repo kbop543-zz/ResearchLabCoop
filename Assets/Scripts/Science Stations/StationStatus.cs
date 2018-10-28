@@ -31,6 +31,31 @@ public class StationStatus : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GameObject player = other.transform.root.gameObject;
+
+            GameObject ui = player.transform.Find("ControlUI").gameObject;
+
+            ui.GetComponent<Canvas>().enabled = true;
+        }
+        
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GameObject player = other.transform.root.gameObject;
+
+            GameObject ui = player.transform.Find("ControlUI").gameObject;
+
+            ui.GetComponent<Canvas>().enabled = false;
+        }
+    }
+
     private IEnumerator waitForTermination()
     {
         yield return new WaitForSeconds(duraiton);
