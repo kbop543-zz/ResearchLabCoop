@@ -11,6 +11,22 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1582221883799548}
   m_IsPrefabAsset: 1
+--- !u!1 &1578545064352832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4459217641544620}
+  - component: {fileID: 108304385518981314}
+  m_Layer: 8
+  m_Name: StationLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1582221883799548
 GameObject:
   m_ObjectHideFlags: 0
@@ -21,27 +37,11 @@ GameObject:
   - component: {fileID: 4111641135911104}
   - component: {fileID: 33349373570286512}
   - component: {fileID: 23257935361833872}
-  - component: {fileID: 136585302997476598}
-  - component: {fileID: 114684736266045774}
+  - component: {fileID: 136574180169304736}
+  - component: {fileID: 114423384891903358}
   m_Layer: 8
   m_Name: ElectricityStation
   m_TagString: Station
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1664809839259472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4256566081775642}
-  - component: {fileID: 108516652670471224}
-  m_Layer: 8
-  m_Name: StationLight
-  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,19 +53,19 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1582221883799548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.3, y: 14.5, z: 394.2}
+  m_LocalPosition: {x: -141, y: 1, z: 394.2}
   m_LocalScale: {x: 5.6124, y: 7.4706655, z: 5.6124}
   m_Children:
-  - {fileID: 4256566081775642}
+  - {fileID: 4459217641544620}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4256566081775642
+--- !u!4 &4459217641544620
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1664809839259472}
+  m_GameObject: {fileID: 1578545064352832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -115,12 +115,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1582221883799548}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!108 &108516652670471224
+--- !u!108 &108304385518981314
 Light:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1664809839259472}
+  m_GameObject: {fileID: 1578545064352832}
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
@@ -152,7 +152,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114684736266045774
+--- !u!114 &114423384891903358
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
   flashDuration: 0.075
   maxIntensity: 5
   duraiton: 4
---- !u!136 &136585302997476598
+--- !u!136 &136574180169304736
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
