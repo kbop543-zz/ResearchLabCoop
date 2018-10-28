@@ -32,6 +32,7 @@ public class GameConstants : MonoBehaviour {
         p2 = GameObject.Find("P2(Clone)");
         spawner = GameObject.Find("Spawner(Clone)");
         gameUI = GameObject.Find("HUDCanvas(Clone)");
+        Time.timeScale = 1.0f;
 
     }
     	
@@ -45,11 +46,16 @@ public class GameConstants : MonoBehaviour {
             gameOver = true;
             Time.timeScale = 0;
         }
-        //if (gameOver) {
-        //    Scene scene = SceneManager.GetActiveScene();
-        //    SceneManager.LoadScene(scene.name);
-        //    gameOver = false;
-        //}
+        if (gameOver) {
+            Debug.Log("PRESS R TO RESTART WAVE");
+            if (Input.GetKey("r")){
+
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);
+                gameOver = false;
+            }
+           
+        }
         // Win Condition 1): Kill same amount of enemy with enemy spawn limit
         if (enemyKillCount >= spawner.GetComponent<SpawnManager>().spawnLimit)
         {
