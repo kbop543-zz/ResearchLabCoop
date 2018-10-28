@@ -14,6 +14,7 @@ public class GameConstants : MonoBehaviour {
     public GameObject[] players;
     GameObject p1;
     GameObject p2;
+    public AudioSource beesintro;
     public GameObject gameUI;
 
     // For win condition, grab enemy death count and enemy spawn limit
@@ -81,6 +82,7 @@ public class GameConstants : MonoBehaviour {
         {
             if (enemyKillCount >= secondSpawner.GetComponent<SpawnManager>().spawnLimit)
             {
+                beesintro.Play();
                 //secondSpawner.GetComponent<SpawnManager>().end = true;
                 thirdSpawner.GetComponent<SpawnManager>().activated = true;
                 Debug.Log("LEVEL 2 CLEARED");
@@ -94,6 +96,7 @@ public class GameConstants : MonoBehaviour {
         {
             if (enemyKillCount >= thirdSpawner.GetComponent<SpawnManager>().spawnLimit)
             {
+
                 //thirdSpawner.GetComponent<SpawnManager>().end = true;
                 //secondSpawner.GetComponent<SpawnManager>().activated = true;
                 Debug.Log("LEVEL 3 CLEARED/YOU WIN");

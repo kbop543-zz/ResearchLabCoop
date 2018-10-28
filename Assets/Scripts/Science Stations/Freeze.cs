@@ -5,6 +5,7 @@ using UnityEngine;
 public class Freeze : MonoBehaviour {
 
     private GameObject station;
+    //public AudioSource freezeSound;
 
 
 	void Start () {
@@ -21,14 +22,17 @@ public class Freeze : MonoBehaviour {
 
             if (hitTarget.name == "P1(Clone)")
             {
+                //freezeSound.Play();
                 hitTarget.GetComponent<P1Status>().Freeze();
             }
             if (hitTarget.name == "P2(Clone)")
             {
+                //freezeSound.Play();
                 hitTarget.GetComponent<P2Status>().Freeze();
             }
             if (hitTarget.tag == "Monster")
             {
+                //freezeSound.Play();
                 hitTarget.GetComponent<EnemyStatus>().Freeze();
             }
 
