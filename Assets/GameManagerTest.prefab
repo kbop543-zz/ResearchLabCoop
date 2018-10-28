@@ -58,13 +58,17 @@ MonoBehaviour:
   curLabHealth: 100
   curOrbs: 0
   gameOver: 0
-  completeLvl: 0
+  completeLvl1: 0
+  completeLvl2: 0
+  completeLvl3: 0
   players:
   - {fileID: 0}
   - {fileID: 0}
   gameUI: {fileID: 0}
   enemyKillCount: 0
   spawner: {fileID: 0}
+  secondSpawner: {fileID: 0}
+  thirdSpawner: {fileID: 0}
 --- !u!114 &114590286036137762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,13 +113,15 @@ MonoBehaviour:
   freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
     type: 2}
   freezeTile: {fileID: 1720781894172248, guid: e24d1f61251644c9f97363a385aa9b78, type: 2}
-  ShockWaveGun1: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d,
-    type: 2}
-  ShockWaveGun2: {fileID: 1024149662512340, guid: 178f79a5e6e9c459aa85f427cea6b60d,
-    type: 2}
+  electricityStation: {fileID: 0}
+  electricityTile: {fileID: 0}
   BackgroundSound: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
     type: 2}
   navmesh: {fileID: 1556159252549452, guid: d157c3920c88b4812804bc5750761c62, type: 2}
+  enemySpawner2: {fileID: 1419591262829196, guid: 7b1c08eb6af6540abb4caea724627dc6,
+    type: 2}
+  enemySpawner3: {fileID: 1721240001647310, guid: 4e0a9151424104d9488b97a5385bf589,
+    type: 2}
   p1: {fileID: 0}
   p2: {fileID: 0}
 --- !u!114 &114940834490679864

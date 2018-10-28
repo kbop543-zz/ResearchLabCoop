@@ -10,29 +10,36 @@ public class GameConstants : MonoBehaviour {
     public int curLabHealth;
     public int curOrbs;
     public bool gameOver;
-    public bool completeLvl;
+    public bool completeLvl1, completeLvl2, completeLvl3;
     public GameObject[] players;
     GameObject p1;
     GameObject p2;
     public GameObject gameUI;
-    
+
     // For win condition, grab enemy death count and enemy spawn limit
     public int enemyKillCount = 0;
-    public GameObject spawner;
+    public GameObject spawner, secondSpawner, thirdSpawner;
 
     // Use this for initialization
     void Start () {
         curLabHealth = maxLabHealth;
         gameOver = false;
         curOrbs = 0;
-        completeLvl = false;
+        completeLvl1 = false;
+        completeLvl2 = false;
+        completeLvl3 = false;
         // Grab each gameobject for win condition
         players = GameObject.FindGameObjectsWithTag("Player");
         p1 = GameObject.Find("P1(Clone)");
         p2 = GameObject.Find("P2(Clone)");
         spawner = GameObject.Find("Spawner(Clone)");
+        secondSpawner = GameObject.Find("SecondSpawnManager(Clone)");
+        thirdSpawner = GameObject.Find("ThirdSpawnManager(Clone)");
         gameUI = GameObject.Find("HUDCanvas(Clone)");
         Time.timeScale = 1.0f;
+        if (spawner.GetComponent<SpawnManager>().prevSpawner == null){
+            spawner.GetComponent<SpawnManager>().activated = true;
+        }
 
     }
     	
@@ -57,14 +64,51 @@ public class GameConstants : MonoBehaviour {
            
         }
         // Win Condition 1): Kill same amount of enemy with enemy spawn limit
-        if (enemyKillCount >= spawner.GetComponent<SpawnManager>().spawnLimit)
+        if ((completeLvl1 == false) && (completeLvl2 == false) && (completeLvl3 == false))
         {
-            Debug.Log("YOU WIN");
-            gameUI.GetComponent<PlayerUI>().gameState.text = "YOU WIN!";
-            completeLvl = true;
-            enemyKillCount = 0;
-            Time.timeScale = 0;
+            if (enemyKillCount >= spawner.GetComponent<SpawnManager>().spawnLimit)
+            {
+                //spawner.GetComponent<SpawnManager>().end = true;
+                secondSpawner.GetComponent<SpawnManager>().activated = true;
+                Debug.Log("LEVEL 1 CLEARED");
+                //.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
+                completeLvl1 = true;
+                enemyKillCount = 0;
+                //Time.timeScale = 0;
+            }
         }
+        if ((completeLvl1 == true) && (completeLvl2 == false) && (completeLvl3 == false))
+        {
+            if (enemyKillCount >= secondSpawner.GetComponent<SpawnManager>().spawnLimit)
+            {
+                //secondSpawner.GetComponent<SpawnManager>().end = true;
+                thirdSpawner.GetComponent<SpawnManager>().activated = true;
+                Debug.Log("LEVEL 2 CLEARED");
+                //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 2 CLEARED!";
+                completeLvl2 = true;
+                enemyKillCount = 0;
+                //Time.timeScale = 0;
+            }
+        }
+        if ((completeLvl1 == true) && (completeLvl2 == true) && (completeLvl3 == false))
+        {
+            if (enemyKillCount >= thirdSpawner.GetComponent<SpawnManager>().spawnLimit)
+            {
+                //thirdSpawner.GetComponent<SpawnManager>().end = true;
+                //secondSpawner.GetComponent<SpawnManager>().activated = true;
+                Debug.Log("LEVEL 3 CLEARED/YOU WIN");
+                //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 3 CLEARED! (YOU WIN)";
+                completeLvl3 = true;
+                enemyKillCount = 0;
+                Time.timeScale = 0;
+            }
+        }
+        if ((completeLvl1 == true) && (completeLvl2 == true) && (completeLvl3 == true)){
+            //game over give option to restart
+            gameOver = true;
+        }
+
+
         // Win Condition 1): collect enough orbs and press button
         //if (!completeLvl && !gameOver && curOrbs >= maxOrbs &&
         //    ((GameObject.Find("P2(Clone)").transform.position.y > 700 && GameObject.Find("P2(Clone)").transform.position.z < -40 &&
