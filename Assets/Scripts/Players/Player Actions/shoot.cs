@@ -42,12 +42,12 @@ public class shoot : MonoBehaviour
         if ((Input.GetKeyUp("v") || Input.GetKey(KeyCode.Joystick1Button4)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
         {
             //Debug.Log("switch bullet");
-            Switch();
+            Switch1();
         }
         if ((Input.GetKeyUp("n") || Input.GetKey(KeyCode.Joystick2Button4)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
         {
             //Debug.Log("switch bullet2");
-            Switch();
+            Switch2();
         }
 
         if ((Input.GetKeyUp("b") || Input.GetKey(KeyCode.Joystick1Button7)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
@@ -66,7 +66,7 @@ public class shoot : MonoBehaviour
        
     }
 
-    public void Switch()
+    public void Switch1()
     {
         if (curGun == (guns.Length - 1))
         {
@@ -77,6 +77,22 @@ public class shoot : MonoBehaviour
         {
             curGun += 1;
             pIcon.transform.Find("P1 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
+        }
+        GunStatsUpdate(guns[curGun]);
+
+    }
+
+    public void Switch2()
+    {
+        if (curGun == (guns.Length - 1))
+        {
+            curGun = 0;
+            pIcon.transform.Find("P2 Bullet Icon").gameObject.GetComponent<RawImage>().texture = shockwaveIcon;
+        }
+        else
+        {
+            curGun += 1;
+            pIcon.transform.Find("P2 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
         }
         GunStatsUpdate(guns[curGun]);
 
