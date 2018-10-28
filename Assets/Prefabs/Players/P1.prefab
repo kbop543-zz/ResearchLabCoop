@@ -912,6 +912,11 @@ MonoBehaviour:
   shockwave: {fileID: 1140697868829180, guid: 4a8c00681baba4876b10bad10fe867d4, type: 2}
   oil: {fileID: 1537764969882842, guid: c4f86c60abf53cf43a6772fedd4a6c80, type: 2}
   LaserSound: {fileID: 82128115911998652}
+  pIcon: {fileID: 1475400907237462, guid: fe37bb0a439214dad944150abe29feec, type: 2}
+  oilIcon: {fileID: 2800000, guid: 736a8fe2e58f14d2081f0e3edd045dbd, type: 3}
+  shockwaveIcon: {fileID: 2800000, guid: 56301d21fb7fe422f8a8dc3c59ab09f9, type: 3}
+  bulletSwapDelay: 0
+  curbulletSwapDelay: 0
 --- !u!114 &114840860456598936
 MonoBehaviour:
   m_ObjectHideFlags: 1
