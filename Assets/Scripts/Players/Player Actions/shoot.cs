@@ -35,26 +35,28 @@ public class shoot : MonoBehaviour
         //cooldown = 0.5f;
         cooldown = 2.0f;
         curCooldown = cooldown;
+        bulletSwapDelay = 1.0f;
+        curbulletSwapDelay = bulletSwapDelay;
     }
 
     void FixedUpdate()
     {
-        if ((Input.GetKeyUp("v") || Input.GetKey(KeyCode.Joystick1Button4)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
+        if ((Input.GetKeyDown("v") || Input.GetKey(KeyCode.Joystick1Button4)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
         {
             //Debug.Log("switch bullet");
             Switch1();
         }
-        if ((Input.GetKeyUp("n") || Input.GetKey(KeyCode.Joystick2Button4)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
+        if ((Input.GetKeyDown("n") || Input.GetKey(KeyCode.Joystick2Button4)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
         {
             //Debug.Log("switch bullet2");
             Switch2();
         }
 
-        if ((Input.GetKeyUp("b") || Input.GetKey(KeyCode.Joystick1Button7)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
+        if ((Input.GetKeyDown("b") || Input.GetKey(KeyCode.Joystick1Button7)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
         {
             Shoot();
         }
-        if ((Input.GetKeyUp("m") || Input.GetKey(KeyCode.Joystick2Button7)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
+        if ((Input.GetKeyDown("m") || Input.GetKey(KeyCode.Joystick2Button7)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
         {
             Shoot();
         }
@@ -63,20 +65,29 @@ public class shoot : MonoBehaviour
         {
             curCooldown += Time.deltaTime;
         }
+        if (curbulletSwapDelay < bulletSwapDelay)
+        {
+            curbulletSwapDelay += Time.deltaTime;
+        }
        
     }
 
     public void Switch1()
     {
-        if (curGun == (guns.Length - 1))
+        if (curGun == (guns.Length - 1) && curbulletSwapDelay >= bulletSwapDelay)
         {
+            curbulletSwapDelay = 0f;
             curGun = 0;
             pIcon.transform.Find("P1 Bullet Icon").gameObject.GetComponent<RawImage>().texture = shockwaveIcon;
         }
         else
         {
-            curGun += 1;
-            pIcon.transform.Find("P1 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
+            if (curbulletSwapDelay >= bulletSwapDelay)
+            {
+                curbulletSwapDelay = 0;
+                curGun += 1;
+                pIcon.transform.Find("P1 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
+            }
         }
         GunStatsUpdate(guns[curGun]);
 
@@ -84,15 +95,20 @@ public class shoot : MonoBehaviour
 
     public void Switch2()
     {
-        if (curGun == (guns.Length - 1))
+        if (curGun == (guns.Length - 1) && curbulletSwapDelay >= bulletSwapDelay)
         {
+            curbulletSwapDelay = 0f;
             curGun = 0;
             pIcon.transform.Find("P2 Bullet Icon").gameObject.GetComponent<RawImage>().texture = shockwaveIcon;
         }
         else
         {
-            curGun += 1;
-            pIcon.transform.Find("P2 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
+            if (curbulletSwapDelay >= bulletSwapDelay)
+            {
+                curbulletSwapDelay = 0;
+                curGun += 1;
+                pIcon.transform.Find("P2 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
+            }
         }
         GunStatsUpdate(guns[curGun]);
 
