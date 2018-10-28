@@ -27,12 +27,12 @@ public class SpawnManager : MonoBehaviour
 	    yield return new WaitForSeconds (startWait);
 
 		while(!stop && (EnemiesSpawned < spawnLimit)) {
-		    randEnemy = Random.Range(0, enemies.Length);
+		    //randEnemy = enemies[EnemiesSpawned];
             spawnPosition = new Vector3 (spawnPoint.x + Random.Range(-spawnDeviation.x, spawnDeviation.x),
-                                         enemies[randEnemy].transform.localScale.y / 2,
+                                         enemies[EnemiesSpawned].transform.localScale.y / 2,
                                          spawnPoint.z + Random.Range(-spawnDeviation.z, spawnDeviation.z));
 
-			GameObject monster = Instantiate (enemies[randEnemy], spawnPosition,
+			GameObject monster = Instantiate (enemies[EnemiesSpawned], spawnPosition,
                                               Quaternion.Euler(new Vector3(0, 0, 90)));
             // Send monster into experimental ground
             StartCoroutine(sendMinion(monster));
