@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class shoot : MonoBehaviour
 {
     public GameObject shockwave;
     public GameObject oil;
     public AudioSource LaserSound;
+    public GameObject pIcon;
     // Following projectile properties will be updated according to weapon
     private GameObject projectile;
+    public Texture oilIcon, shockwaveIcon;
     private float range;// = 1000f;
     private float startDistance;// = 25f;
     private float duration;// = 1.5f;
@@ -14,11 +17,17 @@ public class shoot : MonoBehaviour
     private string[] guns = new string[] { "shock", "oil" };
     private int curGun = 0;
 
+    public float bulletSwapDelay;
+    public float curbulletSwapDelay;
+
     // Current gun cooldown
     private float curCooldown;
 
     private void Start()
     {
+        GameObject gm = GameObject.FindWithTag("GameManager");
+        pIcon = gm.GetComponent<LevelManager>().hud;
+
         projectile = shockwave;
         range = 350f;
         startDistance = 30f;
@@ -54,7 +63,7 @@ public class shoot : MonoBehaviour
         {
             curCooldown += Time.deltaTime;
         }
-
+       
     }
 
     public void Switch()
@@ -62,10 +71,12 @@ public class shoot : MonoBehaviour
         if (curGun == (guns.Length - 1))
         {
             curGun = 0;
+            pIcon.transform.Find("P1 Bullet Icon").gameObject.GetComponent<RawImage>().texture = shockwaveIcon;
         }
         else
         {
             curGun += 1;
+            pIcon.transform.Find("P1 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
         }
         GunStatsUpdate(guns[curGun]);
 
