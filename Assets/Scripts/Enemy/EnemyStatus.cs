@@ -195,9 +195,9 @@ public class EnemyStatus : MonoBehaviour
             Destroy(gameObject);
             GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
         }
-        else
-        {
-            gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * 2;
-        }
+        //else
+        //{
+        //    gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * 2;
+        //}
     }
 }
