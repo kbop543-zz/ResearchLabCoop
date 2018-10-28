@@ -9,78 +9,107 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1025782577399982}
+  m_RootGameObject: {fileID: 1333686375123542}
   m_IsPrefabAsset: 1
---- !u!1 &1025782577399982
+--- !u!1 &1333686375123542
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4133069940221976}
-  - component: {fileID: 54550407596532156}
-  - component: {fileID: 114299339019399334}
-  - component: {fileID: 114691987951178912}
-  - component: {fileID: 65569548361975510}
-  - component: {fileID: 195660978219584344}
+  - component: {fileID: 4927062152209086}
+  - component: {fileID: 54906215475917586}
+  - component: {fileID: 114029191079552296}
+  - component: {fileID: 114010694667149414}
+  - component: {fileID: 65310452994119854}
+  - component: {fileID: 195852153646207508}
   m_Layer: 0
-  m_Name: Scorpion
+  m_Name: 'green scorpion with action '
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1252268329820588
+--- !u!1 &1376312186669012
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4548191330366750}
+  - component: {fileID: 33451405618336430}
+  - component: {fileID: 23608877907704498}
+  m_Layer: 0
+  m_Name: defaultobject_defaultobject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1887947607310492
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4818402596374278}
-  - component: {fileID: 33145617972401320}
-  - component: {fileID: 23535243671902254}
+  - component: {fileID: 4686321920249058}
   m_Layer: 0
-  m_Name: scorpman-1
-  m_TagString: Monster
+  m_Name: green scorpion
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4133069940221976
+--- !u!4 &4548191330366750
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025782577399982}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -99.98126, y: 7.5, z: 382.6}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_GameObject: {fileID: 1376312186669012}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4686321920249058}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4686321920249058
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887947607310492}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.4026, y: 2.1609, z: 0.93706}
+  m_LocalScale: {x: 0.04870375, y: 0.04870375, z: 0.04870375}
   m_Children:
-  - {fileID: 4818402596374278}
+  - {fileID: 4548191330366750}
+  m_Father: {fileID: 4927062152209086}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4927062152209086
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333686375123542}
+  m_LocalRotation: {x: -8.3559444e-11, y: -0.76189387, z: 7.1035657e-11, w: 0.64770186}
+  m_LocalPosition: {x: 387.8, y: 2.75, z: 349}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children:
+  - {fileID: 4686321920249058}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4818402596374278
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252268329820588}
-  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: -0.11873627, y: -0.5, z: -0.3699646}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4133069940221976}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
---- !u!23 &23535243671902254
+--- !u!23 &23608877907704498
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252268329820588}
+  m_GameObject: {fileID: 1376312186669012}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -90,7 +119,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: afea8c35016e24906861f8cbd2a32191, type: 2}
+  - {fileID: 2100000, guid: 7a89d6a939805473588a0c84415be6e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,19 +139,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33145617972401320
+--- !u!33 &33451405618336430
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252268329820588}
-  m_Mesh: {fileID: 4300000, guid: 7448d44eb41f048d59fcfdf5355eeb06, type: 3}
---- !u!54 &54550407596532156
+  m_GameObject: {fileID: 1376312186669012}
+  m_Mesh: {fileID: 4300000, guid: 9ff29443c95a742abb39da873985b3b8, type: 3}
+--- !u!54 &54906215475917586
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025782577399982}
+  m_GameObject: {fileID: 1333686375123542}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 1
@@ -130,26 +159,45 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 4
   m_CollisionDetection: 0
---- !u!65 &65569548361975510
+--- !u!65 &65310452994119854
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025782577399982}
+  m_GameObject: {fileID: 1333686375123542}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114299339019399334
+--- !u!114 &114010694667149414
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025782577399982}
+  m_GameObject: {fileID: 1333686375123542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09db2320211cc478d94de697056a09cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frozen: 0
+  shrank: 0
+  blown: 0
+  oiled: 0
+  willDie: 0
+  falling: 0
+  duraiton: 10
+  originalSpeed: 75
+--- !u!114 &114029191079552296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333686375123542}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a0470fc8544546268a0a03b464b07f4, type: 3}
@@ -161,38 +209,20 @@ MonoBehaviour:
   idleDuration: 5
   damage: 10
   attackCD: 1.5
-  navAgent: {fileID: 195660978219584344}
-  chasing: 0
+  navAgent: {fileID: 195852153646207508}
+  chasing: 1
   idling: 0
-  activated: 0
---- !u!114 &114691987951178912
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025782577399982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09db2320211cc478d94de697056a09cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frozen: 0
-  shrank: 0
-  blown: 0
-  willDie: 0
-  falling: 0
-  duraiton: 10
-  originalSpeed: 0
---- !u!195 &195660978219584344
+  activated: 1
+--- !u!195 &195852153646207508
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025782577399982}
+  m_GameObject: {fileID: 1333686375123542}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 45
+  m_Speed: 0
   m_Acceleration: 45
   avoidancePriority: 50
   m_AngularSpeed: 350

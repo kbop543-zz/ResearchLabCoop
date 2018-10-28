@@ -265,8 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398d525ba231047bb9cf2361845acf34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activated: 1
-  waiting: 1
+  activated: 0
+  waiting: 0
   flashDuration: 0.075
   maxIntensity: 5
   duraiton: 4
