@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23618100199866738}
   - component: {fileID: 65631876152698930}
   m_Layer: 0
-  m_Name: OutsideWallBig(Clone)
+  m_Name: OutsideWallEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
