@@ -89,7 +89,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4132035882940756}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4132035882940756
 Transform:
@@ -101,8 +101,8 @@ Transform:
   m_LocalPosition: {x: 394.6, y: 7.7, z: 434.7}
   m_LocalScale: {x: 3.9278383, y: 5.2283454, z: 3.9278383}
   m_Children:
-  - {fileID: 4090045611724730}
   - {fileID: 4722208803115306}
+  - {fileID: 4090045611724730}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -120, z: 0}
@@ -113,8 +113,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982396373435504}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21, y: -8.4, z: -80}
-  m_LocalScale: {x: 1.2182, y: 1.0875, z: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4722208803115306}
   m_RootOrder: 0
@@ -126,12 +126,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1360440153358666}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 0, z: 0.08}
-  m_LocalScale: {x: 0.15288, y: 0.15288, z: 0.15288}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4374732667858420}
   m_Father: {fileID: 4132035882940756}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23804142967640426
 MeshRenderer:
@@ -174,7 +174,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1488631943349220}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -227,7 +227,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0.84376526, a: 1}
-  m_Intensity: 7
+  m_Intensity: 4.4119835
   m_Range: 20
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -265,8 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398d525ba231047bb9cf2361845acf34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activated: 0
-  waiting: 0
+  activated: 1
+  waiting: 1
   flashDuration: 0.075
   maxIntensity: 5
   duraiton: 4
