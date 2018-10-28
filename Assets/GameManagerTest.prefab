@@ -61,9 +61,7 @@ MonoBehaviour:
   completeLvl1: 0
   completeLvl2: 0
   completeLvl3: 0
-  players:
-  - {fileID: 0}
-  - {fileID: 0}
+  players: []
   gameUI: {fileID: 0}
   enemyKillCount: 0
   spawner: {fileID: 0}
@@ -82,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainTile: {fileID: 1244579169590770, guid: 1db0eee1685704a578ed9be83c3f602c,
     type: 2}
+  floor: {fileID: 1231871073512246, guid: cf45aaf9ca76b4b998fb27976ae15aac, type: 2}
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
   HUDCanvas: {fileID: 1475400907237462, guid: fe37bb0a439214dad944150abe29feec, type: 2}
