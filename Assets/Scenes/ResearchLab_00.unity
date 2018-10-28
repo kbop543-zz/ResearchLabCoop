@@ -206,6 +206,18 @@ Prefab:
       value: 
       objectReference: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2,
         type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: electricityStation
+      value: 
+      objectReference: {fileID: 1582221883799548, guid: 044fe51d794c1488cb750b93c5905b8c,
+        type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: electricityTile
+      value: 
+      objectReference: {fileID: 1992221361616934, guid: f007f3acb4f4d4c6d92ee3ca69635ceb,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
   m_IsPrefabAsset: 0
