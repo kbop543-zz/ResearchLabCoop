@@ -151,8 +151,14 @@ public class P2Status : MonoBehaviour {
 
     public void RestoreStatus()
     {
-        StopCoroutine(curUnshrink);
-        StopCoroutine(curUnfreeze);
+        if (curUnshrink != null)
+        {
+            StopCoroutine(curUnshrink);
+        }
+        if (curUnfreeze != null)
+        {
+            StopCoroutine(curUnfreeze);
+        }
         frozen = false;
         shrank = false;
         blown = false;
