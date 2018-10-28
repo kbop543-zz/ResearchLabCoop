@@ -39,6 +39,7 @@ public class LevelManager : MonoBehaviour {
 
     public GameObject p1;
     public GameObject p2;
+    public GameObject hud;
 
     public void SetupScene() {
         //Instantiate(terrainTiles, new Vector3(-514f, 0, -472f), Quaternion.identity);
@@ -53,7 +54,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(terrainTiles);
         p1 = Instantiate(player1) as GameObject;
         p2 = Instantiate(player2) as GameObject;
-        Instantiate(HUDCanvas);
+        hud = Instantiate(HUDCanvas) as GameObject;
         //Instantiate(researchLab);
         Instantiate(enemySpawner);
         Instantiate(orb);
