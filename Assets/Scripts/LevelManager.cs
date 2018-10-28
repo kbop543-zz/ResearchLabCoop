@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour {
     //public GameObject ShockWaveGun2;
     public GameObject BackgroundSound;
     public GameObject navmesh;
+    public GameObject enemySpawner2, enemySpawner3;
 
     public GameObject p1;
     public GameObject p2;
@@ -80,6 +81,8 @@ public class LevelManager : MonoBehaviour {
         Instantiate(electricityTile);
         //Instantiate(ShockWaveGun1);
         //Instantiate(ShockWaveGun2, new Vector3(135f, 2.62f, 400f), Quaternion.identity);
+        Instantiate(enemySpawner2);
+        Instantiate(enemySpawner3);
         Instantiate(BackgroundSound);
         Instantiate(navmesh);
 

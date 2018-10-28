@@ -15,14 +15,29 @@ public class SpawnManager : MonoBehaviour
     public float zBoundary = 505f;
     private int randEnemy;
     private Vector3 spawnPosition;
+    public bool activated;
+    public bool spawning;
+    public GameObject prevSpawner;
 
     private void Start () {
         EnemiesSpawned = 0;
-        StartCoroutine(waitSpawner());
+        spawning = false;
+        //StartCoroutine(waitSpawner());
+
+
 
 	}
 
-	IEnumerator waitSpawner()
+    void Update()
+    {
+
+        if (activated && !spawning) {
+            StartCoroutine(waitSpawner());
+            spawning = true;
+        }
+    }
+
+    IEnumerator waitSpawner()
     {
 	    yield return new WaitForSeconds (startWait);
 
