@@ -61,7 +61,9 @@ MonoBehaviour:
   completeLvl1: 0
   completeLvl2: 0
   completeLvl3: 0
-  players: []
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
   gameUI: {fileID: 0}
   enemyKillCount: 0
   spawner: {fileID: 0}
@@ -78,9 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ef5c2e23af841d48055a3788176322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainTile1: {fileID: 1244579169590770, guid: 1db0eee1685704a578ed9be83c3f602c,
-    type: 2}
-  terrainTile2: {fileID: 1448255338027252, guid: 4390c887bc88f4d4a9673b0b6e7d5934,
+  terrainTile: {fileID: 1244579169590770, guid: 1db0eee1685704a578ed9be83c3f602c,
     type: 2}
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
@@ -126,6 +126,7 @@ MonoBehaviour:
     type: 2}
   p1: {fileID: 0}
   p2: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!114 &114940834490679864
 MonoBehaviour:
   m_ObjectHideFlags: 1
