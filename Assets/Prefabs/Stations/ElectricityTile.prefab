@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4545600755501746}
   - component: {fileID: 33164240539040870}
   - component: {fileID: 23694277289285282}
-  - component: {fileID: 65452433604974732}
-  - component: {fileID: 114190147659153828}
+  - component: {fileID: 65216207411345594}
+  - component: {fileID: 114556536861190816}
   m_Layer: 0
   m_Name: ElectricityTile
   m_TagString: Tile
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992221361616934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.8, y: 0.1, z: 412}
+  m_LocalPosition: {x: -153, y: 1, z: 412}
   m_LocalScale: {x: 11.865231, y: 13, z: 13}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992221361616934}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65452433604974732
+--- !u!65 &65216207411345594
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.999999, y: 10, z: 9.999999}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114190147659153828
+--- !u!114 &114556536861190816
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

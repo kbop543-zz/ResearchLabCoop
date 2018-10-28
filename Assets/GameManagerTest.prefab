@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ef5c2e23af841d48055a3788176322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainTiles: {fileID: 1109714209052696, guid: 441bd60615ae744c69345613b89d59e7,
+  terrainTile: {fileID: 1244579169590770, guid: 1db0eee1685704a578ed9be83c3f602c,
     type: 2}
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
@@ -113,8 +113,10 @@ MonoBehaviour:
   freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
     type: 2}
   freezeTile: {fileID: 1720781894172248, guid: e24d1f61251644c9f97363a385aa9b78, type: 2}
-  electricityStation: {fileID: 0}
-  electricityTile: {fileID: 0}
+  electricityStation: {fileID: 1582221883799548, guid: 044fe51d794c1488cb750b93c5905b8c,
+    type: 2}
+  electricityTile: {fileID: 1992221361616934, guid: f007f3acb4f4d4c6d92ee3ca69635ceb,
+    type: 2}
   BackgroundSound: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
     type: 2}
   navmesh: {fileID: 1556159252549452, guid: d157c3920c88b4812804bc5750761c62, type: 2}
@@ -124,6 +126,7 @@ MonoBehaviour:
     type: 2}
   p1: {fileID: 0}
   p2: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!114 &114940834490679864
 MonoBehaviour:
   m_ObjectHideFlags: 1
