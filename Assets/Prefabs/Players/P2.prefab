@@ -868,6 +868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shockwave: {fileID: 1140697868829180, guid: 4a8c00681baba4876b10bad10fe867d4, type: 2}
+  oil: {fileID: 1537764969882842, guid: c4f86c60abf53cf43a6772fedd4a6c80, type: 2}
   LaserSound: {fileID: 82101949820662934}
 --- !u!114 &114914046198443422
 MonoBehaviour:
