@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
-    public GameObject terrainTiles;
+    public GameObject terrainTile1;
+    public GameObject terrainTile2;
     public GameObject player1;
     public GameObject player2;
     public GameObject HUDCanvas;
@@ -50,7 +51,8 @@ public class LevelManager : MonoBehaviour {
         //Instantiate(eventSystem, new Vector3(0f, 0f, 0f), Quaternion.identity);
         //Instantiate(labHealth, new Vector3(333f, 196.5f, 0f), Quaternion.identity);
 
-        Instantiate(terrainTiles);
+        Instantiate(terrainTile1);
+        Instantiate(terrainTile2);
         p1 = Instantiate(player1) as GameObject;
         p2 = Instantiate(player2) as GameObject;
         Instantiate(HUDCanvas);
