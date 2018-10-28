@@ -71,10 +71,10 @@ public class GameConstants : MonoBehaviour {
                 //spawner.GetComponent<SpawnManager>().end = true;
                 secondSpawner.GetComponent<SpawnManager>().activated = true;
                 Debug.Log("LEVEL 1 CLEARED");
-                gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
+                //.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
                 completeLvl1 = true;
                 enemyKillCount = 0;
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
             }
         }
         if ((completeLvl1 == true) && (completeLvl2 == false) && (completeLvl3 == false))
@@ -84,10 +84,10 @@ public class GameConstants : MonoBehaviour {
                 //secondSpawner.GetComponent<SpawnManager>().end = true;
                 thirdSpawner.GetComponent<SpawnManager>().activated = true;
                 Debug.Log("LEVEL 2 CLEARED");
-                gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 2 CLEARED!";
+                //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 2 CLEARED!";
                 completeLvl2 = true;
                 enemyKillCount = 0;
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
             }
         }
         if ((completeLvl1 == true) && (completeLvl2 == true) && (completeLvl3 == false))
@@ -97,7 +97,7 @@ public class GameConstants : MonoBehaviour {
                 //thirdSpawner.GetComponent<SpawnManager>().end = true;
                 //secondSpawner.GetComponent<SpawnManager>().activated = true;
                 Debug.Log("LEVEL 3 CLEARED/YOU WIN");
-                gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 3 CLEARED! (YOU WIN)";
+                //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 3 CLEARED! (YOU WIN)";
                 completeLvl3 = true;
                 enemyKillCount = 0;
                 Time.timeScale = 0;

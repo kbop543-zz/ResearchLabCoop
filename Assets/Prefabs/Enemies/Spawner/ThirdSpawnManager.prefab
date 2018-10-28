@@ -56,8 +56,12 @@ MonoBehaviour:
   - {fileID: 1025782577399982, guid: 83625b6b540ff481087d79df626f2ce2, type: 2}
   spawnDeviation: {x: 100, y: 0, z: 0}
   spawnPoint: {x: 170, y: 0, z: 560}
-  spawnLimit: 10
+  spawnLimit: 1
   spawnWait: 5
   startWait: 1
   stop: 0
   zBoundary: 505
+  activated: 0
+  spawning: 0
+  prevSpawner: {fileID: 1419591262829196, guid: 7b1c08eb6af6540abb4caea724627dc6,
+    type: 2}

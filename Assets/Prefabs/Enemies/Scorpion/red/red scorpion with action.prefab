@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 65323591528622958}
   - component: {fileID: 195644764898296888}
   m_Layer: 0
-  m_Name: red Scorpion(Clone)
+  m_Name: red scorpion with action
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65569548361975510}
   - component: {fileID: 195660978219584344}
   m_Layer: 0
-  m_Name: Scorpion
+  m_Name: red Scorpion
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

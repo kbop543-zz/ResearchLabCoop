@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65772666588278608}
   - component: {fileID: 195659704086946772}
   m_Layer: 0
-  m_Name: blue scorpion
+  m_Name: blue scorpion with action
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
