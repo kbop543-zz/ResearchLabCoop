@@ -8,7 +8,6 @@ public class LevelManager : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
     public GameObject HUDCanvas;
-    public GameObject researchLab;
     public GameObject enemySpawner;
     public GameObject orb;
     public GameObject eventSystem;
@@ -25,6 +24,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject OutsideWallSmall1;
     public GameObject OutsideWallSmall2;
     public GameObject OutsideWallSmall3;
+    public GameObject OutsideWallEnd;
     public GameObject lightBulbs;
     //public GameObject lighting;
     public GameObject freezeStation;
@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour {
         p1 = Instantiate(player1) as GameObject;
         p2 = Instantiate(player2) as GameObject;
         Instantiate(HUDCanvas);
-        Instantiate(researchLab);
+        //Instantiate(researchLab);
         Instantiate(enemySpawner);
         Instantiate(orb);
         Instantiate(eventSystem);
@@ -70,6 +70,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(OutsideWallSmall1);
         Instantiate(OutsideWallSmall2);
         Instantiate(OutsideWallSmall3);
+        Instantiate(OutsideWallEnd);
         Instantiate(lightBulbs);
         Instantiate(freezeStation);
         Instantiate(freezeTile);

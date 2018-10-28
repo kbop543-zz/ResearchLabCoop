@@ -55,11 +55,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLabHealth: 100
   maxOrbs: 5
-  curLabHealth: 90
+  curLabHealth: 100
   curOrbs: 0
   gameOver: 0
   completeLvl: 0
-  players: []
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  gameUI: {fileID: 0}
   enemyKillCount: 0
   spawner: {fileID: 0}
 --- !u!114 &114590286036137762
@@ -78,8 +81,6 @@ MonoBehaviour:
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
   HUDCanvas: {fileID: 1475400907237462, guid: fe37bb0a439214dad944150abe29feec, type: 2}
-  researchLab: {fileID: 1674157489231016, guid: 6568ce3116a164be19862d064c57f033,
-    type: 2}
   enemySpawner: {fileID: 1911282503729640, guid: 7398c9e685088486c99bc3097dcf6087,
     type: 2}
   orb: {fileID: 1068102295257792, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
@@ -100,6 +101,10 @@ MonoBehaviour:
     type: 2}
   OutsideWallSmall2: {fileID: 1184066616126086, guid: ab7f2fbab83a449b39557a8c391f8855,
     type: 2}
+  OutsideWallSmall3: {fileID: 1356860944220398, guid: d6ba06c59b4d443429802d5847b0b43e,
+    type: 2}
+  OutsideWallEnd: {fileID: 1193796700037868, guid: 77ecb3ac51c444d398b6932bd3d4f60a,
+    type: 2}
   lightBulbs: {fileID: 1837157551751762, guid: 38eb8477d6bfd46b99b1af94dfe01c04, type: 2}
   freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
     type: 2}
@@ -110,6 +115,7 @@ MonoBehaviour:
     type: 2}
   BackgroundSound: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
     type: 2}
+  navmesh: {fileID: 1556159252549452, guid: d157c3920c88b4812804bc5750761c62, type: 2}
   p1: {fileID: 0}
   p2: {fileID: 0}
 --- !u!114 &114940834490679864
@@ -118,7 +124,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111072720783528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f2a4dfacc23d413b962589bc647afa5, type: 3}
   m_Name: 
