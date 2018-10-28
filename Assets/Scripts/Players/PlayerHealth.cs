@@ -46,6 +46,13 @@ public class PlayerHealth : MonoBehaviour {
 
 		health = startHealth;
 
+        // Reset status
+        if (gameObject.name == "P1(Clone)") {
+            GetComponent<P1Status>().RestoreStatus();
+        }else {
+            GetComponent<P2Status>().RestoreStatus();
+        }
+
 		if(gameObject){
 			gameObject.SetActive(true);
             playerIsDead = false;

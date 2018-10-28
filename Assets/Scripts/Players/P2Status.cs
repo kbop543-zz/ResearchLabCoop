@@ -149,4 +149,14 @@ public class P2Status : MonoBehaviour {
         gameObject.GetComponent<p2_movement>().speed = originalSpeed;
     }
 
+    public void RestoreStatus()
+    {
+        StopCoroutine(curUnshrink);
+        StopCoroutine(curUnfreeze);
+        frozen = false;
+        shrank = false;
+        blown = false;
+        gameObject.GetComponent<p2_movement>().speed = originalSpeed;
+    }
+
 }

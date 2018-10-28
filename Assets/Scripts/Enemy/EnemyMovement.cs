@@ -47,16 +47,18 @@ public class EnemyMovement : MonoBehaviour
                 return;
             }
 
-            if (chasing) {
+            if (true) {
+            //if (chasing) {
                 Chase();
             }
+
             // Not chasing && not idling => start idling
-            else {
-                if (!idling) {
-                    idling = true;
-                    StartCoroutine(Idle());
-                }
-            }
+            //else {
+            //    if (!idling) {
+            //        idling = true;
+            //        StartCoroutine(Idle());
+            //    }
+            //}
 
             // Recharge attack
             if (curCD < attackCD) {
