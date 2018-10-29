@@ -18,11 +18,13 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4530309265842806}
+  - component: {fileID: 224135246206257604}
   - component: {fileID: 114940834490679864}
   - component: {fileID: 114590286036137762}
   - component: {fileID: 114116682196046872}
   - component: {fileID: 82493248643465124}
+  - component: {fileID: 222138006757616684}
+  - component: {fileID: 114404250479125814}
   m_Layer: 0
   m_Name: GameManagerTest
   m_TagString: GameManager
@@ -30,19 +32,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4530309265842806
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111072720783528}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 144.4, y: 11.200001, z: 330.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &82493248643465124
 AudioSource:
   m_ObjectHideFlags: 1
@@ -158,16 +147,46 @@ MonoBehaviour:
   completeLvl2: 0
   completeLvl3: 0
   players: []
-<<<<<<< HEAD
-  beesintro: {fileID: 0}
-=======
   beesintro: {fileID: 82493248643465124}
->>>>>>> 49419d81debbe4b353e9fa187df81360e3fd4c3d
   gameUI: {fileID: 0}
+  test: {fileID: 0}
   enemyKillCount: 0
   spawner: {fileID: 0}
   secondSpawner: {fileID: 0}
   thirdSpawner: {fileID: 0}
+--- !u!114 &114404250479125814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111072720783528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
 --- !u!114 &114590286036137762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,3 +261,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelScript: {fileID: 114590286036137762}
+--- !u!222 &222138006757616684
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111072720783528}
+  m_CullTransparentMesh: 0
+--- !u!224 &224135246206257604
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111072720783528}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 330.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 144.4, y: 11.200001}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

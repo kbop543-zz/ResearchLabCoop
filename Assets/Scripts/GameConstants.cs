@@ -16,6 +16,7 @@ public class GameConstants : MonoBehaviour {
     GameObject p2;
     public AudioSource beesintro;
     public GameObject gameUI;
+    public Text test;
 
     // For win condition, grab enemy death count and enemy spawn limit
     public int enemyKillCount = 0;
@@ -50,17 +51,24 @@ public class GameConstants : MonoBehaviour {
         if (!gameOver && p1.GetComponent<PlayerHealth>().playerIsDead && p2.GetComponent<PlayerHealth>().playerIsDead) {
             // Enter GAMEOVER scene
             Debug.Log("GAME OVER");
-            gameUI.GetComponent<PlayerUI>().gameState.text = "GAME OVER";
+            //gameUI.GetComponent<PlayerUI>().gameState.text = "GAME OVER";
             gameOver = true;
             Time.timeScale = 0;
         }
         if (gameOver) {
-            Debug.Log("PRESS R TO RESTART WAVE");
+            Debug.Log("PRESS R TO RESTART GAME");
             if (Input.GetKey("r")){
 
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);
                 gameOver = false;
+            }
+            if(Input.GetKey("e")){
+                gameOver = false;
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(0);
+
+
             }
            
         }
@@ -72,7 +80,8 @@ public class GameConstants : MonoBehaviour {
                 //spawner.GetComponent<SpawnManager>().end = true;
                 secondSpawner.GetComponent<SpawnManager>().activated = true;
                 Debug.Log("LEVEL 1 CLEARED");
-                //.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
+                test.text = "LEVEL 1 CLEARED";
+                //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
                 completeLvl1 = true;
                 enemyKillCount = 0;
                 //Time.timeScale = 0;
@@ -109,6 +118,10 @@ public class GameConstants : MonoBehaviour {
         if ((completeLvl1 == true) && (completeLvl2 == true) && (completeLvl3 == true)){
             //game over give option to restart
             gameOver = true;
+            completeLvl1 = false;
+            completeLvl2 = false;
+            completeLvl3 = false;
+
         }
 
 
