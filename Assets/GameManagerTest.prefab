@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b64c75e06ef74636b9c30af0a4da979, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   maxLabHealth: 100
   maxOrbs: 5
   curLabHealth: 100
@@ -158,11 +158,7 @@ MonoBehaviour:
   completeLvl2: 0
   completeLvl3: 0
   players: []
-<<<<<<< HEAD
-  beesintro: {fileID: 0}
-=======
   beesintro: {fileID: 82493248643465124}
->>>>>>> 49419d81debbe4b353e9fa187df81360e3fd4c3d
   gameUI: {fileID: 0}
   enemyKillCount: 0
   spawner: {fileID: 0}
@@ -177,8 +173,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3ef5c2e23af841d48055a3788176322, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   terrainTile: {fileID: 1244579169590770, guid: 1db0eee1685704a578ed9be83c3f602c,
     type: 2}
   bigtile: {fileID: 1645928098060810, guid: e9a05bbc7897c48708591875e81fefeb, type: 2}
@@ -239,6 +235,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f2a4dfacc23d413b962589bc647afa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   levelScript: {fileID: 114590286036137762}
