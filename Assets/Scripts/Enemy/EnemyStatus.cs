@@ -105,7 +105,7 @@ public class EnemyStatus : MonoBehaviour
         frozen = true;
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = 0;
         gameObject.GetComponent<NavMeshAgent>().speed = 0;
-        gameObject.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+        //gameObject.GetComponent<NavMeshAgent>().SetDestination(transform.position);
         gameObject.GetComponent<EnemyMovement>().chasing = false;
         gameObject.GetComponent<EnemyMovement>().idling = false;
 
