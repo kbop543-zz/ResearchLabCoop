@@ -62,6 +62,7 @@ MonoBehaviour:
   completeLvl2: 0
   completeLvl3: 0
   players: []
+  beesintro: {fileID: 0}
   gameUI: {fileID: 0}
   enemyKillCount: 0
   spawner: {fileID: 0}
@@ -80,7 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainTile: {fileID: 1244579169590770, guid: 1db0eee1685704a578ed9be83c3f602c,
     type: 2}
-  floor: {fileID: 1231871073512246, guid: cf45aaf9ca76b4b998fb27976ae15aac, type: 2}
+  bigtile: {fileID: 1645928098060810, guid: e9a05bbc7897c48708591875e81fefeb, type: 2}
+  smalltile: {fileID: 1370544063798430, guid: 1686701efe56241bfbaa73b7b884de0e, type: 2}
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
   HUDCanvas: {fileID: 1475400907237462, guid: fe37bb0a439214dad944150abe29feec, type: 2}
@@ -90,6 +92,8 @@ MonoBehaviour:
   eventSystem: {fileID: 1087734908863884, guid: 18f754b90762d447ba8b0b0bfe9364aa,
     type: 2}
   crossBow: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
+  wall: {fileID: 1210540657253074, guid: 95eaf303c874947e5b5ef9e331fbe0fc, type: 2}
+  light: {fileID: 1384732459541282, guid: e550918c6030f4347b04037a6f615d99, type: 2}
   thrinkStation: {fileID: 1488631943349220, guid: d618651b637464720a90749f6612495d,
     type: 2}
   thrinkTile: {fileID: 1672104751296836, guid: cee798ca3ee4c43329ae3babc76d7ce0, type: 2}

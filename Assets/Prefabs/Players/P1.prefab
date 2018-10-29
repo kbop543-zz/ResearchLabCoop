@@ -263,7 +263,7 @@ Transform:
   m_GameObject: {fileID: 1021489951523888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 161.59071, y: 7.4471, z: 309.81436}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 4006998043146472}
   - {fileID: 4015222333724628}
@@ -912,11 +912,11 @@ MonoBehaviour:
   shockwave: {fileID: 1140697868829180, guid: 4a8c00681baba4876b10bad10fe867d4, type: 2}
   oil: {fileID: 1537764969882842, guid: c4f86c60abf53cf43a6772fedd4a6c80, type: 2}
   LaserSound: {fileID: 82128115911998652}
-  pIcon: {fileID: 1475400907237462, guid: fe37bb0a439214dad944150abe29feec, type: 2}
+  pIcon: {fileID: 0}
   oilIcon: {fileID: 2800000, guid: 736a8fe2e58f14d2081f0e3edd045dbd, type: 3}
   shockwaveIcon: {fileID: 2800000, guid: 56301d21fb7fe422f8a8dc3c59ab09f9, type: 3}
-  bulletSwapDelay: 0
-  curbulletSwapDelay: 0
+  bulletSwapDelay: 1
+  curbulletSwapDelay: 1
 --- !u!114 &114840860456598936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1038,7 +1038,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318571218632680}
   m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.326055}
   m_LocalScale: {x: 0.012541183, y: 0.012541183, z: 0.012541183}
   m_Children:
   - {fileID: 224782118269581876}
@@ -1047,7 +1047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.009999594, y: 2.88}
+  m_AnchoredPosition: {x: -7.1814337, y: 2.88}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224293807030226146
