@@ -12,6 +12,7 @@ public class Interact : MonoBehaviour
         if (((Input.GetKey("x") || Input.GetKeyUp(KeyCode.Joystick1Button1)) && (gameObject.name == "P1" || gameObject.name == "P1(Clone)")) ||
             ((Input.GetKey("o") || Input.GetKeyUp(KeyCode.Joystick2Button1)) && (gameObject.name == "P2" || gameObject.name == "P2(Clone)")))
         {
+
             Activate();
 
         }
@@ -19,6 +20,7 @@ public class Interact : MonoBehaviour
 
     private void Activate()
     {
+
         Collider[] items = Physics.OverlapSphere(transform.position, interactRadius);
         bool found = false;
         int size = items.Length;

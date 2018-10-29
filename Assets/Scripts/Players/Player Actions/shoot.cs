@@ -33,7 +33,7 @@ public class shoot : MonoBehaviour
         startDistance = 30f;
         duration = 0.45f;
         //cooldown = 0.5f;
-        cooldown = 2.0f;
+        cooldown = 1.0f;
         curCooldown = cooldown;
         bulletSwapDelay = 1.0f;
         curbulletSwapDelay = bulletSwapDelay;
@@ -69,7 +69,7 @@ public class shoot : MonoBehaviour
         {
             curbulletSwapDelay += Time.deltaTime;
         }
-       
+
     }
 
     public void Switch1()

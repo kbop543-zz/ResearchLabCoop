@@ -653,7 +653,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd002b4db9ec44eb88d6a16bdf6ae46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRadius: 20
+  interactRadius: 70
 --- !u!114 &114253876359812230
 MonoBehaviour:
   m_ObjectHideFlags: 1

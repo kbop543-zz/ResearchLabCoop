@@ -14,7 +14,7 @@ public class Thrink : MonoBehaviour {
 
     private void Start()
     {
-        station = GameObject.Find("ThrinkStation(Clone)");
+        station = GameObject.Find("ShrinkStation(Clone)");
         myLight = GetComponentInChildren<Light>();
         myLight.intensity = 0f;
         flashing = false;
