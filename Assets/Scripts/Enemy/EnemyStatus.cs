@@ -18,6 +18,7 @@ public class EnemyStatus : MonoBehaviour
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
     private IEnumerator curUnoiled;
+    public AudioSource freezeSound;
 
     private void Start()
     {
@@ -106,6 +107,7 @@ public class EnemyStatus : MonoBehaviour
 
     public void Freeze()
     {
+        freezeSound.Play();
         frozen = true;
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = 0;
         gameObject.GetComponent<NavMeshAgent>().speed = 0;

@@ -80,7 +80,7 @@ public class GameConstants : MonoBehaviour {
                 //spawner.GetComponent<SpawnManager>().end = true;
                 secondSpawner.GetComponent<SpawnManager>().activated = true;
                 Debug.Log("LEVEL 1 CLEARED");
-                test.text = "LEVEL 1 CLEARED";
+                //test.text = "LEVEL 1 CLEARED";
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
                 completeLvl1 = true;
                 enemyKillCount = 0;
