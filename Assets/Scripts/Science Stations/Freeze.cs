@@ -5,7 +5,9 @@ using UnityEngine;
 public class Freeze : MonoBehaviour {
 
     private GameObject station;
-    //public AudioSource freezeSound;
+    public AudioSource freezeSound;
+    public AudioClip clip1;
+    public AudioClip clip2;
 
 
 	void Start () {
@@ -32,7 +34,16 @@ public class Freeze : MonoBehaviour {
             }
             if (hitTarget.tag == "Monster")
             {
-                //freezeSound.Play();
+                if(freezeSound.clip == clip1){
+                    freezeSound.Play();
+                    freezeSound.clip = clip2;
+                }
+                else if (freezeSound.clip == clip2)
+                {
+                    freezeSound.Play();
+                    freezeSound.clip = clip1;
+                }
+                freezeSound.Play();
                 hitTarget.GetComponent<EnemyStatus>().Freeze();
             }
 
