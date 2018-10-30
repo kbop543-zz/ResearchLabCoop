@@ -10,12 +10,14 @@ public class StationStatus : MonoBehaviour
     public float maxIntensity = 5.0f;
     Light myLight;
     Coroutine flashLight;
+    public ParticleSystem ShockEffect;
 
     public float duraiton = 4f;
 
     private void Start()
     {
         myLight = GetComponentInChildren<Light>();
+        ShockEffect = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -61,6 +63,7 @@ public class StationStatus : MonoBehaviour
         yield return new WaitForSeconds(duraiton);
         activated = false;
         waiting = false;
+        ShockEffect.Stop();
 
         StopCoroutine(flashLight);
         myLight.intensity = maxIntensity;
