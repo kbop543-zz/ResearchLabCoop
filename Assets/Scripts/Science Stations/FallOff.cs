@@ -77,6 +77,15 @@ public class FallOff : MonoBehaviour {
                 //GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
 
             }
+            if (hitTarget.transform.localScale.x > fallThreshold)
+            {
+                //play sound effect for  monster being too big to fall into hole(right now will do it for all monsters)
+                if (hitTarget.tag == "Monster"){
+                    dropsound.Play();
+                }
+
+            }
+
         }
 
     }
