@@ -30,15 +30,15 @@ public class p2_movement : MonoBehaviour
 
         motionVector = movement;
 
-        if (camTransform != null)
-        {
-            motionVector = camTransform.TransformDirection(motionVector);
-            motionVector.Set(motionVector.x, 0, motionVector.z);
-        }
-        else
-        {
-            camTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
-        }
+        //if (camTransform != null)
+        //{
+        //    motionVector = camTransform.TransformDirection(motionVector);
+        //    motionVector.Set(motionVector.x, 0, motionVector.z);
+        //}
+        //else
+        //{
+        //    camTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        //}
 
         //rb.AddForce(motionVector * speed);
         rb.transform.Translate(speed * motionVector.x * Time.deltaTime, 0f, speed * motionVector.z * Time.deltaTime);
