@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     public float idleDuration = 5.0f;
     public int damage = 10;
     public float attackCD = 1.5f;
+    public float navCD = 0.1f;
     public NavMeshAgent navAgent;
     private GameObject[] players;
     //private Transform LabTransform;
@@ -19,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 curVelocity;
     private GameObject curTargetPlayer;
     private float curCD;
+    private float curNavCD;
     public bool chasing;
     public bool idling;
     public bool activated;
@@ -36,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
         idling = false;
         activated = false;
         curCD = attackCD;
+        curNavCD = navCD;
         navAgent.speed = 0;
 
     }
@@ -66,6 +69,11 @@ public class EnemyMovement : MonoBehaviour
             // Recharge attack
             if (curCD < attackCD) {
                 curCD += Time.deltaTime;
+            }
+
+            // Count re-navigation CD
+            if (curNavCD < navCD) {
+                curNavCD += Time.deltaTime;
             }
         }
     }
@@ -140,8 +148,12 @@ public class EnemyMovement : MonoBehaviour
             //curVelocity.Normalize();
             //curVelocity *= forwardSpeed;
             //GetComponent<Rigidbody>().velocity = curVelocity;
-            navAgent.speed = forwardSpeed;
-            navAgent.SetDestination(DestinationPos);
+
+            if (curNavCD >= navCD) {
+                navAgent.speed = forwardSpeed;
+                navAgent.SetDestination(DestinationPos);
+                curNavCD = 0f;
+            }
 
         }
         else {
