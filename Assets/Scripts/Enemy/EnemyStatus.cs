@@ -12,13 +12,15 @@ public class EnemyStatus : MonoBehaviour
     public bool willDie = false;
     public bool falling = false;
     public float duraiton = 5f;
-
+    public AudioSource FireSound;
     public float originalSpeed;
     public float originalScale;
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
     private IEnumerator curUnoiled;
     public AudioSource freezeSound;
+    public GameObject newObject;
+
 
     private void Start()
     {
@@ -196,8 +198,17 @@ public class EnemyStatus : MonoBehaviour
 
     public void Shock()
     {
+
+        //Instantiate(newObject);
+        //AudioSource hitAudio = gameObject.GetComponent<AudioSource>();
+        //AudioSource hitAudio1 = newObject.AddComponent<AudioSource>();
+        //hitAudio1.clip = hitAudio.clip;
+
         if (gameObject.GetComponent<EnemyStatus>().oiled)
         {
+
+            AudioSource.PlayClipAtPoint(FireSound.clip, transform.position);
+            //FireSound.Play();
             Destroy(gameObject);
             GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
         }
