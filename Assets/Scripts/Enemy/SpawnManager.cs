@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     public float spawnWait = 4f;
 	public float startWait = 5f;
 	public bool stop = false;
-    public float zBoundary = 505f;
+    public float zBoundary = 368f;
     private int randEnemy;
     private Vector3 spawnPosition;
     public bool activated;
@@ -44,7 +44,7 @@ public class SpawnManager : MonoBehaviour
 		while(!stop && (EnemiesSpawned < spawnLimit)) {
 		    //randEnemy = enemies[EnemiesSpawned];
             spawnPosition = new Vector3 (spawnPoint.x + Random.Range(-spawnDeviation.x, spawnDeviation.x),
-                                         enemies[EnemiesSpawned].transform.localScale.y / 2,
+                                         1f,
                                          spawnPoint.z + Random.Range(-spawnDeviation.z, spawnDeviation.z));
 
 			GameObject monster = Instantiate (enemies[EnemiesSpawned], spawnPosition,

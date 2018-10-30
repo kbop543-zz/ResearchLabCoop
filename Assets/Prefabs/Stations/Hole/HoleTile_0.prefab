@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSpeed: 10
-  fallThreshold: 10
+  fallThreshold: 26
   destroyDelay: 5
   rotateRate: 270
   expandDuration: 0.75
