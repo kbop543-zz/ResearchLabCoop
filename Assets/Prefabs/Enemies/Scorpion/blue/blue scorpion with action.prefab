@@ -191,6 +191,7 @@ MonoBehaviour:
   idleDuration: 5
   damage: 10
   attackCD: 1.5
+  navCD: 0.1
   navAgent: {fileID: 195659704086946772}
   chasing: 1
   idling: 0
