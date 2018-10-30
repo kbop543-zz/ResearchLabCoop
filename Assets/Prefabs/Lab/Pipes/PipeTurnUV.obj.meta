@@ -1,22 +1,18 @@
 fileFormatVersion: 2
-guid: 16e784605f34149d792f67ad27ed04a1
+guid: e45750762a3cf44b391dc54e3e99a51c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Box007
-    100002: //RootNode
-    400000: Box007
-    400002: //RootNode
-    2100000: Box007Mat
-    2300000: Box007
-    3300000: Box007
-    4300000: Box007
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box007Mat
-    second: {fileID: 2100000, guid: 2735b28036d0245f7a415544e4162ffc, type: 2}
+    100000: //RootNode
+    100002: polySurface6_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    400000: //RootNode
+    400002: polySurface6_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    2100000: polySurface6_polySurface5_polySurface3_FullPipeUV_Cylinder001Mat
+    2300000: polySurface6_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    3300000: polySurface6_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    4300000: polySurface6_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
