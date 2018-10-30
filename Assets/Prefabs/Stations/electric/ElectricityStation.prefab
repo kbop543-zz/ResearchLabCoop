@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 23257935361833872}
   - component: {fileID: 136574180169304736}
   - component: {fileID: 114423384891903358}
+  - component: {fileID: 208159589718165696}
   m_Layer: 8
   m_Name: ElectricityStation
   m_TagString: Station
@@ -271,7 +272,7 @@ MonoBehaviour:
   waiting: 0
   flashDuration: 0.075
   maxIntensity: 5
-  ShockEffect: {fileID: 0}
+  ParticleEffect: {fileID: 0}
   duraiton: 4
 --- !u!136 &136574180169304736
 CapsuleCollider:
@@ -283,9 +284,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: -0.5, z: -0.00000008940697}
 --- !u!198 &198261302212025106
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -4876,3 +4877,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!208 &208159589718165696
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582221883799548}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.7, y: 1.25, z: 0.7}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.5, z: 0}
+  m_TimeToStationary: 0.5
