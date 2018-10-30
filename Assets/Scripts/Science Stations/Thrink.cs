@@ -11,7 +11,8 @@ public class Thrink : MonoBehaviour {
     private GameObject station;
     private Light myLight;
     private bool flashing;
-
+    public AudioSource shrinkSound;
+    public AudioClip clip3, clip4;
     private void Start()
     {
         //thrinkMin = GameObject.Find("P1(Clone)").transform.localScale.x / 3;
@@ -19,6 +20,7 @@ public class Thrink : MonoBehaviour {
         myLight = GetComponentInChildren<Light>();
         myLight.intensity = 0f;
         flashing = false;
+        shrinkSound.clip = clip3;
     }
 
     private void OnTriggerStay(Collider other)
@@ -61,6 +63,15 @@ public class Thrink : MonoBehaviour {
                 }
                 else if (hitTarget.tag == "Monster")
                 {
+                    if(shrinkSound.clip == clip3){
+                        //shrinkSound.Play();
+                        shrinkSound.clip = clip4;
+                    }
+                    else if(shrinkSound.clip == clip4){
+                        //shrinkSound.Play();
+                        shrinkSound.clip = clip3;
+                    }
+                    shrinkSound.Play();
                     hitTarget.GetComponent<EnemyStatus>().Shrink(ratio);
 
                 }

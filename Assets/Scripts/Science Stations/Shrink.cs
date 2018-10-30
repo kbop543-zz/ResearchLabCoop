@@ -11,6 +11,7 @@ public class Shrink : MonoBehaviour {
     private GameObject station;
     private Light myLight;
     private bool flashing;
+    //public AudioSource shrinkSound;
 
     private void Start()
     {
@@ -49,6 +50,7 @@ public class Shrink : MonoBehaviour {
                 }
                 else if (hitTarget.tag == "Monster")
                 {
+                    //shrinkSound.Play();
                     hitTarget.GetComponent<EnemyStatus>().Shrink(ratio);
 
                 }
