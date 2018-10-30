@@ -6,6 +6,7 @@ public class shoot : MonoBehaviour
     public GameObject shockwave;
     public GameObject oil;
     public AudioSource LaserSound;
+    public AudioSource OilSound;
     public GameObject pIcon;
     // Following projectile properties will be updated according to weapon
     private GameObject projectile;
@@ -137,15 +138,17 @@ public class shoot : MonoBehaviour
             var b = (GameObject)Instantiate(projectile,
                                             pos + direction * startDistance,
                                             transform.rotation);
-            LaserSound.Play();
+
             b.GetComponent<Rigidbody>().velocity = direction * range;
             if (guns[curGun] == "shock")
             {
+                LaserSound.Play();
                 b.GetComponent<BigShotHit>().updateHolder(gameObject);
 
             }
             else if (guns[curGun] == "oil")
             {
+                OilSound.Play();
                 b.GetComponent<OilHit>().updateHolder(gameObject);
             }
             Destroy(b, duration);
