@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour {
 	public bool playerIsDead = false;
 	public Image healthBar;
 	public Transform respawnTransform;
+    public AudioSource playerhurt;
+    public AudioClip clip1, clip2, clip3;
 
 
 	// Use this for initialization
@@ -65,7 +67,8 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void TakeDamage(float amount){
-		health-=amount;
+
+        health-=amount;
 
 		healthBar.fillAmount = health/startHealth;
 		// Debug.Log("fill amount" + healthBar.fillAmount );
@@ -73,18 +76,24 @@ public class PlayerHealth : MonoBehaviour {
 
 		if(healthBar.fillAmount <= .80 & healthBar.fillAmount > .30){
 			healthBar.color = Color.yellow;
-			// Debug.Log("fill should be yellow" );
-		}
+            // Debug.Log("fill should be yellow" );
+            playerhurt.clip = clip2;
+            playerhurt.Play();
+        }
 
 		else if(healthBar.fillAmount <= .30 ){
 			healthBar.color = Color.red;
-			// Debug.Log("fill should be red" );
-		}
+            playerhurt.clip = clip3;
+            playerhurt.Play();
+            // Debug.Log("fill should be red" );
+        }
 		else{
 			healthBar.color = Color.green;
-			// Debug.Log("fill should be red" );
+            playerhurt.clip = clip1;
+            playerhurt.Play();
+            // Debug.Log("fill should be red" );
 
-		}
+        }
 
 		if(health <= 0){
             // Drop items before Die
