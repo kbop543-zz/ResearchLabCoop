@@ -49,6 +49,8 @@ public class EnemyStatus : MonoBehaviour
         GetComponent<EnemyMovement>().activated = false;
         GetComponent<EnemyMovement>().forwardSpeed = 0;
 
+        GetComponent<NavMeshAgent>().enabled = false;
+
         falling = true;
         willDie = true;
     }
@@ -85,7 +87,7 @@ public class EnemyStatus : MonoBehaviour
         // restore original size after being unshrink
         while (transform.localScale.x < originalScale)
         {
-            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * originalScale / 3 * Time.deltaTime;
+            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * (originalScale / 3) * Time.deltaTime;
             transform.position = new Vector3(transform.position.x,
                                              transform.localScale.y / 2,
                                              transform.position.z);
