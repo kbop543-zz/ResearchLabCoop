@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,6 +217,12 @@ Prefab:
       propertyPath: electricityTile
       value: 
       objectReference: {fileID: 1992221361616934, guid: f007f3acb4f4d4c6d92ee3ca69635ceb,
+        type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1660447889329732, guid: 2d9f421ede380484d8c526fdc7efbd83,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
