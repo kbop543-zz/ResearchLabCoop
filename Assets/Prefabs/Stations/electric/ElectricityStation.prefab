@@ -271,6 +271,7 @@ MonoBehaviour:
   waiting: 0
   flashDuration: 0.075
   maxIntensity: 5
+  ShockEffect: {fileID: 0}
   duraiton: 4
 --- !u!136 &136574180169304736
 CapsuleCollider:
@@ -297,7 +298,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
