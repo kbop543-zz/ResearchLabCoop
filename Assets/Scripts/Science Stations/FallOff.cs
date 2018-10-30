@@ -5,7 +5,7 @@ using UnityEngine;
 public class FallOff : MonoBehaviour {
 
     public float fallSpeed = 10.0f;
-    public float fallThreshold = 10.0f;
+    public float fallThreshold = 26.0f;
     public float destroyDelay = 5.0f;
     public float rotateRate = 270f;
     public float expandDuration = 0.75f;

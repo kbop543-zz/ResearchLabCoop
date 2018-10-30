@@ -30,7 +30,7 @@ public class shoot : MonoBehaviour
 
         projectile = shockwave;
         range = 350f;
-        startDistance = 30f;
+        startDistance = transform.localScale.x / 2 + 35f;
         duration = 0.45f;
         //cooldown = 0.5f;
         cooldown = 1.0f;
@@ -162,7 +162,7 @@ public class shoot : MonoBehaviour
             case "shock":
                 projectile = shockwave;
                 range = 350f;
-                startDistance = 30f;
+                startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 0.5f;
                 //cooldown = 2.0f;
@@ -171,7 +171,7 @@ public class shoot : MonoBehaviour
             case "oil":
                 projectile = oil;
                 range = 350f;
-                startDistance = 30f;
+                startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 2.0f;
                 //curCooldown = cooldown;
@@ -180,7 +180,7 @@ public class shoot : MonoBehaviour
                 Debug.Log("Unregistered weapon");
                 projectile = shockwave;
                 range = 350f;
-                startDistance = 30f;
+                startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 2.0f;
                 //curCooldown = cooldown;

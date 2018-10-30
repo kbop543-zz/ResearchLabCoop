@@ -10,12 +10,14 @@ public class P2Status : MonoBehaviour {
     public float duraiton = 5f;
 
     public float originalSpeed;
+    public float originalScale;
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
 
     private void Start()
     {
         originalSpeed = gameObject.GetComponent<p2_movement>().speed;
+        originalScale = transform.localScale.x;
     }
 
     //void FixedUpdate()
@@ -63,7 +65,7 @@ public class P2Status : MonoBehaviour {
         yield return new WaitForSeconds(duraiton);
 
         // restore original size after being unshrink
-        while (transform.localScale.x < 15)
+        while (transform.localScale.x < originalScale)
         {
             transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * 3f * Time.deltaTime;
             transform.position = new Vector3(transform.position.x,

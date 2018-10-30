@@ -5,7 +5,12 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
 
-    public float interactRadius = 16f;
+    public float interactRadius;// = 16f;
+
+    private void Start()
+    {
+        interactRadius = transform.localScale.x / 2 + 20f;
+    }
 
     void FixedUpdate()
     {

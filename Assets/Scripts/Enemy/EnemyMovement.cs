@@ -4,10 +4,10 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float minDistance = 20f;
+    public float minDistance;// = 20f;
     public float forwardSpeed = 75f;
 
-    public float sightRange = 115f;
+    public float sightRange;// = 115f;
     public float idleDuration = 5.0f;
     public int damage = 10;
     public float attackCD = 1.5f;
@@ -27,6 +27,9 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         //LabTransform = GameObject.FindGameObjectWithTag("Lab").transform;
+        sightRange = 500f;
+        minDistance = transform.localScale.x + 25f;
+        GetComponent<NavMeshAgent>().stoppingDistance = minDistance;
         gm = GameObject.FindWithTag("GameManager");
         players = gm.GetComponent<GameConstants>().players;
         chasing = false;
@@ -157,49 +160,49 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator Idle() {
-        // Pick random direction
+    //private IEnumerator Idle() {
+    //    // Pick random direction
 
-        Vector3 idleDir = new Vector3(Random.Range(-75, 75), 0, Random.Range(-75, 75));
-        idleDir += curTargetPlayer.transform.position - transform.position;
-        idleDir.y = 0;
-        idleDir.Normalize();
-        float stopDuration = Random.Range(1, 3) * idleDuration / 10;
-        float walkSpeed = 3 * forwardSpeed / 5;
-        // Vector3 lookTo;
+    //    Vector3 idleDir = new Vector3(Random.Range(-75, 75), 0, Random.Range(-75, 75));
+    //    idleDir += curTargetPlayer.transform.position - transform.position;
+    //    idleDir.y = 0;
+    //    idleDir.Normalize();
+    //    float stopDuration = Random.Range(1, 3) * idleDuration / 10;
+    //    float walkSpeed = 3 * forwardSpeed / 5;
+    //    // Vector3 lookTo;
 
-        // Idle
-        navAgent.speed = 0;
-        float curTime = 0.0f;
-        while (idling && (curTime < stopDuration)) {
-            curTime += Time.deltaTime;
-            yield return null;
-        }
+    //    // Idle
+    //    navAgent.speed = 0;
+    //    float curTime = 0.0f;
+    //    while (idling && (curTime < stopDuration)) {
+    //        curTime += Time.deltaTime;
+    //        yield return null;
+    //    }
 
-        if (!idling)
-        {
-            //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
-            yield break;
-        }
+    //    if (!idling)
+    //    {
+    //        //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+    //        yield break;
+    //    }
 
-        // Walk
-        Vector3 dest = transform.position + idleDir * forwardSpeed;
-        navAgent.speed = walkSpeed;
-        navAgent.SetDestination(dest);
-        while (idling && curTime < idleDuration && Vector3.Distance(transform.position, dest) > 0) {
-            //lookTo = transform.position + idleDir;
-            //transform.LookAt(lookTo);
-            //GetComponent<Rigidbody>().velocity = idleDir * walkSpeed;
-            curTime += Time.deltaTime;
-            yield return null;
-        }
+    //    // Walk
+    //    Vector3 dest = transform.position + idleDir * forwardSpeed;
+    //    navAgent.speed = walkSpeed;
+    //    navAgent.SetDestination(dest);
+    //    while (idling && curTime < idleDuration && Vector3.Distance(transform.position, dest) > 0) {
+    //        //lookTo = transform.position + idleDir;
+    //        //transform.LookAt(lookTo);
+    //        //GetComponent<Rigidbody>().velocity = idleDir * walkSpeed;
+    //        curTime += Time.deltaTime;
+    //        yield return null;
+    //    }
 
-        // End
-        navAgent.speed = 0;
-        navAgent.SetDestination(transform.position);
-        //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
-        idling = false;
-        yield return null;
-    }
+    //    // End
+    //    navAgent.speed = 0;
+    //    navAgent.SetDestination(transform.position);
+    //    //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+    //    idling = false;
+    //    yield return null;
+    //}
 
 }

@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistance: 20
-  forwardSpeed: 75
+  forwardSpeed: 45
   sightRange: 115
   idleDuration: 5
   damage: 10

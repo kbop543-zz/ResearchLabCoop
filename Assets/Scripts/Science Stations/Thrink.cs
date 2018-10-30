@@ -6,7 +6,7 @@ public class Thrink : MonoBehaviour {
 
     public float thrinkRate = 3.0f;
     public int speedDecreaseRate = 5;
-    public float thrinkMin = 5.0f;
+    //public float thrinkMin = 5.0f;
     public float maxIntensity = 20f;
     private GameObject station;
     private Light myLight;
@@ -14,6 +14,7 @@ public class Thrink : MonoBehaviour {
 
     private void Start()
     {
+        //thrinkMin = GameObject.Find("P1(Clone)").transform.localScale.x / 3;
         station = GameObject.Find("ShrinkStation(Clone)");
         myLight = GetComponentInChildren<Light>();
         myLight.intensity = 0f;
@@ -24,6 +25,17 @@ public class Thrink : MonoBehaviour {
     {
         if (station.GetComponent<StationStatus>().activated) {
             GameObject hitTarget = other.transform.root.gameObject;
+
+            float thrinkMin = 0;
+
+            if (hitTarget.name == "P1(Clone)") {
+                thrinkMin = hitTarget.GetComponent<P1Status>().originalScale / 2;
+            }else if (hitTarget.name == "P2(Clone)") {
+                thrinkMin = hitTarget.GetComponent<P2Status>().originalScale / 2;
+            }
+            else if (hitTarget.tag == "Monster") {
+                thrinkMin = hitTarget.GetComponent<EnemyStatus>().originalScale / 2;
+            }
 
             if (hitTarget.transform.localScale.x > thrinkMin)
             {

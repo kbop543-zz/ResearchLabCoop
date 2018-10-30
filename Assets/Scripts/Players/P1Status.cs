@@ -10,12 +10,14 @@ public class P1Status : MonoBehaviour {
     public float duration = 5f;
 
     public float originalSpeed;
+    public float originalScale;
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
 
     private void Start()
     {
         originalSpeed = gameObject.GetComponent<p1_movement>().speed;
+        originalScale = transform.localScale.x;
     }
 
     //void FixedUpdate()
@@ -71,9 +73,9 @@ public class P1Status : MonoBehaviour {
         yield return new WaitForSeconds(duration);
 
         // restore original size after being unshrink
-        while (transform.localScale.x < 15)
+        while (transform.localScale.x < originalScale)
         {
-            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * 3f * Time.deltaTime;
+            transform.localScale = transform.localScale + new Vector3(1f, 1f, 1f) * (originalScale / 3) * Time.deltaTime;
             transform.position = new Vector3(transform.position.x,
                                              transform.localScale.y / 2,
                                              transform.position.z);
@@ -171,6 +173,7 @@ public class P1Status : MonoBehaviour {
         shrank = false;
         blown = false;
         gameObject.GetComponent<p1_movement>().speed = originalSpeed;
+        transform.localScale = new Vector3(1, 1, 1) * originalScale;
     }
 
 }
