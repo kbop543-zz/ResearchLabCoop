@@ -31,6 +31,7 @@ public class Ignite : MonoBehaviour
             //}
             if (hitTarget.tag == "Monster")
             {
+                Debug.Log("ignite monster");
                 hitTarget.GetComponent<EnemyStatus>().Shock();
             }
 

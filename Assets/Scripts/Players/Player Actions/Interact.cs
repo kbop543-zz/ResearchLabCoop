@@ -42,7 +42,7 @@ public class Interact : MonoBehaviour
                     if (items[i].GetComponent<StationStatus>().activated == false)
                     {
                         items[i].GetComponent<StationStatus>().activated = true;
-                        items[i].GetComponent<StationStatus>().ShockEffect.Play();
+                        items[i].GetComponent<StationStatus>().ParticleEffect.Play();
                         found = true;
 
                         //Debug.Log("Interacted!!!");
