@@ -1,18 +1,23 @@
 fileFormatVersion: 2
-guid: 2170e277e0d40444094dde74683307ae
+guid: 6dcf7f6f31b2a4facb2bb2d1515f7e9c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: polySurface4_polySurface3_FullPipeUV:Cylinder001
+    100002: PipeTurnUV:Cylinder001_PipeTurnUV:polySurface3_PipeTurnUV:polySurface5_PipeTurnUV:polySurface6_PipeTurnUV:polySurface1
     400000: //RootNode
-    400002: polySurface4_polySurface3_FullPipeUV:Cylinder001
-    2100000: polySurface4_polySurface3_FullPipeUV_Cylinder001Mat
-    2300000: polySurface4_polySurface3_FullPipeUV:Cylinder001
-    3300000: polySurface4_polySurface3_FullPipeUV:Cylinder001
-    4300000: polySurface4_polySurface3_FullPipeUV:Cylinder001
+    400002: PipeTurnUV:Cylinder001_PipeTurnUV:polySurface3_PipeTurnUV:polySurface5_PipeTurnUV:polySurface6_PipeTurnUV:polySurface1
+    2100000: PipeTurnUV_Cylinder001_PipeTurnUV_polySurface3_PipeTurnUV_polySurface5_PipeTurnUV_polySurface6_PipeTurnUV_polySurface1Mat
+    2300000: PipeTurnUV:Cylinder001_PipeTurnUV:polySurface3_PipeTurnUV:polySurface5_PipeTurnUV:polySurface6_PipeTurnUV:polySurface1
+    3300000: PipeTurnUV:Cylinder001_PipeTurnUV:polySurface3_PipeTurnUV:polySurface5_PipeTurnUV:polySurface6_PipeTurnUV:polySurface1
+    4300000: PipeTurnUV:Cylinder001_PipeTurnUV:polySurface3_PipeTurnUV:polySurface5_PipeTurnUV:polySurface6_PipeTurnUV:polySurface1
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PipeTurnUV_Cylinder001_PipeTurnUV_polySurface3_PipeTurnUV_polySurface5_PipeTurnUV_polySurface6_PipeTurnUV_polySurface1Mat
+    second: {fileID: 2100000, guid: ec889165c5df042438d5741d45a9483f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

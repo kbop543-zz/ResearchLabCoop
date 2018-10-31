@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: 14f79b88ffebb4e548b907ca1ce87b2b
+guid: 0d0717cf0a3814a2ebd61df6056e7455
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: polySurface2_FullPipeUV:Cylinder001
+    100002: WallHole:Box001
     400000: //RootNode
-    400002: polySurface2_FullPipeUV:Cylinder001
-    2100000: polySurface2_FullPipeUV_Cylinder001Mat
-    2300000: polySurface2_FullPipeUV:Cylinder001
-    3300000: polySurface2_FullPipeUV:Cylinder001
-    4300000: polySurface2_FullPipeUV:Cylinder001
-    2186277476908879412: ImportLogs
+    400002: WallHole:Box001
+    2100000: WallHole_Box001Mat
+    2300000: WallHole:Box001
+    3300000: WallHole:Box001
+    4300000: WallHole:Box001
   externalObjects: {}
   materials:
     importMaterials: 1

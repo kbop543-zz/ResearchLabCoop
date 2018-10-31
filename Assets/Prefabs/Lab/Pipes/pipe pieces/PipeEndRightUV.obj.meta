@@ -1,22 +1,23 @@
 fileFormatVersion: 2
-guid: d1a2d32f4ab5f4e3086bb2dd22e877a7
+guid: ebc88e64eb1364f32ad14e1a85ecf31a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: g_Box001_Box001
-    100002: //RootNode
-    400000: g_Box001_Box001
-    400002: //RootNode
-    2100000: g_Box001_Box001Mat
-    2300000: g_Box001_Box001
-    3300000: g_Box001_Box001
-    4300000: g_Box001_Box001
+    100000: //RootNode
+    100002: polySurface7_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    400000: //RootNode
+    400002: polySurface7_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    2100000: polySurface7_polySurface5_polySurface3_FullPipeUV_Cylinder001Mat
+    2300000: polySurface7_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    3300000: polySurface7_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    4300000: polySurface7_polySurface5_polySurface3_FullPipeUV:Cylinder001
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: g_Box001_Box001Mat
-    second: {fileID: 2100000, guid: cf2af9c02c7d249e39fe7725ffe57b19, type: 2}
+      name: polySurface7_polySurface5_polySurface3_FullPipeUV_Cylinder001Mat
+    second: {fileID: 2100000, guid: ec889165c5df042438d5741d45a9483f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
