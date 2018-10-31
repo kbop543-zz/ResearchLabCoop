@@ -209,7 +209,7 @@ MonoBehaviour:
   eventSystem: {fileID: 1087734908863884, guid: 18f754b90762d447ba8b0b0bfe9364aa,
     type: 2}
   crossBow: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
-  wall: {fileID: 1210540657253074, guid: 95eaf303c874947e5b5ef9e331fbe0fc, type: 2}
+  wall: {fileID: 1660447889329732, guid: 2d9f421ede380484d8c526fdc7efbd83, type: 2}
   light: {fileID: 1384732459541282, guid: e550918c6030f4347b04037a6f615d99, type: 2}
   thrinkStation: {fileID: 1488631943349220, guid: d618651b637464720a90749f6612495d,
     type: 2}
