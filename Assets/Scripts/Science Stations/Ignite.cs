@@ -6,7 +6,7 @@ public class Ignite : MonoBehaviour
 {
 
     private GameObject station;
-
+    public AudioSource FireSound;
 
     void Start()
     {
@@ -33,6 +33,9 @@ public class Ignite : MonoBehaviour
             {
                 Debug.Log("ignite monster");
                 hitTarget.GetComponent<EnemyStatus>().Shock();
+                if(hitTarget.GetComponent<EnemyStatus>().oiled){
+                    FireSound.Play();
+                }
             }
 
         }
