@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translocation: {x: 0, y: -800, z: 90}
+  doorOpen: 0
 --- !u!114 &114398170190546646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -402,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translocation: {x: 0, y: 800, z: -90}
+  doorOpen: 0
 --- !u!154 &154798853257034312
 TerrainCollider:
   m_ObjectHideFlags: 1
