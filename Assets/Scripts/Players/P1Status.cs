@@ -7,7 +7,7 @@ public class P1Status : MonoBehaviour {
     public bool frozen = false;
     public bool shrank = false;
     public bool blown = false;
-    public float duration = 5f;
+    public float duration = 7.0f;
 
     public float originalSpeed;
     public float originalScale;

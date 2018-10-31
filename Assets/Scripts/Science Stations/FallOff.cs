@@ -104,16 +104,26 @@ public class FallOff : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        IEnumerator holeAnimation = holeOpening();
+        //IEnumerator holeAnimation = holeOpening();
+        //if (station.GetComponent<StationStatus>().activated && !opened) {
+        //    myRend.enabled = true;
+        //    opened = true;
+        //    StartCoroutine(holeAnimation);
+        //}
+        //else if (!station.GetComponent<StationStatus>().activated && opened) {
+        //    myRend.enabled = false;
+        //    opened = false;
+        //    StopCoroutine(holeAnimation);
+        //}
         if (station.GetComponent<StationStatus>().activated && !opened) {
-            myRend.enabled = true;
+            transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
             opened = true;
-            StartCoroutine(holeAnimation);
+
         }
         else if (!station.GetComponent<StationStatus>().activated && opened) {
-            myRend.enabled = false;
+            transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = true;
             opened = false;
-            StopCoroutine(holeAnimation);
+
         }
     }
 
