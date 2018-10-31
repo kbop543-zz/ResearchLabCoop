@@ -137,7 +137,7 @@ public class shoot : MonoBehaviour
 
             var b = (GameObject)Instantiate(projectile,
                                             pos + direction * startDistance,
-                                            transform.rotation);
+                                            transform.GetChild(1).rotation);
 
             b.GetComponent<Rigidbody>().velocity = direction * range;
             if (guns[curGun] == "shock")
