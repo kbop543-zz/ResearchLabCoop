@@ -25,12 +25,13 @@ public class LevelManager : MonoBehaviour {
     public GameObject holeTile1;
     public GameObject holeTile2;
     public GameObject lightBulbs;
-    public GameObject longpipe;
     //public GameObject lighting;
     public GameObject freezeStation;
     public GameObject freezeTile;
+    public GameObject freezePipe;
     public GameObject electricityStation;
     public GameObject electricityTile;
+    public GameObject electricityPipe;
     //public GameObject ShockWaveGun1;
     //public GameObject ShockWaveGun2;
     public GameObject BackgroundSound;
@@ -69,7 +70,6 @@ public class LevelManager : MonoBehaviour {
 
         Instantiate(thrinkStation);
         Instantiate(thrinkTile);
-        Instantiate(longpipe);
         Instantiate(holeStation);
         Instantiate(holeTile0);
         Instantiate(holeTile1);
@@ -77,9 +77,11 @@ public class LevelManager : MonoBehaviour {
         //Instantiate(lighting);
         Instantiate(lightBulbs);
         Instantiate(freezeStation);
+        Instantiate(freezePipe);
         Instantiate(freezeTile);
         Instantiate(electricityStation);
         Instantiate(electricityTile);
+        Instantiate(electricityPipe);
         //Instantiate(ShockWaveGun1);
         //Instantiate(ShockWaveGun2, new Vector3(135f, 2.62f, 400f), Quaternion.identity);
         Instantiate(enemySpawner2);

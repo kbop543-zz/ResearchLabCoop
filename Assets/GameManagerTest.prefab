@@ -220,13 +220,15 @@ MonoBehaviour:
   holeTile1: {fileID: 1593000909422462, guid: 989d9ff28137a4e6b9744f787145361c, type: 2}
   holeTile2: {fileID: 1207480537272990, guid: c0417e1dbf4244dad8002fdfd7ac4d6a, type: 2}
   lightBulbs: {fileID: 1837157551751762, guid: 38eb8477d6bfd46b99b1af94dfe01c04, type: 2}
-  longpipe: {fileID: 1337359581838746, guid: 81c06001c16794cd8b07f8289dc170bb, type: 2}
   freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
     type: 2}
   freezeTile: {fileID: 1720781894172248, guid: e24d1f61251644c9f97363a385aa9b78, type: 2}
+  freezePipe: {fileID: 1292374496853834, guid: d1cd3d5b0dc044e378237bf11bebc918, type: 2}
   electricityStation: {fileID: 1582221883799548, guid: 044fe51d794c1488cb750b93c5905b8c,
     type: 2}
   electricityTile: {fileID: 1992221361616934, guid: f007f3acb4f4d4c6d92ee3ca69635ceb,
+    type: 2}
+  electricityPipe: {fileID: 1298795752722870, guid: 20abc1e3f0ce842ddbe769202b7753fb,
     type: 2}
   BackgroundSound: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
     type: 2}
