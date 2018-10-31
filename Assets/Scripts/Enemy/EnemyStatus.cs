@@ -67,7 +67,7 @@ public class EnemyStatus : MonoBehaviour
     public void Shrink(float ratio)
     {
         shrank = true;
-        gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * ratio;
+        //gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * ratio;
 
         if (curUnshrink != null)
         {
@@ -197,7 +197,7 @@ public class EnemyStatus : MonoBehaviour
 
     public void Shock()
     {
-    
+
 
         if (gameObject.GetComponent<EnemyStatus>().oiled)
         {
