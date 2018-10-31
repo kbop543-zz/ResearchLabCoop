@@ -7,7 +7,7 @@ public class PlayerUI : MonoBehaviour
 {
     public GameObject player1;
     public GameObject player2;
-    public float coolDownTime = 5f;
+    public float coolDownTime = 10.0f;
     public Text P1ShrinkCoolDown;
     public Text P1FrozenCoolDown;
     public Text P2ShrinkCoolDown;
@@ -37,16 +37,43 @@ public class PlayerUI : MonoBehaviour
         gameState.text = "";
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         // Update player statuses
         P1Shrank = player1.GetComponent<P1Status>().shrank;
         P1Frozen = player1.GetComponent<P1Status>().frozen;
         P2Shrank = player2.GetComponent<P2Status>().shrank;
         P2Frozen = player2.GetComponent<P2Status>().frozen;
-        if(gmtest.GetComponent<GameConstants>().gameOver){
+
+        // If player is affected by any status, update and show a cooldown timer
+        if (P1Shrank)
+        {
+            UpdateShrinkCoolDown(P1ShrinkCoolDown);
+        }
+
+        if (P1Frozen)
+        {
+            UpdateFrozenCoolDown(P1FrozenCoolDown);
+        }
+
+        if (P2Shrank)
+        {
+            UpdateShrinkCoolDown(P2ShrinkCoolDown);
+        }
+
+        if (P2Frozen)
+        {
+            UpdateFrozenCoolDown(P2FrozenCoolDown);
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (gmtest.GetComponent<GameConstants>().gameOver)
+        {
             gameState.text = "GAME OVER! PRESS Options Button to RESTART GAME!";
-            if(Input.GetKey(KeyCode.JoystickButton9))
+            if (Input.GetKey(KeyCode.JoystickButton9))
             {
                 gameState.text = "";
                 gmtest.GetComponent<GameConstants>().gameOver = false;
@@ -74,49 +101,29 @@ public class PlayerUI : MonoBehaviour
             //wave.text = "Wave 3";
         }
 
-        // If player is affected by any status, update and show a cooldown timer
-        if (P1Shrank)
-        {
-            UpdateShrinkCoolDown(P1ShrinkCoolDown);
-        }
-        if (P1Frozen)
-        {
-            UpdateFrozenCoolDown(P1FrozenCoolDown);
-        }
-
-        if (P2Shrank)
-        {
-            UpdateShrinkCoolDown(P2ShrinkCoolDown);
-        }
-        if (P2Frozen)
-        {
-            UpdateFrozenCoolDown(P2FrozenCoolDown);
-        }
-
     }
 
     public void UpdateShrinkCoolDown(Text coolDownText)
     {
         coolDownTime -= Time.deltaTime;
-        coolDownTime = (int) coolDownTime;
-        coolDownText.text = "Shrink effect: " + coolDownTime.ToString();
+        coolDownText.text = "Shrink effect: " + (coolDownTime).ToString("0");
 
-        if (coolDownTime <= 0)
+        if (coolDownTime < 0)
         {
             coolDownText.text = "";
-            coolDownTime = 5f;
+            coolDownTime = 10.0f;
         }
     }
 
     public void UpdateFrozenCoolDown(Text coolDownText)
     {
         coolDownTime -= Time.deltaTime;
-        coolDownText.text = "Frozen effect: " + coolDownTime.ToString();
+        coolDownText.text = "Frozen effect: " + (coolDownTime).ToString("0");
 
         if (coolDownTime <= 0)
         {
             coolDownText.text = "";
-            coolDownTime = 5f;
+            coolDownTime = 10.0f;
         }
     }
 

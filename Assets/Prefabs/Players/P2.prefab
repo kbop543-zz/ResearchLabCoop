@@ -1084,7 +1084,7 @@ MonoBehaviour:
   frozen: 0
   shrank: 0
   blown: 0
-  duraiton: 5
+  duration: 7
   originalSpeed: 100
   originalScale: 0
 --- !u!114 &114705477820812482

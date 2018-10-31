@@ -1,27 +1,13 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-<<<<<<< Updated upstream
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/EnemyStatus.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Players/P1Status.cs">
     <Files>
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="79" Column="36" />
-      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="14" Column="27" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="25" Column="11" />
-      <File FileName="Assets/Scripts/GameConstants.cs" Line="76" Column="31" />
-      <File FileName="Assets/BackgroundSoundScript.cs" Line="9" Column="5" />
-      <File FileName="Assets/Scripts/Science Stations/FallOff.cs" Line="58" Column="87" />
-      <File FileName="Assets/Scripts/Players/Player Actions/BigShotHit.cs" Line="56" Column="91" />
-      <File FileName="Assets/Scripts/Enemy/EnemyStatus.cs" Line="196" Column="79" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/SpawnManager.cs">
-    <Files>
-      <File FileName="Assets/Scripts/Players/PlayerUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameConstants.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Players/PlayerInstructionUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Science Stations/StationStatus.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Science Stations/Freeze.cs" Line="20" Column="67" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="1" Column="1" />
->>>>>>> Stashed changes
+      <File FileName="Assets/Scripts/Science Stations/StationStatus.cs" Line="69" Column="62" />
+      <File FileName="Assets/Scripts/GameConstants.cs" Line="60" Column="35" />
+      <File FileName="Assets/Scripts/Players/Player Actions/Interact.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Players/PlayerUI.cs" Line="103" Column="75" />
+      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="10" Column="33" />
+      <File FileName="Assets/Scripts/Players/P2Status.cs" Line="10" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

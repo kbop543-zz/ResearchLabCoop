@@ -7,7 +7,7 @@ public class P2Status : MonoBehaviour {
     public bool frozen = false;
     public bool shrank = false;
     public bool blown = false;
-    public float duraiton = 5f;
+    public float duration = 7.0f;
 
     public float originalSpeed;
     public float originalScale;
@@ -62,7 +62,7 @@ public class P2Status : MonoBehaviour {
 
     IEnumerator Unshrink()
     {
-        yield return new WaitForSeconds(duraiton);
+        yield return new WaitForSeconds(duration);
 
         // restore original size after being unshrink
         while (transform.localScale.x < originalScale)
@@ -100,7 +100,7 @@ public class P2Status : MonoBehaviour {
 
     IEnumerator Unfreeze()
     {
-        yield return new WaitForSeconds(duraiton);
+        yield return new WaitForSeconds(duration);
 
         // restore original speed after being unfrozen
         gameObject.GetComponent<p2_movement>().speed = originalSpeed;

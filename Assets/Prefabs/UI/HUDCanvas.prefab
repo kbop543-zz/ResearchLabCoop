@@ -593,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 0}
   player2: {fileID: 0}
-  coolDownTime: 5
+  coolDownTime: 10
   P1ShrinkCoolDown: {fileID: 114916024803142730}
   P1FrozenCoolDown: {fileID: 114087299251052930}
   P2ShrinkCoolDown: {fileID: 114000645475117134}
