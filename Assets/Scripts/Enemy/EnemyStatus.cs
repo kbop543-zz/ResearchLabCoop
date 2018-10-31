@@ -18,6 +18,7 @@ public class EnemyStatus : MonoBehaviour
     private IEnumerator curUnfreeze;
     private IEnumerator curUnoiled;
     public AudioSource freezeSound;
+    public float speedLimit = 500f;
 
 
 
@@ -68,7 +69,12 @@ public class EnemyStatus : MonoBehaviour
     {
         shrank = true;
         //gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * ratio;
-
+        float estimatedSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * ratio;
+        // reduce speed after being shrunk
+        if (estimatedSpeed <= speedLimit)
+        {
+            gameObject.GetComponent<EnemyMovement>().forwardSpeed = estimatedSpeed;
+        }
         if (curUnshrink != null)
         {
             StopCoroutine(curUnshrink);
