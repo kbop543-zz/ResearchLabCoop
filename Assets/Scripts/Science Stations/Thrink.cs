@@ -55,11 +55,11 @@ public class Thrink : MonoBehaviour {
 
                 if (hitTarget.name == "P1(Clone)")
                 {
-                    hitTarget.GetComponent<P1Status>().Shrink(ratio);
+                    hitTarget.GetComponent<P1Status>().Shrink(1/ratio);
                 }
                 else if (hitTarget.name == "P2(Clone)")
                 {
-                    hitTarget.GetComponent<P2Status>().Shrink(ratio);
+                    hitTarget.GetComponent<P2Status>().Shrink(1/ratio);
                 }
                 else if (hitTarget.tag == "Monster")
                 {
@@ -72,7 +72,7 @@ public class Thrink : MonoBehaviour {
                         shrinkSound.clip = clip3;
                     }
                     shrinkSound.Play();
-                    hitTarget.GetComponent<EnemyStatus>().Shrink(ratio);
+                    hitTarget.GetComponent<EnemyStatus>().Shrink(1/ratio);
 
                 }
             }
