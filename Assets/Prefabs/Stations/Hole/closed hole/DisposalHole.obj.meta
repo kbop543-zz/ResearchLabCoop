@@ -12,7 +12,12 @@ ModelImporter:
     3300000: DisposalHole:Cylinder001
     4300000: DisposalHole:Cylinder001
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DisposalHole_Cylinder001Mat
+    second: {fileID: 2100000, guid: 40e7f4abe663549eb85624cdb3745c74, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
