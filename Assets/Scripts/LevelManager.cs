@@ -23,9 +23,9 @@ public class LevelManager : MonoBehaviour {
     public GameObject thrinkTile;
     public GameObject holeStation;
     public GameObject holes;
-    public GameObject holeTile0;
-    public GameObject holeTile1;
-    public GameObject holeTile2;
+    //public GameObject holeTile0;
+    //public GameObject holeTile1;
+    //public GameObject holeTile2;
     public GameObject lightBulbs;
     //public GameObject lighting;
     public GameObject freezeStation;
@@ -74,9 +74,9 @@ public class LevelManager : MonoBehaviour {
         Instantiate(thrinkTile);
         Instantiate(shrinkpipe);
         Instantiate(holeStation);
-        Instantiate(holeTile0);
-        Instantiate(holeTile1);
-        Instantiate(holeTile2);
+        //Instantiate(holeTile0);
+        //Instantiate(holeTile1);
+        //Instantiate(holeTile2);
         Instantiate(holes);
         //Instantiate(lighting);
         Instantiate(lightBulbs);

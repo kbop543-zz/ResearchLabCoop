@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.12731725, g: 0.13414745, b: 0.12107873, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.12731703, g: 0.13414727, b: 0.12107852, a: 1}
+>>>>>>> 5a111eb7ee5c23a5dfeded6ca22dc85fc2502abc
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,6 +214,12 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: holes
+      value: 
+      objectReference: {fileID: 1999096722844310, guid: a63fed032a8ba45ec9c77b12ebd40574,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
   m_IsPrefabAsset: 0
