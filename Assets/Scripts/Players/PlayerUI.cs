@@ -17,6 +17,8 @@ public class PlayerUI : MonoBehaviour
     private bool P1Frozen = false;
     private bool P2Shrank = false;
     private bool P2Frozen = false;
+    public GameObject gmtest;
+    public Text wave;
 
     // Use this for initialization
     void Start()
@@ -30,6 +32,7 @@ public class PlayerUI : MonoBehaviour
 
         P2ShrinkCoolDown.text = "";
         P2FrozenCoolDown.text = "";
+        gmtest = GameObject.Find("GameManagerTest");
 
         gameState.text = "";
     }
@@ -41,6 +44,21 @@ public class PlayerUI : MonoBehaviour
         P1Frozen = player1.GetComponent<P1Status>().frozen;
         P2Shrank = player2.GetComponent<P2Status>().shrank;
         P2Frozen = player2.GetComponent<P2Status>().frozen;
+        if (gmtest.GetComponent<GameConstants>().completeLvl1)
+        {
+            gameState.text = "Level1 Cleared";
+            wave.text = "Wave 2";
+        }
+        if (gmtest.GetComponent<GameConstants>().completeLvl2)
+        {
+            gameState.text = "Level2 Cleared";
+            wave.text = "Wave 3";
+        }
+        if (gmtest.GetComponent<GameConstants>().completeLvl3)
+        {
+            gameState.text = "CONGRATULATIONS! YOU WIN!";
+            //wave.text = "Wave 3";
+        }
 
         // If player is affected by any status, update and show a cooldown timer
         if (P1Shrank)

@@ -513,7 +513,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -599,6 +599,8 @@ MonoBehaviour:
   P2ShrinkCoolDown: {fileID: 114000645475117134}
   P2FrozenCoolDown: {fileID: 114792910376558922}
   gameState: {fileID: 114463356972178206}
+  gmtest: {fileID: 0}
+  wave: {fileID: 114211065878773704}
 --- !u!114 &114823369159410018
 MonoBehaviour:
   m_ObjectHideFlags: 1
