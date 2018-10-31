@@ -56,9 +56,12 @@ MonoBehaviour:
   - {fileID: 1015557837402526, guid: 6d1d3db45f9bd44908a7bb647046af8d, type: 2}
   - {fileID: 1734885756600160, guid: 1bad41f331a024923bfbd82c318852ac, type: 2}
   - {fileID: 1161726465531520, guid: 89b721b50e5164f29876fa37e19bc7a6, type: 2}
+  - {fileID: 1015557837402526, guid: 6d1d3db45f9bd44908a7bb647046af8d, type: 2}
+  - {fileID: 1734885756600160, guid: 1bad41f331a024923bfbd82c318852ac, type: 2}
+  - {fileID: 1161726465531520, guid: 89b721b50e5164f29876fa37e19bc7a6, type: 2}
   spawnDeviation: {x: 0, y: 0, z: 0}
   spawnPoint: {x: 0, y: 0, z: 350}
-  spawnLimit: 3
+  spawnLimit: 6
   spawnWait: 5
   startWait: 1
   stop: 0

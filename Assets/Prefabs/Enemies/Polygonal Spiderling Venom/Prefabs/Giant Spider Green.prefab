@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 65303248155929224}
   - component: {fileID: 195035691965975044}
   - component: {fileID: 82971448344514658}
+  - component: {fileID: 208450982213349216}
   m_Layer: 0
   m_Name: Giant Spider Green
   m_TagString: Monster
@@ -1383,7 +1384,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734264043511762}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -0.2, y: 1, z: -0.4}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4399480879943030}
@@ -2025,7 +2026,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015557837402526}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2043,8 +2044,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.75, y: 2.5, z: 2.35}
-  m_Center: {x: 0.21, y: 1.9, z: 0.3}
+  m_Size: {x: 1.5, y: 3, z: 1.5}
+  m_Center: {x: 0, y: 1.6, z: -0.2}
 --- !u!82 &82971448344514658
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2173,10 +2174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistance: 20
-  forwardSpeed: 75
+  forwardSpeed: 15
   sightRange: 115
   idleDuration: 5
-  damage: 10
+  damage: 15
   attackCD: 1.5
   navCD: 0.1
   navAgent: {fileID: 195035691965975044}
@@ -2287,16 +2288,31 @@ NavMeshAgent:
   m_GameObject: {fileID: 1015557837402526}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1.5
   m_Speed: 0
   m_Acceleration: 45
-  avoidancePriority: 50
+  avoidancePriority: 99
   m_AngularSpeed: 350
   m_StoppingDistance: 20
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &208450982213349216
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015557837402526}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.5, y: 0.375, z: 1.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
