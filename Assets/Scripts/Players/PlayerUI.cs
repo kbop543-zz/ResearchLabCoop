@@ -86,13 +86,15 @@ public class PlayerUI : MonoBehaviour
             }
 
         }
-        if (gmtest.GetComponent<GameConstants>().completeLvl1)
+        if ((gmtest.GetComponent<GameConstants>().completeLvl1) && (!gmtest.GetComponent<GameConstants>().gameOver))
         {
-            gameState.text = "Level1 Cleared";
-            wave.text = "Wave 2";
-            Invoke("dos", 2);
+            {
+                gameState.text = "Level1 Cleared";
+                wave.text = "Wave 2";
+                Invoke("dos", 2);
+            }
         }
-        if (gmtest.GetComponent<GameConstants>().completeLvl2)
+        if ((gmtest.GetComponent<GameConstants>().completeLvl2) && (!gmtest.GetComponent<GameConstants>().gameOver))
         {
             gameState.text = "Level2 Cleared";
             wave.text = "Wave 3";

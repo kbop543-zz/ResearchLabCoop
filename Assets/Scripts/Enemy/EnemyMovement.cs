@@ -125,7 +125,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Chase() {
         //DestinationPos = new Vector3(targetPos.x, transform.position.y, targetPos.z);
-        if(curTargetPlayer.GetComponent<PlayerHealth>().playerIsDead) {
+        if(curTargetPlayer == null || curTargetPlayer.GetComponent<PlayerHealth>().playerIsDead) {
             chasing = false;
             navAgent.speed = 0;
             return;
