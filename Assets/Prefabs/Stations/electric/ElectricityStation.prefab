@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4459217641544620}
   - component: {fileID: 108304385518981314}
+  - component: {fileID: 65248352695778030}
   m_Layer: 8
   m_Name: StationLight
   m_TagString: Untagged
@@ -104,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578545064352832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.02, z: 0}
+  m_LocalPosition: {x: 0, y: -0.92, z: 0}
   m_LocalScale: {x: 1, y: 0.2374284, z: 0.75327}
   m_Children: []
   m_Father: {fileID: 4111641135911104}
@@ -220,6 +221,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856948032607912}
   m_Mesh: {fileID: 4300000, guid: d1a2d32f4ab5f4e3086bb2dd22e877a7, type: 3}
+--- !u!65 &65248352695778030
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578545064352832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0676202, y: 9.053551, z: 1.4709685}
+  m_Center: {x: -0.023778154, y: 4.0267754, z: 0.013359633}
 --- !u!108 &108304385518981314
 Light:
   m_ObjectHideFlags: 1
@@ -281,12 +294,12 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1582221883799548}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 1.5
   m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: -0.5, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!198 &198261302212025106
 ParticleSystem:
   m_ObjectHideFlags: 1

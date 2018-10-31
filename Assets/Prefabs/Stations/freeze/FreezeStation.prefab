@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835393105787874}
   - component: {fileID: 108343329412519758}
-  - component: {fileID: 136491749235643632}
+  - component: {fileID: 65305899100543592}
   m_Layer: 8
   m_Name: StationLight
   m_TagString: Untagged
@@ -281,6 +281,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1412230610378214}
   m_Mesh: {fileID: 4300000, guid: 557f5391745974551ac882b08c688612, type: 3}
+--- !u!65 &65305899100543592
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1295039079467396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0291837, y: 1.7642801, z: 1.2445275}
+  m_Center: {x: -0.0030234146, y: 0.4686244, z: -0.036275674}
 --- !u!108 &108343329412519758
 Light:
   m_ObjectHideFlags: 1
@@ -335,19 +347,6 @@ MonoBehaviour:
   maxIntensity: 5
   ParticleEffect: {fileID: 0}
   duraiton: 4
---- !u!136 &136491749235643632
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295039079467396}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.0894802
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5447404, z: 0}
 --- !u!136 &136979283598056986
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -357,10 +356,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 1.5
   m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: -0.5, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!198 &198424897545252228
 ParticleSystem:
   m_ObjectHideFlags: 1
