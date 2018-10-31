@@ -37,11 +37,17 @@ public class StationStatus : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            // Enable player control UI
             GameObject player = other.transform.root.gameObject;
 
             GameObject ui = player.transform.Find("ControlUI").gameObject;
 
             ui.GetComponent<Canvas>().enabled = true;
+
+            // Enable station UI
+            GameObject stationUI = gameObject.transform.Find("StationCanvas").gameObject;
+
+            stationUI.GetComponent<Canvas>().enabled = true;
         }
         
     }
@@ -50,11 +56,17 @@ public class StationStatus : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            // Disable player control UI
             GameObject player = other.transform.root.gameObject;
 
             GameObject ui = player.transform.Find("ControlUI").gameObject;
 
             ui.GetComponent<Canvas>().enabled = false;
+
+            // Disable station UI
+            GameObject stationUI = gameObject.transform.Find("StationCanvas").gameObject;
+
+            stationUI.GetComponent<Canvas>().enabled = false;
         }
     }
 
