@@ -112,16 +112,23 @@ public class GameConstants : MonoBehaviour {
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 3 CLEARED! (YOU WIN)";
                 completeLvl3 = true;
                 enemyKillCount = 0;
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
             }
         }
-        if ((completeLvl1 == true) && (completeLvl2 == true) && (completeLvl3 == true)){
-            //game over give option to restart
-            gameOver = true;
-            completeLvl1 = false;
-            completeLvl2 = false;
-            completeLvl3 = false;
+        if ((completeLvl1 == true) && (completeLvl2 == true) && (completeLvl3 == true))
+        {
+            //    //game over give option to restart
+            //    //gameOver = true;
 
+            //    completeLvl1 = false;
+            //    completeLvl2 = false;
+            //    completeLvl3 = false;
+            if (Input.GetKey(KeyCode.JoystickButton9))
+            {
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);
+                gameOver = false;
+            }
         }
 
 

@@ -44,6 +44,15 @@ public class PlayerUI : MonoBehaviour
         P1Frozen = player1.GetComponent<P1Status>().frozen;
         P2Shrank = player2.GetComponent<P2Status>().shrank;
         P2Frozen = player2.GetComponent<P2Status>().frozen;
+        if(gmtest.GetComponent<GameConstants>().gameOver){
+            gameState.text = "GAME OVER! PRESS Options Button to RESTART GAME!";
+            if(Input.GetKey(KeyCode.JoystickButton9))
+            {
+                gameState.text = "";
+                gmtest.GetComponent<GameConstants>().gameOver = false;
+            }
+
+        }
         if (gmtest.GetComponent<GameConstants>().completeLvl1)
         {
             gameState.text = "Level1 Cleared";
@@ -56,7 +65,12 @@ public class PlayerUI : MonoBehaviour
         }
         if (gmtest.GetComponent<GameConstants>().completeLvl3)
         {
-            gameState.text = "CONGRATULATIONS! YOU WIN!";
+            gameState.text = "CONGRATULATIONS! YOU WIN! PRESS options to RESTART GAME.";
+            if (Input.GetKey(KeyCode.JoystickButton9))
+            {
+                gameState.text = "";
+                gmtest.GetComponent<GameConstants>().gameOver = false;
+            }
             //wave.text = "Wave 3";
         }
 
