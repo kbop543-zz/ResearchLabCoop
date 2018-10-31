@@ -53,7 +53,7 @@ public class GameConstants : MonoBehaviour {
             Debug.Log("GAME OVER");
             //gameUI.GetComponent<PlayerUI>().gameState.text = "GAME OVER";
             gameOver = true;
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
         if (gameOver) {
             Debug.Log("PRESS R TO RESTART GAME");
@@ -63,7 +63,7 @@ public class GameConstants : MonoBehaviour {
                 SceneManager.LoadScene(scene.name);
                 gameOver = false;
             }
-            if(Input.GetKey("e")){
+            if ((Input.GetKey("e")) || (Input.GetKey(KeyCode.JoystickButton8))){
                 gameOver = false;
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(0);
@@ -128,6 +128,14 @@ public class GameConstants : MonoBehaviour {
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);
                 gameOver = false;
+            }
+            if ((Input.GetKey("e"))|| (Input.GetKey(KeyCode.JoystickButton8)))
+            {
+                gameOver = false;
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(0);
+
+
             }
         }
 

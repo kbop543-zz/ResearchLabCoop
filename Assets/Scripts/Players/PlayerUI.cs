@@ -45,8 +45,14 @@ public class PlayerUI : MonoBehaviour
         P2Shrank = player2.GetComponent<P2Status>().shrank;
         P2Frozen = player2.GetComponent<P2Status>().frozen;
         if(gmtest.GetComponent<GameConstants>().gameOver){
-            gameState.text = "GAME OVER! PRESS Options Button to RESTART GAME!";
-            if(Input.GetKey(KeyCode.JoystickButton9))
+            gameState.text = "GAME OVER! PRESS Options Button to RESTART GAME!" + System.Environment.NewLine + "PRESS Share to EXIT TO MAIN Menu";
+
+            if (Input.GetKey(KeyCode.JoystickButton9))
+            {
+                gameState.text = "";
+                gmtest.GetComponent<GameConstants>().gameOver = false;
+            }
+            if ((Input.GetKey("e")) || (Input.GetKey(KeyCode.JoystickButton8)))
             {
                 gameState.text = "";
                 gmtest.GetComponent<GameConstants>().gameOver = false;
@@ -65,13 +71,17 @@ public class PlayerUI : MonoBehaviour
         }
         if (gmtest.GetComponent<GameConstants>().completeLvl3)
         {
-            gameState.text = "CONGRATULATIONS! YOU WIN! PRESS options to RESTART GAME.";
+            gameState.text = "CONGRATULATIONS! YOU WIN! PRESS options to RESTART GAME." + System.Environment.NewLine + "PRESS Share to EXIT TO MAIN Menu";
             if (Input.GetKey(KeyCode.JoystickButton9))
             {
                 gameState.text = "";
                 gmtest.GetComponent<GameConstants>().gameOver = false;
             }
-            //wave.text = "Wave 3";
+            if ((Input.GetKey("e")) || (Input.GetKey(KeyCode.JoystickButton8)))
+            {
+                gameState.text = "";
+                gmtest.GetComponent<GameConstants>().gameOver = false;
+            }
         }
 
         // If player is affected by any status, update and show a cooldown timer

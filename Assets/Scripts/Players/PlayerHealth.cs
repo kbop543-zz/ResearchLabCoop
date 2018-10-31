@@ -13,12 +13,14 @@ public class PlayerHealth : MonoBehaviour {
 	public Transform respawnTransform;
     public AudioSource playerhurt;
     public AudioClip clip1, clip2, clip3;
+    public GameObject gmtest;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		health = startHealth;
 		healthBar.color = Color.green;
+        gmtest = GameObject.Find("GameManagerTest");
 
         // Respawn position is subject to change in future
         //respawnTransform = transform;
@@ -37,33 +39,41 @@ public class PlayerHealth : MonoBehaviour {
 			gameObject.SetActive(false);
 			playerIsDead = true;
 
-			Invoke("Respawn",3);
+            Invoke("Respawn", 3);
+                
 		}
 	}
 
 	public void Respawn () {
 		print("respawn");
-		transform.position = respawnTransform.position;
-		transform.rotation = respawnTransform.rotation;
-        transform.localScale = respawnTransform.localScale;
+        if (!gmtest.GetComponent<GameConstants>().gameOver)
+        {
+            transform.position = respawnTransform.position;
+            transform.rotation = respawnTransform.rotation;
+            transform.localScale = respawnTransform.localScale;
 
-		health = startHealth;
+            health = startHealth;
 
-        // Reset status
-        if (gameObject.name == "P1(Clone)") {
-            GetComponent<P1Status>().RestoreStatus();
-        }else {
-            GetComponent<P2Status>().RestoreStatus();
+            // Reset status
+            if (gameObject.name == "P1(Clone)")
+            {
+                GetComponent<P1Status>().RestoreStatus();
+            }
+            else
+            {
+                GetComponent<P2Status>().RestoreStatus();
+            }
+
+            if (gameObject)
+            {
+                gameObject.SetActive(true);
+                playerIsDead = false;
+                healthBar.fillAmount = health;
+                healthBar.color = Color.green;
+            }
+
+            Debug.Log("Player has respawned");
         }
-
-		if(gameObject){
-			gameObject.SetActive(true);
-            playerIsDead = false;
-			healthBar.fillAmount = health;
-			healthBar.color = Color.green;
-		}
-
-		Debug.Log("Player has respawned");
 	}
 
 	public void TakeDamage(float amount){
