@@ -8,6 +8,7 @@ public class P2Status : MonoBehaviour {
     public bool shrank = false;
     public bool blown = false;
     public float duration = 7.0f;
+    public float speedLimit = 500f;
 
     public float originalSpeed;
     public float originalScale;
@@ -49,7 +50,12 @@ public class P2Status : MonoBehaviour {
     public void Shrink(float ratio)
     {
         shrank = true;
-        gameObject.GetComponent<p2_movement>().speed = gameObject.GetComponent<p2_movement>().speed * ratio;
+        float estimatedSpeed = gameObject.GetComponent<p2_movement>().speed * ratio;
+        // reduce speed after being shrunk
+        if (estimatedSpeed <= speedLimit)
+        {
+            gameObject.GetComponent<p2_movement>().speed = estimatedSpeed;
+        }
 
         if (curUnshrink != null)
         {
