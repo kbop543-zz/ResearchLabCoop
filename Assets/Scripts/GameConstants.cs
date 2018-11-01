@@ -57,7 +57,7 @@ public class GameConstants : MonoBehaviour {
         }
         if (gameOver) {
             Debug.Log("PRESS R TO RESTART GAME");
-            if (Input.GetKey("r")){
+            if ((Input.GetKey("r"))|| (Input.GetKey(KeyCode.JoystickButton9))){
 
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);
