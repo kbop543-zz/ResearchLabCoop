@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4687751364148446}
   - component: {fileID: 33251953550435774}
   - component: {fileID: 23839465021387204}
+  - component: {fileID: 65848475516235084}
   m_Layer: 0
   m_Name: Danger Sign
   m_TagString: Untagged
@@ -8408,6 +8409,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000014, y: 3.3, z: 0.104063615}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65848475516235084
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005337087564642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.439553, z: 0.51133394}
+  m_Center: {x: -0.0000009535354, y: -0.5840417, z: 0.037292138}
 --- !u!65 &65866283716887704
 BoxCollider:
   m_ObjectHideFlags: 1

@@ -217,10 +217,7 @@ MonoBehaviour:
   thrinkTile: {fileID: 1672104751296836, guid: cee798ca3ee4c43329ae3babc76d7ce0, type: 2}
   holeStation: {fileID: 1596177855346838, guid: 8ad50e9e3ae794429a49b1c350ea2390,
     type: 2}
-  holes: {fileID: 1208918002080106, guid: ef09ce70e95b44bcd9f2e0e5c08faa46, type: 2}
-  holeTile0: {fileID: 1283595887262320, guid: 520e342c859454126b533a82a3d4d447, type: 2}
-  holeTile1: {fileID: 1593000909422462, guid: 989d9ff28137a4e6b9744f787145361c, type: 2}
-  holeTile2: {fileID: 1207480537272990, guid: c0417e1dbf4244dad8002fdfd7ac4d6a, type: 2}
+  holes: {fileID: 1999096722844310, guid: a63fed032a8ba45ec9c77b12ebd40574, type: 2}
   lightBulbs: {fileID: 1837157551751762, guid: 38eb8477d6bfd46b99b1af94dfe01c04, type: 2}
   freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
     type: 2}

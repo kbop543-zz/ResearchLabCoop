@@ -3230,7 +3230,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634170075648614}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 1.5}
@@ -3373,6 +3373,7 @@ MonoBehaviour:
   originalSpeed: 75
   originalScale: 0
   freezeSound: {fileID: 82798313006883616}
+  speedLimit: 500
 --- !u!137 &137105134165660274
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
