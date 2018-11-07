@@ -39,7 +39,8 @@ public class Interact : MonoBehaviour
                 //If we have station
                 if (items[i].gameObject.tag == "Station")
                 {
-                    if (items[i].GetComponent<StationStatus>().activated == false)
+                    if (items[i].GetComponent<StationStatus>().prepared == true &&
+                        items[i].GetComponent<StationStatus>().activated == false)
                     {
                         items[i].GetComponent<StationStatus>().activated = true;
                         items[i].GetComponent<StationStatus>().ParticleEffect.Play();

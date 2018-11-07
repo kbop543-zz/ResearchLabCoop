@@ -6,10 +6,12 @@ public class StationStatus : MonoBehaviour
 
     public bool activated = false;
     public bool waiting = false;
+    public bool prepared = true;
     public float flashDuration = 0.075f;
     public float maxIntensity = 5.0f;
     Light myLight;
     Coroutine flashLight;
+    GameObject gm;
     public ParticleSystem ParticleEffect;
 
     public float duraiton = 4f;
@@ -18,6 +20,15 @@ public class StationStatus : MonoBehaviour
     {
         myLight = GetComponentInChildren<Light>();
         ParticleEffect = GetComponentInChildren<ParticleSystem>();
+
+        gm = GameObject.FindGameObjectWithTag("GameManager");
+        if (gm.GetComponent<GameConstants>().completeLvl1 == false &&
+            (gameObject.name.Contains("ElectricityStation") ||
+             gameObject.name.Contains("FreezeStation"))) {
+
+            prepared = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -35,6 +46,10 @@ public class StationStatus : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        if (!prepared)
+        {
+            return;
+        }
         if (other.gameObject.tag == "Player")
         {
             // Enable player control UI
@@ -54,6 +69,9 @@ public class StationStatus : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        if (!prepared) {
+            return;
+        }
         if (other.gameObject.tag == "Player")
         {
             // Disable player control UI

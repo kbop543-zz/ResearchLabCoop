@@ -85,6 +85,15 @@ public class GameConstants : MonoBehaviour {
                 completeLvl1 = true;
                 enemyKillCount = 0;
                 //Time.timeScale = 0;
+
+                //Enable FreezeStation
+                GameObject[] stations = GameObject.FindGameObjectsWithTag("Station");
+                for (int i = 0; i < stations.Length; i++)
+                {
+                    if (stations[i].name.Contains("FreezeStation")) {
+                        stations[i].GetComponent<StationStatus>().prepared = true;
+                    }
+                }
             }
         }
         if ((completeLvl1 == true) && (completeLvl2 == false) && (completeLvl3 == false))
@@ -99,6 +108,16 @@ public class GameConstants : MonoBehaviour {
                 completeLvl2 = true;
                 enemyKillCount = 0;
                 //Time.timeScale = 0;
+
+                //Enable ElectricityStation
+                GameObject[] stations = GameObject.FindGameObjectsWithTag("Station");
+                for (int i = 0; i < stations.Length; i++)
+                {
+                    if (stations[i].name.Contains("ElectricityStation"))
+                    {
+                        stations[i].GetComponent<StationStatus>().prepared = true;
+                    }
+                }
             }
         }
         if ((completeLvl1 == true) && (completeLvl2 == true) && (completeLvl3 == false))
