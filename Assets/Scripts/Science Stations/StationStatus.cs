@@ -7,6 +7,7 @@ public class StationStatus : MonoBehaviour
     public bool activated = false;
     public bool waiting = false;
     public bool prepared = true;
+    public bool used = false;
     public float flashDuration = 0.075f;
     public float maxIntensity = 5.0f;
     Light myLight;
@@ -40,6 +41,17 @@ public class StationStatus : MonoBehaviour
 
             flashLight = StartCoroutine(flashNow());
             //Debug.Log("Waiting on Termination!!!");
+
+            used = true;
+        }
+
+        if (!prepared || used)
+        {
+            disableArrow();
+
+        }
+        else {
+            enableArrow();
         }
 
     }
@@ -114,6 +126,24 @@ public class StationStatus : MonoBehaviour
                 myLight.intensity -= Time.deltaTime / waitTime;        //Decrease intensity
                 yield return null;
             }
+        }
+    }
+
+    public void disableArrow()
+    {
+        var parts = transform.GetChild(0).GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer part in parts)
+        {
+            part.enabled = false;
+        }
+    }
+
+    public void enableArrow()
+    {
+        var parts = transform.GetChild(0).GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer part in parts)
+        {
+            part.enabled = true;
         }
     }
 }
