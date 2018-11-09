@@ -79,7 +79,8 @@ public class shoot : MonoBehaviour
         {
             curbulletSwapDelay = 0f;
             curGun = 0;
-            pIcon.transform.Find("P1 Bullet Icon").gameObject.GetComponent<RawImage>().texture = shockwaveIcon;
+            GameObject bulletIcon = pIcon.transform.Find("P1 UI/Gun UI/Bullet Icon").gameObject;
+            bulletIcon.GetComponent<RawImage>().texture = shockwaveIcon;
         }
         else
         {
@@ -87,7 +88,8 @@ public class shoot : MonoBehaviour
             {
                 curbulletSwapDelay = 0;
                 curGun += 1;
-                pIcon.transform.Find("P1 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
+                GameObject bulletIcon = pIcon.transform.Find("P1 UI/Gun UI/Bullet Icon").gameObject;
+                bulletIcon.GetComponent<RawImage>().texture = oilIcon;
             }
         }
         GunStatsUpdate(guns[curGun]);
@@ -100,7 +102,8 @@ public class shoot : MonoBehaviour
         {
             curbulletSwapDelay = 0f;
             curGun = 0;
-            pIcon.transform.Find("P2 Bullet Icon").gameObject.GetComponent<RawImage>().texture = shockwaveIcon;
+            GameObject bulletIcon = pIcon.transform.Find("P2 UI/Gun UI/Bullet Icon").gameObject;
+            bulletIcon.GetComponent<RawImage>().texture = shockwaveIcon;
         }
         else
         {
@@ -108,7 +111,8 @@ public class shoot : MonoBehaviour
             {
                 curbulletSwapDelay = 0;
                 curGun += 1;
-                pIcon.transform.Find("P2 Bullet Icon").gameObject.GetComponent<RawImage>().texture = oilIcon;
+                GameObject bulletIcon = pIcon.transform.Find("P2 UI/Gun UI/Bullet Icon").gameObject;
+                bulletIcon.GetComponent<RawImage>().texture = oilIcon;
             }
         }
         GunStatsUpdate(guns[curGun]);
