@@ -20,6 +20,10 @@ public class PlayerUI : MonoBehaviour
     public GameObject gmtest;
     public Text wave;
 
+    public Image progressBarFill;
+    public float enemyKilled;
+    public float enemyTotal;
+
     // Use this for initialization
     void Start()
     {
@@ -35,6 +39,10 @@ public class PlayerUI : MonoBehaviour
         gmtest = GameObject.Find("GameManagerTest");
 
         gameState.text = "";
+
+        enemyKilled = gm.GetComponent<GameConstants>().enemyKillCount;
+        enemyTotal = gm.GetComponent<GameConstants>().curWaveSpawnLimit;
+        progressBarFill.fillAmount = enemyKilled / enemyTotal;
     }
 
     private void Update()
@@ -66,6 +74,11 @@ public class PlayerUI : MonoBehaviour
             UpdateFrozenCoolDown(P2FrozenCoolDown);
         }
 
+        // Update enemy kill count and spawn limit of current wave
+        enemyKilled = gmtest.GetComponent<GameConstants>().enemyKillCount;
+        enemyTotal = gmtest.GetComponent<GameConstants>().curWaveSpawnLimit;
+        // Update wave progess bar fill amount using enemyKilled/enemyTotal
+        progressBarFill.fillAmount = enemyKilled / enemyTotal;
     }
 
     private void FixedUpdate()

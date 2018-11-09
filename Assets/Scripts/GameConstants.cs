@@ -21,6 +21,7 @@ public class GameConstants : MonoBehaviour {
     // For win condition, grab enemy death count and enemy spawn limit
     public int enemyKillCount = 0;
     public GameObject spawner, secondSpawner, thirdSpawner;
+    public int curWaveSpawnLimit;
 
     // Use this for initialization
     void Start () {
@@ -34,9 +35,14 @@ public class GameConstants : MonoBehaviour {
         players = GameObject.FindGameObjectsWithTag("Player");
         p1 = GameObject.Find("P1(Clone)");
         p2 = GameObject.Find("P2(Clone)");
+
+        // Get enemy spawner gameobjects
         spawner = GameObject.Find("Spawner(Clone)");
         secondSpawner = GameObject.Find("SecondSpawnManager(Clone)");
         thirdSpawner = GameObject.Find("ThirdSpawnManager(Clone)");
+        // assign the enemy spawn limit of first enemy spawner to a variable that will update after each wave
+        curWaveSpawnLimit = spawner.GetComponent<SpawnManager>().spawnLimit;
+
         gameUI = GameObject.Find("HUDCanvas(Clone)");
         Time.timeScale = 1.0f;
         if (spawner.GetComponent<SpawnManager>().prevSpawner == null){
@@ -75,7 +81,7 @@ public class GameConstants : MonoBehaviour {
         // Win Condition 1): Kill same amount of enemy with enemy spawn limit
         if ((completeLvl1 == false) && (completeLvl2 == false) && (completeLvl3 == false))
         {
-            if (enemyKillCount >= spawner.GetComponent<SpawnManager>().spawnLimit)
+            if (enemyKillCount >= curWaveSpawnLimit)
             {
                 //spawner.GetComponent<SpawnManager>().end = true;
                 secondSpawner.GetComponent<SpawnManager>().activated = true;
@@ -84,6 +90,7 @@ public class GameConstants : MonoBehaviour {
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
                 completeLvl1 = true;
                 enemyKillCount = 0;
+                curWaveSpawnLimit = secondSpawner.GetComponent<SpawnManager>().spawnLimit;
                 //Time.timeScale = 0;
 
                 //Enable FreezeStation
@@ -98,7 +105,7 @@ public class GameConstants : MonoBehaviour {
         }
         if ((completeLvl1 == true) && (completeLvl2 == false) && (completeLvl3 == false))
         {
-            if (enemyKillCount >= secondSpawner.GetComponent<SpawnManager>().spawnLimit)
+            if (enemyKillCount >= curWaveSpawnLimit)
             {
                 beesintro.Play();
                 //secondSpawner.GetComponent<SpawnManager>().end = true;
@@ -107,6 +114,7 @@ public class GameConstants : MonoBehaviour {
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 2 CLEARED!";
                 completeLvl2 = true;
                 enemyKillCount = 0;
+                curWaveSpawnLimit = thirdSpawner.GetComponent<SpawnManager>().spawnLimit;
                 //Time.timeScale = 0;
 
                 //Enable ElectricityStation
@@ -122,7 +130,7 @@ public class GameConstants : MonoBehaviour {
         }
         if ((completeLvl1 == true) && (completeLvl2 == true) && (completeLvl3 == false))
         {
-            if (enemyKillCount >= thirdSpawner.GetComponent<SpawnManager>().spawnLimit)
+            if (enemyKillCount >= curWaveSpawnLimit)
             {
 
                 //thirdSpawner.GetComponent<SpawnManager>().end = true;
