@@ -10,10 +10,12 @@ public class p2_movement : MonoBehaviour
     public Vector3 motionVector;
     private Rigidbody rb;
     private Transform camTransform;
+    private Animator anim;
 
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -44,9 +46,21 @@ public class p2_movement : MonoBehaviour
         rb.transform.Translate(speed * motionVector.x * Time.deltaTime, 0f, speed * motionVector.z * Time.deltaTime);
 
         // Change rotation
-        if (!GetComponent<P2Status>().frozen && movement.magnitude > 0)
+        if (!GetComponent<P2Status>().frozen)
         {
-            transform.GetChild(1).LookAt(rb.transform.position + motionVector); // since model is reversed, we will reverse directions
+            if (movement.magnitude > 0)
+            {
+                transform.GetChild(1).LookAt(rb.transform.position + motionVector); // since model is reversed, we will reverse directions
+                anim.SetBool("running", true);
+            }
+            else
+            {
+                anim.SetBool("running", false);
+            }
+        }
+        else
+        {
+            // Stop animation
         }
     }
 }
