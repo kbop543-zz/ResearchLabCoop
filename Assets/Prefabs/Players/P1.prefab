@@ -596,7 +596,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.001, y: 1, z: 0.001}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65736034056075486
 BoxCollider:
@@ -903,9 +903,9 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1327268403118020}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e95974df3a5344268b57b59d0f41cb4c, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
+  m_Avatar: {fileID: 9000000, guid: d8032cd8700cd4bc0b3fd2bbd68af10f, type: 3}
+  m_Controller: {fileID: 9100000, guid: da00b79e4b97a42df943c34b61041187, type: 2}
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

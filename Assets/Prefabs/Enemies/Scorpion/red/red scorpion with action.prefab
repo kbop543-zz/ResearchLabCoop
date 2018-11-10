@@ -170,10 +170,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621901085619024}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.8333333, z: 1.75}
+  m_Size: {x: 0.001, y: 0.8333333, z: 0.001}
   m_Center: {x: 0, y: 0.46666667, z: -0.25}
 --- !u!82 &82241579100521330
 AudioSource:
@@ -313,6 +313,7 @@ MonoBehaviour:
   originalSpeed: 75
   originalScale: 0
   freezeSound: {fileID: 82241579100521330}
+  speedLimit: 500
 --- !u!195 &195644764898296888
 NavMeshAgent:
   m_ObjectHideFlags: 1

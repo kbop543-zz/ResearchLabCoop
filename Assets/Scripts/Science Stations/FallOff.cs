@@ -96,7 +96,7 @@ public class FallOff : MonoBehaviour {
         Vector3 direction = tarDest - target.transform.position;
         direction.Normalize();
 
-        while (true) {
+        while (target != null) {
             target.transform.Translate(direction * fallSpeed * Time.deltaTime);
             yield return null;
         }
