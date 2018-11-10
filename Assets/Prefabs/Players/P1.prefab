@@ -991,6 +991,7 @@ MonoBehaviour:
   clip1: {fileID: 8300000, guid: b28f863ac962d4a368af67217c69f982, type: 3}
   clip2: {fileID: 8300000, guid: 90903e7c13cff45bd8e7c1b685bb93be, type: 3}
   clip3: {fileID: 8300000, guid: 23c3c1357f47b41faad9ba9fbe8f3249, type: 3}
+  gmtest: {fileID: 0}
 --- !u!114 &114353489285475782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1056,6 +1057,7 @@ MonoBehaviour:
   shrank: 0
   blown: 0
   duration: 7
+  speedLimit: 500
   originalSpeed: 100
   originalScale: 0
 --- !u!114 &114699365985371590
@@ -1111,8 +1113,8 @@ MonoBehaviour:
   LaserSound: {fileID: 82128115911998652}
   OilSound: {fileID: 82815181835932280}
   pIcon: {fileID: 0}
-  oilIcon: {fileID: 2800000, guid: 736a8fe2e58f14d2081f0e3edd045dbd, type: 3}
-  shockwaveIcon: {fileID: 2800000, guid: 56301d21fb7fe422f8a8dc3c59ab09f9, type: 3}
+  oilIcon: {fileID: 2800000, guid: 69fcb50258d214a7b8f1713084f3bdd9, type: 3}
+  shockwaveIcon: {fileID: 2800000, guid: 587071bd3fe5b4cc8be1afc938c4e13e, type: 3}
   bulletSwapDelay: 1
   curbulletSwapDelay: 1.0199996
 --- !u!114 &114840860456598936

@@ -601,6 +601,9 @@ MonoBehaviour:
   gameState: {fileID: 114463356972178206}
   gmtest: {fileID: 0}
   wave: {fileID: 114211065878773704}
+  progressBarFill: {fileID: 0}
+  enemyKilled: 0
+  enemyTotal: 0
 --- !u!114 &114823369159410018
 MonoBehaviour:
   m_ObjectHideFlags: 1

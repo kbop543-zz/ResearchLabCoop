@@ -91,6 +91,7 @@ public class GameConstants : MonoBehaviour {
                 completeLvl1 = true;
                 enemyKillCount = 0;
                 curWaveSpawnLimit = secondSpawner.GetComponent<SpawnManager>().spawnLimit;
+                gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 2 of 3";
                 //Time.timeScale = 0;
 
                 //Enable FreezeStation
@@ -115,6 +116,7 @@ public class GameConstants : MonoBehaviour {
                 completeLvl2 = true;
                 enemyKillCount = 0;
                 curWaveSpawnLimit = thirdSpawner.GetComponent<SpawnManager>().spawnLimit;
+                gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 3 of 3";
                 //Time.timeScale = 0;
 
                 //Enable ElectricityStation

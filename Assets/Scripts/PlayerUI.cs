@@ -19,6 +19,7 @@ public class PlayerUI : MonoBehaviour
     private bool P2Frozen = false;
     public GameObject gmtest;
     public Text wave;
+    public Text waveNum;
 
     public Image progressBarFill;
     public float enemyKilled;
@@ -39,6 +40,7 @@ public class PlayerUI : MonoBehaviour
         gmtest = GameObject.Find("GameManagerTest");
 
         gameState.text = "";
+        waveNum.text = "Wave 1 of 3";
 
         enemyKilled = gm.GetComponent<GameConstants>().enemyKillCount;
         enemyTotal = gm.GetComponent<GameConstants>().curWaveSpawnLimit;
