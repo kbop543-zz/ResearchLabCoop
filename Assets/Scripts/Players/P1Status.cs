@@ -56,12 +56,12 @@ public class P1Status : MonoBehaviour {
     public void Shrink(float ratio)
     {
         shrank = true;
-        float estimatedSpeed = gameObject.GetComponent<p1_movement>().speed * ratio;
+        //float estimatedSpeed = gameObject.GetComponent<p1_movement>().speed * ratio;
         // reduce speed after being shrunk
-        if (estimatedSpeed <= speedLimit)
-        {
-            gameObject.GetComponent<p1_movement>().speed = estimatedSpeed;
-        }
+        // if (estimatedSpeed <= speedLimit)
+        // {
+        //     gameObject.GetComponent<p1_movement>().speed = estimatedSpeed;
+        // }
         if (curUnshrink != null)
         {
             StopCoroutine(curUnshrink);
