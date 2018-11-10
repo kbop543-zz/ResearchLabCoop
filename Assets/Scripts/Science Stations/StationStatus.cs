@@ -15,7 +15,9 @@ public class StationStatus : MonoBehaviour
     public ParticleSystem ParticleEffect;
 
     public float duraiton = 4f;
+    public float coolDown = 3f;
     private bool used;
+    private float curCoolDown;
 
     private void Start()
     {
@@ -34,12 +36,23 @@ public class StationStatus : MonoBehaviour
         used = false;
         Vector3 pos = new Vector3(0f, 300f, -350f);
         transform.GetChild(0).GetChild(0).LookAt(pos);
+
+        // Set curCoolDown;
+        curCoolDown = coolDown;
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if(!waiting && activated){
+        if (!activated && prepared)
+        {
+            if (curCoolDown < coolDown) {
+                curCoolDown += Time.deltaTime;
+            }
+        }
+
+        if (!waiting && activated)
+        {
             StartCoroutine(waitForTermination());
             waiting = true;
 
@@ -148,6 +161,17 @@ public class StationStatus : MonoBehaviour
         foreach (MeshRenderer part in parts)
         {
             part.enabled = true;
+        }
+    }
+
+    public bool isStationOnCD()
+    {
+        if (curCoolDown >= coolDown) {
+            curCoolDown = 0f;
+            return false;
+        }
+        else {
+            return true;
         }
     }
 }

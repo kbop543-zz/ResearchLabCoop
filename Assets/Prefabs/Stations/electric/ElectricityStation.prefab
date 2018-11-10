@@ -646,6 +646,7 @@ MonoBehaviour:
   maxIntensity: 5
   ParticleEffect: {fileID: 198261302212025106}
   duraiton: 4
+  coolDown: 5
 --- !u!114 &114830533814189544
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -697,11 +697,11 @@ MonoBehaviour:
   activated: 0
   waiting: 0
   prepared: 0
-  used: 0
   flashDuration: 0.075
   maxIntensity: 5
   ParticleEffect: {fileID: 198594026563167166}
   duraiton: 4
+  coolDown: 5
 --- !u!114 &114412736810096016
 MonoBehaviour:
   m_ObjectHideFlags: 1
