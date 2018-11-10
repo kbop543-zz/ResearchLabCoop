@@ -11,6 +11,7 @@ public class GameConstants : MonoBehaviour {
     public int curOrbs;
     public bool gameOver;
     public bool completeLvl1, completeLvl2, completeLvl3;
+    public bool curWaveComplete;
     public GameObject[] players;
     GameObject p1;
     GameObject p2;
@@ -31,6 +32,7 @@ public class GameConstants : MonoBehaviour {
         completeLvl1 = false;
         completeLvl2 = false;
         completeLvl3 = false;
+        curWaveComplete = false;
         // Grab each gameobject for win condition
         players = GameObject.FindGameObjectsWithTag("Player");
         p1 = GameObject.Find("P1(Clone)");
@@ -89,6 +91,7 @@ public class GameConstants : MonoBehaviour {
                 //test.text = "LEVEL 1 CLEARED";
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
                 completeLvl1 = true;
+                curWaveComplete = true;
                 enemyKillCount = 0;
                 curWaveSpawnLimit = secondSpawner.GetComponent<SpawnManager>().spawnLimit;
                 gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 2 of 3";
