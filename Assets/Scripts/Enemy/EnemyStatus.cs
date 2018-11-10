@@ -69,12 +69,12 @@ public class EnemyStatus : MonoBehaviour
     {
         shrank = true;
         //gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * ratio;
-        float estimatedSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * ratio;
-        // reduce speed after being shrunk
-        if (estimatedSpeed <= speedLimit)
-        {
-            gameObject.GetComponent<EnemyMovement>().forwardSpeed = estimatedSpeed;
-        }
+        // float estimatedSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * ratio;
+        // // reduce speed after being shrunk
+        // if (estimatedSpeed <= speedLimit)
+        // {
+        //     gameObject.GetComponent<EnemyMovement>().forwardSpeed = estimatedSpeed;
+        // }
         if (curUnshrink != null)
         {
             StopCoroutine(curUnshrink);
