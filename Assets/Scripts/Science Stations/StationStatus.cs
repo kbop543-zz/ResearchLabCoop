@@ -7,7 +7,6 @@ public class StationStatus : MonoBehaviour
     public bool activated = false;
     public bool waiting = false;
     public bool prepared = true;
-    public bool used = false;
     public float flashDuration = 0.075f;
     public float maxIntensity = 5.0f;
     Light myLight;
@@ -16,6 +15,7 @@ public class StationStatus : MonoBehaviour
     public ParticleSystem ParticleEffect;
 
     public float duraiton = 4f;
+    private bool used;
 
     private void Start()
     {
@@ -30,6 +30,10 @@ public class StationStatus : MonoBehaviour
             prepared = false;
         }
 
+        // Set Arrow angle
+        used = false;
+        Vector3 pos = new Vector3(0f, 300f, -350f);
+        transform.GetChild(0).GetChild(0).LookAt(pos);
     }
 
     // Update is called once per frame

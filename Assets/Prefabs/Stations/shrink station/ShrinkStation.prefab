@@ -364,7 +364,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1391808243756218}
   m_LocalRotation: {x: 0.02255758, y: 0.9622502, z: -0.08418602, w: 0.25783423}
-  m_LocalPosition: {x: -0.018663408, y: -1, z: 1.8037543}
+  m_LocalPosition: {x: 0.57, y: -0.6, z: 2.04}
   m_LocalScale: {x: 0.021428572, y: 0.021428572, z: 0.021428578}
   m_Children:
   - {fileID: 4588206262949930}
@@ -725,6 +725,7 @@ MonoBehaviour:
   activated: 0
   waiting: 0
   prepared: 1
+  used: 0
   flashDuration: 0.075
   maxIntensity: 5
   ParticleEffect: {fileID: 198454405463727684}
