@@ -105,14 +105,14 @@ public class PlayerUI : MonoBehaviour
         {
             {
                 gameState.text = "Level1 Cleared";
-                wave.text = "Wave 2";
+                //wave.text = "Wave 2";
                 Invoke("dos", 2);
             }
         }
         if ((gmtest.GetComponent<GameConstants>().completeLvl2) && (!gmtest.GetComponent<GameConstants>().gameOver))
         {
             gameState.text = "Level2 Cleared";
-            wave.text = "Wave 3";
+            //wave.text = "Wave 3";
             Invoke("dos", 2);
         }
         if (gmtest.GetComponent<GameConstants>().completeLvl3)

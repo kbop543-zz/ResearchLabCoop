@@ -16,6 +16,7 @@ public class FallOff : MonoBehaviour {
     private float scaleY;
     private float scaleZ;
     public AudioSource dropsound;
+    public AudioSource actualDropSound;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class FallOff : MonoBehaviour {
 
             if (hitTarget.transform.localScale.x <= fallThreshold)
             {
+                actualDropSound.Play();
                 // Freeze movement by setting parameters
                 if (hitTarget.name == "P1(Clone)")
                 {
