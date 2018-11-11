@@ -1482,7 +1482,27 @@ ModelImporter:
     13700062: model:polySurface7
     13700064: model:polySurface8
     13700066: model:polySurface9
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: model_01 - Default
+    second: {fileID: 2100000, guid: 5e062d8cadb3e4cceb6fd018ff510219, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: model_01 - Default1
+    second: {fileID: 2100000, guid: 3277be52aaccd457781fe0a64c6d9e02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: model_01 - Default2
+    second: {fileID: 2100000, guid: 252a1815427cd4252a8a0d5af5357941, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: model_aiStandardSurface1
+    second: {fileID: 2100000, guid: a15c5c90e04104cd1a6ae4db8396aa70, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -1533,7 +1553,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.004
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

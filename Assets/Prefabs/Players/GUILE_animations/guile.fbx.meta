@@ -1449,7 +1449,12 @@ ModelImporter:
     13700046: polySurface9
     13700048: Surface1
     13700050: Surface2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: c2966b62f6b24415b8077a77eec03b4e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
