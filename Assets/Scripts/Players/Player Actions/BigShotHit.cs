@@ -8,6 +8,7 @@ public class BigShotHit : MonoBehaviour {
     private GameObject shooter;
     private Rigidbody rb;
     //private bool isColliding;
+    public AudioSource shatterSound;
 
     private void Start()
     {
@@ -51,6 +52,7 @@ public class BigShotHit : MonoBehaviour {
 
                     // If Frozen
                     if (hitTarget.GetComponent<EnemyStatus>().frozen) {
+                        shatterSound.Play();
                         Destroy(hitTarget);
                         GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
                     }
