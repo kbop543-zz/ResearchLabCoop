@@ -1,14 +1,39 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Players/P1Status.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GunTargeting.cs">
     <Files>
-      <File FileName="Assets/Scripts/Science Stations/StationStatus.cs" Line="69" Column="62" />
-      <File FileName="Assets/Scripts/GameConstants.cs" Line="60" Column="35" />
-      <File FileName="Assets/Scripts/Players/Player Actions/Interact.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Players/PlayerUI.cs" Line="103" Column="75" />
-      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="10" Column="33" />
-      <File FileName="Assets/Scripts/Players/P2Status.cs" Line="10" Column="33" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="21" Column="34" />
+      <File FileName="Assets/Scripts/Players/PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PauseMenu.cs" Line="45" Column="28" />
+      <File FileName="Assets/MainMenu.cs" Line="17" Column="2" />
+      <File FileName="Assets/Scripts/GameConstants.cs" Line="94" Column="40" />
+      <File FileName="Assets/Scripts/WaveCompletePause.cs" Line="41" Column="42" />
+      <File FileName="Assets/Scripts/PlayerUI.cs" Line="47" Column="63" />
+      <File FileName="Assets/Scripts/Players/P1Status.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Players/P2Status.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Players/Player Actions/shoot.cs" Line="114" Column="76" />
+      <File FileName="Assets/Scripts/Players/Player Movement/p1_movement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GunTargeting.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ResearchLabCoop" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Enemy" expanded="True" />
+                <Node name="Players" expanded="True">
+                  <Node name="Player Actions" expanded="True" />
+                  <Node name="Player Movement" expanded="True" />
+                </Node>
+                <Node name="Science Stations" expanded="True" />
+                <Node name="GunTargeting.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
