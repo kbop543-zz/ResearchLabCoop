@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class P2Status : MonoBehaviour {
 
@@ -15,10 +16,34 @@ public class P2Status : MonoBehaviour {
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
 
+    public Image shrinkFill;
+    public Image freezeFill;
+    public float shrinkStartTime;
+    public float freezeStartTime;
+    public float shrinkTimePassed; // timePassed = Time.time - (___)StartTime;
+    public float freezeTimePassed;
+
     private void Start()
     {
         originalSpeed = gameObject.GetComponent<p2_movement>().speed;
         originalScale = transform.localScale.x;
+
+        shrinkFill.fillAmount = 1.0f;
+        freezeFill.fillAmount = 1.0f;
+    }
+
+    private void Update()
+    {
+        if (shrank)
+        {
+            shrinkTimePassed = Time.time - shrinkStartTime;
+            shrinkFill.fillAmount = shrinkTimePassed / duration;
+        }
+        if (frozen)
+        {
+            freezeTimePassed = Time.time - freezeStartTime;
+            freezeFill.fillAmount = freezeTimePassed / duration;
+        }
     }
 
     //void FixedUpdate()
@@ -64,6 +89,11 @@ public class P2Status : MonoBehaviour {
         curUnshrink = Unshrink();
         StartCoroutine(curUnshrink);
         // Debug.Log("Waiting for unshrink!");
+
+        // Mark the time when player is shrunk
+        shrinkStartTime = Time.time;
+        shrinkTimePassed = Time.time - shrinkStartTime;
+        shrinkFill.fillAmount = shrinkTimePassed / duration;
     }
 
     IEnumerator Unshrink()
@@ -102,6 +132,10 @@ public class P2Status : MonoBehaviour {
         curUnfreeze = Unfreeze();
         StartCoroutine(curUnfreeze);
         // Debug.Log("Waiting for unfreeze!");
+
+        freezeStartTime = Time.time;
+        freezeTimePassed = Time.time - freezeStartTime;
+        freezeFill.fillAmount = freezeTimePassed / duration;
     }
 
     IEnumerator Unfreeze()

@@ -14,12 +14,18 @@ public class PlayerHealth : MonoBehaviour {
     public AudioSource playerhurt;
     public AudioClip clip1, clip2, clip3;
     public GameObject gmtest;
-
+    Color t_green;
+    Color t_yellow;
+    Color t_red;
 
     // Use this for initialization
     void Start () {
 		health = startHealth;
-		healthBar.color = Color.green;
+        t_green = new Color(0.04f, 0.9f, 0.0f, 0.5f);
+        t_yellow = new Color(1.0f, 1.0f, 0.0f, 0.5f);
+        t_red = new Color(1.0f, 0.0f, 0.0f, 0.5f);
+
+		healthBar.color = t_green;
         gmtest = GameObject.Find("GameManagerTest");
 
         // Respawn position is subject to change in future
@@ -69,7 +75,7 @@ public class PlayerHealth : MonoBehaviour {
                 gameObject.SetActive(true);
                 playerIsDead = false;
                 healthBar.fillAmount = health;
-                healthBar.color = Color.green;
+                healthBar.color = t_green;
             }
 
             Debug.Log("Player has respawned");
@@ -85,20 +91,20 @@ public class PlayerHealth : MonoBehaviour {
 
 
 		if(healthBar.fillAmount <= .80 & healthBar.fillAmount > .30){
-			healthBar.color = Color.yellow;
+			healthBar.color = t_yellow;
             // Debug.Log("fill should be yellow" );
             playerhurt.clip = clip2;
             playerhurt.Play();
         }
 
 		else if(healthBar.fillAmount <= .30 ){
-			healthBar.color = Color.red;
+			healthBar.color = t_red;
             playerhurt.clip = clip3;
             playerhurt.Play();
             // Debug.Log("fill should be red" );
         }
 		else{
-			healthBar.color = Color.green;
+			healthBar.color = t_green;
             playerhurt.clip = clip1;
             playerhurt.Play();
             // Debug.Log("fill should be red" );
