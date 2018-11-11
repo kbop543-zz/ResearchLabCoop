@@ -116,6 +116,9 @@ public class EnemyStatus : MonoBehaviour
     {
         freezeSound.Play();
         frozen = true;
+        // Enable iceCrystal renderer
+        transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = 0;
         gameObject.GetComponent<NavMeshAgent>().speed = 0;
         //gameObject.GetComponent<NavMeshAgent>().SetDestination(transform.position);
@@ -139,6 +142,7 @@ public class EnemyStatus : MonoBehaviour
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
 
         frozen = false;
+        transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
         //Debug.Log("Unfrozen!!");
     }
 
