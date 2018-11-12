@@ -681,7 +681,7 @@ MonoBehaviour:
   flashDuration: 0.075
   maxIntensity: 5
   ParticleEffect: {fileID: 198889429368312894}
-  duraiton: 4
+  duraiton: 7
   coolDown: 3
 --- !u!114 &114820768585322952
 MonoBehaviour:
