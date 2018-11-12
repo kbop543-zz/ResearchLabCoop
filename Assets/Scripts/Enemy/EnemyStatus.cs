@@ -242,6 +242,7 @@ public class EnemyStatus : MonoBehaviour
             smoke.Play();
 
             GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
+            GameManager.instance.GetComponent<GameConstants>().comboBoom += 1;
         }
         //else
         //{

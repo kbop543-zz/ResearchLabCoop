@@ -65,6 +65,7 @@ public class FallOff : MonoBehaviour {
                     hitTarget.GetComponent<EnemyStatus>().Fall();
                     Destroy(hitTarget, destroyDelay);
                     GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
+                    GameManager.instance.GetComponent<GameConstants>().comboFalling += 1;
 
                     // Start falling animation
                     StartCoroutine(StartFalling(hitTarget));
