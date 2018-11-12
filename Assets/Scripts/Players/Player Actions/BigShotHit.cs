@@ -62,7 +62,7 @@ public class BigShotHit : MonoBehaviour {
                         Destroy(hitTarget);
                         GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
                         GameManager.instance.GetComponent<GameConstants>().comboShatter += 1;
-                        GameManager.instance.GetComponent<LevelManager>().myStats.incFreezeShockKill();
+                        GameManager.instance.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incFreezeShockKill();
                     }
                     // If normal state
                     else {
