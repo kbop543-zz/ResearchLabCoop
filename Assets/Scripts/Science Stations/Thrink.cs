@@ -13,6 +13,7 @@ public class Thrink : MonoBehaviour {
     private bool flashing;
     public AudioSource shrinkSound;
     //public AudioClip clip3, clip4;
+    public bool play;
     private void Start()
     {
         //thrinkMin = GameObject.Find("P1(Clone)").transform.localScale.x / 3;
@@ -20,6 +21,7 @@ public class Thrink : MonoBehaviour {
         myLight = GetComponentInChildren<Light>();
         myLight.intensity = 0f;
         flashing = false;
+        play = true;
         //shrinkSound.clip = clip3;
     }
 
@@ -71,13 +73,22 @@ public class Thrink : MonoBehaviour {
                     //    //shrinkSound.Play();
                     //    shrinkSound.clip = clip3;
                     //}
-                    shrinkSound.Play();
+                    if ((!shrinkSound.isPlaying) && (play))
+                    {
+                        shrinkSound.PlayOneShot(shrinkSound.clip);
+                        play = false;
+                        Invoke("Whatever", 5);
+                    }
                     hitTarget.GetComponent<EnemyStatus>().Shrink(1/ratio);
 
                 }
             }
         }
 
+    }
+    void Whatever()
+    {
+        play = true;
     }
 
     private void FixedUpdate()

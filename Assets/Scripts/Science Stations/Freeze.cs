@@ -50,7 +50,7 @@ public class Freeze : MonoBehaviour {
                 {
                     freezeSound.PlayOneShot(freezeSound.clip);
                     play = false;
-                    Invoke("whatever", 5);
+                    Invoke("Whatever", 5);
                 }
                 hitTarget.GetComponent<EnemyStatus>().Freeze();
 
@@ -58,7 +58,7 @@ public class Freeze : MonoBehaviour {
 
         }
     }
-    void whatever()
+    void Whatever()
     {
         play = true;
     }
