@@ -21,6 +21,10 @@ public class GameConstants : MonoBehaviour {
 
     // For win condition, grab enemy death count and enemy spawn limit
     public int enemyKillCount = 0;
+    public int comboFalling = 0;
+    public int comboShatter = 0;
+    public int comboBoom = 0;
+
     public GameObject spawner, secondSpawner, thirdSpawner;
     public int curWaveSpawnLimit;
 
@@ -61,6 +65,7 @@ public class GameConstants : MonoBehaviour {
             Debug.Log("GAME OVER");
             //gameUI.GetComponent<PlayerUI>().gameState.text = "GAME OVER";
             gameOver = true;
+            gameUI.GetComponent<GameUIPanels>().playerLose = true;
             //Time.timeScale = 0;
         }
         if (gameOver) {
@@ -93,6 +98,9 @@ public class GameConstants : MonoBehaviour {
                 completeLvl1 = true;
                 curWaveComplete = true;
                 enemyKillCount = 0;
+                comboFalling = 0;
+                comboShatter = 0;
+                comboBoom = 0;
                 curWaveSpawnLimit = secondSpawner.GetComponent<SpawnManager>().spawnLimit;
                 gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 2 of 3";
                 //Time.timeScale = 0;
@@ -117,7 +125,11 @@ public class GameConstants : MonoBehaviour {
                 Debug.Log("LEVEL 2 CLEARED");
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 2 CLEARED!";
                 completeLvl2 = true;
+                curWaveComplete = true;
                 enemyKillCount = 0;
+                comboFalling = 0;
+                comboShatter = 0;
+                comboBoom = 0;
                 curWaveSpawnLimit = thirdSpawner.GetComponent<SpawnManager>().spawnLimit;
                 gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 3 of 3";
                 //Time.timeScale = 0;
@@ -144,6 +156,9 @@ public class GameConstants : MonoBehaviour {
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 3 CLEARED! (YOU WIN)";
                 completeLvl3 = true;
                 enemyKillCount = 0;
+                comboFalling = 0;
+                comboShatter = 0;
+                comboBoom = 0;
                 //Time.timeScale = 0;
             }
         }

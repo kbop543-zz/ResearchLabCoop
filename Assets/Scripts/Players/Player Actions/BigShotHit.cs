@@ -61,6 +61,7 @@ public class BigShotHit : MonoBehaviour {
                         shatterSound.Play();
                         Destroy(hitTarget);
                         GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
+                        GameManager.instance.GetComponent<GameConstants>().comboShatter += 1;
                     }
                     // If normal state
                     else {
