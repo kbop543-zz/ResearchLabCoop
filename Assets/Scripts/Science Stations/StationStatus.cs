@@ -26,6 +26,7 @@ public class StationStatus : MonoBehaviour
     public float coolDownStartTime;
     public float coolDownTimePassed; // timePassed = Time.time - startTime
 
+    public GameObject arrow;
     public GameObject model;
     private Color originalColor;
     private bool colorChanged;
@@ -54,7 +55,7 @@ public class StationStatus : MonoBehaviour
         // Set Arrow angle
         used = false;
         Vector3 pos = new Vector3(0f, 300f, -350f);
-        transform.GetChild(0).GetChild(0).LookAt(pos);
+        arrow.transform.GetChild(0).LookAt(pos);
 
         // Set curCoolDown;
         curCoolDown = coolDown;
@@ -200,7 +201,7 @@ public class StationStatus : MonoBehaviour
 
     public void disableArrow()
     {
-        var parts = transform.GetChild(0).GetComponentsInChildren<MeshRenderer>();
+        var parts = arrow.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer part in parts)
         {
             part.enabled = false;
@@ -209,7 +210,7 @@ public class StationStatus : MonoBehaviour
 
     public void enableArrow()
     {
-        var parts = transform.GetChild(0).GetComponentsInChildren<MeshRenderer>();
+        var parts = arrow.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer part in parts)
         {
             part.enabled = true;
