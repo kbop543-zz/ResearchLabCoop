@@ -182,6 +182,8 @@ public class EnemyStatus : MonoBehaviour
     {
         oiled = true;
 
+        // Darkened texture
+
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed / 2;
 
         if (curUnoiled != null)
@@ -202,6 +204,8 @@ public class EnemyStatus : MonoBehaviour
         }
 
         oiled = false;
+
+        // Original texture
     }
 
     public void Shock()
