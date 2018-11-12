@@ -37,7 +37,7 @@ public class PlayerUI : MonoBehaviour
 
         //P2ShrinkCoolDown.text = "";
         //P2FrozenCoolDown.text = "";
-        gmtest = GameObject.Find("GameManagerTest");
+        gmtest = GameObject.FindWithTag("GameManager");
 
         gameState.text = "";
         waveNum.text = "Wave 1 of 3";

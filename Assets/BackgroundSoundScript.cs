@@ -13,7 +13,7 @@ public class BackgroundSoundScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake(){
         //DontDestroyOnLoad(gameObject);
-        gmtest = GameObject.Find("GameManagerTest");
+        gmtest = GameObject.FindWithTag("GameManager");
         play1 = true;
         play2 = true;
 	}
