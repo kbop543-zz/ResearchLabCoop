@@ -151,7 +151,10 @@ public class EnemyMovement : MonoBehaviour
 
             if (curNavCD >= navCD) {
                 navAgent.speed = forwardSpeed;
-                navAgent.SetDestination(DestinationPos);
+                if (navAgent.isOnNavMesh)
+                {
+                    navAgent.SetDestination(DestinationPos);
+                }
                 curNavCD = 0f;
             }
 
@@ -165,8 +168,10 @@ public class EnemyMovement : MonoBehaviour
             }
 
             navAgent.speed = 0;
-            navAgent.SetDestination(transform.position);
-
+            if (navAgent.isOnNavMesh)
+            {
+                navAgent.SetDestination(transform.position);
+            }
             //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
 
         }
