@@ -78,6 +78,9 @@ public class PlayerHealth : MonoBehaviour {
                 healthBar.color = t_green;
             }
 
+            // Hide iceCrystal
+            transform.GetChild(2).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+
             Debug.Log("Player has respawned");
         }
 	}

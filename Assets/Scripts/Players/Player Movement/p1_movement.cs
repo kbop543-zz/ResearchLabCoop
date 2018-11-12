@@ -50,6 +50,11 @@ public class p1_movement : MonoBehaviour
 
         // Change rotation
         if (!GetComponent<P1Status>().frozen) {
+            // Rebind animation
+            if (anim.speed.Equals(0)) {
+                anim.speed = 1;
+            }
+
             if (movement.magnitude > 0)
             {
                 transform.GetChild(1).LookAt(rb.transform.position + motionVector); // since model is reversed, we will reverse directions
@@ -62,6 +67,7 @@ public class p1_movement : MonoBehaviour
         }
         else {
             // Stop animation
+            anim.speed = 0;
         }
 
     }
