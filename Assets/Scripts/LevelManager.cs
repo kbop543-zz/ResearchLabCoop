@@ -39,10 +39,12 @@ public class LevelManager : MonoBehaviour {
     public GameObject BackgroundSound;
     public GameObject navmesh;
     public GameObject enemySpawner2, enemySpawner3;
+    public GameObject waveStatsClear;
 
     public GameObject p1;
     public GameObject p2;
     public GameObject hud;
+    public GameObject myStats;
 
     public void SetupScene() {
         //Instantiate(terrainTiles, new Vector3(-514f, 0, -472f), Quaternion.identity);
@@ -62,9 +64,11 @@ public class LevelManager : MonoBehaviour {
         p1 = Instantiate(player1) as GameObject;
         p2 = Instantiate(player2) as GameObject;
         hud = Instantiate(HUDCanvas) as GameObject;
+        myStats = Instantiate(waveStatsClear) as GameObject;
         //Instantiate(researchLab);
         Instantiate(enemySpawner);
         Instantiate(orb);
+
         Instantiate(eventSystem);
 
         //Instantiate(crossBow);

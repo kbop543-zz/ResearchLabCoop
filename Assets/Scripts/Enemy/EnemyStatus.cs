@@ -243,6 +243,7 @@ public class EnemyStatus : MonoBehaviour
 
             GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
             GameManager.instance.GetComponent<GameConstants>().comboBoom += 1;
+            GameManager.instance.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incElectricOilKill();
         }
         //else
         //{
