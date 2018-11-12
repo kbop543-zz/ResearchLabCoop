@@ -267,7 +267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4090045611724730
 Transform:
   m_ObjectHideFlags: 1
@@ -786,7 +786,7 @@ MonoBehaviour:
   batteryFill: {fileID: 114211401933408522}
   coolDownStartTime: 0
   coolDownTimePassed: 0
-  model: {fileID: 1383669173150516}
+  model: {fileID: 0}
 --- !u!114 &114636922410791524
 MonoBehaviour:
   m_ObjectHideFlags: 1
