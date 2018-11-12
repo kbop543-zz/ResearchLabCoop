@@ -14,6 +14,7 @@ public class EnemyStatus : MonoBehaviour
     public float duraiton = 5f;
     public float originalSpeed;
     public float originalScale;
+    public ParticleSystem smoke;
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
     private IEnumerator curUnoiled;
@@ -22,8 +23,6 @@ public class EnemyStatus : MonoBehaviour
     public float speedLimit = 500f;
     public GameObject gmtest;
     public bool play;
-
-
 
 
     private void Start()
@@ -230,12 +229,43 @@ public class EnemyStatus : MonoBehaviour
 
         if (gameObject.GetComponent<EnemyStatus>().oiled)
         {
-            Destroy(gameObject);
+            DestroyMonster(4.5f);
+            smoke.Play();
+
             GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
         }
         //else
         //{
         //    gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * 2;
         //}
+    }
+
+    public void DestroyMonster(float delay) {
+        MeshRenderer[] allMesh = GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in allMesh)
+        {
+            mesh.enabled = false;
+        }
+        SkinnedMeshRenderer[] allSkinMesh = GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
+        {
+            skinMesh.enabled = false;
+        }
+        Collider[] allCollider = GetComponentsInChildren<Collider>();
+        foreach (Collider col in allCollider)
+        {
+            col.enabled = false;
+        }
+        NavMeshAgent[] allAgent = GetComponentsInChildren<NavMeshAgent>();
+        foreach (NavMeshAgent agent in allAgent)
+        {
+            agent.enabled = false;
+        }
+        NavMeshObstacle[] allObs = GetComponentsInChildren<NavMeshObstacle>();
+        foreach (NavMeshObstacle obs in allObs)
+        {
+            obs.enabled = false;
+        }
+        Destroy(gameObject, delay);
     }
 }
