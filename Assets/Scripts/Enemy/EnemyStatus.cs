@@ -202,7 +202,7 @@ public class EnemyStatus : MonoBehaviour
         oiled = true;
 
         // Darkened texture
-        Darken(0.5f);
+        Darken(0.7f);
 
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed / 2;
 
