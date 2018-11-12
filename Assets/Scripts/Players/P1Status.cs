@@ -127,6 +127,8 @@ public class P1Status : MonoBehaviour {
     public void Freeze()
     {
         frozen = true;
+        // Enable iceCrystal renderer
+        transform.GetChild(2).GetChild(0).GetComponent<MeshRenderer>().enabled = true;
 
         // make speed 0 after being frozen
         gameObject.GetComponent<p1_movement>().speed = 0;
@@ -152,6 +154,7 @@ public class P1Status : MonoBehaviour {
         gameObject.GetComponent<p1_movement>().speed = originalSpeed;
 
         frozen = false;
+        transform.GetChild(2).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
         //Debug.Log("Unfrozen!!");
     }
 
