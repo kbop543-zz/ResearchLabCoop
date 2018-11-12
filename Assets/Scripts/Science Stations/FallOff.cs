@@ -17,6 +17,9 @@ public class FallOff : MonoBehaviour {
     private float scaleZ;
     public AudioSource dropsound;
     public AudioSource actualDropSound;
+    public bool play;
+    public GameObject hole1,hole2,hole3,hole4;
+
 
     private void Start()
     {
@@ -24,7 +27,11 @@ public class FallOff : MonoBehaviour {
         myRend = GetComponent<Renderer>();
         myRend.enabled = false;
         opened = false;
-
+        play = true;
+        hole1 = GameObject.Find("HoleTile_1");
+        hole2 = GameObject.Find("HoleTile_2");
+        hole3 = GameObject.Find("HoleTile_3");
+        hole4 = GameObject.Find("HoleTile_4");
         scaleX = transform.localScale.x;
         scaleY = transform.localScale.y;
         scaleZ = transform.localScale.z;
@@ -83,13 +90,30 @@ public class FallOff : MonoBehaviour {
             {
                 //play sound effect for  monster being too big to fall into hole(right now will do it for all monsters)
                 if (hitTarget.tag == "Monster"){
-                    dropsound.Play();
+                    if ((!dropsound.isPlaying) && (play))
+                    {
+                        dropsound.PlayOneShot(dropsound.clip);
+                        hole1.GetComponent<FallOff>().play = false;
+                        hole2.GetComponent<FallOff>().play = false;
+                        hole3.GetComponent<FallOff>().play = false;
+                        hole4.GetComponent<FallOff>().play = false;
+                        play = false;
+                        Invoke("Whatever", 5);
+                    }
                 }
 
             }
 
         }
 
+    }
+    void Whatever()
+    {
+        play = true;
+        hole1.GetComponent<FallOff>().play = true;
+        hole2.GetComponent<FallOff>().play = true;
+        hole3.GetComponent<FallOff>().play = true;
+        hole4.GetComponent<FallOff>().play = true;
     }
 
     private IEnumerator StartFalling (GameObject target) {
