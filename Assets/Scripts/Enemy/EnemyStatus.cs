@@ -19,12 +19,19 @@ public class EnemyStatus : MonoBehaviour
     private IEnumerator curUnfreeze;
     private IEnumerator curUnoiled;
     public AudioSource freezeSound;
+    public AudioSource oilSound;
     public float speedLimit = 500f;
+    public GameObject gmtest;
+    public bool play;
+
 
     private void Start()
     {
+        play = true;
         originalSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed;
         originalScale = transform.localScale.x;
+        gmtest = GameObject.Find("GameManagerTest");
+
     }
 
     //void FixedUpdate()
@@ -180,6 +187,15 @@ public class EnemyStatus : MonoBehaviour
 
     public void Oiling()
     {
+        if (gmtest.GetComponent<GameConstants>().completeLvl2)
+        {
+            if(play){
+                play = false;
+                oilSound.Play();
+                Invoke("Whatever", 10);
+            }
+
+        }
         oiled = true;
 
         // Darkened texture
@@ -192,6 +208,9 @@ public class EnemyStatus : MonoBehaviour
         }
         curUnoiled = Unoil();
         StartCoroutine(curUnoiled);
+    }
+    void Whatever(){
+        play = true;
     }
 
     IEnumerator Unoil()

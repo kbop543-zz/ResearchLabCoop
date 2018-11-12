@@ -1260,7 +1260,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87793c200e06f46f3b6b9da9f4752ff6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6f1f02da49d37402a99ab7e103794041, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.49
   m_Pitch: 1
@@ -1355,7 +1355,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87793c200e06f46f3b6b9da9f4752ff6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6f1f02da49d37402a99ab7e103794041, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.49
   m_Pitch: 1
@@ -1450,7 +1450,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87793c200e06f46f3b6b9da9f4752ff6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6f1f02da49d37402a99ab7e103794041, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.49
   m_Pitch: 1
@@ -1545,7 +1545,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87793c200e06f46f3b6b9da9f4752ff6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6f1f02da49d37402a99ab7e103794041, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.49
   m_Pitch: 1
@@ -2029,6 +2029,11 @@ MonoBehaviour:
   expandDuration: 0.75
   dropsound: {fileID: 82053167906253436}
   actualDropSound: {fileID: 82672459782763210}
+  play: 0
+  hole1: {fileID: 0}
+  hole2: {fileID: 0}
+  hole3: {fileID: 0}
+  hole4: {fileID: 0}
 --- !u!114 &114294491072744364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2047,6 +2052,11 @@ MonoBehaviour:
   expandDuration: 0.75
   dropsound: {fileID: 82207828200886006}
   actualDropSound: {fileID: 82988122175313960}
+  play: 0
+  hole1: {fileID: 0}
+  hole2: {fileID: 0}
+  hole3: {fileID: 0}
+  hole4: {fileID: 0}
 --- !u!114 &114745876309847414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2065,6 +2075,11 @@ MonoBehaviour:
   expandDuration: 0.75
   dropsound: {fileID: 82117580816798674}
   actualDropSound: {fileID: 82639028942942338}
+  play: 0
+  hole1: {fileID: 0}
+  hole2: {fileID: 0}
+  hole3: {fileID: 0}
+  hole4: {fileID: 0}
 --- !u!114 &114840805569642032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2083,6 +2098,11 @@ MonoBehaviour:
   expandDuration: 0.75
   dropsound: {fileID: 82270423977941048}
   actualDropSound: {fileID: 82325973640226326}
+  play: 0
+  hole1: {fileID: 0}
+  hole2: {fileID: 0}
+  hole3: {fileID: 0}
+  hole4: {fileID: 0}
 --- !u!135 &135154915204319420
 SphereCollider:
   m_ObjectHideFlags: 1
