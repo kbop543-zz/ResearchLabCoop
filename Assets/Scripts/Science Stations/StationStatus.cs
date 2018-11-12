@@ -26,10 +26,18 @@ public class StationStatus : MonoBehaviour
     public float coolDownStartTime;
     public float coolDownTimePassed; // timePassed = Time.time - startTime
 
+    public GameObject model;
+    private Color originalColor;
+    private bool colorChanged;
+
     private void Start()
     {
         myLight = GetComponentInChildren<Light>();
         ParticleEffect = GetComponentInChildren<ParticleSystem>();
+
+        //Get originalMaterialColor
+        colorChanged = true;
+        GetMaterialColor();
 
         gm = GameObject.FindGameObjectWithTag("GameManager");
         if (gm.GetComponent<GameConstants>().completeLvl1 == false &&
@@ -37,6 +45,10 @@ public class StationStatus : MonoBehaviour
              gameObject.name.Contains("FreezeStation"))) {
 
             prepared = false;
+            colorChanged = false;
+
+            //Darken the station
+            Darken(0.9f);
         }
 
         // Set Arrow angle
@@ -71,6 +83,13 @@ public class StationStatus : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        // Restore color
+        if (prepared && !colorChanged)
+        {
+            RestoreColor();
+            colorChanged = true;
+        }
+
         if (!activated && prepared)
         {
             if (curCoolDown < coolDown) {
@@ -97,7 +116,6 @@ public class StationStatus : MonoBehaviour
         else {
             enableArrow();
         }
-
     }
 
     public void OnTriggerEnter(Collider other)
@@ -206,6 +224,34 @@ public class StationStatus : MonoBehaviour
         }
         else {
             return true;
+        }
+    }
+
+    private void GetMaterialColor()
+    {
+        MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in allMesh)
+        {
+            originalColor = mesh.material.color;
+        }
+    }
+
+    public void Darken(float percent)
+    {
+        percent = Mathf.Clamp01(percent);
+        MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in allMesh)
+        {
+            mesh.material.color = new Color(originalColor.r * (1 - percent), originalColor.g * (1 - percent), originalColor.b * (1 - percent), originalColor.a);
+        }
+    }
+
+    public void RestoreColor()
+    {
+        MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in allMesh)
+        {
+            mesh.material.color = originalColor;
         }
     }
 }
