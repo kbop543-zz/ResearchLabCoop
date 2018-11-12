@@ -786,6 +786,7 @@ MonoBehaviour:
   batteryFill: {fileID: 114211401933408522}
   coolDownStartTime: 0
   coolDownTimePassed: 0
+  model: {fileID: 1383669173150516}
 --- !u!114 &114636922410791524
 MonoBehaviour:
   m_ObjectHideFlags: 1
