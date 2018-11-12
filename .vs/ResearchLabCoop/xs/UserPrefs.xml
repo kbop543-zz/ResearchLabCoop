@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Players/Player Actions/Interact.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Science Stations/StationStatus.cs">
     <Files>
       <File FileName="Assets/Scripts/LevelManager.cs" Line="21" Column="34" />
       <File FileName="Assets/Scripts/Players/PlayerHealth.cs" Line="1" Column="1" />
@@ -11,9 +11,9 @@
       <File FileName="Assets/Scripts/PlayerUI.cs" Line="47" Column="63" />
       <File FileName="Assets/Scripts/Players/P1Status.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Players/P2Status.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Players/Player Actions/shoot.cs" Line="114" Column="76" />
-      <File FileName="Assets/Scripts/Science Stations/StationStatus.cs" Line="8" Column="26" />
-      <File FileName="Assets/Scripts/Science Stations/Thrink.cs" Line="85" Column="60" />
+      <File FileName="Assets/Scripts/Players/Player Actions/shoot.cs" Line="114" Column="40" />
+      <File FileName="Assets/Scripts/Science Stations/StationStatus.cs" Line="45" Column="1" />
+      <File FileName="Assets/Scripts/Science Stations/Thrink.cs" Line="85" Column="22" />
       <File FileName="Assets/Scripts/Players/Player Actions/Interact.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
