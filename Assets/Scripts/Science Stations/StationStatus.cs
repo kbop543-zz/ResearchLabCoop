@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class StationStatus : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class StationStatus : MonoBehaviour
     public float coolDown = 3f;
     private bool used;
     private float curCoolDown;
+
+    public bool recharging = false;
+    public GameObject battery;
+    public Image batteryFill;
+    public float coolDownStartTime;
+    public float coolDownTimePassed; // timePassed = Time.time - startTime
 
     private void Start()
     {
@@ -39,6 +46,26 @@ public class StationStatus : MonoBehaviour
 
         // Set curCoolDown;
         curCoolDown = coolDown;
+
+        // Set fill amount of battery fill to 1
+        batteryFill.fillAmount = 1.0f;
+        // Set both batteryIcon and batteryFill to inactive at start of game
+        battery.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (recharging)
+        {
+            coolDownTimePassed = Time.time - coolDownStartTime;
+            batteryFill.fillAmount = coolDownTimePassed / coolDown;
+
+            if (batteryFill.fillAmount >= 1.0f)
+            {
+                battery.SetActive(false);
+                recharging = false;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -123,6 +150,13 @@ public class StationStatus : MonoBehaviour
         activated = false;
         waiting = false;
         ParticleEffect.Stop();
+
+        // Display and start cooldown UI of station
+        battery.SetActive(true);
+        coolDownStartTime = Time.time;
+        coolDownTimePassed = Time.time - coolDownStartTime;
+        batteryFill.fillAmount = coolDownTimePassed / coolDown;
+        recharging = true;
 
         StopCoroutine(flashLight);
         myLight.intensity = maxIntensity;
