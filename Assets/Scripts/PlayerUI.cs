@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    public GameObject player1;
-    public GameObject player2;
+    //public GameObject player1;
+    //public GameObject player2;
     public float coolDownTime = 10.0f;
-    public Text P1ShrinkCoolDown;
-    public Text P1FrozenCoolDown;
-    public Text P2ShrinkCoolDown;
-    public Text P2FrozenCoolDown;
+    //public Text P1ShrinkCoolDown;
+    //public Text P1FrozenCoolDown;
+    //public Text P2ShrinkCoolDown;
+    //public Text P2FrozenCoolDown;
     public Text gameState;
-    private bool P1Shrank = false;
-    private bool P1Frozen = false;
-    private bool P2Shrank = false;
-    private bool P2Frozen = false;
+    //private bool P1Shrank = false;
+    //private bool P1Frozen = false;
+    //private bool P2Shrank = false;
+    //private bool P2Frozen = false;
     public GameObject gmtest;
     public Text wave;
     public Text waveNum;
@@ -29,15 +29,15 @@ public class PlayerUI : MonoBehaviour
     void Start()
     {
         GameObject gm = GameObject.FindWithTag("GameManager");
-        player1 = gm.GetComponent<LevelManager>().p1;
-        player2 = gm.GetComponent<LevelManager>().p2;
+        //player1 = gm.GetComponent<LevelManager>().p1;
+        //player2 = gm.GetComponent<LevelManager>().p2;
 
-        P1ShrinkCoolDown.text = "";
-        P1FrozenCoolDown.text = "";
+        //P1ShrinkCoolDown.text = "";
+        //P1FrozenCoolDown.text = "";
 
-        P2ShrinkCoolDown.text = "";
-        P2FrozenCoolDown.text = "";
-        gmtest = GameObject.Find("GameManagerTest");
+        //P2ShrinkCoolDown.text = "";
+        //P2FrozenCoolDown.text = "";
+        gmtest = GameObject.FindWithTag("GameManager");
 
         gameState.text = "";
         waveNum.text = "Wave 1 of 3";
@@ -49,32 +49,32 @@ public class PlayerUI : MonoBehaviour
 
     private void Update()
     {
-        // Update player statuses
-        P1Shrank = player1.GetComponent<P1Status>().shrank;
-        P1Frozen = player1.GetComponent<P1Status>().frozen;
-        P2Shrank = player2.GetComponent<P2Status>().shrank;
-        P2Frozen = player2.GetComponent<P2Status>().frozen;
+        //// Update player statuses
+        //P1Shrank = player1.GetComponent<P1Status>().shrank;
+        //P1Frozen = player1.GetComponent<P1Status>().frozen;
+        //P2Shrank = player2.GetComponent<P2Status>().shrank;
+        //P2Frozen = player2.GetComponent<P2Status>().frozen;
 
-        // If player is affected by any status, update and show a cooldown timer
-        if (P1Shrank)
-        {
-            UpdateShrinkCoolDown(P1ShrinkCoolDown);
-        }
+        //// If player is affected by any status, update and show a cooldown timer
+        //if (P1Shrank)
+        //{
+        //    UpdateShrinkCoolDown(P1ShrinkCoolDown);
+        //}
 
-        if (P1Frozen)
-        {
-            UpdateFrozenCoolDown(P1FrozenCoolDown);
-        }
+        //if (P1Frozen)
+        //{
+        //    UpdateFrozenCoolDown(P1FrozenCoolDown);
+        //}
 
-        if (P2Shrank)
-        {
-            UpdateShrinkCoolDown(P2ShrinkCoolDown);
-        }
+        //if (P2Shrank)
+        //{
+        //    UpdateShrinkCoolDown(P2ShrinkCoolDown);
+        //}
 
-        if (P2Frozen)
-        {
-            UpdateFrozenCoolDown(P2FrozenCoolDown);
-        }
+        //if (P2Frozen)
+        //{
+        //    UpdateFrozenCoolDown(P2FrozenCoolDown);
+        //}
 
         // Update enemy kill count and spawn limit of current wave
         enemyKilled = gmtest.GetComponent<GameConstants>().enemyKillCount;

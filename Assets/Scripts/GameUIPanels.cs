@@ -19,7 +19,7 @@ public class GameUIPanels : MonoBehaviour {
         gameCompletePanel.SetActive(false);
         gameOverPanel.SetActive(false);
 
-        gm = GameObject.Find("GameManagerTest");
+        gm = GameObject.FindWithTag("GameManager");
         curWaveComplete = gm.GetComponent<GameConstants>().curWaveComplete;
         finalWaveComplete = gm.GetComponent<GameConstants>().completeLvl3;
     }
