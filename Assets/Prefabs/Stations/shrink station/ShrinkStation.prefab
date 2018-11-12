@@ -388,7 +388,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1391808243756218}
   m_LocalRotation: {x: 0.015134449, y: -0.9810603, z: 0.085831694, w: 0.17298748}
-  m_LocalPosition: {x: -0.13424182, y: -1, z: 0.048860047}
+  m_LocalPosition: {x: 1.43, y: -2.06, z: 3.28}
   m_LocalScale: {x: 0.02142859, y: 0.021428574, z: 0.021428583}
   m_Children:
   - {fileID: 4588206262949930}
@@ -786,7 +786,8 @@ MonoBehaviour:
   batteryFill: {fileID: 114211401933408522}
   coolDownStartTime: 0
   coolDownTimePassed: 0
-  model: {fileID: 1383669173150516}
+  arrow: {fileID: 1391808243756218}
+  model: {fileID: 1384418907901842}
 --- !u!114 &114636922410791524
 MonoBehaviour:
   m_ObjectHideFlags: 1
