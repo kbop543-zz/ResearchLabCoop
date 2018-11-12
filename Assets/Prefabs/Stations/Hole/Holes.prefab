@@ -2022,7 +2022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da894b749a02c4ac6bcc4d906f2af6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 10
+  fallSpeed: 20
   fallThreshold: 26
   destroyDelay: 5
   rotateRate: 270
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da894b749a02c4ac6bcc4d906f2af6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 10
+  fallSpeed: 20
   fallThreshold: 26
   destroyDelay: 5
   rotateRate: 270
@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da894b749a02c4ac6bcc4d906f2af6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 10
+  fallSpeed: 20
   fallThreshold: 26
   destroyDelay: 5
   rotateRate: 270
@@ -2091,7 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da894b749a02c4ac6bcc4d906f2af6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 10
+  fallSpeed: 20
   fallThreshold: 26
   destroyDelay: 5
   rotateRate: 270

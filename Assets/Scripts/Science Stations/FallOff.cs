@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallOff : MonoBehaviour {
 
-    public float fallSpeed = 10.0f;
+    public float fallSpeed = 20.0f;
     public float fallThreshold = 26.0f;
     public float destroyDelay = 5.0f;
     public float rotateRate = 270f;
@@ -117,6 +117,13 @@ public class FallOff : MonoBehaviour {
     }
 
     private IEnumerator StartFalling (GameObject target) {
+        // Disable colliders
+        Collider[] allCollider = target.GetComponentsInChildren<Collider>();
+        foreach (Collider col in allCollider)
+        {
+            col.enabled = false;
+        }
+
         //dropsound.Play();
         Vector3 tarDest = transform.position + new Vector3(0f, -75f, 0f);
         Vector3 direction = tarDest - target.transform.position;
