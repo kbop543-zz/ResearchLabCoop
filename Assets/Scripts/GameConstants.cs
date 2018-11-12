@@ -117,6 +117,7 @@ public class GameConstants : MonoBehaviour {
                 Debug.Log("LEVEL 2 CLEARED");
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 2 CLEARED!";
                 completeLvl2 = true;
+                curWaveComplete = true;
                 enemyKillCount = 0;
                 curWaveSpawnLimit = thirdSpawner.GetComponent<SpawnManager>().spawnLimit;
                 gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 3 of 3";
