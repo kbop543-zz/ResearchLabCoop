@@ -65,6 +65,7 @@ public class GameConstants : MonoBehaviour {
             Debug.Log("GAME OVER");
             //gameUI.GetComponent<PlayerUI>().gameState.text = "GAME OVER";
             gameOver = true;
+            gameUI.GetComponent<GameUIPanels>().playerLose = true;
             //Time.timeScale = 0;
         }
         if (gameOver) {

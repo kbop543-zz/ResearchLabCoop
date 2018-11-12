@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WaveCompletePause : MonoBehaviour {
+public class GameUIPanels : MonoBehaviour {
 
     [SerializeField] private GameObject waveCompletePanel;
     [SerializeField] private GameObject gameCompletePanel;
+    [SerializeField] private GameObject gameOverPanel;
     public GameObject gm;
     public bool curWaveComplete;
     public bool finalWaveComplete;
+    public bool playerLose;
 
     void Start()
     {
         waveCompletePanel.SetActive(false);
         gameCompletePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
 
         gm = GameObject.Find("GameManagerTest");
         curWaveComplete = gm.GetComponent<GameConstants>().curWaveComplete;
@@ -39,6 +42,14 @@ public class WaveCompletePause : MonoBehaviour {
             if (!gameCompletePanel.activeInHierarchy)
             {
                 GameComplete();
+            }
+        }
+
+        if (playerLose)
+        {
+            if (!gameOverPanel.activeInHierarchy)
+            {
+                GameOver();
             }
         }
     }
@@ -69,7 +80,22 @@ public class WaveCompletePause : MonoBehaviour {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         gm.GetComponent<GameConstants>().gameOver = false;
-        gameCompletePanel.SetActive(false);
+
+        if (gameCompletePanel.activeInHierarchy)
+        {
+            gameCompletePanel.SetActive(false);
+        }
+
+        if (gameOverPanel.activeInHierarchy)
+        {
+            gameOverPanel.SetActive(false);
+        }
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOverPanel.SetActive(true);
     }
 
     public void MainMenu()
