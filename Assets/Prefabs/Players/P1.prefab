@@ -21279,7 +21279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunTargetUI: {fileID: 223137970324604814}
-  playerModel: {fileID: 0}
+  playerModel: {fileID: 1079123770444842}
 --- !u!114 &114342909005918420
 MonoBehaviour:
   m_ObjectHideFlags: 1

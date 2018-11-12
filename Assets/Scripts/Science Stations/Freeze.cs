@@ -6,13 +6,15 @@ public class Freeze : MonoBehaviour {
 
     private GameObject station;
     public AudioSource freezeSound;
-    public AudioClip clip1;
-    public AudioClip clip2;
+    public bool play;
+    //public AudioClip clip1;
+    //public AudioClip clip2;
 
 
 	void Start () {
 
         station = GameObject.Find("FreezeStation(Clone)");
+        play = true;
 
     }
     
@@ -34,19 +36,31 @@ public class Freeze : MonoBehaviour {
             }
             if (hitTarget.tag == "Monster")
             {
-                if(freezeSound.clip == clip1){
-                    freezeSound.Play();
-                    freezeSound.clip = clip2;
-                }
-                else if (freezeSound.clip == clip2)
+
+                //if(freezeSound.clip == clip1){
+                //    freezeSound.Play();
+                //    freezeSound.clip = clip2;
+                //}
+                //else if (freezeSound.clip == clip2)
+                //{
+                //    freezeSound.Play();
+                //    freezeSound.clip = clip1;
+                //}
+                if ((!freezeSound.isPlaying) && (play))
                 {
-                    freezeSound.Play();
-                    freezeSound.clip = clip1;
+                    freezeSound.PlayOneShot(freezeSound.clip);
+                    play = false;
+                    Invoke("whatever", 5);
                 }
-                freezeSound.Play();
                 hitTarget.GetComponent<EnemyStatus>().Freeze();
+
             }
 
         }
     }
+    void whatever()
+    {
+        play = true;
+    }
 }
+
