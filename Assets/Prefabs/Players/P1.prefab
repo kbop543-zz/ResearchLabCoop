@@ -21398,7 +21398,7 @@ MonoBehaviour:
   respawnTransform: {fileID: 4073913689763814, guid: 9b723c5addd034aa1ad212dc321568e8,
     type: 2}
   playerhurt: {fileID: 82947904123540612}
-  clip1: {fileID: 8300000, guid: b28f863ac962d4a368af67217c69f982, type: 3}
+  clip1: {fileID: 8300000, guid: 43415b08a038b42da95cf15158a34dfb, type: 3}
   clip2: {fileID: 8300000, guid: 90903e7c13cff45bd8e7c1b685bb93be, type: 3}
   clip3: {fileID: 8300000, guid: 23c3c1357f47b41faad9ba9fbe8f3249, type: 3}
   gmtest: {fileID: 0}

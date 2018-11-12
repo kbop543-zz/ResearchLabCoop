@@ -107,7 +107,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eb850be23ad114ec4a607ffc7bdc16b0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d67da3859dbf24681b137bf3df9df219, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -205,5 +205,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeSound: {fileID: 82671231261044286}
-  clip1: {fileID: 8300000, guid: eb850be23ad114ec4a607ffc7bdc16b0, type: 3}
-  clip2: {fileID: 8300000, guid: ab2232d6699584430b2182416a9e5066, type: 3}
+  play: 0

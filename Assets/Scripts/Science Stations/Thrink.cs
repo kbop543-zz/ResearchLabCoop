@@ -12,8 +12,9 @@ public class Thrink : MonoBehaviour {
     private Light myLight;
     private bool flashing;
     public AudioSource shrinkSound;
+    public AudioSource shrinkSound1;
     //public AudioClip clip3, clip4;
-    public bool play;
+    public bool play,play1;
     private void Start()
     {
         //thrinkMin = GameObject.Find("P1(Clone)").transform.localScale.x / 3;
@@ -22,12 +23,19 @@ public class Thrink : MonoBehaviour {
         myLight.intensity = 0f;
         flashing = false;
         play = true;
+        play1 = true;
         //shrinkSound.clip = clip3;
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (station.GetComponent<StationStatus>().activated) {
+            if ((!shrinkSound1.isPlaying) && (play1))
+            {
+                shrinkSound1.PlayOneShot(shrinkSound1.clip);
+                play1 = false;
+                Invoke("Whatever1", 5);
+            }
             GameObject hitTarget = other.transform.root.gameObject;
 
             float thrinkMin = 0;
@@ -89,6 +97,10 @@ public class Thrink : MonoBehaviour {
     void Whatever()
     {
         play = true;
+    }
+    void Whatever1()
+    {
+        play1 = true;
     }
 
     private void FixedUpdate()
