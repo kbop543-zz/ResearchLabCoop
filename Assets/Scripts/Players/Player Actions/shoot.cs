@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class shoot : MonoBehaviour
 {
@@ -155,10 +157,28 @@ public class shoot : MonoBehaviour
                 OilSound.Play();
                 b.GetComponent<OilHit>().updateHolder(gameObject);
             }
-            Destroy(b, duration);
+            StartCoroutine(DestroyBullet(b, duration));
 
             curCooldown = 0f;
         }
+
+    }
+
+    private IEnumerator DestroyBullet(GameObject bullet, float duration)
+    {
+        float destroyTime = 2f;
+        float curTime = 0;
+        while (curTime < duration) {
+            curTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Disable mesh and collider
+        bullet.GetComponent<MeshRenderer>().enabled = false;
+        bullet.GetComponent<Collider>().enabled = false;
+
+        // Destroy
+        Destroy(bullet, destroyTime);
 
     }
 
@@ -169,7 +189,8 @@ public class shoot : MonoBehaviour
             case "shock":
                 projectile = shockwave;
                 range = 350f;
-                startDistance = transform.localScale.x / 2 + 35f;
+                startDistance = -transform.localScale.x;
+                //startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 0.5f;
                 //cooldown = 2.0f;
@@ -178,7 +199,8 @@ public class shoot : MonoBehaviour
             case "oil":
                 projectile = oil;
                 range = 350f;
-                startDistance = transform.localScale.x / 2 + 35f;
+                startDistance = -transform.localScale.x;
+                //startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 2.0f;
                 //curCooldown = cooldown;
@@ -187,7 +209,8 @@ public class shoot : MonoBehaviour
                 Debug.Log("Unregistered weapon");
                 projectile = shockwave;
                 range = 350f;
-                startDistance = transform.localScale.x / 2 + 35f;
+                startDistance = -transform.localScale.x;
+                //startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 2.0f;
                 //curCooldown = cooldown;

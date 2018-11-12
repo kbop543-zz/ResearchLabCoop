@@ -23,6 +23,12 @@ public class BigShotHit : MonoBehaviour {
         GameObject hitTarget = other.transform.root.gameObject;
         float force = thrust;
         if (hitTarget.tag == "Monster" || hitTarget.tag == "Player") {
+            // Check if it's the shooter himself
+            if (shooter.name.Equals(hitTarget.name)) {
+                return;
+            }
+
+            // Else
             if (hitTarget.name == "P1(Clone)") {
                 if (!hitTarget.GetComponent<P1Status>().blown)
                 {
