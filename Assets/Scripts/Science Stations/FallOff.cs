@@ -132,7 +132,7 @@ public class FallOff : MonoBehaviour {
         direction.Normalize();
 
         while (target != null) {
-            target.transform.Translate(direction * fallSpeed * Time.deltaTime);
+            target.transform.Translate(2f * direction * fallSpeed * Time.deltaTime);
             yield return null;
         }
     }

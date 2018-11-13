@@ -120,7 +120,7 @@ public class GameConstants : MonoBehaviour {
         {
             if (enemyKillCount >= curWaveSpawnLimit)
             {
-                beesintro.Play();
+                //beesintro.Play();
                 //secondSpawner.GetComponent<SpawnManager>().end = true;
                 thirdSpawner.GetComponent<SpawnManager>().activated = true;
                 Debug.Log("LEVEL 2 CLEARED");

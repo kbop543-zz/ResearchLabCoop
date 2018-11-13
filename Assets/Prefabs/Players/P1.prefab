@@ -21494,6 +21494,7 @@ MonoBehaviour:
   shrank: 0
   blown: 0
   duration: 7
+  shrinkDuration: 7
   speedLimit: 500
   originalSpeed: 100
   originalScale: 50

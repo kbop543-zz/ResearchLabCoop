@@ -12,6 +12,7 @@ public class EnemyStatus : MonoBehaviour
     public bool willDie = false;
     public bool falling = false;
     public float duraiton = 5f;
+    public float shrinkDuration = 15;
     public float originalSpeed;
     public float originalScale;
     public ParticleSystem smoke;
@@ -96,7 +97,7 @@ public class EnemyStatus : MonoBehaviour
 
     IEnumerator Unshrink()
     {
-        yield return new WaitForSeconds(duraiton);
+        yield return new WaitForSeconds(shrinkDuration);
 
         if (falling) {
             yield break;

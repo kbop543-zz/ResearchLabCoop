@@ -9,6 +9,7 @@ public class P2Status : MonoBehaviour {
     public bool shrank = false;
     public bool blown = false;
     public float duration = 7.0f;
+    public float shrinkDuration = 7f;
     public float speedLimit = 500f;
 
     public float originalSpeed;
@@ -98,7 +99,7 @@ public class P2Status : MonoBehaviour {
 
     IEnumerator Unshrink()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(shrinkDuration);
 
         // restore original size after being unshrink
         while (transform.localScale.x < originalScale)
