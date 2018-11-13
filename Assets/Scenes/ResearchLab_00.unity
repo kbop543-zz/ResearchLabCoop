@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731725, g: 0.13414745, b: 0.12107873, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -221,6 +221,12 @@ Prefab:
       propertyPath: electricityPipe
       value: 
       objectReference: {fileID: 1182840752814554, guid: c30f4fcc01179432baec65480d9e8812,
+        type: 2}
+    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
+        type: 2}
+      propertyPath: lightBulbs
+      value: 
+      objectReference: {fileID: 1837157551751762, guid: 38eb8477d6bfd46b99b1af94dfe01c04,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
