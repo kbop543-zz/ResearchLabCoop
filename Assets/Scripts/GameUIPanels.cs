@@ -12,6 +12,7 @@ public class GameUIPanels : MonoBehaviour {
     public bool curWaveComplete;
     public bool finalWaveComplete;
     public bool playerLose;
+    private bool pauseGameInProgress;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class GameUIPanels : MonoBehaviour {
         gm = GameObject.FindWithTag("GameManager");
         curWaveComplete = gm.GetComponent<GameConstants>().curWaveComplete;
         finalWaveComplete = gm.GetComponent<GameConstants>().completeLvl3;
+
+        pauseGameInProgress = false;
     }
 
     void Update()
@@ -31,17 +34,19 @@ public class GameUIPanels : MonoBehaviour {
 
         if (curWaveComplete)
         {
-            if (!waveCompletePanel.activeInHierarchy)
+            if (!waveCompletePanel.activeInHierarchy && !pauseGameInProgress)
             {
-                PauseGame();
+                pauseGameInProgress = true;
+                Invoke("PauseGame", 3);
             }
         }
 
         if (finalWaveComplete)
         {
-            if (!gameCompletePanel.activeInHierarchy)
+            if (!gameCompletePanel.activeInHierarchy && !pauseGameInProgress)
             {
-                GameComplete();
+                pauseGameInProgress = true;
+                Invoke("GameComplete", 3);
             }
         }
 
@@ -73,6 +78,8 @@ public class GameUIPanels : MonoBehaviour {
         Time.timeScale = 1;
         waveCompletePanel.SetActive(false);
         //enable the scripts again
+
+        pauseGameInProgress = false;
     }
 
     public void RestartGame()
@@ -90,6 +97,8 @@ public class GameUIPanels : MonoBehaviour {
         {
             gameOverPanel.SetActive(false);
         }
+
+        pauseGameInProgress = false;
     }
 
     public void GameOver()

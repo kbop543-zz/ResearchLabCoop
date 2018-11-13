@@ -161,7 +161,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else {
             // Attack target when in attack range
-            if (curCD >= attackCD) {
+            if (curCD >= attackCD && !GetComponent<EnemyStatus>().willDie) {
                 //Debug.Log("Attack!");
                 curTargetPlayer.GetComponent<PlayerHealth>().TakeDamage(damage);
                 curCD = 0f;
