@@ -97,7 +97,9 @@ public class GameUIPanels : MonoBehaviour {
         gm.GetComponent<GameConstants>().curWaveComplete = false;
         Time.timeScale = 1;
         waveCompletePanel.SetActive(false);
-        waveSwitched = true;
+        if (!waveSwitched) { waveSwitched = true; }
+        else if (waveSwitched) { waveSwitched = false; }
+        
         //enable the scripts again
 
         pauseGameInProgress = false;
