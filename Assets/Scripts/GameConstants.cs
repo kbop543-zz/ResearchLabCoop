@@ -24,6 +24,18 @@ public class GameConstants : MonoBehaviour {
     public int comboFalling = 0;
     public int comboShatter = 0;
     public int comboBoom = 0;
+    public int wave1enemyKillCount = 0;
+    public int wave1comboFalling = 0;
+    public int wave1comboShatter = 0;
+    public int wave1comboBoom = 0;
+    public int wave2enemyKillCount = 0;
+    public int wave2comboFalling = 0;
+    public int wave2comboShatter = 0;
+    public int wave2comboBoom = 0;
+    public int wave3enemyKillCount = 0;
+    public int wave3comboFalling = 0;
+    public int wave3comboShatter = 0;
+    public int wave3comboBoom = 0;
 
     public GameObject spawner, secondSpawner, thirdSpawner;
     public int curWaveSpawnLimit;
@@ -97,6 +109,10 @@ public class GameConstants : MonoBehaviour {
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 1 CLEARED!";
                 completeLvl1 = true;
                 curWaveComplete = true;
+                wave1enemyKillCount = enemyKillCount;
+                wave1comboFalling = comboFalling;
+                wave1comboShatter = comboShatter;
+                wave1comboBoom = comboBoom;
                 enemyKillCount = 0;
                 comboFalling = 0;
                 comboShatter = 0;
@@ -126,6 +142,10 @@ public class GameConstants : MonoBehaviour {
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 2 CLEARED!";
                 completeLvl2 = true;
                 curWaveComplete = true;
+                wave2enemyKillCount = enemyKillCount;
+                wave2comboFalling = comboFalling;
+                wave2comboShatter = comboShatter;
+                wave2comboBoom = comboBoom;
                 enemyKillCount = 0;
                 comboFalling = 0;
                 comboShatter = 0;
@@ -155,6 +175,10 @@ public class GameConstants : MonoBehaviour {
                 Debug.Log("LEVEL 3 CLEARED/YOU WIN");
                 //gameUI.GetComponent<PlayerUI>().gameState.text = "LEVEL 3 CLEARED! (YOU WIN)";
                 completeLvl3 = true;
+                wave3enemyKillCount = enemyKillCount;
+                wave3comboFalling = comboFalling;
+                wave3comboShatter = comboShatter;
+                wave3comboBoom = comboBoom;
                 enemyKillCount = 0;
                 comboFalling = 0;
                 comboShatter = 0;

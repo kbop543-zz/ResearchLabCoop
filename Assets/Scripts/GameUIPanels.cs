@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameUIPanels : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class GameUIPanels : MonoBehaviour {
     public bool curWaveComplete;
     public bool finalWaveComplete;
     public bool playerLose;
+    private bool waveSwitched = false;
     private bool pauseGameInProgress;
 
     void Start()
@@ -62,13 +64,31 @@ public class GameUIPanels : MonoBehaviour {
     private void PauseGame()
     {
         Time.timeScale = 0;
-        waveCompletePanel.SetActive(true);
+        if (!waveSwitched)
+        {
+            waveCompletePanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1enemyKillCount.ToString();
+            waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboFalling.ToString();
+            waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboBoom.ToString();
+            waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboShatter.ToString();
+        }
+        else if (waveSwitched)
+        {
+            waveCompletePanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2enemyKillCount.ToString();
+            waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboFalling.ToString();
+            waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboBoom.ToString();
+            waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboShatter.ToString();
+        }
+            waveCompletePanel.SetActive(true);
         //Disable scripts that still work while timescale is set to 0
     }
 
     private void GameComplete()
     {
         Time.timeScale = 0;
+        gameCompletePanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3enemyKillCount.ToString();
+        gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboFalling.ToString();
+        gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboBoom.ToString();
+        gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboShatter.ToString();
         gameCompletePanel.SetActive(true);
     }
 
@@ -77,6 +97,7 @@ public class GameUIPanels : MonoBehaviour {
         gm.GetComponent<GameConstants>().curWaveComplete = false;
         Time.timeScale = 1;
         waveCompletePanel.SetActive(false);
+        waveSwitched = true;
         //enable the scripts again
 
         pauseGameInProgress = false;
