@@ -21203,7 +21203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb099b1d8d6a4454ba0c19826023883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 200
   motionVector: {x: 0, y: 0, z: 0}
 --- !u!114 &114503017410631520
 MonoBehaviour:

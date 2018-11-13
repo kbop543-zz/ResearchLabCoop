@@ -102,8 +102,7 @@ public class GameConstants : MonoBehaviour {
                 comboShatter = 0;
                 comboBoom = 0;
                 curWaveSpawnLimit = secondSpawner.GetComponent<SpawnManager>().spawnLimit;
-                //gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 2 of 3";
-                StartCoroutine(ChangeWaveNumText("Wave 2 of 3", 3.1f));
+                gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 2 of 3";
                 //Time.timeScale = 0;
 
                 //Enable FreezeStation
@@ -132,8 +131,7 @@ public class GameConstants : MonoBehaviour {
                 comboShatter = 0;
                 comboBoom = 0;
                 curWaveSpawnLimit = thirdSpawner.GetComponent<SpawnManager>().spawnLimit;
-                //gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 3 of 3";
-                StartCoroutine(ChangeWaveNumText("Wave 3 of 3", 3.1f));
+                gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 3 of 3";
                 //Time.timeScale = 0;
 
                 //Enable ElectricityStation
@@ -201,15 +199,5 @@ public class GameConstants : MonoBehaviour {
         //    completeLvl = true;
         //}
 
-    }
-
-    public IEnumerator ChangeWaveNumText (string txt, float delay) {
-        float i = 0f;
-        while (i < delay) {
-            i += Time.deltaTime;
-            yield return null;
-        }
-
-        gameUI.GetComponent<PlayerUI>().waveNum.text = txt;
     }
 }
