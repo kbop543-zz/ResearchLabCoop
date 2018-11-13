@@ -699,6 +699,12 @@ ModelImporter:
     101386: UnTwistShoulder_L
     101388: UnTwistShoulder_R
     101390: UnTwistSpine2_M
+    101392: bodyG_GEO
+    101394: coat_GEO
+    101396: Eyes_GEO
+    101398: geo1
+    101400: mbelt_GEO
+    101402: moustache_GEO
     400000: AimSystem
     400002: AlignIKToAnkle_L
     400004: AlignIKToAnkle_R
@@ -1395,6 +1401,12 @@ ModelImporter:
     401386: UnTwistShoulder_L
     401388: UnTwistShoulder_R
     401390: UnTwistSpine2_M
+    401392: bodyG_GEO
+    401394: coat_GEO
+    401396: Eyes_GEO
+    401398: geo1
+    401400: mbelt_GEO
+    401402: moustache_GEO
     2100000: 01 - Default
     4300000: Surface1
     4300002: Surface2
@@ -1422,6 +1434,11 @@ ModelImporter:
     4300046: polySurface22
     4300048: polySurface23
     4300050: moustache
+    4300052: Eyes_GEO
+    4300054: mbelt_GEO
+    4300056: coat_GEO
+    4300058: bodyG_GEO
+    4300060: moustache_GEO
     9500000: //RootNode
     13700000: moustache
     13700002: polySurface10
@@ -1449,6 +1466,11 @@ ModelImporter:
     13700046: polySurface9
     13700048: Surface1
     13700050: Surface2
+    13700052: bodyG_GEO
+    13700054: coat_GEO
+    13700056: Eyes_GEO
+    13700058: mbelt_GEO
+    13700060: moustache_GEO
   externalObjects:
   - first:
       type: UnityEngine:Material
