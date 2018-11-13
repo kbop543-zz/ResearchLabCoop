@@ -89,7 +89,7 @@ public class LevelManager : MonoBehaviour {
         Instantiate(freezeTile);
         Instantiate(electricityStation);
         Instantiate(electricityTile);
-        Instantiate(electricityPipe);
+        //Instantiate(electricityPipe);
         //Instantiate(ShockWaveGun1);
         //Instantiate(ShockWaveGun2, new Vector3(135f, 2.62f, 400f), Quaternion.identity);
         Instantiate(enemySpawner2);
