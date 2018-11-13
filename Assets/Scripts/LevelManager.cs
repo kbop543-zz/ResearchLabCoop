@@ -83,7 +83,7 @@ public class LevelManager : MonoBehaviour {
         //Instantiate(holeTile2);
         Instantiate(holes);
         //Instantiate(lighting);
-        Instantiate(lightBulbs);
+        //Instantiate(lightBulbs);
         Instantiate(freezeStation);
         //Instantiate(freezePipe);
         Instantiate(freezeTile);
