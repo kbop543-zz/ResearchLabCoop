@@ -15,6 +15,7 @@ public class EnemyStatus : MonoBehaviour
     public float originalSpeed;
     public float originalScale;
     public ParticleSystem smoke;
+    public ParticleSystem shatter;
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
     private IEnumerator curUnoiled;
@@ -278,6 +279,7 @@ public class EnemyStatus : MonoBehaviour
             obs.enabled = false;
         }
         Destroy(gameObject, delay);
+        willDie = true;
     }
 
     private void GetMaterial() {
@@ -319,5 +321,10 @@ public class EnemyStatus : MonoBehaviour
         {
             skinMesh.material.color = originalMaterialColor;
         }
+    }
+
+    public void ShatterMonster() {
+        DestroyMonster(4.5f);
+        shatter.Play();
     }
 }

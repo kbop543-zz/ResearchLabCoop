@@ -59,10 +59,11 @@ public class BigShotHit : MonoBehaviour {
                     // If Frozen
                     if (hitTarget.GetComponent<EnemyStatus>().frozen) {
                         shatterSound.Play();
-                        Destroy(hitTarget);
+                        hitTarget.GetComponent<EnemyStatus>().ShatterMonster();
                         GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
                         GameManager.instance.GetComponent<GameConstants>().comboShatter += 1;
                         GameManager.instance.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incFreezeShockKill();
+                        return;
                     }
                     // If normal state
                     else {
