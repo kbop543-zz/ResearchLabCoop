@@ -278,11 +278,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114631500291252854, guid: d157c3920c88b4812804bc5750761c62,
-        type: 2}
-      propertyPath: m_VoxelSize
-      value: 3.3333333
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d157c3920c88b4812804bc5750761c62, type: 2}
   m_IsPrefabAsset: 0
