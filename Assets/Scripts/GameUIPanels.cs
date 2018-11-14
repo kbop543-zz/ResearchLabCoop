@@ -63,7 +63,7 @@ public class GameUIPanels : MonoBehaviour {
 
     private void PauseGame()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.0001f;
         if (!waveSwitched)
         {
             waveCompletePanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1enemyKillCount.ToString();
@@ -84,7 +84,7 @@ public class GameUIPanels : MonoBehaviour {
 
     private void GameComplete()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.0001f;
         gameCompletePanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3enemyKillCount.ToString();
         gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboFalling.ToString();
         gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboBoom.ToString();
@@ -126,7 +126,7 @@ public class GameUIPanels : MonoBehaviour {
 
     public void GameOver()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.0001f;
         gameOverPanel.SetActive(true);
     }
 
