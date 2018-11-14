@@ -18,6 +18,9 @@ public class Tutorial : MonoBehaviour {
     public GameObject blackCanvas6;
     public GameObject waveProg1;
 
+    public GameObject shrinkBattery;
+    public GameObject holeBattery;
+
     private int timesPressed = 0;
 
 	// Use this for initialization
@@ -35,6 +38,13 @@ public class Tutorial : MonoBehaviour {
         waveProg1 = hud.transform.Find("Wave Progression (1)").gameObject;
         //athenaUI.GetComponent<DialogueTrigger>().TriggerDialogue();
         blackCanvas1.SetActive(true);
+
+        shrinkBattery = gameObject.GetComponent<LevelManager>().shrink.transform.Find("BatteryCanvas").gameObject;
+        holeBattery = gameObject.GetComponent<LevelManager>().hole.transform.Find("BatteryCanvas").gameObject;
+
+        // Set both the battery for the shrink and hole station as inactive
+        shrinkBattery.SetActive(false);
+        holeBattery.SetActive(false);
     }
 
     // Update is called once per frame
@@ -237,6 +247,8 @@ public class Tutorial : MonoBehaviour {
             blackCanvas1.SetActive(false);
             waveProg1.SetActive(false);
             athenaUI.SetActive(false);
+            shrinkBattery.SetActive(true);
+            holeBattery.SetActive(true);
             Time.timeScale = 1;
 
             timesPressed++;
