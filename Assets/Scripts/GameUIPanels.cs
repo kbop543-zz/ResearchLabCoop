@@ -16,6 +16,7 @@ public class GameUIPanels : MonoBehaviour {
     public bool playerLose;
     private bool waveSwitched = false;
     private bool pauseGameInProgress;
+    public AudioSource clickSound;
 
     void Start()
     {
@@ -44,6 +45,10 @@ public class GameUIPanels : MonoBehaviour {
             {
                 pauseGameInProgress = true;
                 Invoke("PauseGame", 3);
+                if (Input.GetKey(KeyCode.JoystickButton0))
+                {
+                    clickSound.Play();
+                }
             }
         }
 
@@ -53,6 +58,10 @@ public class GameUIPanels : MonoBehaviour {
             {
                 pauseGameInProgress = true;
                 Invoke("GameComplete", 3);
+                if (Input.GetKey(KeyCode.JoystickButton0))
+                {
+                    clickSound.Play();
+                }
             }
         }
 
@@ -61,6 +70,10 @@ public class GameUIPanels : MonoBehaviour {
             if (!gameOverPanel.activeInHierarchy)
             {
                 GameOver();
+                if (Input.GetKey(KeyCode.JoystickButton0))
+                {
+                    clickSound.Play();
+                }
             }
         }
     }
