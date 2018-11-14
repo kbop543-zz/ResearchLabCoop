@@ -95,7 +95,8 @@ AudioSource:
   m_GameObject: {fileID: 1593000909422462}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243645197745806732, guid: 6ad51d82e602f4821a9eba402622e6bc,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 96fc846b854314c49adcc4c5e42fac8f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -295,6 +296,11 @@ MonoBehaviour:
   expandDuration: 0.75
   dropsound: {fileID: 82690230413783642}
   actualDropSound: {fileID: 82678032312057570}
+  play: 0
+  hole1: {fileID: 0}
+  hole2: {fileID: 0}
+  hole3: {fileID: 0}
+  hole4: {fileID: 0}
 --- !u!135 &135720763151217450
 SphereCollider:
   m_ObjectHideFlags: 1
