@@ -3290,7 +3290,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wave 2 of 3
+  m_Text: Wave 1 of 3
 --- !u!114 &114338430729258722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7697,7 +7697,7 @@ RectTransform:
   m_GameObject: {fileID: 1927596234871866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 224846193923608178}
   - {fileID: 224646089287098212}

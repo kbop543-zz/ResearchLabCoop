@@ -20685,8 +20685,8 @@ MonoBehaviour:
   LaserSound: {fileID: 82128115911998652}
   OilSound: {fileID: 82815181835932280}
   pIcon: {fileID: 0}
-  oilIcon: {fileID: 2800000, guid: 6e6517e2d5ccd4fd5a8cde307a76eb50, type: 3}
-  shockwaveIcon: {fileID: 2800000, guid: ca98e32e72f8a44b7ab96c214e653699, type: 3}
+  oilIcon: {fileID: 2800000, guid: f0d316f306ae140feb8bc5c87af83cb1, type: 3}
+  shockwaveIcon: {fileID: 2800000, guid: d32c51a1b114042c8852f06219b789fa, type: 3}
   bulletSwapDelay: 1
   curbulletSwapDelay: 1
 --- !u!114 &114840860456598936
