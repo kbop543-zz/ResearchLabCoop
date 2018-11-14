@@ -243,9 +243,9 @@ public class EnemyStatus : MonoBehaviour
             DestroyMonster(4.5f);
             smoke.Play();
 
-            GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
-            GameManager.instance.GetComponent<GameConstants>().comboBoom += 1;
-            GameManager.instance.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incElectricOilKill();
+            gmtest.GetComponent<GameConstants>().enemyKillCount += 1;
+            gmtest.GetComponent<GameConstants>().comboBoom += 1;
+            gmtest.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incElectricOilKill();
         }
         //else
         //{
