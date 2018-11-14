@@ -142,6 +142,13 @@ public class FallOff : MonoBehaviour {
 
     private IEnumerator StartFallingPlayer(GameObject target, float duration)
     {
+        // P1/P2
+        if (target.name.Contains("P1")) {
+            target.GetComponent<p1_movement>().speed = 0f;
+        }else {
+            target.GetComponent<p2_movement>().speed = 0f;
+        }
+
         // Disable colliders
         Collider[] allCollider = target.GetComponentsInChildren<Collider>();
         foreach (Collider col in allCollider)
