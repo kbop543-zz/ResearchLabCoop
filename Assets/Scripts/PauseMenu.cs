@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
         pausePanel.SetActive(true);
-        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(pausePanel.transform.GetChild(2).GetChild(0).gameObject);
+        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(pausePanel.transform.Find("buttons/Resume Button").gameObject);
         //Disable scripts that still work while timescale is set to 0
     }
 
