@@ -32,7 +32,7 @@ public class EnemyStatus : MonoBehaviour
         play = true;
         originalSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed;
         originalScale = transform.localScale.x;
-        gmtest = GameObject.Find("GameManagerTest");
+        gmtest = GameObject.FindWithTag("GameManager");
 
         // Store original material
         GetMaterial();
@@ -243,9 +243,9 @@ public class EnemyStatus : MonoBehaviour
             DestroyMonster(4.5f);
             smoke.Play();
 
-            GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
-            GameManager.instance.GetComponent<GameConstants>().comboBoom += 1;
-            GameManager.instance.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incElectricOilKill();
+            gmtest.GetComponent<GameConstants>().enemyKillCount += 1;
+            gmtest.GetComponent<GameConstants>().comboBoom += 1;
+            gmtest.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incElectricOilKill();
         }
         //else
         //{
