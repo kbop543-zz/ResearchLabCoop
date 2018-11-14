@@ -50,7 +50,10 @@ public class PlayerHealth : MonoBehaviour {
             Invoke("Respawn", 3);
                 
 		}
-	}
+
+        // Destroy bullet immediately;
+        GetComponent<shoot>().InstantDestroyBullet();
+    }
 
     public void InvokeDie () {
         Invoke("Die", 0.5f);

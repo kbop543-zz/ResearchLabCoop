@@ -19,6 +19,7 @@ public class shoot : MonoBehaviour
     private float cooldown;// = 10f;
     private string[] guns = new string[] { "shock", "oil" };
     private int curGun = 0;
+    private GameObject curBullet;  
 
     public float bulletSwapDelay;
     public float curbulletSwapDelay;
@@ -141,27 +142,31 @@ public class shoot : MonoBehaviour
 
             //Debug.Log("Preparing Bullet");
 
-            var b = (GameObject)Instantiate(projectile,
+            curBullet = (GameObject)Instantiate(projectile,
                                             pos + direction * startDistance,
                                             transform.GetChild(1).rotation);
 
-            b.GetComponent<Rigidbody>().velocity = direction * range;
+            curBullet.GetComponent<Rigidbody>().velocity = direction * range;
             if (guns[curGun] == "shock")
             {
                 LaserSound.Play();
-                b.GetComponent<BigShotHit>().updateHolder(gameObject);
+                curBullet.GetComponent<BigShotHit>().updateHolder(gameObject);
 
             }
             else if (guns[curGun] == "oil")
             {
                 OilSound.Play();
-                b.GetComponent<OilHit>().updateHolder(gameObject);
+                curBullet.GetComponent<OilHit>().updateHolder(gameObject);
             }
-            StartCoroutine(DestroyBullet(b, duration));
+            StartCoroutine(DestroyBullet(curBullet, duration));
 
             curCooldown = 0f;
         }
 
+    }
+
+    public void InstantDestroyBullet() {
+        Destroy(curBullet);
     }
 
     private IEnumerator DestroyBullet(GameObject bullet, float duration)
