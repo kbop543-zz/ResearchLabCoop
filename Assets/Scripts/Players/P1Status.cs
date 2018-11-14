@@ -8,6 +8,7 @@ public class P1Status : MonoBehaviour {
     public bool frozen = false;
     public bool shrank = false;
     public bool blown = false;
+    public bool oiled = false;
     public float duration = 7.0f;
     public float shrinkDuration = 7f;
     public float speedLimit = 500f;
@@ -16,6 +17,7 @@ public class P1Status : MonoBehaviour {
     public float originalScale;
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
+    private IEnumerator curUnoiled;
 
     public Image shrinkFill;
     public Image freezeFill;
@@ -24,6 +26,9 @@ public class P1Status : MonoBehaviour {
     public float shrinkTimePassed; // timePassed = Time.time - (___)StartTime;
     public float freezeTimePassed;
     public ParticleSystem shatter;
+    public ParticleSystem smoke;
+
+    private Color originalMaterialColor;
 
     private void Start()
     {
@@ -32,6 +37,8 @@ public class P1Status : MonoBehaviour {
 
         shrinkFill.fillAmount = 1.0f;
         freezeFill.fillAmount = 1.0f;
+
+        GetMaterial();
     }
 
     private void Update()
@@ -212,6 +219,104 @@ public class P1Status : MonoBehaviour {
         gameObject.GetComponent<p1_movement>().speed = originalSpeed;
     }
 
+    public void Oiling()
+    {
+        oiled = true;
+
+        // Darkened texture
+        Darken(0.7f);
+
+        gameObject.GetComponent<p1_movement>().speed = originalSpeed / 2;
+
+        if (curUnoiled != null)
+        {
+            StopCoroutine(curUnoiled);
+        }
+        curUnoiled = Unoil();
+        StartCoroutine(curUnoiled);
+    }
+
+    IEnumerator Unoil()
+    {
+        yield return new WaitForSeconds(duration);
+
+        if (!frozen)
+        {
+            gameObject.GetComponent<p1_movement>().speed = originalSpeed;
+        }
+
+        oiled = false;
+
+        // Original texture
+        RestoreColor();
+    }
+
+    public void Shock()
+    {
+
+
+        if (gameObject.GetComponent<P1Status>().oiled)
+        {
+            Exploded();
+        }
+        //else
+        //{
+        //    gameObject.GetComponent<EnemyMovement>().forwardSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed * 2;
+        //}
+    }
+
+    public void Exploded()
+    {
+        //Particle effect not gonna work as it .Die() will disable the player GameObject
+        smoke.Play();
+        gameObject.GetComponent<p1_movement>().speed = 0;
+        gameObject.GetComponent<PlayerHealth>().InvokeDie();
+        gameObject.GetComponent<p1_movement>().speed = originalSpeed;
+    }
+
+    private void GetMaterial()
+    {
+        MeshRenderer[] allMesh = transform.GetChild(1).GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in allMesh)
+        {
+            originalMaterialColor = mesh.material.color;
+        }
+        SkinnedMeshRenderer[] allSkinMesh = transform.GetChild(1).GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
+        {
+            originalMaterialColor = skinMesh.material.color;
+        }
+    }
+
+    public void Darken(float percent)
+    {
+        percent = Mathf.Clamp01(percent);
+        MeshRenderer[] allMesh = transform.GetChild(1).GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in allMesh)
+        {
+            mesh.material.color = new Color(originalMaterialColor.r * (1 - percent), originalMaterialColor.g * (1 - percent), originalMaterialColor.b * (1 - percent), originalMaterialColor.a);
+        }
+        SkinnedMeshRenderer[] allSkinMesh = transform.GetChild(1).GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
+        {
+            skinMesh.material.color = new Color(originalMaterialColor.r * (1 - percent), originalMaterialColor.g * (1 - percent), originalMaterialColor.b * (1 - percent), originalMaterialColor.a);
+        }
+    }
+
+    public void RestoreColor()
+    {
+        MeshRenderer[] allMesh = transform.GetChild(1).GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer mesh in allMesh)
+        {
+            mesh.material.color = originalMaterialColor;
+        }
+        SkinnedMeshRenderer[] allSkinMesh = transform.GetChild(1).GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
+        {
+            skinMesh.material.color = originalMaterialColor;
+        }
+    }
+
     public void RestoreStatus()
     {
         if (curUnshrink != null) {
@@ -223,8 +328,11 @@ public class P1Status : MonoBehaviour {
         frozen = false;
         shrank = false;
         blown = false;
+        oiled = false;
         gameObject.GetComponent<p1_movement>().speed = originalSpeed;
         transform.localScale = new Vector3(1, 1, 1) * originalScale;
+
+        RestoreColor();
     }
 
 }

@@ -37,6 +37,24 @@ public class Ignite : MonoBehaviour
                     FireSound.Play();
                 }
             }
+            else if (hitTarget.name.Contains("P1"))
+            {
+                Debug.Log("ignite P1");
+                hitTarget.GetComponent<P1Status>().Shock();
+                if (hitTarget.GetComponent<P1Status>().oiled)
+                {
+                    FireSound.Play();
+                }
+            }
+            else if (hitTarget.name.Contains("P2"))
+            {
+                Debug.Log("ignite P2");
+                hitTarget.GetComponent<P2Status>().Shock();
+                if (hitTarget.GetComponent<P2Status>().oiled)
+                {
+                    FireSound.Play();
+                }
+            }
 
         }
     }
