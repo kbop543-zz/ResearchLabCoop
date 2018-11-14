@@ -206,9 +206,9 @@ public class P1Status : MonoBehaviour {
     public void Shattered()
     {
         //Particle effect not gonna work as it .Die() will disable the player GameObject
-        //shatter.Play();
+        shatter.Play();
         gameObject.GetComponent<p1_movement>().speed = 0;
-        gameObject.GetComponent<PlayerHealth>().Die();
+        gameObject.GetComponent<PlayerHealth>().InvokeDie();
         gameObject.GetComponent<p1_movement>().speed = originalSpeed;
     }
 
