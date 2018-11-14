@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 222249918906187798}
   - component: {fileID: 114614314936335346}
   m_Layer: 5
-  m_Name: Freeze Shockwave Number
+  m_Name: Freeze+Shockwave Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

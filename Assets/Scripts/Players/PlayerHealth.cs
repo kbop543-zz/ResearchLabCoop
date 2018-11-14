@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour {
         t_red = new Color(1.0f, 0.0f, 0.0f, 0.5f);
 
 		healthBar.color = t_green;
-        gmtest = GameObject.Find("GameManagerTest");
+        gmtest = GameObject.FindWithTag("GameManager");
 
         // Respawn position is subject to change in future
         //respawnTransform = transform;

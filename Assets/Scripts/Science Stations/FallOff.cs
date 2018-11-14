@@ -19,7 +19,7 @@ public class FallOff : MonoBehaviour {
     public AudioSource actualDropSound;
     public bool play;
     public GameObject hole1,hole2,hole3,hole4;
-
+    GameObject gm;
 
     private void Start()
     {
@@ -35,6 +35,7 @@ public class FallOff : MonoBehaviour {
         scaleX = transform.localScale.x;
         scaleY = transform.localScale.y;
         scaleZ = transform.localScale.z;
+        gm = GameObject.FindWithTag("GameManager");
     }
 
     private void OnTriggerStay(Collider other)
@@ -64,9 +65,9 @@ public class FallOff : MonoBehaviour {
                     // Enemy Fall
                     hitTarget.GetComponent<EnemyStatus>().Fall();
                     Destroy(hitTarget, destroyDelay);
-                    GameManager.instance.GetComponent<GameConstants>().enemyKillCount += 1;
-                    GameManager.instance.GetComponent<GameConstants>().comboFalling += 1;
-                    GameManager.instance.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incShrinkHoleKill();
+                    gm.GetComponent<GameConstants>().enemyKillCount += 1;
+                    gm.GetComponent<GameConstants>().comboFalling += 1;
+                    gm.GetComponent<LevelManager>().myStats.GetComponent<StatsCounter>().incShrinkHoleKill();
 
                     // Start falling animation
                     StartCoroutine(StartFalling(hitTarget));

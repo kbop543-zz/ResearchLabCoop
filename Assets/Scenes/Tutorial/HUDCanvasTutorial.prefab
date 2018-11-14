@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 114529809115909170}
   - component: {fileID: 114729884291858906}
   m_Layer: 5
-  m_Name: Next Button
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 222849503479758512}
   - component: {fileID: 114823028449391138}
   m_Layer: 5
-  m_Name: Freeze Shockwave Number
+  m_Name: Freeze+Shockwave Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2828,7 +2828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next Wave
+  m_Text: Start Game
 --- !u!114 &114088410166785540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3372,7 +3372,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wave Complete
+  m_Text: Tutorial Complete!!
 --- !u!114 &114277043375065400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5354,7 +5354,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114191380357336048}
-        m_MethodName: NextWave
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
