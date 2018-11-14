@@ -61,7 +61,7 @@ public class GameConstants : MonoBehaviour {
         // assign the enemy spawn limit of first enemy spawner to a variable that will update after each wave
         curWaveSpawnLimit = spawner.GetComponent<SpawnManager>().spawnLimit;
 
-        gameUI = GameObject.Find("HUDCanvas(Clone)");
+        gameUI = gameObject.GetComponent<LevelManager>().hud;
         Time.timeScale = 1.0f;
         if (spawner.GetComponent<SpawnManager>().prevSpawner == null){
             spawner.GetComponent<SpawnManager>().activated = true;

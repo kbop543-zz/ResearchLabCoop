@@ -234,6 +234,7 @@ public class Tutorial : MonoBehaviour {
         else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 24)
         {
             // Tutorial enemies incoming!!
+            blackCanvas1.SetActive(false);
             athenaUI.SetActive(false);
             Time.timeScale = 1;
 
