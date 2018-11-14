@@ -44,12 +44,12 @@ public class shoot : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ((Input.GetKeyDown("v") || Input.GetKey(KeyCode.Joystick1Button4)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
+        if ((Input.GetKeyDown("v") || Input.GetKey(KeyCode.Joystick1Button3)) && ((gameObject.name == "P1") || gameObject.name == "P1(Clone)"))
         {
             //Debug.Log("switch bullet");
             Switch1();
         }
-        if ((Input.GetKeyDown("n") || Input.GetKey(KeyCode.Joystick2Button4)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
+        if ((Input.GetKeyDown("n") || Input.GetKey(KeyCode.Joystick2Button3)) && ((gameObject.name == "P2") || (gameObject.name == "P2(Clone)")))
         {
             //Debug.Log("switch bullet2");
             Switch2();
