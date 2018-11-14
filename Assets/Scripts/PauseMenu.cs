@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
+    public AudioSource clickSound;
 
     void Start()
     {
@@ -19,6 +20,10 @@ public class PauseMenu : MonoBehaviour
             if (!pausePanel.activeInHierarchy)
             {
                 PauseGame();
+                if (Input.GetKey(KeyCode.JoystickButton0))
+                {
+                    clickSound.Play();
+                }
             }
             else if (pausePanel.activeInHierarchy)
             {
