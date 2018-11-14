@@ -19,7 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224171273336733866}
-  - component: {fileID: 114669463539288744}
+  - component: {fileID: 114402525801031956}
+  - component: {fileID: 114821704320612248}
   - component: {fileID: 114050804984518992}
   - component: {fileID: 114087474348841946}
   - component: {fileID: 82983178505800836}
@@ -142,7 +143,7 @@ MonoBehaviour:
     type: 2}
   player1: {fileID: 1021489951523888, guid: 52a37076a454e48c6a8034fed6fe01b1, type: 2}
   player2: {fileID: 1397161449656490, guid: 2b668203e951c474ebb9a1c97969f5b2, type: 2}
-  HUDCanvas: {fileID: 1898844431938760, guid: fa0c720aeaee34e86ab0dcd3e8072062, type: 2}
+  HUDCanvas: {fileID: 1519217847695364, guid: dc575e9f488ca4e54aae73d01178ea29, type: 2}
   enemySpawner: {fileID: 1911282503729640, guid: 7398c9e685088486c99bc3097dcf6087,
     type: 2}
   orb: {fileID: 1068102295257792, guid: e53e89717a9394308bc3eeedd1fd83b7, type: 2}
@@ -224,6 +225,18 @@ MonoBehaviour:
   secondSpawner: {fileID: 0}
   thirdSpawner: {fileID: 0}
   curWaveSpawnLimit: 0
+--- !u!114 &114402525801031956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620990892634340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8f2547e773b4408a68679ac7d007b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelScript: {fileID: 114050804984518992}
 --- !u!114 &114570319327555850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,18 +270,28 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &114669463539288744
+--- !u!114 &114821704320612248
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620990892634340}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f2a4dfacc23d413b962589bc647afa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 399e80fa11e594cb8a3de7464e297949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelScript: {fileID: 114050804984518992}
+  athenaUI: {fileID: 0}
+  athenaDialogue: {fileID: 0}
+  dialogueTriggered: 0
+  hud: {fileID: 0}
+  blackCanvas1: {fileID: 0}
+  blackCanvas2: {fileID: 0}
+  blackCanvas3: {fileID: 0}
+  blackCanvas4: {fileID: 0}
+  blackCanvas5: {fileID: 0}
+  blackCanvas6: {fileID: 0}
+  waveProg1: {fileID: 0}
 --- !u!222 &222938524027949510
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -291,6 +314,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144.4, y: 11.200001}
+  m_AnchoredPosition: {x: 144.39998, y: 11.199997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
