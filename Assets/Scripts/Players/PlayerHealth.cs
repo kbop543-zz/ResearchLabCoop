@@ -42,6 +42,8 @@ public class PlayerHealth : MonoBehaviour {
         }
 
         if (gameObject){
+            GameObject controlUI = gameObject.transform.Find("ControlUI").gameObject;
+            controlUI.GetComponent<Canvas>().enabled = false;
 			gameObject.SetActive(false);
 			playerIsDead = true;
 
