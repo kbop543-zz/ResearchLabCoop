@@ -4138,7 +4138,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &114506450173051294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4241,7 +4241,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &114542865439558022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6240,7 +6240,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224105235841611398}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6413,9 +6413,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224439184424733702}
-  - {fileID: 224839180561844330}
   - {fileID: 224567659587389062}
   - {fileID: 224047776459412256}
+  - {fileID: 224839180561844330}
   - {fileID: 4262251290056390}
   m_Father: {fileID: 224671503707442440}
   m_RootOrder: 4
@@ -7206,7 +7206,7 @@ RectTransform:
   - {fileID: 224194517144237278}
   - {fileID: 224002375585132574}
   m_Father: {fileID: 224105235841611398}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7792,7 +7792,7 @@ RectTransform:
   m_LocalScale: {x: 0.52682996, y: 0.52682996, z: 0.52682996}
   m_Children: []
   m_Father: {fileID: 224105235841611398}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -66,6 +67,7 @@ public class GameUIPanels : MonoBehaviour {
         Time.timeScale = 0.0001f;
         if (!waveSwitched)
         {
+            EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(waveCompletePanel.transform.GetChild(1).GetChild(0).gameObject);
             waveCompletePanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1enemyKillCount.ToString();
             waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboFalling.ToString();
             waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboBoom.ToString();
@@ -73,6 +75,7 @@ public class GameUIPanels : MonoBehaviour {
         }
         else if (waveSwitched)
         {
+            EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(waveCompletePanel.transform.GetChild(1).GetChild(0).gameObject);
             waveCompletePanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2enemyKillCount.ToString();
             waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboFalling.ToString();
             waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboBoom.ToString();
@@ -85,6 +88,7 @@ public class GameUIPanels : MonoBehaviour {
     private void GameComplete()
     {
         Time.timeScale = 0.0001f;
+        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(gameCompletePanel.transform.GetChild(1).GetChild(0).gameObject);
         gameCompletePanel.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3enemyKillCount.ToString();
         gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboFalling.ToString();
         gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboBoom.ToString();
@@ -127,6 +131,7 @@ public class GameUIPanels : MonoBehaviour {
     public void GameOver()
     {
         Time.timeScale = 0.0001f;
+        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(gameOverPanel.transform.GetChild(1).GetChild(0).gameObject);
         gameOverPanel.SetActive(true);
     }
 
