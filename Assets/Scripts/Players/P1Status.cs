@@ -199,7 +199,7 @@ public class P1Status : MonoBehaviour {
         }
 
         gameObject.GetComponent<p1_movement>().speed = 0;
-        gameObject.GetComponent<PlayerHealth>().Die();
+        gameObject.GetComponent<PlayerHealth>().InvokeFalling();
         gameObject.GetComponent<p1_movement>().speed = originalSpeed;
     }
 

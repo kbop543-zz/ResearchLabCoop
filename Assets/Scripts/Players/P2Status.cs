@@ -193,7 +193,7 @@ public class P2Status : MonoBehaviour {
         }
 
         gameObject.GetComponent<p2_movement>().speed = 0;
-        gameObject.GetComponent<PlayerHealth>().Die();
+        gameObject.GetComponent<PlayerHealth>().InvokeFalling();
         gameObject.GetComponent<p2_movement>().speed = originalSpeed;
     }
     public void Shattered()
