@@ -23,6 +23,7 @@ public class P2Status : MonoBehaviour {
     public float freezeStartTime;
     public float shrinkTimePassed; // timePassed = Time.time - (___)StartTime;
     public float freezeTimePassed;
+    public ParticleSystem shatter;
 
     private void Start()
     {
@@ -191,6 +192,14 @@ public class P2Status : MonoBehaviour {
             shrank = false;
         }
 
+        gameObject.GetComponent<p2_movement>().speed = 0;
+        gameObject.GetComponent<PlayerHealth>().Die();
+        gameObject.GetComponent<p2_movement>().speed = originalSpeed;
+    }
+    public void Shattered()
+    {
+        //Particle effect not gonna work as it .Die() will disable the player GameObject
+        //shatter.Play();
         gameObject.GetComponent<p2_movement>().speed = 0;
         gameObject.GetComponent<PlayerHealth>().Die();
         gameObject.GetComponent<p2_movement>().speed = originalSpeed;

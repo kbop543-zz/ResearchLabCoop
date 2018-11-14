@@ -35,6 +35,12 @@ public class BigShotHit : MonoBehaviour {
                     hitTarget.GetComponent<P1Status>().BlowAway(0.5f);
 
                     // If Frozen
+                    if (hitTarget.GetComponent<P1Status>().frozen)
+                    {
+                        shatterSound.Play();
+                        hitTarget.GetComponent<P1Status>().Shattered();
+                        return;
+                    }
                 }
                 else {
                     return;
@@ -46,6 +52,12 @@ public class BigShotHit : MonoBehaviour {
                     hitTarget.GetComponent<P2Status>().BlowAway(0.5f);
 
                     // If Frozen
+                    if (hitTarget.GetComponent<P2Status>().frozen)
+                    {
+                        shatterSound.Play();
+                        hitTarget.GetComponent<P2Status>().Shattered();
+                        return;
+                    }
                 }
                 else {
                     return;
