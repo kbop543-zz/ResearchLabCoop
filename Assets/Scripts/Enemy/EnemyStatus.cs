@@ -32,7 +32,7 @@ public class EnemyStatus : MonoBehaviour
         play = true;
         originalSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed;
         originalScale = transform.localScale.x;
-        gmtest = GameObject.Find("GameManagerTest");
+        gmtest = GameObject.FindWithTag("GameManager");
 
         // Store original material
         GetMaterial();
