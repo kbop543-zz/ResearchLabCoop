@@ -45,6 +45,8 @@ public class LevelManager : MonoBehaviour {
     public GameObject p2;
     public GameObject hud;
     public GameObject myStats;
+    public GameObject shrink;
+    public GameObject hole;
 
     public void SetupScene() {
         //Instantiate(terrainTiles, new Vector3(-514f, 0, -472f), Quaternion.identity);
@@ -74,10 +76,10 @@ public class LevelManager : MonoBehaviour {
         //Instantiate(crossBow);
         //Instantiate(collector);
 
-        Instantiate(thrinkStation);
+        shrink = Instantiate(thrinkStation) as GameObject;
         Instantiate(thrinkTile);
         //Instantiate(shrinkpipe);
-        Instantiate(holeStation);
+        hole = Instantiate(holeStation) as GameObject;
         //Instantiate(holeTile0);
         //Instantiate(holeTile1);
         //Instantiate(holeTile2);

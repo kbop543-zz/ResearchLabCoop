@@ -51,12 +51,14 @@ public class FallOff : MonoBehaviour {
                 if (hitTarget.name == "P1(Clone)")
                 {
                     hitTarget.GetComponent<P1Status>().Fall();
+                    StartCoroutine(StartFallingPlayer(hitTarget, 2.0f));
 
                     // Drop item after short delay
                 }
                 else if (hitTarget.name == "P2(Clone)")
                 {
                     hitTarget.GetComponent<P2Status>().Fall();
+                    StartCoroutine(StartFallingPlayer(hitTarget, 2.0f));
 
                     // Drop item after short delay
                 }
@@ -136,6 +138,34 @@ public class FallOff : MonoBehaviour {
             target.transform.Translate(2f * direction * fallSpeed * Time.deltaTime);
             yield return null;
         }
+    }
+
+    private IEnumerator StartFallingPlayer(GameObject target, float duration)
+    {
+        // Disable colliders
+        Collider[] allCollider = target.GetComponentsInChildren<Collider>();
+        foreach (Collider col in allCollider)
+        {
+            col.enabled = false;
+        }
+
+        //dropsound.Play();
+        Vector3 tarDest = transform.position + new Vector3(0f, -75f, 0f);
+        Vector3 direction = tarDest - target.transform.position;
+        direction.Normalize();
+
+        float i = 0;
+        while (target != null && i < duration)
+        {
+            target.transform.Translate(2f * direction * fallSpeed * Time.deltaTime);
+            i += Time.deltaTime;
+            yield return null;
+        }
+        foreach (Collider col in allCollider)
+        {
+            col.enabled = true;
+        }
+
     }
 
     private void FixedUpdate()

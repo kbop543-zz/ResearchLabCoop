@@ -50,6 +50,13 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
+    public void InvokeDie () {
+        Invoke("Die", 0.5f);
+    }
+    public void InvokeFalling () {
+        Invoke("Die", 2.0f);
+    }
+
 	public void Respawn () {
 		print("respawn");
         if (!gmtest.GetComponent<GameConstants>().gameOver)

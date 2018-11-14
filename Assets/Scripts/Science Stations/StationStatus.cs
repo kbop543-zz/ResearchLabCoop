@@ -63,7 +63,7 @@ public class StationStatus : MonoBehaviour
         // Set fill amount of battery fill to 1
         batteryFill.fillAmount = 1.0f;
         // Set both batteryIcon and batteryFill to inactive at start of game
-        battery.SetActive(false);
+        //battery.SetActive(false);
     }
 
     private void Update()
@@ -75,7 +75,7 @@ public class StationStatus : MonoBehaviour
 
             if (batteryFill.fillAmount >= 1.0f)
             {
-                battery.SetActive(false);
+                //battery.SetActive(false);
                 recharging = false;
             }
         }
@@ -171,7 +171,7 @@ public class StationStatus : MonoBehaviour
         ParticleEffect.Stop();
 
         // Display and start cooldown UI of station
-        battery.SetActive(true);
+        //battery.SetActive(true);
         coolDownStartTime = Time.time;
         coolDownTimePassed = Time.time - coolDownStartTime;
         batteryFill.fillAmount = coolDownTimePassed / coolDown;

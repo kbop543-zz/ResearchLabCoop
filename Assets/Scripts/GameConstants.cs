@@ -127,6 +127,7 @@ public class GameConstants : MonoBehaviour {
                 {
                     if (stations[i].name.Contains("FreezeStation")) {
                         stations[i].GetComponent<StationStatus>().prepared = true;
+                        stations[i].transform.Find("BatteryCanvas").gameObject.SetActive(true);
                     }
                 }
             }
@@ -161,6 +162,7 @@ public class GameConstants : MonoBehaviour {
                     if (stations[i].name.Contains("ElectricityStation"))
                     {
                         stations[i].GetComponent<StationStatus>().prepared = true;
+                        stations[i].transform.Find("BatteryCanvas").gameObject.SetActive(true);
                     }
                 }
             }
