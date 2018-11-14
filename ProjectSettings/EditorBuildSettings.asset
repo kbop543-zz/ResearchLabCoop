@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ResearchLab_00.unity
     guid: 98e12726424264f4e9bb43a2a9ab83f1
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: eae70352bf1874edf8e6bec9c5759b3f
   m_configObjects: {}

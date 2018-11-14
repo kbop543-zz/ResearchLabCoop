@@ -235,6 +235,7 @@ public class Tutorial : MonoBehaviour {
         {
             // Tutorial enemies incoming!!
             blackCanvas1.SetActive(false);
+            waveProg1.SetActive(false);
             athenaUI.SetActive(false);
             Time.timeScale = 1;
 
