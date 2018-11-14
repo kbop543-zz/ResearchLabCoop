@@ -26,6 +26,9 @@ public class OilHit : MonoBehaviour
         GameObject hitTarget = other.transform.root.gameObject;
         //float force = thrust;
         //if (hitTarget.tag == "Monster" || hitTarget.tag == "Player")
+        if (hitTarget.name == shooter.name) {
+            return;
+        }
         if (hitTarget.tag == "Monster")
         {
             //if (hitTarget.name == "P1(Clone)")
@@ -71,6 +74,22 @@ public class OilHit : MonoBehaviour
             //}
 
             //hitTarget.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity.normalized * force, ForceMode.Impulse);
+        }
+        else if (hitTarget.name.Contains("P1"))
+        {
+            if (!hitTarget.GetComponent<P1Status>().oiled)
+            {
+                hitTarget.GetComponent<P1Status>().Oiling();
+
+            }
+        }
+        else if (hitTarget.name.Contains("P2"))
+        {
+            if (!hitTarget.GetComponent<P2Status>().oiled)
+            {
+                hitTarget.GetComponent<P2Status>().Oiling();
+
+            }
         }
 
     }

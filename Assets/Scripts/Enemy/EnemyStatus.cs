@@ -11,7 +11,7 @@ public class EnemyStatus : MonoBehaviour
     public bool oiled = false;
     public bool willDie = false;
     public bool falling = false;
-    public float duraiton = 5f;
+    public float duration = 5f;
     public float shrinkDuration = 15;
     public float originalSpeed;
     public float originalScale;
@@ -147,7 +147,7 @@ public class EnemyStatus : MonoBehaviour
 
     IEnumerator Unfreeze()
     {
-        yield return new WaitForSeconds(duraiton);
+        yield return new WaitForSeconds(duration);
 
         // restore original speed after being unfrozen
         gameObject.GetComponent<EnemyMovement>().forwardSpeed = originalSpeed;
@@ -221,7 +221,7 @@ public class EnemyStatus : MonoBehaviour
 
     IEnumerator Unoil()
     {
-        yield return new WaitForSeconds(duraiton);
+        yield return new WaitForSeconds(duration);
 
         if (!falling || !frozen)
         {
