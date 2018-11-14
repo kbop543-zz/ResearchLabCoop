@@ -51,7 +51,7 @@ public class Tutorial : MonoBehaviour {
     void Update()
     {
 
-        if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && !dialogueTriggered)
+        if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && !dialogueTriggered)
         {
             // We are in danger scientists! I am Athena, an AI security protocol that you created.
             // I've just detected an enemy intrusion and we must act quickly to defend the lab.
@@ -59,7 +59,7 @@ public class Tutorial : MonoBehaviour {
             dialogueTriggered = true;
             timesPressed++;
         } 
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 1)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 1)
         {
             // I have activated the interface that displays your vital statistics.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -67,7 +67,7 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 2)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 2)
         {
             // The two bars on the bottom displays the amount of health each of you have remaining.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -76,21 +76,21 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 3)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 3)
         {
             // The circle icons right above your health bar will become active if you are affected by any statuses.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 4)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 4)
         {
             // These statuses lower your performance or weaken you, and the icons will become inactive when the statuses go away.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 5)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 5)
         {
             // This bar on top is the progress bar, which fills up as you defeat enemies in the current wave.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -100,7 +100,7 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 6)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 6)
         {
             // There aren’t not many things around the lab you can use to fight the enemies,
             // but I’ve switched on the science stations you two have been researching.
@@ -108,7 +108,7 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 7)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 7)
         {
             // This is the shrink ray.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -117,7 +117,7 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 8)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 8)
         {
             // These here are the black holes.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -126,7 +126,7 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 9)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 9)
         {
             // This is the freeze station.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -135,7 +135,7 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 10)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 10)
         {
             // And here we have the electric coil.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -144,7 +144,7 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 11)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 11)
         {
             // It appears that the intruders might have caused a power outage and not all the stations are powered.
             // We will need to wait for the backup power supply.
@@ -154,14 +154,14 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 12)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 12)
         {
             // You can activate the stations by pressing X when you are close enough to the stations.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 13)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 13)
         {
             // Once the stations are switched on, their effects will take place in the 
             // striped areas and it will need to recharge before you can use it again.
@@ -169,7 +169,7 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 14)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 14)
         {
             // Be careful not to walk into the striped areas while the stations are activated! 
             // Or else, you might get blasted too!
@@ -177,28 +177,28 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 15)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 15)
         {
             // I have also equipped both of you with a multifunctional gun.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 16)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 16)
         {
             // There are two gun modes. The shockwave mode and oil mode.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 17)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 17)
         {
             // You can switch between the two gun modes by pressing (triangle) and you can shoot by pressing RT.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 18)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 18)
         {
             // The science stations and gun modes by themselves aren’t harmful, 
             // but if you were to combine the effects together they could deadly.
@@ -206,42 +206,42 @@ public class Tutorial : MonoBehaviour {
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 19)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 19)
         {
             // You can shrink your enemies and then drop them into the black holes when they are small enough!
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 20)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 20)
         {
             // You can also freeze your enemies and then shatter them with the impact of your shockwave gun.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 21)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 21)
         {
             // Or you could drench your enemies in oil and ignite them into flames with the electric coil.
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 22)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 22)
         {
             // This is all I have time for! Good luck scientists!
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 23)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 23)
         {
             // Here comes your first enemy!
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
             timesPressed++;
         }
-        else if ((Input.GetKeyDown("y") || Input.GetKey(KeyCode.JoystickButton1)) && timesPressed == 24)
+        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && timesPressed == 24)
         {
             // Tutorial enemies incoming!!
             blackCanvas1.SetActive(false);
