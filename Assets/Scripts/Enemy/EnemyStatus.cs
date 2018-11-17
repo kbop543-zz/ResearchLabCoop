@@ -25,6 +25,7 @@ public class EnemyStatus : MonoBehaviour
     public float speedLimit = 500f;
     public GameObject gmtest;
     public bool play;
+    public GameObject model;
     private Color originalMaterialColor;
 
     private void Start()
@@ -284,12 +285,12 @@ public class EnemyStatus : MonoBehaviour
     }
 
     private void GetMaterial() {
-        MeshRenderer[] allMesh = transform.GetChild(0).GetComponentsInChildren<MeshRenderer>();
+        MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer mesh in allMesh)
         {
             originalMaterialColor = mesh.material.color;
         }
-        SkinnedMeshRenderer[] allSkinMesh = transform.GetChild(0).GetComponentsInChildren<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer[] allSkinMesh = model.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
         {
             originalMaterialColor = skinMesh.material.color;
@@ -299,12 +300,12 @@ public class EnemyStatus : MonoBehaviour
     public void Darken(float percent)
     {
         percent = Mathf.Clamp01(percent);
-        MeshRenderer[] allMesh = transform.GetChild(0).GetComponentsInChildren<MeshRenderer>();
+        MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer mesh in allMesh)
         {
             mesh.material.color = new Color(originalMaterialColor.r * (1 - percent), originalMaterialColor.g * (1 - percent), originalMaterialColor.b * (1 - percent), originalMaterialColor.a);
         }
-        SkinnedMeshRenderer[] allSkinMesh = transform.GetChild(0).GetComponentsInChildren<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer[] allSkinMesh = model.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
         {
             skinMesh.material.color = new Color(originalMaterialColor.r * (1 - percent), originalMaterialColor.g * (1 - percent), originalMaterialColor.b * (1 - percent), originalMaterialColor.a);
@@ -312,12 +313,12 @@ public class EnemyStatus : MonoBehaviour
     }
 
     public void RestoreColor() {
-        MeshRenderer[] allMesh = transform.GetChild(0).GetComponentsInChildren<MeshRenderer>();
+        MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer mesh in allMesh)
         {
             mesh.material.color = originalMaterialColor;
         }
-        SkinnedMeshRenderer[] allSkinMesh = transform.GetChild(0).GetComponentsInChildren<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer[] allSkinMesh = model.GetComponentsInChildren<SkinnedMeshRenderer>();
         foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
         {
             skinMesh.material.color = originalMaterialColor;

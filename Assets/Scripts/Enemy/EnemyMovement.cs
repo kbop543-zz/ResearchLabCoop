@@ -21,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
     private GameObject curTargetPlayer;
     private float curCD;
     private float curNavCD;
+    private Animator anim;
     public bool chasing;
     public bool idling;
     public bool activated;
@@ -40,6 +41,8 @@ public class EnemyMovement : MonoBehaviour
         curCD = attackCD;
         curNavCD = navCD;
         navAgent.speed = 0;
+        anim = GetComponentInChildren<Animator>();
+        anim.SetBool("attack", false);
 
     }
 
@@ -50,12 +53,23 @@ public class EnemyMovement : MonoBehaviour
 
         if (activated) {
             if (GetComponent<EnemyStatus>().frozen || GetComponent<EnemyStatus>().blown) {
+                if (GetComponent<EnemyStatus>().frozen) {
+                    anim.speed = 0;
+                }
                 return;
             }
+            else if (!GetComponent<EnemyStatus>().frozen && anim.speed.Equals(0)) {
+                anim.speed = 1;
+            }
 
-            if (true) {
-            //if (chasing) {
+            if (!anim.GetBool("attack")) {
                 Chase();
+            }
+
+            if (anim.GetBool("idle") && curTargetPlayer != null)
+            {
+                var targetRotation = Quaternion.LookRotation(DestinationPos - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3f * Time.deltaTime);
             }
 
             // Not chasing && not idling => start idling
@@ -67,7 +81,7 @@ public class EnemyMovement : MonoBehaviour
             //}
 
             // Recharge attack
-            if (curCD < attackCD) {
+            if (curCD < attackCD && !anim.GetBool("attack")) {
                 curCD += Time.deltaTime;
             }
 
@@ -137,17 +151,20 @@ public class EnemyMovement : MonoBehaviour
 
         //transform.LookAt(DestinationPos);
 
-        if (Vector3.Distance(transform.position, DestinationPos) > 2 * sightRange) {
-            chasing = false;
-            navAgent.speed = 0;
-            return;
-        }
-        else if (Vector3.Distance(transform.position, DestinationPos) >= minDistance)
+        //if (Vector3.Distance(transform.position, DestinationPos) > 2 * sightRange) {
+        //    chasing = false;
+        //    navAgent.speed = 0;
+        //    return;
+        //}
+        if (Vector3.Distance(transform.position, DestinationPos) >= minDistance)
         {
             //curVelocity = DestinationPos - transform.position;
             //curVelocity.Normalize();
             //curVelocity *= forwardSpeed;
             //GetComponent<Rigidbody>().velocity = curVelocity;
+
+            // Set idle boolean
+            anim.SetBool("idle", false);
 
             if (curNavCD >= navCD) {
                 navAgent.speed = forwardSpeed;
@@ -163,7 +180,8 @@ public class EnemyMovement : MonoBehaviour
             // Attack target when in attack range
             if (curCD >= attackCD && !GetComponent<EnemyStatus>().willDie) {
                 //Debug.Log("Attack!");
-                curTargetPlayer.GetComponent<PlayerHealth>().TakeDamage(damage);
+                //curTargetPlayer.GetComponent<PlayerHealth>().TakeDamage(damage);
+                StartCoroutine(Attack());
                 curCD = 0f;
             }
 
@@ -174,7 +192,50 @@ public class EnemyMovement : MonoBehaviour
             }
             //GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
 
+            // Set idle boolean
+            anim.SetBool("idle", true);
         }
+    }
+
+    private IEnumerator Attack() {
+        float time = AnimationLength("attack");
+
+        // Set attack boolean
+        anim.SetBool("attack", true);
+        bool attacked = false;
+        float j = 0f;
+        while (j < time) {
+            if (j > time / 4 && !attacked) {
+                if (!GetComponent<EnemyStatus>().willDie && !GetComponent<EnemyStatus>().frozen &&
+                    curTargetPlayer != null && !curTargetPlayer.GetComponent<PlayerHealth>().playerIsDead)
+                {
+                    curTargetPlayer.GetComponent<PlayerHealth>().TakeDamage(damage);
+                    attacked = true;
+                }
+            }
+
+            j += Time.deltaTime;
+            yield return null;
+        }
+
+        //if (!GetComponent<EnemyStatus>().willDie && !GetComponent<EnemyStatus>().frozen &&
+        //    curTargetPlayer != null && !curTargetPlayer.GetComponent<PlayerHealth>().playerIsDead) {
+        //    curTargetPlayer.GetComponent<PlayerHealth>().TakeDamage(damage);
+        //}
+
+        anim.SetBool("attack", false);
+    }
+
+    public float AnimationLength(string name)
+    {
+        float time = 0;
+        RuntimeAnimatorController ac = anim.runtimeAnimatorController;
+
+        for (int i = 0; i < ac.animationClips.Length; i++)
+            if (ac.animationClips[i].name.Contains(name))
+                time = ac.animationClips[i].length;
+
+        return time;
     }
 
     //private IEnumerator Idle() {

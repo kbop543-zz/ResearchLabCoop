@@ -1701,6 +1701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4752775785695428}
+  - component: {fileID: 95946731784578332}
   m_Layer: 0
   m_Name: Polygonal Giant Bee Red
   m_TagString: Untagged
@@ -3006,7 +3007,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974744916359430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9, y: -2.8, z: -1.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children:
   - {fileID: 4782041294618910}
@@ -3623,6 +3624,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95946731784578332
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974744916359430}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: aa19438d32e37614eb4d2df20e144d1e, type: 3}
+  m_Controller: {fileID: 9100000, guid: b85a6658babb64b38bdf5a9737a5c247, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114189700612207212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3640,7 +3659,7 @@ MonoBehaviour:
   oiled: 0
   willDie: 0
   falling: 0
-  duraiton: 10
+  duration: 5
   shrinkDuration: 15
   originalSpeed: 75
   originalScale: 0
@@ -3651,6 +3670,7 @@ MonoBehaviour:
   speedLimit: 500
   gmtest: {fileID: 0}
   play: 0
+  model: {fileID: 1325950020129148}
 --- !u!114 &114681347079538556
 MonoBehaviour:
   m_ObjectHideFlags: 1
