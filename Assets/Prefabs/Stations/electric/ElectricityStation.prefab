@@ -1059,7 +1059,7 @@ MonoBehaviour:
   maxIntensity: 5
   ParticleEffect: {fileID: 198261302212025106}
   duraiton: 4
-  coolDown: 5
+  coolDown: 10
   recharging: 0
   battery: {fileID: 1278577051878284}
   batteryFill: {fileID: 114783282751823810}
