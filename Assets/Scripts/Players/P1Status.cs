@@ -12,6 +12,7 @@ public class P1Status : MonoBehaviour {
     public float duration = 7.0f;
     public float shrinkDuration = 7f;
     public float speedLimit = 500f;
+    private bool hasInvincibility;
 
     public float originalSpeed;
     public float originalScale;
@@ -39,6 +40,8 @@ public class P1Status : MonoBehaviour {
         freezeFill.fillAmount = 1.0f;
 
         GetMaterial();
+
+        SetInvincibility(true);
     }
 
     private void Update()
@@ -335,4 +338,11 @@ public class P1Status : MonoBehaviour {
         RestoreColor();
     }
 
+    public void SetInvincibility(bool bol) {
+        hasInvincibility = bol;
+    }
+
+    public bool isInvincible() {
+        return hasInvincibility;
+    }
 }
