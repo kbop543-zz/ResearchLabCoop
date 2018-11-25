@@ -93,13 +93,37 @@ public class PlayerHealth : MonoBehaviour {
             // Hide iceCrystal
             transform.GetChild(2).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
 
-            Debug.Log("Player has respawned");
+            // Debug.Log("Player has respawned");
+            // Enable invincibility window
+            if (gameObject.name.Contains("P1"))
+            {
+                GetComponent<P1Status>().SetInvincibility(true);
+            }
+            else
+            {
+                GetComponent<P2Status>().SetInvincibility(true);
+            }
         }
 	}
 
 	public void TakeDamage(float amount){
+        // Check invincibility window
+        if (gameObject.name.Contains("P1"))
+        {
+            if (GetComponent<P1Status>().isInvincible())
+            {
+                return;
+            }
+        }
+        else
+        {
+            if (GetComponent<P2Status>().isInvincible())
+            {
+                return;
+            }
+        }
 
-        health-=amount;
+        health -=amount;
 
 		healthBar.fillAmount = health/startHealth;
 		// Debug.Log("fill amount" + healthBar.fillAmount );
