@@ -30,6 +30,7 @@ public class StationStatus : MonoBehaviour
     public GameObject model;
     private Color originalColor;
     private bool colorChanged;
+    public Material disabledMaterial;
 
     private void Start()
     {
@@ -139,7 +140,7 @@ public class StationStatus : MonoBehaviour
 
             stationUI.GetComponent<Canvas>().enabled = true;
         }
-        
+
     }
 
     public void OnTriggerExit(Collider other)
@@ -243,7 +244,8 @@ public class StationStatus : MonoBehaviour
         MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer mesh in allMesh)
         {
-            mesh.material.color = new Color(originalColor.r * (1 - percent), originalColor.g * (1 - percent), originalColor.b * (1 - percent), originalColor.a);
+            //mesh.material.color = new Color(originalColor.r * (1 - percent), originalColor.g * (1 - percent), originalColor.b * (1 - percent), originalColor.a);
+            mesh.material = disabledMaterial;
         }
     }
 
