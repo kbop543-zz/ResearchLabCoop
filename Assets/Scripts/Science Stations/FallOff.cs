@@ -28,10 +28,11 @@ public class FallOff : MonoBehaviour {
         myRend.enabled = false;
         opened = false;
         play = true;
-        hole1 = GameObject.Find("HoleTile_1");
-        hole2 = GameObject.Find("HoleTile_2");
-        hole3 = GameObject.Find("HoleTile_3");
-        hole4 = GameObject.Find("HoleTile_4");
+        hole1 = GameObject.Find("Portal");
+        //hole1 = GameObject.Find("HoleTile_1");
+        //hole2 = GameObject.Find("HoleTile_2");
+        //hole3 = GameObject.Find("HoleTile_3");
+        //hole4 = GameObject.Find("HoleTile_4");
         scaleX = transform.localScale.x;
         scaleY = transform.localScale.y;
         scaleZ = transform.localScale.z;
@@ -99,9 +100,9 @@ public class FallOff : MonoBehaviour {
                     {
                         dropsound.PlayOneShot(dropsound.clip);
                         hole1.GetComponent<FallOff>().play = false;
-                        hole2.GetComponent<FallOff>().play = false;
-                        hole3.GetComponent<FallOff>().play = false;
-                        hole4.GetComponent<FallOff>().play = false;
+                        //hole2.GetComponent<FallOff>().play = false;
+                        //hole3.GetComponent<FallOff>().play = false;
+                        //hole4.GetComponent<FallOff>().play = false;
                         play = false;
                         Invoke("Whatever", 5);
                     }
@@ -116,9 +117,9 @@ public class FallOff : MonoBehaviour {
     {
         play = true;
         hole1.GetComponent<FallOff>().play = true;
-        hole2.GetComponent<FallOff>().play = true;
-        hole3.GetComponent<FallOff>().play = true;
-        hole4.GetComponent<FallOff>().play = true;
+        //hole2.GetComponent<FallOff>().play = true;
+        //hole3.GetComponent<FallOff>().play = true;
+        //hole4.GetComponent<FallOff>().play = true;
     }
 
     private IEnumerator StartFalling (GameObject target) {
@@ -198,6 +199,10 @@ public class FallOff : MonoBehaviour {
             opened = false;
 
         }
+
+        if (opened) {
+            Attract();
+        }
     }
 
     IEnumerator holeOpening()
@@ -221,6 +226,40 @@ public class FallOff : MonoBehaviour {
             curRotation += rotateRate * Time.deltaTime;
             transform.rotation = Quaternion.Euler(new Vector3(0, curRotation, 0));
             yield return null;
+        }
+    }
+
+    public void Attract() {
+        //float pullForce = 5000f;
+        //Non-escapable distance = 200
+        //Monster scale: 30 -> 15
+        //Player scale: 50 -> 25
+        float maxPullForce = 5000f;
+        float distFactor = 3000f * 200f;
+        float sizeFactor = 2000f * 15f;
+        float pullRadius = 650f;
+
+        foreach (Collider body in Physics.OverlapSphere(transform.position, pullRadius)) {
+            if (body.gameObject.tag == "Player" || body.gameObject.tag == "Monster")
+            {
+                // calculate direction from target to portal
+                Vector3 forceDirection = new Vector3(transform.position.x - body.transform.position.x,
+                                                     0f,
+                                                     transform.position.z - body.transform.position.z);
+
+                float distance = Vector3.Distance(transform.position, body.transform.position);
+                if (distance < 1f) {
+                    return;
+                }
+
+                float pullForce = distFactor / distance + sizeFactor / body.transform.localScale.x;
+                if (pullForce > maxPullForce) {
+                    pullForce = maxPullForce;
+                }
+
+                // apply force on target towards portal
+                body.GetComponent<Rigidbody>().AddForce(forceDirection.normalized * pullForce * Time.fixedDeltaTime);
+            }
         }
     }
 }
