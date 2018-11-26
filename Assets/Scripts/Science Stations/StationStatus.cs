@@ -28,7 +28,7 @@ public class StationStatus : MonoBehaviour
 
     public GameObject arrow;
     public GameObject model;
-    private Color originalColor;
+    private Material originalMaterial;
     private bool colorChanged;
     public Material disabledMaterial;
 
@@ -234,7 +234,7 @@ public class StationStatus : MonoBehaviour
         MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer mesh in allMesh)
         {
-            originalColor = mesh.material.color;
+            originalMaterial = mesh.material;
         }
     }
 
@@ -254,7 +254,7 @@ public class StationStatus : MonoBehaviour
         MeshRenderer[] allMesh = model.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer mesh in allMesh)
         {
-            mesh.material.color = originalColor;
+            mesh.material = originalMaterial;
         }
     }
 }

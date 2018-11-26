@@ -81,6 +81,7 @@ public class BigShotHit : MonoBehaviour {
                     else {
                         hitTarget.GetComponent<EnemyMovement>().changeCurTarget(shooter);
                     }
+                    hitTarget.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity.normalized * force, ForceMode.Impulse);
 
                 }
                 else {
@@ -89,7 +90,8 @@ public class BigShotHit : MonoBehaviour {
                 //force *= 2f;
             }
 
-            hitTarget.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity.normalized * force, ForceMode.Impulse);         }   
+         
+          } 
     }
 
     IEnumerator increaseXscale()
