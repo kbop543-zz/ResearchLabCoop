@@ -12,6 +12,8 @@ public class EnemyMovement : MonoBehaviour
     public int damage = 10;
     public float attackCD = 1.5f;
     public float navCD = 0.1f;
+    public float chgTarCD = 3f;
+    public float chgTarDis = 200f;
     public NavMeshAgent navAgent;
     private GameObject[] players;
     //private Transform LabTransform;
@@ -22,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
     private float curCD;
     private float curNavCD;
     private Animator anim;
+    private float curChgTarCD;
     public bool chasing;
     public bool idling;
     public bool activated;
@@ -31,6 +34,9 @@ public class EnemyMovement : MonoBehaviour
     {
         //LabTransform = GameObject.FindGameObjectWithTag("Lab").transform;
         sightRange = 500f;
+        chgTarCD = 3f;
+        chgTarDis = 200f;
+        curChgTarCD = 0;
         minDistance = transform.localScale.x + 25f;
         GetComponent<NavMeshAgent>().stoppingDistance = minDistance;
         gm = GameObject.FindWithTag("GameManager");
@@ -89,6 +95,11 @@ public class EnemyMovement : MonoBehaviour
             if (curNavCD < navCD) {
                 curNavCD += Time.deltaTime;
             }
+
+            // Count switch target CD
+            if (curChgTarCD < chgTarCD) {
+                curChgTarCD += Time.deltaTime;
+            }
         }
     }
 
@@ -97,42 +108,75 @@ public class EnemyMovement : MonoBehaviour
     }
 
     public void SearchForTarget () {
-        if (!chasing) {
-            if (players[0].GetComponent<PlayerHealth>().playerIsDead &&
-                players[1].GetComponent<PlayerHealth>().playerIsDead)
+        if (!chasing || (curChgTarCD >= chgTarCD)) {
+            if (curTargetPlayer == null || curTargetPlayer.GetComponent<PlayerHealth>().playerIsDead)
             {
-                return;
-            }
+                if (players[0].GetComponent<PlayerHealth>().playerIsDead &&
+                    players[1].GetComponent<PlayerHealth>().playerIsDead)
+                {
+                    return;
+                }
 
-            if (!players[0].GetComponent<PlayerHealth>().playerIsDead) {
-                //targetPos = players[0].transform.position;
-                curTargetPlayer = players[0];
-            }
+                if (!players[0].GetComponent<PlayerHealth>().playerIsDead)
+                {
+                    //targetPos = players[0].transform.position;
+                    curTargetPlayer = players[0];
+                }
 
-            if (!players[1].GetComponent<PlayerHealth>().playerIsDead) {
-                if (!players[0].GetComponent<PlayerHealth>().playerIsDead) {
-                    float p1Dis = Vector3.Distance(players[0].transform.position, transform.position);
-                    float p2Dis = Vector3.Distance(players[1].transform.position, transform.position);
-                    if (p2Dis < p1Dis) {
+                if (!players[1].GetComponent<PlayerHealth>().playerIsDead)
+                {
+                    if (!players[0].GetComponent<PlayerHealth>().playerIsDead)
+                    {
+                        float p1Dis = Vector3.Distance(players[0].transform.position, transform.position);
+                        float p2Dis = Vector3.Distance(players[1].transform.position, transform.position);
+                        if (p2Dis < p1Dis)
+                        {
+                            //targetPos = players[1].transform.position;
+                            curTargetPlayer = players[1];
+                        }
+                    }
+                    else
+                    {
                         //targetPos = players[1].transform.position;
                         curTargetPlayer = players[1];
                     }
+
+                }
+
+                // Verify range
+                if (Vector3.Distance(curTargetPlayer.transform.position, transform.position) < sightRange)
+                {
+                    chasing = true;
+                    idling = false;
+
+                    //if (!activated) {
+                    //    activated = true;
+                    //}
+                }
+            }
+            else
+            {
+                // Switch target iff both players are alive
+                if (players[0].GetComponent<PlayerHealth>().playerIsDead ||
+                    players[1].GetComponent<PlayerHealth>().playerIsDead)
+                {
+                    return;
+                }
+
+                int otherPlayerIdx = 0;
+                if (curTargetPlayer.gameObject.name.Contains("P1")) {
+                    otherPlayerIdx = 1;
                 }
                 else {
-                    //targetPos = players[1].transform.position;
-                    curTargetPlayer = players[1];
+                    otherPlayerIdx = 0;
                 }
 
-            }
-
-            // Verify range
-            if (Vector3.Distance(curTargetPlayer.transform.position, transform.position) < sightRange) {
-                chasing = true;
-                idling = false;
-
-                //if (!activated) {
-                //    activated = true;
-                //}
+                float otherPlayerDist = Vector3.Distance(players[otherPlayerIdx].transform.position, transform.position);
+                if (Vector3.Distance(DestinationPos, transform.position) - otherPlayerDist >= chgTarDis)
+                {
+                    curTargetPlayer = players[otherPlayerIdx];
+                    curChgTarCD = 0f;
+                }
             }
         }
     }
