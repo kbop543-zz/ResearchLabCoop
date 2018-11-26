@@ -1067,7 +1067,7 @@ MonoBehaviour:
   coolDownTimePassed: 0
   arrow: {fileID: 1833159157550846}
   model: {fileID: 1856948032607912}
-  disabledMaterial: {fileID: 2100000, guid: cc49b748150d041fa98cc55ff565f1b8, type: 2}
+  disabledMaterial: {fileID: 2100000, guid: 1e5a773338390411c8ea8e0734061315, type: 2}
 --- !u!114 &114783282751823810
 MonoBehaviour:
   m_ObjectHideFlags: 1
