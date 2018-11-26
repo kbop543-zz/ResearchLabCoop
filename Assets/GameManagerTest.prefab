@@ -146,11 +146,27 @@ MonoBehaviour:
   completeLvl1: 0
   completeLvl2: 0
   completeLvl3: 0
+  curWaveComplete: 0
   players: []
   beesintro: {fileID: 82493248643465124}
   gameUI: {fileID: 0}
   test: {fileID: 0}
   enemyKillCount: 0
+  comboFalling: 0
+  comboShatter: 0
+  comboBoom: 0
+  wave1enemyKillCount: 0
+  wave1comboFalling: 0
+  wave1comboShatter: 0
+  wave1comboBoom: 0
+  wave2enemyKillCount: 0
+  wave2comboFalling: 0
+  wave2comboShatter: 0
+  wave2comboBoom: 0
+  wave3enemyKillCount: 0
+  wave3comboFalling: 0
+  wave3comboShatter: 0
+  wave3comboBoom: 0
   spawner: {fileID: 0}
   secondSpawner: {fileID: 0}
   thirdSpawner: {fileID: 0}
@@ -212,7 +228,6 @@ MonoBehaviour:
   crossBow: {fileID: 1115235763026810, guid: 9908a0d59161a4ae7976ee0ac0c21a37, type: 2}
   wall: {fileID: 1660447889329732, guid: 2d9f421ede380484d8c526fdc7efbd83, type: 2}
   light: {fileID: 1384732459541282, guid: e550918c6030f4347b04037a6f615d99, type: 2}
-  shrinkpipe: {fileID: 1524891975317546, guid: c3105a7a8b2414135926359338113dbb, type: 2}
   thrinkStation: {fileID: 1488631943349220, guid: d618651b637464720a90749f6612495d,
     type: 2}
   thrinkTile: {fileID: 1672104751296836, guid: cee798ca3ee4c43329ae3babc76d7ce0, type: 2}
@@ -223,12 +238,11 @@ MonoBehaviour:
   freezeStation: {fileID: 1452901008558586, guid: dc13ef63647a94a1aae395fa6a5be28c,
     type: 2}
   freezeTile: {fileID: 1720781894172248, guid: e24d1f61251644c9f97363a385aa9b78, type: 2}
-  freezePipe: {fileID: 1292374496853834, guid: d1cd3d5b0dc044e378237bf11bebc918, type: 2}
   electricityStation: {fileID: 1582221883799548, guid: 044fe51d794c1488cb750b93c5905b8c,
     type: 2}
   electricityTile: {fileID: 1992221361616934, guid: f007f3acb4f4d4c6d92ee3ca69635ceb,
     type: 2}
-  electricityPipe: {fileID: 1298795752722870, guid: 20abc1e3f0ce842ddbe769202b7753fb,
+  electricityPipe: {fileID: 1182840752814554, guid: c30f4fcc01179432baec65480d9e8812,
     type: 2}
   BackgroundSound: {fileID: 1250976546370208, guid: c72ef9221f06242e48549ffbb425d64b,
     type: 2}
@@ -237,9 +251,14 @@ MonoBehaviour:
     type: 2}
   enemySpawner3: {fileID: 1721240001647310, guid: 4e0a9151424104d9488b97a5385bf589,
     type: 2}
+  waveStatsClear: {fileID: 1591076120268222, guid: d034052df4ca44c0d882c0b8a21d7d3b,
+    type: 2}
   p1: {fileID: 0}
   p2: {fileID: 0}
   hud: {fileID: 0}
+  myStats: {fileID: 0}
+  shrink: {fileID: 0}
+  hole: {fileID: 0}
 --- !u!114 &114940834490679864
 MonoBehaviour:
   m_ObjectHideFlags: 1

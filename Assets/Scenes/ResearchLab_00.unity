@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731725, g: 0.13414745, b: 0.12107873, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731703, g: 0.13414727, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,6 +113,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: f2e75f062eeb141409eefa9cf0f54453, type: 2}
+--- !u!1001 &155652794
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4658722706752886, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658722706752886, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15.083333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658722706752886, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 337.6276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658722706752886, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658722706752886, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658722706752886, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658722706752886, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658722706752886, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659188038122022, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515929244508322, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515929244508322, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515929244508322, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515929244508322, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515929244508322, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 981ffe1d808e14d2aa98f5a990896829, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &370975145
 Prefab:
   m_ObjectHideFlags: 0
@@ -212,21 +278,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
         type: 2}
-      propertyPath: waveStatsClear
+      propertyPath: holes
       value: 
-      objectReference: {fileID: 1591076120268222, guid: d034052df4ca44c0d882c0b8a21d7d3b,
-        type: 2}
-    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
-        type: 2}
-      propertyPath: electricityPipe
-      value: 
-      objectReference: {fileID: 1182840752814554, guid: c30f4fcc01179432baec65480d9e8812,
-        type: 2}
-    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
-        type: 2}
-      propertyPath: lightBulbs
-      value: 
-      objectReference: {fileID: 1837157551751762, guid: 38eb8477d6bfd46b99b1af94dfe01c04,
+      objectReference: {fileID: 1417844696478670, guid: 981ffe1d808e14d2aa98f5a990896829,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
