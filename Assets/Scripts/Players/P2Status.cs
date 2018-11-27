@@ -19,6 +19,7 @@ public class P2Status : MonoBehaviour {
     private IEnumerator curUnshrink;
     private IEnumerator curUnfreeze;
     private IEnumerator curUnoiled;
+    private IEnumerator curInvWindow;
 
     public Image shrinkFill;
     public Image freezeFill;
@@ -41,7 +42,7 @@ public class P2Status : MonoBehaviour {
 
         GetMaterial();
 
-        SetInvincibility(true);
+        // SetInvincibility(true);
     }
 
     private void Update()
@@ -328,9 +329,74 @@ public class P2Status : MonoBehaviour {
         RestoreColor();
     }
 
-    public void SetInvincibility(bool bol)
+    public void SetInvincibility()
     {
-        hasInvincibility = bol;
+        hasInvincibility = true;
+
+        if (curInvWindow != null)
+        {
+            StopCoroutine(curInvWindow);
+        }
+        curInvWindow = EnterInvWindow(4f);
+        StartCoroutine(curInvWindow);
+
+    }
+
+    private IEnumerator EnterInvWindow(float t)
+    {
+        // Transparency change
+        SkinnedMeshRenderer[] allSkinMesh = transform.GetChild(1).GetComponentsInChildren<SkinnedMeshRenderer>();
+        float tempTransparency = 0.1f;
+        Color tempColor = new Color(originalMaterialColor.r, originalMaterialColor.g, originalMaterialColor.b, originalMaterialColor.a);
+        tempColor.a = tempTransparency;
+
+        float chgRate = 8f;
+        bool goUp = true;
+
+        float i = 0f;
+        while (i < t)
+        {
+            if (goUp)
+            {
+                if (tempTransparency < originalMaterialColor.a)
+                {
+                    tempTransparency += chgRate * Time.deltaTime;
+                    tempColor.a = tempTransparency;
+                }
+                else
+                {
+                    goUp = false;
+                }
+
+            }
+            else //if it's going down
+            {
+                if (tempTransparency > 0.1f)
+                {
+                    tempTransparency -= chgRate * Time.deltaTime;
+                    tempColor.a = tempTransparency;
+                }
+                else
+                {
+                    goUp = true;
+                }
+
+            }
+            foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
+            {
+                skinMesh.material.color = tempColor;
+            }
+
+            i += Time.deltaTime;
+            yield return null;
+        }
+
+        // Exit invincibility
+        hasInvincibility = false;
+        foreach (SkinnedMeshRenderer skinMesh in allSkinMesh)
+        {
+            skinMesh.material.color = originalMaterialColor;
+        }
     }
 
     public bool isInvincible()

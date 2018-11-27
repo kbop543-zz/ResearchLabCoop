@@ -64,6 +64,7 @@ public class OilHit : MonoBehaviour
                 hitTarget.GetComponent<EnemyStatus>().Oiling();
 
                 hitTarget.GetComponent<EnemyMovement>().changeCurTarget(shooter);
+                hitTarget.GetComponent<EnemyMovement>().SetCurChgTarCD(0f);
 
             }
             else
@@ -77,7 +78,7 @@ public class OilHit : MonoBehaviour
         }
         else if (hitTarget.name.Contains("P1"))
         {
-            if (!hitTarget.GetComponent<P1Status>().oiled)
+            if (!hitTarget.GetComponent<P1Status>().oiled && !hitTarget.GetComponent<P1Status>().isInvincible())
             {
                 hitTarget.GetComponent<P1Status>().Oiling();
 
@@ -85,7 +86,7 @@ public class OilHit : MonoBehaviour
         }
         else if (hitTarget.name.Contains("P2"))
         {
-            if (!hitTarget.GetComponent<P2Status>().oiled)
+            if (!hitTarget.GetComponent<P2Status>().oiled && !hitTarget.GetComponent<P2Status>().isInvincible())
             {
                 hitTarget.GetComponent<P2Status>().Oiling();
 

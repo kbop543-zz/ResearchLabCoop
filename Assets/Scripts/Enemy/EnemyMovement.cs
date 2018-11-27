@@ -327,4 +327,7 @@ public class EnemyMovement : MonoBehaviour
     //    yield return null;
     //}
 
+    public void SetCurChgTarCD (float t) {
+        curChgTarCD = t;
+    }
 }

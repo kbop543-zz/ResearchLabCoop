@@ -97,11 +97,11 @@ public class PlayerHealth : MonoBehaviour {
             // Enable invincibility window
             if (gameObject.name.Contains("P1"))
             {
-                GetComponent<P1Status>().SetInvincibility(true);
+                GetComponent<P1Status>().SetInvincibility();
             }
             else
             {
-                GetComponent<P2Status>().SetInvincibility(true);
+                GetComponent<P2Status>().SetInvincibility();
             }
         }
 	}

@@ -80,6 +80,7 @@ public class BigShotHit : MonoBehaviour {
                     // If normal state
                     else {
                         hitTarget.GetComponent<EnemyMovement>().changeCurTarget(shooter);
+                        hitTarget.GetComponent<EnemyMovement>().SetCurChgTarCD(0f);
                     }
                     hitTarget.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity.normalized * force, ForceMode.Impulse);
 

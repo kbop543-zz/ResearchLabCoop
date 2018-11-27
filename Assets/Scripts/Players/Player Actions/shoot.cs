@@ -97,10 +97,10 @@ public class shoot : MonoBehaviour
         }
         GunStatsUpdate(guns[curGun]);
 
-        if (GetComponent<P1Status>().isInvincible())
-        {
-            GetComponent<P1Status>().SetInvincibility(false);
-        }
+        //if (GetComponent<P1Status>().isInvincible())
+        //{
+        //    GetComponent<P1Status>().SetInvincibility(false);
+        //}
     }
 
     public void Switch2()
@@ -124,10 +124,10 @@ public class shoot : MonoBehaviour
         }
         GunStatsUpdate(guns[curGun]);
 
-        if (GetComponent<P2Status>().isInvincible())
-        {
-            GetComponent<P2Status>().SetInvincibility(false);
-        }
+        //if (GetComponent<P2Status>().isInvincible())
+        //{
+        //    GetComponent<P2Status>().SetInvincibility(false);
+        //}
     }
 
     public void Shoot()
@@ -171,18 +171,18 @@ public class shoot : MonoBehaviour
             curCooldown = 0f;
 
             // Disable invincibility window
-            if (gameObject.name.Contains("P1")) {
-                if (GetComponent<P1Status>().isInvincible())
-                {
-                    GetComponent<P1Status>().SetInvincibility(false);
-                }
-            }
-            else {
-                if (GetComponent<P2Status>().isInvincible())
-                {
-                    GetComponent<P2Status>().SetInvincibility(false);
-                }
-            }
+            //if (gameObject.name.Contains("P1")) {
+            //    if (GetComponent<P1Status>().isInvincible())
+            //    {
+            //        GetComponent<P1Status>().SetInvincibility(false);
+            //    }
+            //}
+            //else {
+            //    if (GetComponent<P2Status>().isInvincible())
+            //    {
+            //        GetComponent<P2Status>().SetInvincibility(false);
+            //    }
+            //}
         }
 
     }

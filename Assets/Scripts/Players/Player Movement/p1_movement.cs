@@ -60,10 +60,10 @@ public class p1_movement : MonoBehaviour
                 transform.GetChild(1).LookAt(rb.transform.position + motionVector); // since model is reversed, we will reverse directions
                 anim.SetBool("running", true);
 
-                if (GetComponent<P1Status>().isInvincible())
-                {
-                    GetComponent<P1Status>().SetInvincibility(false);
-                }
+                //if (GetComponent<P1Status>().isInvincible())
+                //{
+                //    GetComponent<P1Status>().SetInvincibility(false);
+                //}
             }
             else
             {
