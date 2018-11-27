@@ -1,25 +1,19 @@
 ﻿<Properties StartupConfiguration="{7266E9D8-237E-77EF-ADB6-674C7F8580D2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameUIPanels.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Science Stations/StationStatus.cs" Line="133" Column="13" />
-      <File FileName="Assets/Scripts/Science Stations/Thrink.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Players/Player Actions/Interact.cs" Line="1" Column="1" />
-      <File FileName="Assets/BackgroundSoundScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scenes/Tutorial/Dialogue.cs" Line="5" Column="22" />
       <File FileName="Assets/Scenes/Tutorial/DialogueManager.cs" Line="64" Column="2" />
       <File FileName="Assets/Scenes/Tutorial/DialogueTrigger.cs" Line="12" Column="9" />
       <File FileName="Assets/Scenes/Tutorial/GameManagerTutorial.cs" Line="33" Column="6" />
       <File FileName="Assets/Scripts/Enemy/SpawnManager.cs" Line="20" Column="35" />
       <File FileName="Assets/Scenes/Tutorial/Tutorial.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameConstants.cs" Line="165" Column="96" />
-      <File FileName="Assets/MainMenu.cs" Line="6" Column="40" />
-      <File FileName="Assets/Scripts/Science Stations/FallOff.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Players/PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Science Stations/Freeze.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Science Stations/Ignite.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameConstants.cs" Line="1" Column="1" />
+      <File FileName="Assets/MainMenu.cs" Line="10" Column="76" />
       <File FileName="Assets/Scripts/LevelManager.cs" Line="82" Column="54" />
-      <File FileName="Assets/Scripts/GameUIPanels.cs" Line="19" Column="35" />
+      <File FileName="Assets/Scripts/GameUIPanels.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TutorialManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
