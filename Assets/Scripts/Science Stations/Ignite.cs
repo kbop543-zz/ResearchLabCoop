@@ -7,10 +7,12 @@ public class Ignite : MonoBehaviour
 
     private GameObject station;
     public AudioSource FireSound;
+    public AudioSource oildialogue;
+    public bool play;
 
     void Start()
     {
-
+        play = true;
         station = GameObject.Find("ElectricityStation(Clone)");
 
     }
@@ -33,8 +35,18 @@ public class Ignite : MonoBehaviour
             {
                 Debug.Log("ignite monster");
                 hitTarget.GetComponent<EnemyStatus>().Shock();
-                if(hitTarget.GetComponent<EnemyStatus>().oiled){
-                    FireSound.Play();
+                if (play)
+                {  
+
+
+                    if (hitTarget.GetComponent<EnemyStatus>().oiled)
+                    {
+                        FireSound.Play();
+                    }
+                    else
+                    {
+                        oildialogue.Play();
+                    }
                 }
             }
             else if (hitTarget.name.Contains("P1"))

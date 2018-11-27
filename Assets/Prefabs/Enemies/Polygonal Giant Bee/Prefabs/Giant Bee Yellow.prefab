@@ -3442,7 +3442,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243489003772540954, guid: 6ad51d82e602f4821a9eba402622e6bc,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 80b0837c28e9940bb88426206711c012, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d71a000c5ac2947199d4316864afe9c2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3660,6 +3660,8 @@ MonoBehaviour:
   damage: 20
   attackCD: 1.5
   navCD: 0.1
+  chgTarCD: 3
+  chgTarDis: 200
   navAgent: {fileID: 195891934106134904}
   chasing: 1
   idling: 0
@@ -3693,6 +3695,8 @@ MonoBehaviour:
   gmtest: {fileID: 0}
   play: 0
   model: {fileID: 1824146266093908}
+  tile: {fileID: 0}
+  oildialogue: {fileID: 0}
 --- !u!137 &137105134165660274
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

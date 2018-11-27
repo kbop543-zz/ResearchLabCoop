@@ -27,6 +27,8 @@ public class EnemyStatus : MonoBehaviour
     public bool play;
     public GameObject model;
     private Color originalMaterialColor;
+    public GameObject tile;
+    public AudioSource oildialogue;
 
     private void Start()
     {
@@ -34,6 +36,8 @@ public class EnemyStatus : MonoBehaviour
         originalSpeed = gameObject.GetComponent<EnemyMovement>().forwardSpeed;
         originalScale = transform.localScale.x;
         gmtest = GameObject.FindWithTag("GameManager");
+        tile = GameObject.Find("ElectricityTile(Clone)");
+        oildialogue = tile.GetComponent<Ignite>().oildialogue;
 
         // Store original material
         GetMaterial();
@@ -195,7 +199,7 @@ public class EnemyStatus : MonoBehaviour
     {
         if (gmtest.GetComponent<GameConstants>().completeLvl2)
         {
-            if(play){
+            if((!oildialogue.isPlaying)&&(play)){
                 play = false;
                 oilSound.Play();
                 Invoke("Whatever", 10);
