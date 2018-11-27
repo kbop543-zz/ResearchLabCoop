@@ -7,6 +7,7 @@ public class shoot : MonoBehaviour
 {
     public GameObject shockwave;
     public GameObject oil;
+    public ParticleSystem oilEffect;
     public AudioSource LaserSound;
     public AudioSource OilSound;
     public GameObject pIcon;
@@ -163,6 +164,9 @@ public class shoot : MonoBehaviour
             }
             else if (guns[curGun] == "oil")
             {
+                oilEffect.transform.rotation = transform.GetChild(1).rotation;
+                oilEffect.Play();
+
                 OilSound.Play();
                 curBullet.GetComponent<OilHit>().updateHolder(gameObject);
             }
@@ -188,6 +192,7 @@ public class shoot : MonoBehaviour
     }
 
     public void InstantDestroyBullet() {
+        oilEffect.Stop();
         Destroy(curBullet);
     }
 
