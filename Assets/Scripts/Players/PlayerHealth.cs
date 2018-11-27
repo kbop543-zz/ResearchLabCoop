@@ -46,6 +46,8 @@ public class PlayerHealth : MonoBehaviour {
             controlUI.GetComponent<Canvas>().enabled = false;
 			gameObject.SetActive(false);
 			playerIsDead = true;
+            gmtest.GetComponent<GameConstants>().playerDeath += 1;
+
 
             Invoke("Respawn", 3);
                 
