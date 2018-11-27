@@ -36,6 +36,7 @@ public class GameConstants : MonoBehaviour {
     public int wave3comboFalling = 0;
     public int wave3comboShatter = 0;
     public int wave3comboBoom = 0;
+    public int playerDeath = 0;
 
     public GameObject spawner, secondSpawner, thirdSpawner;
     public int curWaveSpawnLimit;
