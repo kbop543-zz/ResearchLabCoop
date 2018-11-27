@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: f2e75f062eeb141409eefa9cf0f54453, type: 2}
---- !u!1001 &370975145
+--- !u!1001 &1624647734
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -210,12 +210,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114590286036137762, guid: 8075d8a61865d4ba1b6a8fc541e3183d,
-        type: 2}
-      propertyPath: holes
-      value: 
-      objectReference: {fileID: 1417844696478670, guid: 981ffe1d808e14d2aa98f5a990896829,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8075d8a61865d4ba1b6a8fc541e3183d, type: 2}
   m_IsPrefabAsset: 0
