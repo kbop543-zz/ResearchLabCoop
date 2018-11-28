@@ -36,10 +36,14 @@ public class GameConstants : MonoBehaviour {
     public int wave3comboFalling = 0;
     public int wave3comboShatter = 0;
     public int wave3comboBoom = 0;
-    public int playerDeath = 0;
-    public int wave1PlayerDeath = 0;
-    public int wave2PlayerDeath = 0;
-    public int wave3PlayerDeath = 0;
+    public int guileDeath = 0;
+    public int bobDeath = 0;
+    public int wave1GuileDeath = 0;
+    public int wave1BobDeath = 0;
+    public int wave2GuileDeath = 0;
+    public int wave2BobDeath = 0;
+    public int wave3GuileDeath = 0;
+    public int wave3BobDeath = 0;
 
 
     public GameObject spawner, secondSpawner, thirdSpawner;
@@ -73,7 +77,7 @@ public class GameConstants : MonoBehaviour {
         }
 
     }
-    	
+
 	// Update is called once per frame
 	void Update () {
         // Lose Condition 1): lab health drops to 0
@@ -100,7 +104,7 @@ public class GameConstants : MonoBehaviour {
 
 
             }
-           
+
         }
         // Win Condition 1): Kill same amount of enemy with enemy spawn limit
         if ((completeLvl1 == false) && (completeLvl2 == false) && (completeLvl3 == false))
@@ -118,12 +122,14 @@ public class GameConstants : MonoBehaviour {
                 wave1comboFalling = comboFalling;
                 wave1comboShatter = comboShatter;
                 wave1comboBoom = comboBoom;
-                wave1PlayerDeath = playerDeath;
+                wave1GuileDeath = guileDeath;
+                wave1BobDeath = bobDeath;
                 enemyKillCount = 0;
                 comboFalling = 0;
                 comboShatter = 0;
                 comboBoom = 0;
-                playerDeath = 0;
+                bobDeath = 0;
+                guileDeath = 0;
                 curWaveSpawnLimit = secondSpawner.GetComponent<SpawnManager>().spawnLimit;
                 gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 2 of 3";
                 //Time.timeScale = 0;
@@ -154,12 +160,14 @@ public class GameConstants : MonoBehaviour {
                 wave2comboFalling = comboFalling;
                 wave2comboShatter = comboShatter;
                 wave2comboBoom = comboBoom;
-                wave2PlayerDeath = playerDeath;
+                wave2GuileDeath = guileDeath;
+                wave2BobDeath = bobDeath;
                 enemyKillCount = 0;
                 comboFalling = 0;
                 comboShatter = 0;
                 comboBoom = 0;
-                playerDeath = 0;
+                bobDeath = 0;
+                guileDeath = 0;
                 curWaveSpawnLimit = thirdSpawner.GetComponent<SpawnManager>().spawnLimit;
                 gameUI.GetComponent<PlayerUI>().waveNum.text = "Wave 3 of 3";
                 //Time.timeScale = 0;
@@ -190,12 +198,14 @@ public class GameConstants : MonoBehaviour {
                 wave3comboFalling = comboFalling;
                 wave3comboShatter = comboShatter;
                 wave3comboBoom = comboBoom;
-                wave3PlayerDeath = playerDeath;
+                wave2GuileDeath = guileDeath;
+                wave2BobDeath = bobDeath;
                 enemyKillCount = 0;
                 comboFalling = 0;
                 comboShatter = 0;
                 comboBoom = 0;
-                playerDeath = 0;
+                bobDeath = 0;
+                guileDeath = 0;
                 //Time.timeScale = 0;
             }
         }

@@ -44,13 +44,20 @@ public class PlayerHealth : MonoBehaviour {
         if (gameObject){
             GameObject controlUI = gameObject.transform.Find("ControlUI").gameObject;
             controlUI.GetComponent<Canvas>().enabled = false;
-			gameObject.SetActive(false);
-			playerIsDead = true;
-            gmtest.GetComponent<GameConstants>().playerDeath += 1;
+						gameObject.SetActive(false);
+						playerIsDead = true;
+						if (gameObject.name.Contains("P1"))
+						{
+								gmtest.GetComponent<GameConstants>().bobDeath += 1;
+						}
+						else
+						{
+								gmtest.GetComponent<GameConstants>().guileDeath += 1;
+						}
 
 
             Invoke("Respawn", 3);
-                
+
 		}
 
         // Destroy bullet immediately;

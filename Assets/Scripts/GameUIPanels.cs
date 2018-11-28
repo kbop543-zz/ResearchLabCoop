@@ -90,11 +90,12 @@ public class GameUIPanels : MonoBehaviour {
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboFalling.ToString();
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboBoom.ToString();
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboShatter.ToString();
-            waveCompletePanel.transform.Find("Panel/Player Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1PlayerDeath.ToString();
-            waveCompletePanel.transform.Find("Panel/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1enemyKillCount.ToString();
-            waveCompletePanel.transform.Find("Panel/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1comboFalling.ToString();
-            waveCompletePanel.transform.Find("Panel/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1comboBoom.ToString();
-            waveCompletePanel.transform.Find("Panel/Combos/Freeze+Shockwave Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1comboShatter.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Guile Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1GuileDeath.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Bob Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1BobDeath.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1enemyKillCount.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1comboFalling.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1comboBoom.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Combos/Freeze+Shockwave Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1comboShatter.ToString();
         }
         else if (waveSwitched)
         {
@@ -103,11 +104,12 @@ public class GameUIPanels : MonoBehaviour {
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboFalling.ToString();
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboBoom.ToString();
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboShatter.ToString();
-            waveCompletePanel.transform.Find("Panel/Player Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2PlayerDeath.ToString();
-            waveCompletePanel.transform.Find("Panel/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2enemyKillCount.ToString();
-            waveCompletePanel.transform.Find("Panel/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboFalling.ToString();
-            waveCompletePanel.transform.Find("Panel/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboBoom.ToString();
-            waveCompletePanel.transform.Find("Panel/Combos/Freeze+Shockwave Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboShatter.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Guile Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2GuileDeath.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Bob Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2BobDeath.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2enemyKillCount.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboFalling.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboBoom.ToString();
+            waveCompletePanel.transform.Find("Panel/Content/Combos/Freeze+Shockwave Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboShatter.ToString();
         }
             waveCompletePanel.SetActive(true);
         //Disable scripts that still work while timescale is set to 0
@@ -121,11 +123,12 @@ public class GameUIPanels : MonoBehaviour {
         //gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboFalling.ToString();
         //gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboBoom.ToString();
         //gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboShatter.ToString();
-        gameCompletePanel.transform.Find("Panel/Player Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3PlayerDeath.ToString();
-        gameCompletePanel.transform.Find("Panel/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3enemyKillCount.ToString();
-        gameCompletePanel.transform.Find("Panel/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboFalling.ToString();
-        gameCompletePanel.transform.Find("Panel/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboBoom.ToString();
-        gameCompletePanel.transform.Find("Panel/Combos/Freeze+Shockwave Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboShatter.ToString();
+        waveCompletePanel.transform.Find("Panel/Content/Guile Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3GuileDeath.ToString();
+        waveCompletePanel.transform.Find("Panel/Content/Bob Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3BobDeath.ToString();
+        gameCompletePanel.transform.Find("Panel/Content/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3enemyKillCount.ToString();
+        gameCompletePanel.transform.Find("Panel/Content/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboFalling.ToString();
+        gameCompletePanel.transform.Find("Panel/Content/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboBoom.ToString();
+        gameCompletePanel.transform.Find("Panel/Content/Combos/Freeze+Shockwave Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboShatter.ToString();
 
         gameCompletePanel.SetActive(true);
     }
@@ -140,7 +143,7 @@ public class GameUIPanels : MonoBehaviour {
         waveCompletePanel.SetActive(false);
         if (!waveSwitched) { waveSwitched = true; }
         else if (waveSwitched) { waveSwitched = false; }
-        
+
         //enable the scripts again
 
         pauseGameInProgress = false;
