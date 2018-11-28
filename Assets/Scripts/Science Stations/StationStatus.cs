@@ -313,7 +313,7 @@ public class StationStatus : MonoBehaviour
     }
     public void playucksound()
     {
-        if(station.GetComponent<StationStatus>().activated){
+        if((station.GetComponent<StationStatus>().activated)&&(sucksound!=null)){
             sucksound.Play();
         }
 
