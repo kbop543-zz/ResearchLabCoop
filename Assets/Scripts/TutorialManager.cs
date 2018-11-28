@@ -75,7 +75,7 @@ public class TutorialManager : MonoBehaviour {
         if (curWave == 2)
         {
 
-            if (Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1))
+            if (sentences.Count == 1 && (Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)))
             {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 athenaUI.SetActive(false);
