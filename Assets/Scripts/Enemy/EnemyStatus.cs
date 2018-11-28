@@ -199,7 +199,7 @@ public class EnemyStatus : MonoBehaviour
     {
         if (gmtest.GetComponent<GameConstants>().completeLvl2)
         {
-            if((!oildialogue.isPlaying)&&(play)){
+            if((!oildialogue.isPlaying)&&(play)&&(!tile.GetComponent<Ignite>().FireSound.isPlaying)){
                 play = false;
                 oilSound.Play();
                 Invoke("Whatever", 10);
