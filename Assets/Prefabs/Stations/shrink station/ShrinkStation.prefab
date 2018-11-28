@@ -1075,6 +1075,7 @@ MonoBehaviour:
   flashDuration: 0.075
   maxIntensity: 5
   ParticleEffect: {fileID: 198454405463727684}
+  StationEffect: {fileID: 0}
   duraiton: 4
   coolDown: 3
   recharging: 0
@@ -1083,7 +1084,9 @@ MonoBehaviour:
   coolDownStartTime: 0
   coolDownTimePassed: 0
   arrow: {fileID: 1043184858773198}
+  outOfOrderSign: {fileID: 0}
   model: {fileID: 1384418907901842}
+  disabledMaterial: {fileID: 0}
 --- !u!114 &114636922410791524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5933,7 +5936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 324, y: 152}
+  m_AnchoredPosition: {x: 324, y: 191.99998}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224391435287807814
@@ -5969,6 +5972,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 324, y: 150}
+  m_AnchoredPosition: {x: 324, y: 190}
   m_SizeDelta: {x: 212, y: 403}
   m_Pivot: {x: 0.5, y: 0.5}

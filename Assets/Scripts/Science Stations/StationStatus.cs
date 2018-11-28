@@ -33,6 +33,8 @@ public class StationStatus : MonoBehaviour
     private Material originalMaterial;
     private bool colorChanged;
     public Material disabledMaterial;
+    public GameObject station;
+    public AudioSource sucksound;
 
     private void Start()
     {
@@ -42,6 +44,7 @@ public class StationStatus : MonoBehaviour
         //Get originalMaterialColor
         colorChanged = true;
         GetMaterialColor();
+        station = GameObject.Find("HoleStation(Clone)");
 
         gm = GameObject.FindGameObjectWithTag("GameManager");
         if (gm.GetComponent<GameConstants>().completeLvl1 == false &&
@@ -103,6 +106,9 @@ public class StationStatus : MonoBehaviour
 
         if (!waiting && activated)
         {
+            if(station.GetComponent<StationStatus>().activated){
+                sucksound.Play();
+            }
             StartCoroutine(waitForTermination());
             waiting = true;
 
