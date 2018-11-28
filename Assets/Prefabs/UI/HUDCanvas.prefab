@@ -4705,7 +4705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 0.8}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5930,12 +5930,10 @@ MonoBehaviour:
   dialogue:
     name: Athena
     sentences:
-    - We are in danger scientists! I've just detected an enemy intrusion and we must
-      act quickly to defend the lab.
-    - Both of you are equipped with a multifunctional gun.
-    - There are two gun modes. The shockwave mode and oil mode.
-    - You can switch between the two gun modes by pressing (triangle) and you can
-      shoot by pressing RT.
+    - We are in danger scientists! Your animal experiments have turned into mutants
+      and we must act quickly to defend the lab!
+    - I have equipped both of you with a multifunctional gun. There are two gun modes.
+      The shockwave mode and oil mode.
     - I have also activated the shrink station and the hole station.
     - Use the two stations in combo to defeat enemies!
     - The freeze station is now activated! Use the shockwave gun to shatter enemies

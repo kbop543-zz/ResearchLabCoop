@@ -11,6 +11,7 @@ public class TutorialManager : MonoBehaviour {
     public GameObject hud;
     public Queue<string> sentences;
     public int curWave;
+    public GameObject station;
     public bool skip = false;
 
     private int timesPressed = 0;
@@ -18,7 +19,7 @@ public class TutorialManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Time.timeScale = 0;
-
+        station = GameObject.Find("HoleStation(Clone)");
         hud = gameObject.GetComponent<LevelManager>().hud;
         athenaUI = hud.transform.Find("Athena Canvas").gameObject;
         sentences = hud.transform.Find("DialogueManager").gameObject.GetComponent<DialogueManager>().sentences;
@@ -61,6 +62,7 @@ public class TutorialManager : MonoBehaviour {
             if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)))
             {
                 athenaUI.SetActive(false);
+                athenaUI.transform.Find("Skip").gameObject.SetActive(false);
                 Time.timeScale = 1;
             }
         }
@@ -73,6 +75,7 @@ public class TutorialManager : MonoBehaviour {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 athenaUI.SetActive(false);
                 Time.timeScale = 1;
+                station.GetComponent<StationStatus>().playucksound();
             }
 
         }
@@ -85,6 +88,7 @@ public class TutorialManager : MonoBehaviour {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 athenaUI.SetActive(false);
                 Time.timeScale = 1;
+                station.GetComponent<StationStatus>().playucksound();
             }
 
         }

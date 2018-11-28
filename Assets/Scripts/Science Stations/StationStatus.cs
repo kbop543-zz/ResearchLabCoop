@@ -1,10 +1,13 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StationStatus : MonoBehaviour
 {
-
+    public GameObject canvas;
     public bool activated = false;
     public bool waiting = false;
     public bool prepared = true;
@@ -45,6 +48,7 @@ public class StationStatus : MonoBehaviour
         colorChanged = true;
         GetMaterialColor();
         station = GameObject.Find("HoleStation(Clone)");
+        canvas = GameObject.Find("HUDCanvas(Clone)");
 
         gm = GameObject.FindGameObjectWithTag("GameManager");
         if (gm.GetComponent<GameConstants>().completeLvl1 == false &&
@@ -105,9 +109,10 @@ public class StationStatus : MonoBehaviour
         }
 
         if (!waiting && activated)
-        {
+        {   //station is hole station
             if(station.GetComponent<StationStatus>().activated){
                 sucksound.Play();
+
             }
             StartCoroutine(waitForTermination());
             waiting = true;
@@ -117,6 +122,11 @@ public class StationStatus : MonoBehaviour
 
             used = true;
         }
+        //if (canvas.GetComponent<GameUIPanels>().paneltrue)
+        //{
+        //    Debug.Log("fuckinghell");
+        //    sucksound.Stop();
+        //}
 
         if (!prepared || used)
         {
@@ -297,5 +307,12 @@ public class StationStatus : MonoBehaviour
         if (StationEffect != null) {
             StationEffect.Play();
         }
+    }
+    public void stopsucksound(){
+        sucksound.Pause();
+    }
+    public void playucksound()
+    {
+        sucksound.Play();
     }
 }
