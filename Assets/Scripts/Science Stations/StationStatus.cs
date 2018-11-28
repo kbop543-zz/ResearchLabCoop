@@ -110,7 +110,7 @@ public class StationStatus : MonoBehaviour
 
         if (!waiting && activated)
         {   //station is hole station
-            if(station.GetComponent<StationStatus>().activated){
+            if((station.GetComponent<StationStatus>().activated)&&(sucksound!=null)){
                 sucksound.Play();
 
             }
@@ -313,6 +313,13 @@ public class StationStatus : MonoBehaviour
     }
     public void playucksound()
     {
-        sucksound.Play();
+        if((station.GetComponent<StationStatus>().activated)&&(sucksound!=null)){
+            sucksound.Play();
+        }
+
+    }
+    public void stopsucksoundforreal()
+    {
+        sucksound.Stop();
     }
 }

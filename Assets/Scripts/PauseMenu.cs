@@ -7,9 +7,10 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
     public AudioSource clickSound;
-
+    public GameObject station;
     void Start()
     {
+        station = GameObject.Find("HoleStation(Clone)");
         pausePanel.SetActive(false);
     }
 
@@ -35,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     private void PauseGame()
     {
         Time.timeScale = 0;
+        station.GetComponent<StationStatus>().stopsucksound();
         pausePanel.SetActive(true);
         EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(pausePanel.transform.Find("buttons/Resume Button").gameObject);
         //Disable scripts that still work while timescale is set to 0
@@ -42,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ContinueGame()
     {
+        station.GetComponent<StationStatus>().playucksound();
         Time.timeScale = 1;
         pausePanel.SetActive(false);
         //enable the scripts again
