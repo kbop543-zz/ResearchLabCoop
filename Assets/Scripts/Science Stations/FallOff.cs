@@ -237,7 +237,7 @@ public class FallOff : MonoBehaviour {
         float maxPullForce = 5000f;
         float distFactor = 3000f * 200f;
         float sizeFactor = 2000f * 15f;
-        float pullRadius = 650f;
+        float pullRadius = 200f;
 
         foreach (Collider body in Physics.OverlapSphere(transform.position, pullRadius)) {
             if (body.gameObject.tag == "Player" || body.gameObject.tag == "Monster")

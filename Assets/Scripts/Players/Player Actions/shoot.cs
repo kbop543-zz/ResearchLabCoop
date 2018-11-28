@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class shoot : MonoBehaviour
 {
     public GameObject shockwave;
+    public ParticleSystem shockwaveEffect;
     public GameObject oil;
     public ParticleSystem oilEffect;
     public AudioSource LaserSound;
@@ -35,7 +36,7 @@ public class shoot : MonoBehaviour
 
         projectile = shockwave;
         range = 350f;
-        startDistance = transform.localScale.x / 2 + 35f;
+        startDistance = transform.localScale.x / 2 - 25f;
         duration = 0.45f;
         //cooldown = 0.5f;
         cooldown = 1.0f;
@@ -158,6 +159,10 @@ public class shoot : MonoBehaviour
             curBullet.GetComponent<Rigidbody>().velocity = direction * range;
             if (guns[curGun] == "shock")
             {
+                shockwaveEffect.transform.rotation = transform.GetChild(1).rotation;
+                shockwaveEffect.transform.position = transform.position + direction * 100f + new Vector3(0f, 0.5f, 0f);
+                shockwaveEffect.Play();
+
                 LaserSound.Play();
                 curBullet.GetComponent<BigShotHit>().updateHolder(gameObject);
 
@@ -165,6 +170,7 @@ public class shoot : MonoBehaviour
             else if (guns[curGun] == "oil")
             {
                 oilEffect.transform.rotation = transform.GetChild(1).rotation;
+                oilEffect.transform.position = transform.position + direction * 100f + new Vector3(0f, 3.0f, 0f);
                 oilEffect.Play();
 
                 OilSound.Play();
@@ -192,6 +198,7 @@ public class shoot : MonoBehaviour
     }
 
     public void InstantDestroyBullet() {
+        shockwaveEffect.Stop();
         oilEffect.Stop();
         Destroy(curBullet);
     }
@@ -221,7 +228,7 @@ public class shoot : MonoBehaviour
             case "shock":
                 projectile = shockwave;
                 range = 350f;
-                startDistance = -transform.localScale.x;
+                startDistance = transform.localScale.x / 2 - 25f;
                 //startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 0.5f;
@@ -231,7 +238,7 @@ public class shoot : MonoBehaviour
             case "oil":
                 projectile = oil;
                 range = 350f;
-                startDistance = -transform.localScale.x;
+                startDistance = transform.localScale.x / 2 - 25f;
                 //startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 2.0f;
@@ -241,7 +248,7 @@ public class shoot : MonoBehaviour
                 Debug.Log("Unregistered weapon");
                 projectile = shockwave;
                 range = 350f;
-                startDistance = -transform.localScale.x;
+                startDistance = transform.localScale.x / 2 - 25f;
                 //startDistance = transform.localScale.x / 2 + 35f;
                 duration = 0.45f;
                 //cooldown = 2.0f;
