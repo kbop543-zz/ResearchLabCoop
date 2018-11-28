@@ -10,6 +10,7 @@ public class TutorialManager : MonoBehaviour {
     public bool dialogueTriggered = false;
     public GameObject hud;
     public Queue<string> sentences;
+    public int curWave;
 
     private int timesPressed = 0;
 
@@ -19,38 +20,67 @@ public class TutorialManager : MonoBehaviour {
 
         hud = gameObject.GetComponent<LevelManager>().hud;
         athenaUI = hud.transform.Find("Athena Canvas").gameObject;
-        sentences = hud.transform.Find("Dialogue Manager").gameObject.GetComponent<DialogueManager>().sentences;
+        sentences = hud.transform.Find("DialogueManager").gameObject.GetComponent<DialogueManager>().sentences;
+        curWave = hud.GetComponent<GameUIPanels>().curWave;
     }
-	
-	// Update is called once per frame
-	void Update () {
+    
+    // Update is called once per frame
+    void Update () {
+        curWave = hud.GetComponent<GameUIPanels>().curWave;
 
-        if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)) && !dialogueTriggered)
+        if (curWave == 1)
         {
-            // We are in danger scientists! I am Athena, an AI security protocol that you created.
-            // I've just detected an enemy intrusion and we must act quickly to defend the lab.
-            FindObjectOfType<DialogueTrigger>().TriggerDialogue();
-            dialogueTriggered = true;
-            timesPressed++;
-        }
-        else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1))) // && timesPressed == 1)
-        {
-            // I have activated the interface that displays your vital statistics.
-            FindObjectOfType<DialogueManager>().DisplayNextSentence();
+            if ((Input.GetKeyDown("y") || Input.GetKey("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)) && !dialogueTriggered)
+            {
+                // We are in danger scientists! I am Athena, an AI security protocol that you created.
+                // I've just detected an enemy intrusion and we must act quickly to defend the lab.
+                FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+                dialogueTriggered = true;
+                timesPressed++;
+            }
+            else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1))) // && timesPressed == 1)
+            {
+                // I have activated the interface that displays your vital statistics.
+                FindObjectOfType<DialogueManager>().DisplayNextSentence();
 
-            timesPressed++;
-        }
-        else if (Input.GetKey("t"))
-        {
-            athenaUI.SetActive(false);
-            Time.timeScale = 1;
+                timesPressed++;
+            }
+
+            if (Input.GetKey("t") || Input.GetKey(KeyCode.JoystickButton2))
+            {
+                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+            }
+
+            if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKey("t")))
+            {
+                athenaUI.SetActive(false);
+                Time.timeScale = 1;
+            }
         }
 
-        //if (sentences.Count == 0 && (Input.GetKeyDown("y") || Input.GetKeyDown("t")))
-        //{
-        //    athenaUI.SetActive(false);
-        //    Time.timeScale = 1;
-        //}
+        if (curWave == 2)
+        {
+
+            if (Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1))
+            {
+                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                athenaUI.SetActive(false);
+                Time.timeScale = 1;
+            }
+
+        }
+
+        if (curWave == 3)
+        {
+
+            if (Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1))
+            {
+                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                athenaUI.SetActive(false);
+                Time.timeScale = 1;
+            }
+
+        }
 
     }
 }

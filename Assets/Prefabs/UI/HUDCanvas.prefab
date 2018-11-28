@@ -917,23 +917,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1404888474308616
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224036290013247462}
-  - component: {fileID: 222948928890959818}
-  - component: {fileID: 114807554496951554}
-  m_Layer: 5
-  m_Name: Athena Portrait
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1409523902000090
 GameObject:
   m_ObjectHideFlags: 1
@@ -1410,23 +1393,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1619615707368766
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224667215031522186}
-  - component: {fileID: 222517805007355800}
-  - component: {fileID: 114816219733606352}
-  m_Layer: 5
-  m_Name: Athena Dialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &1631767624095820
 GameObject:
   m_ObjectHideFlags: 1
@@ -1718,23 +1684,6 @@ GameObject:
   - component: {fileID: 114020306459324496}
   m_Layer: 5
   m_Name: Player Death Number
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1845508577478520
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224107917396009884}
-  - component: {fileID: 222585858644579072}
-  - component: {fileID: 114714540392383312}
-  m_Layer: 5
-  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2052,21 +2001,6 @@ GameObject:
   - component: {fileID: 114587838697706998}
   m_Layer: 5
   m_Name: Name Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1963262145022206
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224832059128351124}
-  m_Layer: 5
-  m_Name: Potrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3140,6 +3074,7 @@ MonoBehaviour:
   playerLose: 0
   clickSound: {fileID: 0}
   beesintro: {fileID: 82706966522216832}
+  curWave: 1
 --- !u!114 &114151710740158462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3154,45 +3089,19 @@ MonoBehaviour:
   dialogue:
     name: Athena
     sentences:
-    - We are in danger scientists! I am Athena, an AI security protocol that you created.
-      I've just detected an enemy intrusion and we must act quickly to defend the
-      lab.
-    - I have activated the interface that displays your vital statistics.
-    - The two bars on the bottom displays the amount of health each of you have remaining.
-    - The circle icons right above your health bar will become active if you are affected
-      by any statuses.
-    - These statuses lower your performance or weaken you, and the icons will become
-      inactive when the statuses go away.
-    - This bar on top is the progress bar, which fills up as you defeat enemies in
-      the current wave.
-    - "There aren\u2019t not many things around the lab you can use to fight the enemies,
-      but I\u2019ve switched on the science stations you two have been researching."
-    - This is the shrink ray.
-    - These here are the black holes.
-    - This is the freeze station.
-    - And here we have the electric coil.
-    - It appears that the intruders might have caused a power outage and not all the
-      stations are powered. We will need to wait for the backup power supply.
-    - You can activate the stations by pressing X when you are close enough to the
-      stations.
-    - Once the stations are switched on, their effects will take place in the striped
-      areas and it will need to recharge before you can use it again.
-    - Be careful not to walk into the striped areas while the stations are activated!
-      Or else, you might get blasted too!
-    - I have also equipped both of you with a multifunctional gun.
+    - We are in danger scientists! I've just detected an enemy intrusion and we must
+      act quickly to defend the lab.
+    - Both of you are equipped with a multifunctional gun.
     - There are two gun modes. The shockwave mode and oil mode.
     - You can switch between the two gun modes by pressing (triangle) and you can
       shoot by pressing RT.
-    - "The science stations and gun modes by themselves aren\u2019t harmful, but if
-      you were to combine the effects together they could deadly."
-    - You can shrink your enemies and then drop them into the black holes when they
-      are small enough!
-    - You can also freeze your enemies and then shatter them with the impact of your
-      shockwave gun.
-    - Or you could drench your enemies in oil and ignite them into flames with the
-      electric coil.
-    - This is all I have time for! Good luck scientists!
-    - Here comes your first enemy!
+    - I have also activated the shrink station and the hole station.
+    - Use the two stations in combo to defeat enemies!
+    - The freeze station is now activated! Use the shockwave gun to shatter enemies
+      when they are frozen!
+    - The electricity station is now activated! Use the oil gun to cover enemies in
+      oil and then ignite them using the electricity station!
+    - 
 --- !u!114 &114157134858185242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5413,33 +5322,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 1460930063000766}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &114714540392383312
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845508577478520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 774513496a3ce44bd80fa4f78b81b7ed, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!114 &114724452727647374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5728,60 +5610,6 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: d32c51a1b114042c8852f06219b789fa, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!114 &114807554496951554
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404888474308616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c79fa9b1b21674950a3ab48433f75c9b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!114 &114816219733606352
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1619615707368766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 0.8}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6560,13 +6388,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409523902000090}
   m_CullTransparentMesh: 0
---- !u!222 &222517805007355800
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1619615707368766}
-  m_CullTransparentMesh: 0
 --- !u!222 &222540799331120420
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -6601,13 +6422,6 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951407744002212}
-  m_CullTransparentMesh: 0
---- !u!222 &222585858644579072
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845508577478520}
   m_CullTransparentMesh: 0
 --- !u!222 &222589628685490364
 CanvasRenderer:
@@ -6889,13 +6703,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1993859269365692}
   m_CullTransparentMesh: 0
---- !u!222 &222948928890959818
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404888474308616}
-  m_CullTransparentMesh: 0
 --- !u!222 &222963286540309162
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -7105,24 +6912,6 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -16.4, y: 9.6113825}
   m_SizeDelta: {x: 250, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224036290013247462
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404888474308616}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.328499, y: 0.328499, z: 0.328499}
-  m_Children: []
-  m_Father: {fileID: 224832059128351124}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -382, y: 175}
-  m_SizeDelta: {x: 580, y: 520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224047053276837586
 RectTransform:
@@ -7354,24 +7143,6 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224107917396009884
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845508577478520}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.81138, y: 2.5558, z: 2.5558}
-  m_Children: []
-  m_Father: {fileID: 224832059128351124}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -382, y: 161}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224136759884794342
@@ -7770,7 +7541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -144, y: -293.0084}
+  m_AnchoredPosition: {x: -157, y: -230}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224321290813760066
@@ -8464,25 +8235,6 @@ RectTransform:
   m_AnchoredPosition: {x: -454.00003, y: -171}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224667215031522186
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1619615707368766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.26248202, y: 0.3, z: 0.3}
-  m_Children:
-  - {fileID: 224832059128351124}
-  m_Father: {fileID: 224671503707442440}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -380.5, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224670863843588270
 RectTransform:
   m_ObjectHideFlags: 1
@@ -8498,7 +8250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 234.28818}
+  m_AnchoredPosition: {x: -30.0001, y: 269.6823}
   m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224671503707442440
@@ -8522,7 +8274,6 @@ RectTransform:
   - {fileID: 224467062038024460}
   - {fileID: 4643827939185190}
   - {fileID: 224926896396623964}
-  - {fileID: 224667215031522186}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8884,26 +8635,6 @@ RectTransform:
   m_AnchoredPosition: {x: -266.7, y: -257}
   m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224832059128351124
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1963262145022206}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 224036290013247462}
-  - {fileID: 224107917396009884}
-  m_Father: {fileID: 224667215031522186}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224839180561844330
 RectTransform:
   m_ObjectHideFlags: 1
@@ -9161,6 +8892,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 209, y: -86.394035}
-  m_SizeDelta: {x: 1100, y: 200}
+  m_AnchoredPosition: {x: 122, y: -51}
+  m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
