@@ -54,7 +54,7 @@ public class TutorialManager : MonoBehaviour {
                 }
             }
 
-            if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown("t")))
+            if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)))
             {
                 athenaUI.SetActive(false);
                 Time.timeScale = 1;
