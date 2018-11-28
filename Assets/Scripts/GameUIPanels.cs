@@ -136,7 +136,7 @@ public class GameUIPanels : MonoBehaviour {
         gameCompletePanel.transform.Find("Panel/Content/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboFalling.ToString();
         gameCompletePanel.transform.Find("Panel/Content/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboBoom.ToString();
         gameCompletePanel.transform.Find("Panel/Content/Combos/Freeze+Shockwave Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboShatter.ToString();
-
+        station.GetComponent<StationStatus>().stopsucksoundforreal();
         gameCompletePanel.SetActive(true);
     }
 
