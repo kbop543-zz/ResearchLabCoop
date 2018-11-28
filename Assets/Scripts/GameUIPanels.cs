@@ -10,6 +10,8 @@ public class GameUIPanels : MonoBehaviour {
     [SerializeField] private GameObject waveCompletePanel;
     [SerializeField] private GameObject gameCompletePanel;
     [SerializeField] private GameObject gameOverPanel;
+    public GameObject station;
+    public bool paneltrue;
     public GameObject gm;
     public GameObject athenaUI;
     public bool curWaveComplete;
@@ -23,6 +25,7 @@ public class GameUIPanels : MonoBehaviour {
 
     void Start()
     {
+        station = GameObject.Find("HoleStation(Clone)");
         waveCompletePanel = gameObject.transform.Find("Wave Complete Pause").gameObject;
         gameCompletePanel = gameObject.transform.Find("Game Complete Menu").gameObject;
         gameOverPanel = gameObject.transform.Find("Game Over Menu").gameObject;
@@ -30,7 +33,7 @@ public class GameUIPanels : MonoBehaviour {
         waveCompletePanel.SetActive(false);
         gameCompletePanel.SetActive(false);
         gameOverPanel.SetActive(false);
-
+        paneltrue = false;
         gm = GameObject.FindWithTag("GameManager");
         curWaveComplete = gm.GetComponent<GameConstants>().curWaveComplete;
         finalWaveComplete = gm.GetComponent<GameConstants>().completeLvl3;
@@ -46,7 +49,7 @@ public class GameUIPanels : MonoBehaviour {
         if (curWaveComplete)
         {
             if (!waveCompletePanel.activeInHierarchy && !pauseGameInProgress)
-            {
+            {   
                 pauseGameInProgress = true;
                 Invoke("PauseGame", 3);
                 if (Input.GetKey(KeyCode.JoystickButton0))
@@ -115,6 +118,7 @@ public class GameUIPanels : MonoBehaviour {
             waveCompletePanel.transform.Find("Panel/Content/Combos/Freeze+Shockwave Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboShatter.ToString();
         }
             waveCompletePanel.SetActive(true);
+        station.GetComponent<StationStatus>().stopsucksound();
         //Disable scripts that still work while timescale is set to 0
     }
 
@@ -143,7 +147,9 @@ public class GameUIPanels : MonoBehaviour {
         if(gm.GetComponent<GameConstants>().completeLvl2){
             beesintro.Play();
         }
+        //station.GetComponent<StationStatus>().playucksound();
         waveCompletePanel.SetActive(false);
+        paneltrue = false;
         if (!waveSwitched) { waveSwitched = true; }
         else if (waveSwitched) { waveSwitched = false; }
 

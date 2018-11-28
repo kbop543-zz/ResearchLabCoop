@@ -11,13 +11,13 @@ public class TutorialManager : MonoBehaviour {
     public GameObject hud;
     public Queue<string> sentences;
     public int curWave;
-
+    public GameObject station;
     private int timesPressed = 0;
 
     // Use this for initialization
     void Start () {
         Time.timeScale = 0;
-
+        station = GameObject.Find("HoleStation(Clone)");
         hud = gameObject.GetComponent<LevelManager>().hud;
         athenaUI = hud.transform.Find("Athena Canvas").gameObject;
         sentences = hud.transform.Find("DialogueManager").gameObject.GetComponent<DialogueManager>().sentences;
@@ -70,6 +70,7 @@ public class TutorialManager : MonoBehaviour {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 athenaUI.SetActive(false);
                 Time.timeScale = 1;
+                station.GetComponent<StationStatus>().playucksound();
             }
 
         }
@@ -82,6 +83,7 @@ public class TutorialManager : MonoBehaviour {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 athenaUI.SetActive(false);
                 Time.timeScale = 1;
+                station.GetComponent<StationStatus>().playucksound();
             }
 
         }
