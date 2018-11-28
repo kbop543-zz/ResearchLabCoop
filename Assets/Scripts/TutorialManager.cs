@@ -12,6 +12,8 @@ public class TutorialManager : MonoBehaviour {
     public Queue<string> sentences;
     public int curWave;
     public GameObject station;
+    public bool skip = false;
+
     private int timesPressed = 0;
 
     // Use this for initialization
@@ -49,6 +51,8 @@ public class TutorialManager : MonoBehaviour {
 
             if (Input.GetKey("t") || Input.GetKey(KeyCode.JoystickButton2))
             {
+                skip = true;
+
                 while (sentences.Count > 2)
                 {
                     FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -58,6 +62,7 @@ public class TutorialManager : MonoBehaviour {
             if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)))
             {
                 athenaUI.SetActive(false);
+                athenaUI.transform.Find("Skip").gameObject.SetActive(false);
                 Time.timeScale = 1;
             }
         }

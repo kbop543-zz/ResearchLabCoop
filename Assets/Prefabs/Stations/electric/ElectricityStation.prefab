@@ -162,7 +162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1297392876678490
 GameObject:
   m_ObjectHideFlags: 1
@@ -1203,6 +1203,8 @@ MonoBehaviour:
   outOfOrderSign: {fileID: 1098042998160046}
   model: {fileID: 1856948032607912}
   disabledMaterial: {fileID: 2100000, guid: 1e5a773338390411c8ea8e0734061315, type: 2}
+  station: {fileID: 0}
+  sucksound: {fileID: 0}
 --- !u!114 &114783282751823810
 MonoBehaviour:
   m_ObjectHideFlags: 1
