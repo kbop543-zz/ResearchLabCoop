@@ -242,7 +242,9 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private IEnumerator Attack() {
+        Vector3 TargetPos;
         float time = AnimationLength("attack");
+        GameObject tempTarget = curTargetPlayer.gameObject;
 
         // Set attack boolean
         anim.SetBool("attack", true);
@@ -250,10 +252,15 @@ public class EnemyMovement : MonoBehaviour
         float j = 0f;
         while (j < time) {
             if (j > time / 4 && !attacked) {
+                TargetPos = new Vector3(tempTarget.transform.position.x,
+                                         transform.position.y,
+                                         tempTarget.transform.position.z);
+
                 if (!GetComponent<EnemyStatus>().willDie && !GetComponent<EnemyStatus>().frozen &&
-                    curTargetPlayer != null && !curTargetPlayer.GetComponent<PlayerHealth>().playerIsDead)
+                    tempTarget != null && !tempTarget.GetComponent<PlayerHealth>().playerIsDead &&
+                    Vector3.Distance(transform.position, TargetPos) <= minDistance * 3f)
                 {
-                    curTargetPlayer.GetComponent<PlayerHealth>().TakeDamage(damage);
+                    tempTarget.GetComponent<PlayerHealth>().TakeDamage(damage);
                     attacked = true;
                 }
             }
