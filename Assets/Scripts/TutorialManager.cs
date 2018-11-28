@@ -18,7 +18,7 @@ public class TutorialManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         station = GameObject.Find("HoleStation(Clone)");
         hud = gameObject.GetComponent<LevelManager>().hud;
         athenaUI = hud.transform.Find("Athena Canvas").gameObject;
@@ -33,6 +33,11 @@ public class TutorialManager : MonoBehaviour {
 
         if (curWave == 1)
         {
+            if (timesPressed == 0)
+            {
+                Time.timeScale = 0;
+            }
+
             if ((Input.GetKeyDown("y") || Input.GetKey("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)) && !dialogueTriggered)
             {
                 // We are in danger scientists! I am Athena, an AI security protocol that you created.
