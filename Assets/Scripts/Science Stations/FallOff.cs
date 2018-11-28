@@ -15,6 +15,7 @@ public class FallOff : MonoBehaviour {
     private float scaleX;
     private float scaleY;
     private float scaleZ;
+    public ParticleSystem pullingEffect;
     public AudioSource dropsound;
     public AudioSource actualDropSound;
     public bool play;
@@ -192,12 +193,12 @@ public class FallOff : MonoBehaviour {
         if (station.GetComponent<StationStatus>().activated && !opened) {
             transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
             opened = true;
-
+            pullingEffect.Play();
         }
         else if (!station.GetComponent<StationStatus>().activated && opened) {
             transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = true;
             opened = false;
-
+            pullingEffect.Stop();
         }
 
         if (opened) {
