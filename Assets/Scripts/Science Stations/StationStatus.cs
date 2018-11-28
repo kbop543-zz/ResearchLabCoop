@@ -14,6 +14,7 @@ public class StationStatus : MonoBehaviour
     Coroutine flashLight;
     GameObject gm;
     public ParticleSystem ParticleEffect;
+    public ParticleSystem StationEffect;
 
     public float duraiton = 4f;
     public float coolDown = 3f;
@@ -271,6 +272,10 @@ public class StationStatus : MonoBehaviour
         }
 
         enableSign();
+
+        if (StationEffect != null) {
+            StationEffect.Stop();
+        }
     }
 
     public void RestoreColor()
@@ -282,5 +287,9 @@ public class StationStatus : MonoBehaviour
         }
 
         disableSign();
+
+        if (StationEffect != null) {
+            StationEffect.Play();
+        }
     }
 }
