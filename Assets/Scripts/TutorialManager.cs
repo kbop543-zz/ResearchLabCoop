@@ -50,7 +50,7 @@ public class TutorialManager : MonoBehaviour {
             {
                 // I have activated the interface that displays your vital statistics.
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
-
+                Debug.Log(sentences.Count);
                 timesPressed++;
             }
 
@@ -66,6 +66,7 @@ public class TutorialManager : MonoBehaviour {
 
             if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)))
             {
+                Debug.Log(sentences.Count);
                 athenaUI.SetActive(false);
                 athenaUI.transform.Find("Skip").gameObject.SetActive(false);
                 Time.timeScale = 1;
@@ -75,7 +76,7 @@ public class TutorialManager : MonoBehaviour {
         if (curWave == 2)
         {
 
-            if (sentences.Count == 1 && (Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)))
+            if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)))
             {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 athenaUI.SetActive(false);
