@@ -27,6 +27,7 @@ public class StationStatus : MonoBehaviour
     public float coolDownTimePassed; // timePassed = Time.time - startTime
 
     public GameObject arrow;
+    public GameObject outOfOrderSign;
     public GameObject model;
     private Material originalMaterial;
     private bool colorChanged;
@@ -218,6 +219,27 @@ public class StationStatus : MonoBehaviour
         }
     }
 
+    public void disableSign()
+    {
+        var parts = outOfOrderSign.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer part in parts)
+        {
+            part.enabled = false;
+        }
+    }
+
+    public void enableSign()
+    {
+      print("I am enabling");
+        var parts = outOfOrderSign.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer part in parts)
+        {
+            part.enabled = true;
+        }
+        print("Done enabling");
+
+    }
+
     public bool isStationOnCD()
     {
         if (curCoolDown >= coolDown) {
@@ -247,6 +269,8 @@ public class StationStatus : MonoBehaviour
             //mesh.material.color = new Color(originalColor.r * (1 - percent), originalColor.g * (1 - percent), originalColor.b * (1 - percent), originalColor.a);
             mesh.material = disabledMaterial;
         }
+
+        enableSign();
     }
 
     public void RestoreColor()
@@ -256,5 +280,7 @@ public class StationStatus : MonoBehaviour
         {
             mesh.material = originalMaterial;
         }
+
+        disableSign();
     }
 }
