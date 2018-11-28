@@ -89,6 +89,7 @@ public class GameUIPanels : MonoBehaviour {
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboFalling.ToString();
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboBoom.ToString();
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave1comboShatter.ToString();
+            waveCompletePanel.transform.Find("Panel/Player Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1PlayerDeath.ToString();
             waveCompletePanel.transform.Find("Panel/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1enemyKillCount.ToString();
             waveCompletePanel.transform.Find("Panel/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1comboFalling.ToString();
             waveCompletePanel.transform.Find("Panel/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave1comboBoom.ToString();
@@ -101,6 +102,7 @@ public class GameUIPanels : MonoBehaviour {
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboFalling.ToString();
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboBoom.ToString();
             //waveCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave2comboShatter.ToString();
+            waveCompletePanel.transform.Find("Panel/Player Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2PlayerDeath.ToString();
             waveCompletePanel.transform.Find("Panel/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2enemyKillCount.ToString();
             waveCompletePanel.transform.Find("Panel/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboFalling.ToString();
             waveCompletePanel.transform.Find("Panel/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave2comboBoom.ToString();
@@ -118,6 +120,7 @@ public class GameUIPanels : MonoBehaviour {
         //gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboFalling.ToString();
         //gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboBoom.ToString();
         //gameCompletePanel.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = GameManager.instance.GetComponent<GameConstants>().wave3comboShatter.ToString();
+        gameCompletePanel.transform.Find("Panel/Player Death/Player Death Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3PlayerDeath.ToString();
         gameCompletePanel.transform.Find("Panel/Enemies Killed/Enemies Killed Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3enemyKillCount.ToString();
         gameCompletePanel.transform.Find("Panel/Combos/Shrink+Hole Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboFalling.ToString();
         gameCompletePanel.transform.Find("Panel/Combos/Oil+Electricity Number").gameObject.GetComponent<Text>().text = gm.GetComponent<GameConstants>().wave3comboBoom.ToString();
