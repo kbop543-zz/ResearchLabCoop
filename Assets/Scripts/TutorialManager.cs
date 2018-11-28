@@ -48,10 +48,13 @@ public class TutorialManager : MonoBehaviour {
 
             if (Input.GetKey("t") || Input.GetKey(KeyCode.JoystickButton2))
             {
-                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                while (sentences.Count > 2)
+                {
+                    FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                }
             }
 
-            if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKey("t")))
+            if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown("t")))
             {
                 athenaUI.SetActive(false);
                 Time.timeScale = 1;
