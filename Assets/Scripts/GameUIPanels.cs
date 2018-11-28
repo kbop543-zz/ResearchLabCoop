@@ -11,6 +11,7 @@ public class GameUIPanels : MonoBehaviour {
     [SerializeField] private GameObject gameCompletePanel;
     [SerializeField] private GameObject gameOverPanel;
     public GameObject gm;
+    public GameObject athenaUI;
     public bool curWaveComplete;
     public bool finalWaveComplete;
     public bool playerLose;
@@ -18,12 +19,14 @@ public class GameUIPanels : MonoBehaviour {
     private bool pauseGameInProgress;
     public AudioSource clickSound;
     public AudioSource beesintro;
+    public int curWave = 1;
 
     void Start()
     {
         waveCompletePanel = gameObject.transform.Find("Wave Complete Pause").gameObject;
         gameCompletePanel = gameObject.transform.Find("Game Complete Menu").gameObject;
         gameOverPanel = gameObject.transform.Find("Game Over Menu").gameObject;
+        athenaUI = gameObject.transform.Find("Athena Canvas").gameObject;
         waveCompletePanel.SetActive(false);
         gameCompletePanel.SetActive(false);
         gameOverPanel.SetActive(false);
@@ -147,6 +150,9 @@ public class GameUIPanels : MonoBehaviour {
         //enable the scripts again
 
         pauseGameInProgress = false;
+        curWave++;
+        Time.timeScale = 0;
+        athenaUI.SetActive(true);
     }
 
     public void RestartGame()
