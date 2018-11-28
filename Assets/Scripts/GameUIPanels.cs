@@ -17,6 +17,7 @@ public class GameUIPanels : MonoBehaviour {
     private bool waveSwitched = false;
     private bool pauseGameInProgress;
     public AudioSource clickSound;
+    public AudioSource beesintro;
 
     void Start()
     {
@@ -133,6 +134,9 @@ public class GameUIPanels : MonoBehaviour {
     {
         gm.GetComponent<GameConstants>().curWaveComplete = false;
         Time.timeScale = 1;
+        if(gm.GetComponent<GameConstants>().completeLvl2){
+            beesintro.Play();
+        }
         waveCompletePanel.SetActive(false);
         if (!waveSwitched) { waveSwitched = true; }
         else if (waveSwitched) { waveSwitched = false; }
