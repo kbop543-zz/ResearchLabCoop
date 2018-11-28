@@ -595,8 +595,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288423722908766}
   m_LocalRotation: {x: -0.00000019861236, y: 0.7071068, z: 0.7071068, w: 0.00000019861236}
-  m_LocalPosition: {x: -2.5, y: 2.1428573, z: 0}
-  m_LocalScale: {x: 0.7142861, y: 0.71428657, z: 0.71428657}
+  m_LocalPosition: {x: -2.24, y: 0, z: -0.43}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_Children:
   - {fileID: 4941072697884594}
   m_Father: {fileID: 4367668032062890}
@@ -1215,6 +1215,8 @@ MonoBehaviour:
   outOfOrderSign: {fileID: 1338755150972860}
   model: {fileID: 1713351844582730}
   disabledMaterial: {fileID: 2100000, guid: 1e5a773338390411c8ea8e0734061315, type: 2}
+  station: {fileID: 0}
+  sucksound: {fileID: 0}
 --- !u!114 &114393922666780938
 MonoBehaviour:
   m_ObjectHideFlags: 1
