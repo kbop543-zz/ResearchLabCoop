@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour {
     Color t_green;
     Color t_yellow;
     Color t_red;
+    public ParticleSystem HitEffect;
 
     // Use this for initialization
     void Start () {
@@ -133,6 +134,7 @@ public class PlayerHealth : MonoBehaviour {
         }
 
         health -=amount;
+        HitEffect.Play();
 
 		healthBar.fillAmount = health/startHealth;
 		// Debug.Log("fill amount" + healthBar.fillAmount );
