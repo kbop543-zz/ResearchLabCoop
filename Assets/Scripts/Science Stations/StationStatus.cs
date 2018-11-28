@@ -230,7 +230,7 @@ public class StationStatus : MonoBehaviour
 
     public void enableSign()
     {
-      print("I am enabling");
+        print("I am enabling");
         var parts = outOfOrderSign.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer part in parts)
         {
