@@ -151,8 +151,11 @@ public class GameUIPanels : MonoBehaviour {
 
         pauseGameInProgress = false;
         curWave++;
-        Time.timeScale = 0;
-        athenaUI.SetActive(true);
+        if (!gameObject.GetComponent<TutorialManager>().skip)
+        {
+            Time.timeScale = 0;
+            athenaUI.SetActive(true);
+        }
     }
 
     public void RestartGame()

@@ -11,6 +11,7 @@ public class TutorialManager : MonoBehaviour {
     public GameObject hud;
     public Queue<string> sentences;
     public int curWave;
+    public bool skip = false;
 
     private int timesPressed = 0;
 
@@ -49,6 +50,8 @@ public class TutorialManager : MonoBehaviour {
 
             if (Input.GetKey("t") || Input.GetKey(KeyCode.JoystickButton2))
             {
+                skip = true;
+
                 while (sentences.Count > 2)
                 {
                     FindObjectOfType<DialogueManager>().DisplayNextSentence();
