@@ -42,6 +42,9 @@ public class Ignite : MonoBehaviour
                     if (hitTarget.GetComponent<EnemyStatus>().oiled)
                     {
                         FireSound.Play();
+                        oildialogue.Stop();
+                        play = false;
+                        Invoke("Whatever", 10);
                     }
                     else
                     {
@@ -69,5 +72,8 @@ public class Ignite : MonoBehaviour
             }
 
         }
+    }
+    void Whatever(){
+        play = true;
     }
 }
