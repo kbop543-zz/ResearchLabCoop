@@ -27,6 +27,7 @@ public class TutorialManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         curWave = hud.GetComponent<GameUIPanels>().curWave;
+        sentences = hud.transform.Find("DialogueManager").gameObject.GetComponent<DialogueManager>().sentences;
 
         if (curWave == 1)
         {
