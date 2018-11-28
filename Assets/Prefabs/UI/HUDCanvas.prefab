@@ -2292,7 +2292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1943292434658192
 GameObject:
   m_ObjectHideFlags: 1
@@ -3430,6 +3430,8 @@ MonoBehaviour:
   waveCompletePanel: {fileID: 1997169070020112}
   gameCompletePanel: {fileID: 1936667032333592}
   gameOverPanel: {fileID: 1866443524917912}
+  station: {fileID: 0}
+  paneltrue: 0
   gm: {fileID: 0}
   athenaUI: {fileID: 0}
   curWaveComplete: 0
@@ -5934,6 +5936,7 @@ MonoBehaviour:
       and we must act quickly to defend the lab!
     - I have equipped both of you with a multifunctional gun. There are two gun modes.
       The shockwave mode and oil mode.
+    - The shockwave gun pushes enemies away and the oil gun slows down enemies.
     - I have also activated the shrink station and the hole station.
     - Use the two stations in combo to defeat enemies!
     - The freeze station is now activated! Use the shockwave gun to shatter enemies
