@@ -13,6 +13,7 @@ public class TutorialManager : MonoBehaviour {
     public int curWave;
     public GameObject station;
     public bool skip = false;
+    public bool wave1TutComplete = false;
 
     private int timesPressed = 0;
 
@@ -38,7 +39,7 @@ public class TutorialManager : MonoBehaviour {
                 Time.timeScale = 0;
             }
 
-            if ((Input.GetKeyDown("y") || Input.GetKey("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)) && !dialogueTriggered)
+            if (!wave1TutComplete && (Input.GetKeyDown("y") || Input.GetKey("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)) && !dialogueTriggered)
             {
                 // We are in danger scientists! I am Athena, an AI security protocol that you created.
                 // I've just detected an enemy intrusion and we must act quickly to defend the lab.
@@ -46,7 +47,7 @@ public class TutorialManager : MonoBehaviour {
                 dialogueTriggered = true;
                 timesPressed++;
             }
-            else if ((Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1))) // && timesPressed == 1)
+            else if (!wave1TutComplete && (Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1))) // && timesPressed == 1)
             {
                 // I have activated the interface that displays your vital statistics.
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
@@ -54,7 +55,7 @@ public class TutorialManager : MonoBehaviour {
                 timesPressed++;
             }
 
-            if (Input.GetKey("t") || Input.GetKey(KeyCode.JoystickButton2))
+            if (!wave1TutComplete && (Input.GetKey("t") || Input.GetKey(KeyCode.JoystickButton2)))
             {
                 skip = true;
 
@@ -62,6 +63,8 @@ public class TutorialManager : MonoBehaviour {
                 {
                     FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 }
+
+                wave1TutComplete = true;
             }
 
             if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown("t") || Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2)))
@@ -70,13 +73,14 @@ public class TutorialManager : MonoBehaviour {
                 athenaUI.SetActive(false);
                 athenaUI.transform.Find("Skip").gameObject.SetActive(false);
                 Time.timeScale = 1;
+                wave1TutComplete = true;
             }
         }
 
         if (curWave == 2)
         {
 
-            if (sentences.Count == 2 && (Input.GetKeyDown("y") || Input.GetKeyDown(KeyCode.JoystickButton1)))
+            if (sentences.Count == 2 && (Input.GetKeyUp("y") || Input.GetKeyUp(KeyCode.JoystickButton1)))
             {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
                 athenaUI.SetActive(false);
