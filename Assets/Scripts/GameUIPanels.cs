@@ -144,7 +144,8 @@ public class GameUIPanels : MonoBehaviour {
     {
         gm.GetComponent<GameConstants>().curWaveComplete = false;
         Time.timeScale = 1;
-        if(gm.GetComponent<GameConstants>().completeLvl2){
+        station.GetComponent<StationStatus>().playucksound();
+        if (gm.GetComponent<GameConstants>().completeLvl2){
             beesintro.Play();
         }
         //station.GetComponent<StationStatus>().playucksound();
